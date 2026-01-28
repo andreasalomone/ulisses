@@ -1,0 +1,385 @@
+export const DICTIONARY = {
+    common: {
+        demoCta: "Richiedi una demo",
+        expertCta: "Parla con un esperto",
+        onePagerCta: "Scarica One-Pager",
+        contactCta: "Richiedi una demo / assessment",
+        learnMore: "Scopri di più",
+        backToHome: "Torna alla Home",
+        sending: "Invio in corso...",
+    },
+    navigation: {
+        soluzioni: "Soluzioni",
+        logistica: "Logistica",
+        ferroviario: "Ferroviario",
+        smartParking: "Smart Parking",
+        tecnologia: "Tecnologia",
+        azienda: "Azienda",
+        contatti: "Contatti",
+    },
+    home: {
+        hero: {
+            h1: "Localizzazione di asset indoor/outdoor che genera dati operativi per ridurre sprechi e migliorare le decisioni.",
+            h1Token: "indoor/outdoor",
+            subheadline: "Ulisses è un’infrastruttura completa: rete + sensori + piattaforma + API, pronta per essere messa a terra in ambienti complessi.",
+            subheadlineToken: "rete + sensori + piattaforma + API",
+            proofs: [
+                "Brevetto tecnologico",
+                "Planning & commissioning integrati",
+                "Integrazioni IT/OT con SLA end-to-end"
+            ],
+            expertLink: "Parla con un esperto"
+        },
+        selector: {
+            title: "In quale scenario ti serve Ulisses?",
+            subtitle: "Risoluzioni operative, risultati attesi e percorso di progetto.",
+            cards: {
+                logistica: {
+                    title: "Logistica & Operations",
+                    description: "Riduci tempi di ricerca asset, errori operativi e rischi in magazzino e yard.",
+                    cta: "Scopri Logistica",
+                    resolutions: ["Ricerca asset", "Geofencing", "KPI flussi"]
+                },
+                ferroviario: {
+                    title: "Ferroviario",
+                    description: "Controllo attrezzature e materiali in depositi e officine, con integrazione ai workflow di manutenzione.",
+                    cta: "Scopri Ferroviario",
+                    resolutions: ["Disponibilità attrezzature", "Storico eventi", "CMMS"]
+                },
+                parking: {
+                    title: "Smart City — Smart Parking",
+                    description: "Dati di occupazione e eventi operativi, rollout scalabile e OPEX controllabile con rete privata.",
+                    cta: "Scopri Smart Parking",
+                    resolutions: ["Occupancy", "Durata sosta", "Qualità dato"]
+                }
+            }
+        },
+        why: {
+            title: "Perché Ulisses è diversa",
+            intro: "Non forniamo “un singolo sensore” o “solo una dashboard”. Costruiamo un sistema completo che porta dati affidabili dal campo alle decisioni — e quando serve integriamo il dato nelle piattaforme già in uso (WMS/CMMS/ITS/BI) tramite API.",
+            columns: [
+                {
+                    title: "Software gestionali",
+                    text: "I gestionali organizzano dati e processi, ma non vedono il mondo fisico: posizione reale, eventi sul campo, dinamiche indoor/outdoor."
+                },
+                {
+                    title: "Tracking tradizionale",
+                    text: "Molte soluzioni funzionano bene in demo, ma faticano in ambienti reali: interferenze, scalabilità, manutenance, affidabilità del dato."
+                },
+                {
+                    title: "Soluzioni frammentate",
+                    text: "Quando sensori, rete e software non hanno una regia unica, aumentano complessità, integrazioni su misura e costi nel tempo. Ulisses è modulare: piattaforma opzionale e dato integrabile via API, con metodo e ownership chiara."
+                }
+            ],
+            closure: "Ulisses unifica field, rete e dato: puoi usare la nostra piattaforma oppure integrare via API, riducendo complessità e tempi di messa a terra.",
+            quote: "“Non siamo un prototipo, non siamo un PoC eterno. Siamo operativi nel mondo reale.”"
+        },
+        howItWorks: {
+            title: "Come funziona, in pratica",
+            subtitle: "Dalla rilevazione sul campo al dato operativo: un flusso semplice, industrializzabile, integrabile.",
+            steps: [
+                { title: "Field", text: "sensori/tag/anchor rilevano eventi e presenza" },
+                { title: "Rete", text: "la connettività porta i dati in modo robusto" },
+                { title: "Piattaforma", text: "normalizza, storicizza, abilita dashboard e regole" },
+                { title: "API / Integrazioni", text: "collega sistemi esistenti (WMS/MES/CMMS/ITS)" }
+            ],
+            deployment: {
+                label: "Scegli il tuo deployment",
+                title: "Deployment flessibile",
+                text: "Cloud / On-prem / Edge: scegli la modalità più adatta a security, latenza e requisiti del settore.",
+                tokens: "Cloud / On-prem / Edge"
+            }
+        },
+        app: {
+            label: "Web App / Dashboard",
+            title: "La Web App: cosa vedi e cosa puoi fare",
+            intro: "Non solo “tracking”: trasformiamo segnali ed eventi in decisioni operative.",
+            features: [
+                { title: "Monitori", text: "posizione, eventi, occupancy, health del sistema" },
+                { title: "Analizzi", text: "storico, trend, anomalie, performance per area/sito" },
+                { title: "Agisci", text: "con alert, regole, report, integrazioni ai workflow" }
+            ],
+            cta: "Guarda esempi di dashboard"
+        },
+        proof: {
+            title: "Pronta per la produzione",
+            subtitle: "Ulisses è progettata per funzionare con continuità in contesti complessi. Non solo tecnologia: un metodo completo per ridurre rischi, tempi e costi di progetto.",
+            items: [
+                { title: "Site survey & design", text: "partiamo dai vincoli reali (copertura, interferenze, layout, processi)." },
+                { title: "Commissioning", text: "validiamo sul campo qualità del dato e performance prima del go-live." },
+                { title: "Integrazioni IT/OT via API", text: "portiamo eventi e dati nei sistemi già in uso (WMS/CMMS/ITS/BI)." },
+                { title: "SLA & supporto", text: "osservabilità, alert, report qualità dato e continuità operativa." }
+            ],
+            cta: "Approfondisci il Metodo",
+            closure: "Il risultato è una soluzione adottabile: dati affidabili, governance chiara e rollout scalabile."
+        },
+        cta: {
+            title: "Valutiamo insieme la fattibilità del tuo scenario",
+            formMicrocopy: "Compila 6 campi: ci aiuta a darti una risposta utile, non generica.",
+            bullets: [
+                "Analisi gratuita dello scenario operativo",
+                "Proposta di architettura (Cloud/Edge/On-prem)",
+                "Piano di roll-out e stima del ROI"
+            ],
+            scenariosTitle: "Scenario",
+            objectivesTitle: "Obiettivo principale",
+            objectives: [
+                "Ridurre tempi di ricerca asset",
+                "Geofencing / alert",
+                "Occupancy stalli",
+                "Durata / overstay",
+                "Tracciabilità materiali/attrezzature",
+                "Integrazione con sistemi esistenti",
+                "Altro"
+            ],
+            timingTitle: "Timing",
+            timing: [
+                "0–3 mesi",
+                "3–6 mesi",
+                "6–12 mesi",
+                "Esplorazione"
+            ],
+            contactLabel: "Email Aziendale",
+            phoneLabel: "Telefono (opzionale)",
+            sizeLabel: "Dimensione scenario (# asset / # siti)",
+            sizePlaceholder: "es: 200 carrelli, 3 magazzini",
+            privacyNotice: "Nessuna spam. Usiamo i dati solo per rispondere alla tua richiesta operativa.",
+            button: "Parla con un esperto Ulisses",
+            success: "Successo!",
+            error: "Errore durante l'invio.",
+            networkError: "Si è verificato un errore di rete."
+        }
+    },
+    solutions: {
+        hero: {
+            h1: "Soluzioni per Logistica, Ferroviario e Smart Parking",
+            intro: "Ulisses porta dati affidabili dal campo alle decisioni nei contesti dove contano continuità, qualità del dato e integrazione con sistemi già esistenti. Puoi usare la piattaforma Ulisses oppure integrare eventi e misure nelle tue piattaforme tramite API."
+        },
+        method: {
+            title: "Dal primo sito al rollout: un percorso chiaro",
+            intro: "Una soluzione funziona davvero quando qualità del dato e continuità sono governate. Per questo seguiamo un metodo che riduce rischi, tempi e sorprese di progetto.",
+            steps: [
+                { title: "Step 1 — Obiettivi e KPI", text: "Allineiamo obiettivo operativo, KPI e vincoli (processo, aree, utenti, requisiti)." },
+                { title: "Step 2 — Site survey & design", text: "Disegniamo copertura e architettura in base a layout, interferenze e punti critici." },
+                { title: "Step 3 — Installazione & messa a servizio", text: "Mettiamo in servizio e validiamo sul campo: qualità del dato, eventi, performance." },
+                { title: "Step 4 — Dashboard o integrazione nei sistemi già in uso", text: "Piattaforma Ulisses quando utile, oppure eventi e dati nelle piattaforme esistenti via API (WMS/CMMS/ITS/BI)." },
+                { title: "Step 5 — Go-live e continuità", text: "Monitor health, report qualità dato, supporto e SLA quando richiesto." }
+            ]
+        }
+    },
+    logistica: {
+        hero: {
+            h1: "Logistica: localizzazione asset e dati operativi per ridurre tempi ed errori",
+            sub: "In magazzino e yard, Ulisses rende visibile ciò che oggi è “tempo perso”: ricerca, movimenti, anomalie e rischi.",
+            cta: "Richiedi demo Logistica",
+            onePager: "Scarica One-Pager Logistica"
+        },
+        process: [
+            "Troppo tempo per trovare carrelli/roll/pallet speciali/attrezzature",
+            "Dispersioni e utilizzo inefficiente degli asset",
+            "Errori di allocazione, movimentazioni non tracciate",
+            "Aree sensibili e rischi safety non monitorati",
+            "Difficoltà a misurare performance reali per area/processo"
+        ],
+        useCases: [
+            { title: "Ricerca asset in tempo reale", text: "Riduci tempi di ricerca e fermi operativi con posizione e storico." },
+            { title: "Geofencing & alert", text: "Allerta su uscite non autorizzate, aree interdette, permanenze anomale." },
+            { title: "Safety operativa", text: "Eventi e regole su aree di rischio, presenza e anomalie." },
+            { title: "KPI operativi", text: "Report su utilizzo asset, colli di bottiglia, aree con inefficienze ricorrenti." }
+        ],
+        dashboard: {
+            title: "Dashboard logistica: decisioni rapide, dati affidabili",
+            bullets: [
+                "Ricerca asset per nome/ID/area",
+                "Mappa aree + heatmap utilizzo",
+                "Eventi e alert con priorità",
+                "Report settimanali/mensili (utilizzo, anomalie, tempi)"
+            ]
+        },
+        integration: {
+            title: "Come si inserisce nei tuoi sistemi",
+            text: "Ulisses non ti chiede di cambiare stack: genera eventi e dati operativi dal campo e li rende disponibili via API. Puoi usare la piattaforma Ulisses quando utile, oppure portare i dati direttamente nei sistemi già in uso.",
+            bullets: [
+                "Eventi e misure normalizzati (coerenti e riutilizzabili)",
+                "Integrazione pulita (meno custom, meno manutenzione)",
+                "Dato affidabile e governato (health, qualità dato, storico)"
+            ],
+            common: "WMS • MES • CMMS • ERP • ITS / Smart City • sistemi di sicurezza • BI / Data Lake"
+        },
+        finalCta: {
+            title: "Valutiamo insieme la fattibilità sul tuo scenario",
+            subtitle: "Definiamo area, KPI e tempi. Ti proponiamo architettura e piano di rollout.",
+            ctaPilot: "Richiedi un pilot",
+            ctaExpert: "Parla con un esperto",
+            ctaOnePager: "Scarica One-Pager"
+        }
+    },
+    ferroviario: {
+        hero: {
+            h1: "Ferroviario: controllo di attrezzature e materiali in depositi e officine",
+            sub: "Riduci dispersioni e tempi improduttivi. Collega eventi sul campo ai workflow di manutenzione.",
+            cta: "Richiedi demo Ferroviario",
+            onePager: "Scarica One-Pager Ferroviario"
+        },
+        process: [
+            "Attrezzature e materiali non rintracciabili quando servono",
+            "Tempi di manutenzione allungati per logistica interna inefficiente",
+            "Difficoltà nel dimostrare tracciabilità e auditabilità",
+            "Ambienti complessi e regolati con requisiti di affidabilità"
+        ],
+        useCases: [
+            { title: "Tracciamento attrezzature in officina", text: "Riduci tempi di ricerca e fermi: posizione + storico eventi." },
+            { title: "Materiali e componenti critici", text: "Controllo aree, permanenze, alert su spostamenti non previsti." },
+            { title: "Workflow manutenzione (integrazione CMMS)", text: "Eventi e disponibilità asset alimentano ticket e processi." },
+            { title: "Report per audit", text: "Storico e KPI a supporto di compliance e controllo." }
+        ],
+        dashboard: {
+            bullets: [
+                "Mappa aree + stato asset per categoria",
+                "Eventi e anomalie con timeline",
+                "Report disponibilità e utilizzo",
+                "Health del sistema e SLA"
+            ]
+        },
+        delivery: {
+            title: "Integrazioni e delivery",
+            text: "La differenza non è solo tecnologica: è la capacità di messa a terra.",
+            steps: "Site survey → design → commissioning → integrazione → go-live con SLA.",
+            cta: "Richiedi una demo"
+        }
+    },
+    parking: {
+        hero: {
+            h1: "Smart Parking: occupazione stalli e eventi operativi, con rollout scalabile",
+            sub: "Dati affidabili per gestione della sosta, enforcement, pianificazione e reportistica. Con rete privata: OPEX controllabile e indipendenza.",
+            cta: "Richiedi demo Smart Parking",
+            onePager: "Scarica One-Pager Smart Parking"
+        },
+        segments: [
+            { title: "Per Comuni e PA", text: "decisioni basate su dati, trasparenza e report." },
+            { title: "Per concessionari", text: "efficienza operativa ed enforcement mirato." },
+            { title: "Per grandi aree private", text: "ottimizzazione flussi e qualità del servizio." }
+        ],
+        useCases: [
+            { title: "Occupancy & disponibilità", text: "Stato stalli in tempo reale + storico affidabile." },
+            { title: "Eventi operativi", text: "Durata sosta, overstay, profili stallo e priorità intervento." },
+            { title: "Qualità del dato e health", text: "Stalli “mute”, copertura, anomalie: controllo continuo e SLA." },
+            { title: "Rollout scalabile", text: "Da pilot a città: rete privata/mesh, continuità operativa, crescita modulare." }
+        ],
+        privateNetwork: {
+            title: "Perché rete privata (senza SIM) cambia il conto economico",
+            bullets: [
+                "Riduce dipendenza da operatori e costi ricorrenti per connettività",
+                "Maggiore controllo su prestazioni e continuità",
+                "Rollout più prevedibile e scalabile"
+            ]
+        },
+        dashboard: {
+            bullets: [
+                "Mappa zone + occupancy per area",
+                "Eventi e anomalie (overstay, stalli critici)",
+                "Report per PA (utilizzo, rotazione, KPI)",
+                "Monitor health rete/sensori"
+            ]
+        },
+        paCta: {
+            title: "Stai preparando un bando o un pilot?",
+            text: "Ti supportiamo nel definire KPI, architettura e piano di rollout.",
+            ctaExpert: "Parla con un esperto PA",
+            ctaDemo: "Richiedi demo",
+            ctaOnePager: "Scarica One-Pager"
+        }
+    },
+    tecnologia: {
+        hero: {
+            h1: "Tecnologia Ulisses: dal segnale al dato affidabile, sul campo",
+            sub: "Siamo l’evoluzione dell’ecosistema Bluetooth: non perché è nuovo, ma perché lo rendiamo affidabile, misurabile e pronto per l’uso sul campo.",
+            ctaDemo: "Richiedi demo",
+            ctaSheet: "Scarica scheda tecnica"
+        },
+        pillars: {
+            title: "La differenza è trasformare lo standard in dato affidabile",
+            text: "Gli standard radio più recenti, come il Bluetooth Channel Sounding (RTT + Phase-Based Ranging), aprono nuove possibilità di misura. Il valore però nasce quando quella misura diventa stabile e verificabile sul campo: ambienti complessi, interferenze, densità e vincoli operativi. Ulisses fa questo passaggio e rende il dato pronto da usare e integrabile via API e se serve, è disponibile anche la nostra piattaforma per dashboard e gestione operativa.",
+            items: [
+                "Stack e algoritmi per trasformare il segnale in un dato stabile e verificabile sul campo.",
+                "Tool di planning e commissioning per una messa a terra ripetibile: progettazione, validazione e qualità del dato.",
+                "Piattaforma e integrazioni per portare eventi e misure in dashboard, workflow e sistemi esistenti via API."
+            ]
+        },
+        infrastructure: {
+            title: "Un’infrastruttura completa",
+            subtitle: "Dalla rilevazione sul campo al dato operativo: componenti modulari, stesso obiettivo — dati affidabili e integrabili.",
+            items: [
+                { title: "Field", text: "sensori / tag / anchor per rilevare eventi e presenza" },
+                { title: "Rete", text: "connettività robusta e scalabile per trasportare i dati" },
+                { title: "Piattaforma", text: "dashboard, regole, storicizzazione e gestione operativa (quando utile)" },
+                { title: "API", text: "integrazione con i sistemi esistenti e con i workflow" }
+            ]
+        },
+        itArchitecture: {
+            title: "Scegli l’architettura che facilita il progetto",
+            subtitle: "Supportiamo diverse modalità, in base a requisiti di sicurezza, latenza e governance del dato.",
+            items: [
+                { title: "Cloud", text: "avvio più rapido, aggiornamenti centralizzati, gestione multi-sito" },
+                { title: "On-prem", text: "requisiti security/compliance, dati in sito, controllo completo" },
+                { title: "Edge / Ibrido", text: "bassa latenza, continuità anche con connettività limitata, gestione locale + sincronizzazione" }
+            ]
+        },
+        integrations: {
+            title: "Integrazione nativa, non adattamenti “su misura”",
+            subtitle: "Ulisses espone eventi e misure con un modello dati coerente, così l’integrazione resta pulita e manutenibile nel tempo.",
+            common: "API e connettori verso: WMS • MES • CMMS • ERP • ITS / Smart City • sistemi di sicurezza • BI / Data Lake"
+        },
+        observability: {
+            title: "Continuità e qualità del dato nel tempo",
+            subtitle: "Un sistema è utile solo se il dato resta affidabile. Per questo includiamo osservabilità, controllo qualità e supporto operativo.",
+            items: [
+                "Health monitoring di rete e dispositivi",
+                "Alert su anomalie e degrado prestazioni",
+                "Report qualità dato (copertura, stalli/asset “mute”, trend)",
+                "Supporto e SLA (quando richiesto) per continuità operativa"
+            ]
+        }
+    },
+    ricercaIp: {
+        hero: {
+            h1: "R&D: innovazione che diventa soluzione sul campo",
+            sub: "Investiamo per mantenere un vantaggio nel tempo: robustezza radio, qualità del dato e messa a terra ripetibile. Per noi R&D significa trasformare standard e componenti in un sistema stabile, misurabile e integrabile.",
+            ctaTalk: "Parla con noi",
+            ctaSheet: "Scarica scheda “Ricerca & IP”"
+        },
+        collaborations: {
+            title: "Collaborazioni che accelerano l’innovazione",
+            text: "Collaboriamo con partner tecnici e accademici per validare approcci e trasformarli in soluzioni applicabili sul campo.",
+            partner: { name: "Politecnico di Milano — IoT Lab", link: "#" }
+        },
+        ip: {
+            title: "IP che protegge il vantaggio",
+            text: "Parte del valore Ulisses è protetto da proprietà intellettuale e know-how su algoritmi, stack radio e tooling di commissioning."
+        },
+        awards: {
+            title: "Riconoscimenti e citazioni",
+            text: "Selezione di premi, articoli e contributi pubblici che rafforzano credibilità e solidità."
+        }
+    },
+    azienda: {
+        hero: {
+            h1: "Chi siamo",
+            text: "Ulisses sviluppa soluzioni IoT industriali per localizzazione e dati operativi in contesti complessi. Uniamo competenze di campo e prodotto: dalla progettazione al go-live."
+        },
+        mission: {
+            title: "Mission",
+            text: "Semplificare la complessità operativa tramite dati di campo affidabili."
+        },
+        values: ["Affidabilità", "Scalabilità", "Integrazione"],
+        cta: "Parla con noi"
+    },
+    legal: {
+        privacy: "Privacy Policy",
+        cookie: "Cookie Policy",
+        rightsReserved: "Tutti i diritti riservati.",
+        piva: "P.IVA 12345678901",
+        menuHeader: "Menu",
+        legalHeader: "Legal"
+    }
+};
