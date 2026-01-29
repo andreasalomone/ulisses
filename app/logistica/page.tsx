@@ -126,10 +126,10 @@ export default function LogisticaPage() {
                         {d.finalCta.subtitle}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button asChild size="lg" variant="secondary" className="h-14 px-8 font-bold rounded-full">
+                        <Button asChild size="lg" variant="secondary" className="h-14 px-8 text-base font-bold rounded-full">
                             <Link href="/contatti">{d.finalCta.ctaPilot}</Link>
                         </Button>
-                        <Button asChild size="lg" variant="outline" className="h-14 px-8 font-bold rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary">
+                        <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base font-bold rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary">
                             <Link href="/contatti">{d.finalCta.ctaExpert}</Link>
                         </Button>
                     </div>
