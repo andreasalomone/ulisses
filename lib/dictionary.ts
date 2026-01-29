@@ -381,5 +381,128 @@ export const DICTIONARY = {
         piva: "P.IVA 12345678901",
         menuHeader: "Menu",
         legalHeader: "Legal"
+    },
+    knowledgeHub: {
+        hero: {
+            h1: "Knowledge Hub",
+            sub: "Materiali pratici per orientarti sul tuo scenario: storie tipiche, documenti e FAQ su architettura, integrazioni e continuità del dato."
+        },
+        stories: {
+            title: "Scenari tipici e storie",
+            text: "Risoluzioni operative basate su sfide reali di magazzino, officina e Smart City.",
+            sections: [
+                {
+                    vertical: "Logistica",
+                    items: [
+                        {
+                            title: "I carrelli ci sono… ma ogni turno riparte da zero",
+                            text: "In un magazzino con turni e flussi intensi, carrelli e roll non stanno mai dove dovrebbero. Ulisses introduce visibilità per turni e reparti.",
+                            link: "/knowledge-hub/logistica/carrelli"
+                        },
+                        {
+                            title: "Geofencing e anomalie: quando il processo ha confini",
+                            text: "Senza regole automatiche ci si accorge dei problemi troppo tardi. Ulisses abilita geofence e soglie temporali per un controllo proattivo.",
+                            link: "/knowledge-hub/logistica/geofencing"
+                        }
+                    ]
+                },
+                {
+                    vertical: "Ferroviario",
+                    items: [
+                        {
+                            title: "In officina la manutenzione si ferma…",
+                            text: "Se un’attrezzatura critica non è disponibile, il piano si rompe. Ulisses rende tracciabili materiali e asset con stati operativi chiari.",
+                            link: "/knowledge-hub/ferroviario/manutenzione"
+                        },
+                        {
+                            title: "Quando l’evento diventa azione (CMMS)",
+                            text: "Integrazione nativa API per collegare il campo ai workflow di manutenzione e ticketing.",
+                            link: "/knowledge-hub/ferroviario/cmms"
+                        }
+                    ]
+                },
+                {
+                    vertical: "Smart Parking",
+                    items: [
+                        {
+                            title: "Occupancy affidabile: dati per decidere",
+                            text: "La città smette di decidere a sensazione. Dati di occupazione reali per pianificazione, enforcement e reportistica.",
+                            link: "/knowledge-hub/smart-parking/occupancy"
+                        },
+                        {
+                            title: "Durata, overstay e qualità dato",
+                            text: "Passare dal controllo a vista al controllo prioritizzato, con rete privata e OPEX controllabile.",
+                            link: "/knowledge-hub/smart-parking/enforcement"
+                        }
+                    ]
+                }
+            ]
+        },
+        documents: {
+            title: "Documenti e One-Pager",
+            items: [
+                "One-pager Ulisses (generale)",
+                "One-pager Logistica",
+                "One-pager Ferroviario",
+                "One-pager Smart Parking",
+                "Scheda “Tecnologia & integrazioni”",
+                "Scheda “Metodo di progetto (pilot → rollout)”"
+            ]
+        },
+        faq: {
+            title: "Domande frequenti",
+            items: [
+                { q: "Possiamo integrare nei sistemi già in uso?", a: "Sì, Ulisses espone API robuste e modelli dati normalizzati per WMS, CMMS, ERP e altre piattaforme." },
+                { q: "È necessario usare la piattaforma Ulisses?", a: "No, la piattaforma è opzionale. Puoi consumare il dato direttamente via API nei tuoi sistemi." },
+                { q: "Indoor e outdoor: cosa cambia?", a: "Ulisses gestisce entrambi con tecnologie ottimizzate per ogni contesto, garantendo continuità nel passaggio tra aree." },
+                { q: "Come garantite qualità del dato nel tempo?", a: "Attraverso monitoraggio della salute (health) di rete e dispositivi, con alert proattivi e report di qualità." },
+                { q: "Quali sono tempi tipici per un pilot?", a: "Un pilot tipico richiede dalle 4 alle 8 settimane, a seconda della complessità e dell'integrazione richiesta." }
+            ]
+        },
+        deepDive: {
+            title: "Approfondisci per scenario",
+            intro: "Se vuoi entrare nel dettaglio, vai alle pagine dedicate con architettura, integrazioni e percorso.",
+            cards: [
+                { title: "Logistica", href: "/logistica" },
+                { title: "Ferroviario", href: "/ferroviario" },
+                { title: "Smart Parking", href: "/smart-parking" }
+            ]
+        }
+    },
+    contactForm: {
+        title: "Richiedi una demo / assessment",
+        intro: "Raccontaci scenario e obiettivi: ti proponiamo un percorso chiaro (pilot → rollout).",
+        microcopy: "Compila 6 campi: ci aiuta a darti una risposta utile, non generica.",
+        fields: {
+            scenario: {
+                label: "In quale scenario ti serve Ulisses?",
+                options: ["Logistica", "Ferroviario", "Smart Parking", "Altro"]
+            },
+            objective: {
+                label: "Obiettivo principale",
+                options: [
+                    "Ridurre tempi di ricerca asset",
+                    "Geofencing / alert",
+                    "Occupancy stalli",
+                    "Durata / overstay",
+                    "Tracciabilità materiali/attrezzature",
+                    "Integrazione con sistemi esistenti",
+                    "Altro"
+                ]
+            },
+            size: {
+                label: "Dimensione dello scenario",
+                placeholder: "Es: # asset / # stalli / # siti"
+            },
+            platforms: {
+                label: "Piattaforme già in uso",
+                options: ["WMS", "CMMS", "ITS", "BI", "ERP", "Nessuna", "Altro"]
+            },
+            timing: {
+                label: "Timing stimato",
+                options: ["0–3 mesi", "3–6 mesi", "6–12 mesi", "Esplorazione"]
+            }
+        },
+        noSpam: "Nessuna spam. Usiamo i dati solo per rispondere alla tua richiesta."
     }
 };

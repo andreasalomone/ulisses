@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 import { DICTIONARY } from "@/lib/dictionary";
 
 export function ContactFormSection() {
-    const d = DICTIONARY.home.cta;
+    const d = DICTIONARY.contactForm;
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [serverMessage, setServerMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
@@ -44,7 +44,7 @@ export function ContactFormSection() {
             } else {
                 setServerMessage({ type: "error", text: result.error || "Errore durante l'invio." });
             }
-        } catch (error) {
+        } catch {
             setServerMessage({ type: "error", text: "Si è verificato un errore di rete." });
         } finally {
             setIsSubmitting(false);
@@ -59,16 +59,14 @@ export function ContactFormSection() {
                         {d.title}
                     </h2>
                     <p className="text-xl opacity-90 leading-relaxed mb-8">
-                        {d.formMicrocopy}
+                        {d.intro}
                     </p>
 
-                    <div className="space-y-6">
-                        {d.bullets.map((bullet, i) => (
-                            <div key={i} className="flex gap-4 items-start">
-                                <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-sm">{i + 1}</div>
-                                <p className="text-lg font-medium opacity-80">{bullet}</p>
-                            </div>
-                        ))}
+                    <div className="p-8 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm">
+                        <p className="font-bold text-lg mb-4">Perché chiediamo questi dati?</p>
+                        <p className="opacity-80 leading-relaxed">
+                            Ogni scenario ha vincoli diversi (metallo, interferenze, outdoor). Con queste informazioni possiamo preparare una risposta tecnica concreta, non generica.
+                        </p>
                     </div>
                 </div>
 
@@ -76,28 +74,28 @@ export function ContactFormSection() {
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <Label htmlFor="scenario">{d.scenariosTitle}</Label>
+                                <Label htmlFor="scenario">{d.fields.scenario.label}</Label>
                                 <Select onValueChange={(v) => setValue("scenario", v as "Logistica" | "Ferroviario" | "Smart Parking")}>
                                     <SelectTrigger className={cn(errors.scenario && "border-destructive")}>
-                                        <SelectValue placeholder={DICTIONARY.navigation.soluzioni} />
+                                        <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectItem value="Logistica">{DICTIONARY.navigation.logistica}</SelectItem>
-                                        <SelectItem value="Ferroviario">{DICTIONARY.navigation.ferroviario}</SelectItem>
-                                        <SelectItem value="Smart Parking">{DICTIONARY.navigation.smartParking}</SelectItem>
+                                        {d.fields.scenario.options.map((opt) => (
+                                            <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                                        ))}
                                     </SelectContent>
                                 </Select>
                                 {errors.scenario && <p className="text-xs text-destructive font-bold">{errors.scenario.message}</p>}
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="timing">{d.timingTitle}</Label>
+                                <Label htmlFor="timing">{d.fields.timing.label}</Label>
                                 <Select onValueChange={(v) => setValue("timing", v)}>
                                     <SelectTrigger className={cn(errors.timing && "border-destructive")}>
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {d.timing.map((t) => (
+                                        {d.fields.timing.options.map((t) => (
                                             <SelectItem key={t} value={t}>{t}</SelectItem>
                                         ))}
                                     </SelectContent>
@@ -107,13 +105,13 @@ export function ContactFormSection() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="objective">{d.objectivesTitle}</Label>
+                            <Label htmlFor="objective">{d.fields.objective.label}</Label>
                             <Select onValueChange={(v) => setValue("objective", v)}>
                                 <SelectTrigger className={cn(errors.objective && "border-destructive")}>
                                     <SelectValue placeholder="..." />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    {d.objectives.map((obj) => (
+                                    {d.fields.objective.options.map((obj) => (
                                         <SelectItem key={obj} value={obj}>{obj}</SelectItem>
                                     ))}
                                 </SelectContent>
@@ -122,19 +120,33 @@ export function ContactFormSection() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="size">{d.sizeLabel}</Label>
+                            <Label htmlFor="size">{d.fields.size.label}</Label>
                             <Input
                                 id="size"
-                                placeholder={d.sizePlaceholder}
+                                placeholder={d.fields.size.placeholder}
                                 {...register("size")}
                                 className={cn(errors.size && "border-destructive")}
                             />
                             {errors.size && <p className="text-xs text-destructive font-bold">{errors.size.message}</p>}
                         </div>
 
+                        <div className="space-y-2">
+                            <Label htmlFor="platforms">{d.fields.platforms.label}</Label>
+                            <Select onValueChange={(v) => setValue("platforms", [v])}>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="..." />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {d.fields.platforms.options.map((p) => (
+                                        <SelectItem key={p} value={p}>{p}</SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </div>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <Label htmlFor="email">{d.contactLabel}</Label>
+                                <Label htmlFor="email">Email</Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -145,7 +157,7 @@ export function ContactFormSection() {
                                 {errors.email && <p className="text-xs text-destructive font-bold">{errors.email.message}</p>}
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="phone">{d.phoneLabel}</Label>
+                                <Label htmlFor="phone">Telefono</Label>
                                 <Input id="phone" placeholder="+39 ..." {...register("phone")} />
                             </div>
                         </div>
@@ -172,13 +184,13 @@ export function ContactFormSection() {
                                 </>
                             ) : (
                                 <>
-                                    {d.button}
+                                    Invia Richiesta
                                     <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </>
                             )}
                         </Button>
                         <p className="text-[10px] text-center text-muted-foreground uppercase tracking-widest leading-relaxed">
-                            {d.privacyNotice}
+                            {d.noSpam}
                         </p>
                     </form>
                 </div>

@@ -4,7 +4,6 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ContactFormSection } from "@/components/sections/home/contact-form-section";
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { CONTACT_INFO } from "@/lib/constants";
-import { DICTIONARY } from "@/lib/dictionary";
 
 export default function ContattiPage() {
 
