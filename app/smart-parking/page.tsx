@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Download, LayoutDashboard, Bell, Activity, Layers, Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
+import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 
 export default function SmartParkingPage() {
     const d = DICTIONARY.parking;
@@ -102,6 +103,13 @@ export default function SmartParkingPage() {
                     </div>
                 </div>
             </SectionWrapper>
+
+            {/* Benchmarks */}
+            <BenchmarkSection
+                title={d.benchmarks.title}
+                items={d.benchmarks.items}
+                extra={d.benchmarks.extra}
+            />
 
             {/* PA CTA */}
             <SectionWrapper className="bg-muted border-t">

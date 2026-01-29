@@ -1,0 +1,73 @@
+import React from "react";
+import { SectionWrapper } from "@/components/shared/section-wrapper";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Building2 } from "lucide-react";
+
+interface BenchmarkItem {
+    title: string;
+    context: string;
+    challenge: string;
+    solution: string;
+    impact: string;
+}
+
+interface BenchmarkSectionProps {
+    title: string;
+    items: BenchmarkItem[];
+    extra?: {
+        title: string;
+        text: string;
+    };
+}
+
+export function BenchmarkSection({ title, items, extra }: BenchmarkSectionProps) {
+    return (
+        <SectionWrapper variant="muted">
+            <div className="mb-16">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+                    {title}
+                </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                {items.map((item, i) => (
+                    <Card key={i} className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-300">
+                        <CardHeader>
+                            <CardTitle className="leading-tight text-xl">{item.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4 text-sm">
+                            <div>
+                                <span className="font-bold text-primary block mb-1">Contesto</span>
+                                <p className="text-muted-foreground">{item.context}</p>
+                            </div>
+                            <div>
+                                <span className="font-bold text-primary block mb-1">Sfida</span>
+                                <p className="text-muted-foreground">{item.challenge}</p>
+                            </div>
+                            <div>
+                                <span className="font-bold text-primary block mb-1">Soluzione</span>
+                                <p className="text-muted-foreground">{item.solution}</p>
+                            </div>
+                            <div className="pt-4 mt-4 border-t">
+                                <span className="font-bold text-foreground block mb-1">Impatto</span>
+                                <p className="font-medium italic text-foreground/80">{item.impact}</p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+
+            {extra && (
+                <div className="bg-primary text-primary-foreground p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                    <div className="relative z-10 max-w-3xl">
+                        <h3 className="text-2xl font-bold mb-4">{extra.title}</h3>
+                        <p className="text-lg opacity-90 leading-relaxed">
+                            {extra.text}
+                        </p>
+                    </div>
+                    <Building2 className="absolute right-0 bottom-0 text-white/10 w-64 h-64 -translate-y-1/2 translate-x-1/4 rotate-12" />
+                </div>
+            )}
+        </SectionWrapper>
+    );
+}

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Download, Search, Navigation2, Shield, BarChart2 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
+import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 
 export default function LogisticaPage() {
     const d = DICTIONARY.logistica;
@@ -108,6 +109,12 @@ export default function LogisticaPage() {
                     </div>
                 </div>
             </SectionWrapper>
+
+            {/* Benchmarks */}
+            <BenchmarkSection
+                title={d.benchmarks.title}
+                items={d.benchmarks.items}
+            />
 
             {/* Final CTA */}
             <SectionWrapper className="bg-primary text-primary-foreground text-center">
