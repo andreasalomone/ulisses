@@ -78,10 +78,10 @@ export const DICTIONARY = {
             title: "Come funziona, in pratica",
             subtitle: "Dalla rilevazione sul campo al dato operativo: un flusso semplice, industrializzabile, integrabile.",
             steps: [
-                { title: "Field", text: "sensori/tag/anchor rilevano eventi e presenza" },
-                { title: "Rete", text: "la connettività porta i dati in modo robusto" },
-                { title: "Piattaforma", text: "normalizza, storicizza, abilita dashboard e regole" },
-                { title: "API / Integrazioni", text: "collega sistemi esistenti (WMS/MES/CMMS/ITS)" }
+                { title: "Field", text: "Sensori/tag/anchor rilevano eventi e presenza" },
+                { title: "Rete", text: "La connettività porta i dati in modo robusto" },
+                { title: "Piattaforma", text: "Normalizza, storicizza, abilita dashboard e regole" },
+                { title: "API / Integrazioni", text: "Collega sistemi esistenti (WMS/MES/CMMS/ITS)" }
             ],
             deployment: {
                 label: "Scegli il tuo deployment",
@@ -95,9 +95,9 @@ export const DICTIONARY = {
             title: "La Web App: cosa vedi e cosa puoi fare",
             intro: "Non solo “tracking”: trasformiamo segnali ed eventi in decisioni operative.",
             features: [
-                { title: "Monitori", text: "posizione, eventi, occupancy, health del sistema" },
-                { title: "Analizzi", text: "storico, trend, anomalie, performance per area/sito" },
-                { title: "Agisci", text: "con alert, regole, report, integrazioni ai workflow" }
+                { title: "Monitori", text: "Posizione, eventi, occupancy, health del sistema" },
+                { title: "Analizzi", text: "Storico, trend, anomalie, performance per area/sito" },
+                { title: "Agisci", text: "Con alert, regole, report, integrazioni ai workflow" }
             ],
             cta: "Guarda esempi di dashboard"
         },
@@ -105,10 +105,10 @@ export const DICTIONARY = {
             title: "Pronta per la produzione",
             subtitle: "Ulisses è progettata per funzionare con continuità in contesti complessi. Non solo tecnologia: un metodo completo per ridurre rischi, tempi e costi di progetto.",
             items: [
-                { title: "Site survey & design", text: "partiamo dai vincoli reali (copertura, interferenze, layout, processi)." },
-                { title: "Commissioning", text: "validiamo sul campo qualità del dato e performance prima del go-live." },
-                { title: "Integrazioni IT/OT via API", text: "portiamo eventi e dati nei sistemi già in uso (WMS/CMMS/ITS/BI)." },
-                { title: "SLA & supporto", text: "osservabilità, alert, report qualità dato e continuità operativa." }
+                { title: "Site Survey & Design", text: "Partiamo dai vincoli reali (copertura, interferenze, layout, processi)." },
+                { title: "Commissioning", text: "Validiamo sul campo qualità del dato e performance prima del go-live." },
+                { title: "Integrazioni IT/OT via API", text: "Portiamo eventi e dati nei sistemi già in uso (WMS/CMMS/ITS/BI)." },
+                { title: "SLA & Supporto", text: "Osservabilità, alert, report qualità dato e continuità operativa." }
             ],
             cta: "Approfondisci il Metodo",
             closure: "Il risultato è una soluzione adottabile: dati affidabili, governance chiara e rollout scalabile."
@@ -159,11 +159,11 @@ export const DICTIONARY = {
             title: "Dal primo sito al rollout: un percorso chiaro",
             intro: "Una soluzione funziona davvero quando qualità del dato e continuità sono governate. Per questo seguiamo un metodo che riduce rischi, tempi e sorprese di progetto.",
             steps: [
-                { title: "Step 1 — Obiettivi e KPI", text: "Allineiamo obiettivo operativo, KPI e vincoli (processo, aree, utenti, requisiti)." },
-                { title: "Step 2 — Site survey & design", text: "Disegniamo copertura e architettura in base a layout, interferenze e punti critici." },
-                { title: "Step 3 — Installazione & messa a servizio", text: "Mettiamo in servizio e validiamo sul campo: qualità del dato, eventi, performance." },
-                { title: "Step 4 — Dashboard o integrazione nei sistemi già in uso", text: "Piattaforma Ulisses quando utile, oppure eventi e dati nelle piattaforme esistenti via API (WMS/CMMS/ITS/BI)." },
-                { title: "Step 5 — Go-live e continuità", text: "Monitor health, report qualità dato, supporto e SLA quando richiesto." }
+                { title: "Obiettivi e KPI", text: "Allineiamo obiettivo operativo, KPI e vincoli (processo, aree, utenti, requisiti)." },
+                { title: "Site survey & design", text: "Disegniamo copertura e architettura in base a layout, interferenze e punti critici." },
+                { title: "Installazione & messa a servizio", text: "Mettiamo in servizio e validiamo sul campo: qualità del dato, eventi, performance." },
+                { title: "Dashboard o integrazione nei sistemi già in uso", text: "Piattaforma Ulisses quando utile, oppure eventi e dati nelle piattaforme esistenti via API (WMS/CMMS/ITS/BI)." },
+                { title: "Go-live e continuità", text: "Monitor health, report qualità dato, supporto e SLA quando richiesto." }
             ]
         }
     },
@@ -217,14 +217,14 @@ export const DICTIONARY = {
             title: "Esempi dal mercato",
             items: [
                 {
-                    title: "Pallet tracking in magazzino - MOKO SMART",
+                    title: "Pallet tracking in magazzino - ",
                     context: "Warehouse con pallet che si 'perdono' tra aree.",
                     challenge: "Spreco di tempo ricerca, scarsa precisione inventario.",
                     solution: "Pallet-tracking con posizione precisa e aggiornamenti operativi.",
                     impact: "Riduzione costi e inventario più snello."
                 },
                 {
-                    title: "Carrelli e asset mobili - MOKO SMART",
+                    title: "Carrelli e asset mobili - ",
                     context: "Asset mobili distribuiti su aree ampie.",
                     challenge: "Localizzare rapidamente asset critici e ridurre tempi improduttivi.",
                     solution: "Tag BLE + gateway per visualizzare posizione in app.",
@@ -268,9 +268,9 @@ export const DICTIONARY = {
             ]
         },
         delivery: {
-            title: "Integrazioni e delivery",
+            title: "Integrazioni e Delivery",
             text: "La differenza non è solo tecnologica: è la capacità di messa a terra.",
-            steps: "Site survey → design → commissioning → integrazione → go-live con SLA.",
+            steps: "Site survey → Design → Commissioning → Integrazione → Go-live con SLA.",
             cta: "Richiedi una demo"
         }
     },
@@ -282,9 +282,9 @@ export const DICTIONARY = {
             onePager: "Scarica One-Pager Smart Parking"
         },
         segments: [
-            { title: "Per Comuni e PA", text: "decisioni basate su dati, trasparenza e report." },
-            { title: "Per concessionari", text: "efficienza operativa ed enforcement mirato." },
-            { title: "Per grandi aree private", text: "ottimizzazione flussi e qualità del servizio." }
+            { title: "Per Comuni e PA", text: "Decisioni basate su dati, trasparenza e report." },
+            { title: "Per concessionari", text: "Efficienza operativa ed enforcement mirato." },
+            { title: "Per grandi aree private", text: "Ottimizzazione flussi e qualità del servizio." }
         ],
         useCases: [
             { title: "Occupancy & disponibilità", text: "Stato stalli in tempo reale + storico affidabile." },
@@ -312,14 +312,14 @@ export const DICTIONARY = {
             title: "Esempi dal mercato",
             items: [
                 {
-                    title: "Occupancy e durata sosta - MOKO SMART",
+                    title: "Occupancy e durata sosta - ",
                     context: "Parcheggi ad alta rotazione con bisogno di dati affidabili.",
                     challenge: "Metodi manuali aumentano errori e ritardi.",
                     solution: "Sensori su singolo stallo per arrivo/partenza e calcolo durata.",
                     impact: "Dati tempestivi, riduzione errori, ottimizzazione gestione."
                 },
                 {
-                    title: "Sensori dual detection - MOKO SMART",
+                    title: "Sensori dual detection - ",
                     context: "Parcheggi outdoor con pioggia e interferenze.",
                     challenge: "Mantenere alta accuratezza (99%) e ridurre manutenzione.",
                     solution: "Fusione radar + geomagnetico per stabilità del dato.",
@@ -359,10 +359,10 @@ export const DICTIONARY = {
             title: "Un’infrastruttura completa",
             subtitle: "Dalla rilevazione sul campo al dato operativo: componenti modulari, stesso obiettivo — dati affidabili e integrabili.",
             items: [
-                { title: "Field", text: "sensori / tag / anchor per rilevare eventi e presenza" },
-                { title: "Rete", text: "connettività robusta e scalabile per trasportare i dati" },
-                { title: "Piattaforma", text: "dashboard, regole, storicizzazione e gestione operativa (quando utile)" },
-                { title: "API", text: "integrazione con i sistemi esistenti e con i workflow" }
+                { title: "Field", text: "Sensori / Tag / Anchor per rilevare eventi e presenza" },
+                { title: "Rete", text: "Connettività robusta e scalabile per trasportare i dati" },
+                { title: "Piattaforma", text: "Dashboard, regole, storicizzazione e gestione operativa (quando utile)" },
+                { title: "API", text: "Integrazione con i sistemi esistenti e con i workflow" }
             ]
         },
         itArchitecture: {
