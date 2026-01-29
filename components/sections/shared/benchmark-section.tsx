@@ -29,32 +29,35 @@ export function BenchmarkSection({ title, items, extra }: BenchmarkSectionProps)
                 </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                {items.map((item, i) => (
-                    <Card key={i} className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-300">
-                        <CardHeader>
-                            <CardTitle className="leading-tight text-xl">{item.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4 text-sm">
-                            <div>
-                                <span className="font-bold text-primary block mb-1">Contesto</span>
-                                <p className="text-muted-foreground">{item.context}</p>
-                            </div>
-                            <div>
-                                <span className="font-bold text-primary block mb-1">Sfida</span>
-                                <p className="text-muted-foreground">{item.challenge}</p>
-                            </div>
-                            <div>
-                                <span className="font-bold text-primary block mb-1">Soluzione</span>
-                                <p className="text-muted-foreground">{item.solution}</p>
-                            </div>
-                            <div className="pt-4 mt-4 border-t">
-                                <span className="font-bold text-foreground block mb-1">Impatto</span>
-                                <p className="font-medium italic text-foreground/80">{item.impact}</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                ))}
+            {/* [2026 Standard] Container context */}
+            <div className="@container mb-16">
+                <div className="grid grid-cols-1 @3xl:grid-cols-2 @5xl:grid-cols-3 gap-8">
+                    {items.map((item, i) => (
+                        <Card key={i} className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-300">
+                            <CardHeader>
+                                <CardTitle className="leading-tight text-xl">{item.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-4 text-sm">
+                                <div>
+                                    <span className="font-bold text-primary block mb-1">Contesto</span>
+                                    <p className="text-muted-foreground">{item.context}</p>
+                                </div>
+                                <div>
+                                    <span className="font-bold text-primary block mb-1">Sfida</span>
+                                    <p className="text-muted-foreground">{item.challenge}</p>
+                                </div>
+                                <div>
+                                    <span className="font-bold text-primary block mb-1">Soluzione</span>
+                                    <p className="text-muted-foreground">{item.solution}</p>
+                                </div>
+                                <div className="pt-4 mt-4 border-t">
+                                    <span className="font-bold text-foreground block mb-1">Impatto</span>
+                                    <p className="font-medium italic text-foreground/80">{item.impact}</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
             </div>
 
             {extra && (
