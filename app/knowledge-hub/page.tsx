@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function KnowledgeHubPage() {
     const d = DICTIONARY.knowledgeHub;
-    const stories = d.stories;
+    const { stories } = d;
 
     return (
         <div className="flex flex-col">
@@ -73,7 +73,7 @@ export default function KnowledgeHubPage() {
                                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                                         <FileText className="h-6 w-6" />
                                     </div>
-                                    <span className="font-bold text-lg flex-grow">{doc}</span>
+                                    <span className="font-bold text-lg grow">{doc}</span>
                                     <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </div>
                             ))}

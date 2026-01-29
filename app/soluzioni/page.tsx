@@ -9,8 +9,7 @@ import { DICTIONARY } from "@/lib/dictionary";
 
 export default function SoluzioniPage() {
     const d = DICTIONARY.solutions;
-    const common = DICTIONARY.common;
-    const home = DICTIONARY.home;
+    const { common, home } = DICTIONARY;
 
     const cards = [
         {
@@ -70,7 +69,7 @@ export default function SoluzioniPage() {
 
                                     <div className="flex flex-wrap gap-2 mb-8">
                                         {card.resolutions.map((res, j) => (
-                                            <span key={j} className="text-xs font-bold uppercase tracking-wider bg-primary/5 text-primary-foreground/60 px-3 py-1 rounded-full bg-muted border">
+                                            <span key={j} className="text-xs font-bold uppercase tracking-wider text-primary-foreground/60 px-3 py-1 rounded-full bg-muted border">
                                                 {res}
                                             </span>
                                         ))}

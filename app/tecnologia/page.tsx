@@ -75,7 +75,7 @@ export default function TecnologiaPage() {
                         <div className="space-y-6">
                             {d.itArchitecture.items.map((item: { title: string, text: string }, i: number) => (
                                 <div key={i} className="flex gap-6 p-6 rounded-2xl bg-muted/30 border border-transparent hover:border-muted-foreground/10 transition-colors">
-                                    <div className="mt-1 h-6 w-6 text-primary flex-shrink-0">
+                                    <div className="mt-1 h-6 w-6 text-primary shrink-0">
                                         <Network />
                                     </div>
                                     <div>
@@ -118,7 +118,7 @@ export default function TecnologiaPage() {
                         <ul className="space-y-4">
                             {d.observability.items.map((item: string, i: number) => (
                                 <li key={i} className="flex items-start gap-3">
-                                    <ShieldCheck className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                                    <ShieldCheck className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                                     <span className="font-medium">{item}</span>
                                 </li>
                             ))}
