@@ -5,12 +5,12 @@ import { DICTIONARY } from "@/lib/dictionary";
 
 export function VerticalSelector() {
     const d = DICTIONARY.home.selector;
-    const cards = d.cards;
+    const { cards } = d;
 
     const scenarios = [
-        { ...cards.logistica, href: "/logistica", resolutions: cards.logistica.resolutions },
-        { ...cards.ferroviario, href: "/ferroviario", resolutions: cards.ferroviario.resolutions },
-        { ...cards.parking, href: "/smart-parking", resolutions: cards.parking.resolutions }
+        { ...cards.logistica, href: "/logistica", resolutions: cards.logistica.resolutions, image: "/assets/stock.webp" },
+        { ...cards.ferroviario, href: "/ferroviario", resolutions: cards.ferroviario.resolutions, image: "/assets/trains.webp" },
+        { ...cards.parking, href: "/smart-parking", resolutions: cards.parking.resolutions, image: "/assets/parking.webp" }
     ];
 
     return (
@@ -29,6 +29,7 @@ export function VerticalSelector() {
                     <ScenarioCard
                         key={scenario.href}
                         title={scenario.title}
+                        image={scenario.image}
                         description={scenario.description}
                         href={scenario.href}
                         resolutions={scenario.resolutions}

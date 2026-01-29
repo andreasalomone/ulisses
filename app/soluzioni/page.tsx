@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
+import Image from "next/image";
 
 export default function SoluzioniPage() {
     const d = DICTIONARY.solutions;
@@ -15,17 +16,20 @@ export default function SoluzioniPage() {
         {
             ...home.selector.cards.logistica,
             href: "/logistica",
-            resolutions: home.selector.cards.logistica.resolutions
+            resolutions: home.selector.cards.logistica.resolutions,
+            image: "/assets/stock.webp"
         },
         {
             ...home.selector.cards.ferroviario,
             href: "/ferroviario",
-            resolutions: home.selector.cards.ferroviario.resolutions
+            resolutions: home.selector.cards.ferroviario.resolutions,
+            image: "/assets/trains.webp"
         },
         {
             ...home.selector.cards.parking,
             href: "/smart-parking",
-            resolutions: home.selector.cards.parking.resolutions
+            resolutions: home.selector.cards.parking.resolutions,
+            image: "/assets/parking.webp"
         }
     ];
 
@@ -58,7 +62,16 @@ export default function SoluzioniPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {cards.map((card, i) => (
                         <Card key={i} className="group overflow-hidden rounded-[2rem] border bg-card hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
-                            <CardContent className="p-8 md:p-10 flex flex-col h-full">
+                            <div className="relative h-64 w-full overflow-hidden">
+                                <Image
+                                    src={card.image}
+                                    alt={card.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            </div>
+                            <CardContent className="p-8 md:p-10 flex flex-col grow">
                                 <div className="grow">
                                     <h3 className="text-2xl md:text-3xl font-extrabold mb-4 group-hover:text-primary transition-colors">
                                         {card.title}
