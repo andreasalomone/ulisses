@@ -1,0 +1,21 @@
+{
+    "name": "Ulisses - Intelligent Asset Tracking",
+    "short_name": "Ulisses",
+    "description": "Advanced real-time asset tracking and monitoring solutions for Logistics, Smart Parking, and Industrial applications.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/logos/ulisses_logotipe.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

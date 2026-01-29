@@ -20,29 +20,32 @@ export function ProductionProof() {
             <div className="@container">
                 {/* [2026 Standard] Use @3xl (approx 768px) for main split */}
                 <div className="grid grid-cols-1 @3xl:grid-cols-2 gap-16 items-start relative z-10">
-                    <div>
+                    <div className="animate-in fade-in slide-in-from-left-8 duration-700">
                         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
                             {d.title}
                         </h2>
                         <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                             {d.subtitle}
                         </p>
-                        <p className="text-lg font-bold text-foreground leading-relaxed italic border-l-4 border-primary pl-6 py-2 mb-10 bg-primary/5 rounded-r-xl">
+                        <p className="text-lg font-bold text-foreground leading-relaxed italic border-s-4 border-primary ps-6 py-2 mb-10 bg-primary/5 rounded-e-xl">
                             {DICTIONARY.home.why.closure}
                         </p>
-                        <Button asChild className="rounded-full h-12 px-8 font-bold group">
+                        <Button asChild className="rounded-full h-12 px-8 font-bold group shadow-md hover:shadow-lg transition-all">
                             <Link href="/contatti">
                                 Approfondisci il Metodo
-                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="ms-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </Button>
                     </div>
 
                     {/* [2026 Standard] Use @lg (approx 512px) for card grid */}
-                    <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6 animate-in fade-in slide-in-from-right-8 duration-700 delay-200 fill-mode-both">
                         {proofs.map((proof, index) => (
-                            <div key={index} className="p-6 rounded-2xl bg-card border hover:border-primary/30 transition-all duration-300 shadow-sm group">
-                                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                            <div
+                                key={index}
+                                className="p-6 rounded-2xl bg-card border hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-md group"
+                            >
+                                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                                     <proof.icon className="h-5 w-5" />
                                 </div>
                                 <h3 className="text-lg font-bold mb-2">{proof.title}</h3>
@@ -56,7 +59,7 @@ export function ProductionProof() {
             </div>
 
             {/* Abstract Background Detail */}
-            <div className="absolute left-0 bottom-0 w-full h-1/2 bg-linear-to-t from-primary/3 to-transparent -z-10" />
+            <div className="absolute left-0 bottom-0 w-full h-1/2 bg-linear-to-t from-primary/3 to-transparent -z-10 pointer-events-none" />
         </SectionWrapper>
     );
 }

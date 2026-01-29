@@ -57,7 +57,7 @@ export function ContactFormSection() {
             <div className="@container">
                 {/* [2026 Standard] Use @lg (approx 32rem/512px) for safer container split */}
                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-16 items-center relative z-10">
-                    <div>
+                    <div className="animate-in fade-in slide-in-from-left-8 duration-700">
                         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
                             {d.title}
                         </h2>
@@ -73,11 +73,11 @@ export function ContactFormSection() {
                         </div>
                     </div>
 
-                    <div className="bg-background text-foreground p-8 md:p-10 rounded-[2.5rem] shadow-2xl">
+                    <div className="bg-background text-foreground p-8 md:p-10 rounded-[2.5rem] shadow-2xl animate-in fade-in slide-in-from-right-8 duration-700 delay-200 fill-mode-both">
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             {/* [2026 Standard] Nested container queries for form internal layout */}
                             <div className="@container/form">
-                                <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <Label htmlFor="scenario">{d.fields.scenario.label}</Label>
                                         <Select onValueChange={(v) => setValue("scenario", v as "Logistica" | "Ferroviario" | "Smart Parking")}>
@@ -150,7 +150,7 @@ export function ContactFormSection() {
                             <div className="space-y-2">
                                 <Label htmlFor="platforms">{d.fields.platforms.label}</Label>
                                 <Select onValueChange={(v) => setValue("platforms", [v])}>
-                                    <SelectTrigger className="h-14">
+                                    <SelectTrigger className="h-14" aria-invalid={!!errors.platforms}>
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -162,7 +162,7 @@ export function ContactFormSection() {
                             </div>
 
                             <div className="@container/contact">
-                                <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <Label htmlFor="email">Email</Label>
                                         <Input
@@ -187,6 +187,7 @@ export function ContactFormSection() {
                                             placeholder="+39 ..."
                                             {...register("phone")}
                                             className="h-14 text-base"
+                                            aria-invalid={!!errors.phone}
                                         />
                                     </div>
                                 </div>
@@ -209,13 +210,13 @@ export function ContactFormSection() {
                             >
                                 {isSubmitting ? (
                                     <>
-                                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                                        <Loader2 className="me-2 h-5 w-5 animate-spin" />
                                         {DICTIONARY.common.sending}
                                     </>
                                 ) : (
                                     <>
                                         Invia Richiesta
-                                        <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                        <Send className="ms-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </>
                                 )}
                             </Button>

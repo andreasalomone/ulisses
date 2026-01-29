@@ -53,7 +53,7 @@ export function HowItWorks() {
                             ))}
                         </p>
                     </div>
-                    <div className="h-1 px-8 py-4 bg-primary-foreground/10 rounded-full font-bold text-sm tracking-widest uppercase text-center md:text-left">
+                    <div className="px-8 py-4 bg-primary-foreground/10 rounded-full font-bold text-sm tracking-widest uppercase text-center md:text-left shrink-0">
                         {d.deployment.label}
                     </div>
                 </div>

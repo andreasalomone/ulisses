@@ -7,8 +7,6 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { notFound } from "next/navigation";
 
-// Define the type for the dictionary structure
-type VerticalKey = 'Logistica' | 'Ferroviario' | 'Smart Parking';
 
 interface StoryPageProps {
     params: Promise<{

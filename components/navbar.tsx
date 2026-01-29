@@ -35,7 +35,7 @@ export function Navbar() {
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 <Link href="/" className="relative h-8 w-32 md:w-40 transition-transform hover:scale-105">
                     <Image
-                        src="/logos/ulisses_logotipe.svg"
+                        src="/logos/ulisses_trademark-oriz.svg"
                         alt="Ulisses Logo"
                         fill
                         className="object-contain"
@@ -50,14 +50,14 @@ export function Navbar() {
                             key={link.href}
                             href={link.href}
                             className={cn(
-                                "text-sm font-semibold transition-colors hover:text-primary",
+                                "text-lg font-semibold transition-colors hover:text-primary",
                                 pathname === link.href ? "text-primary" : "text-foreground/80"
                             )}
                         >
                             {link.label}
                         </Link>
                     ))}
-                    <Button asChild size="sm" className="font-bold">
+                    <Button asChild size="lg" className="text-md font-bold">
                         <Link href="/contatti">{DICTIONARY.common.demoCta}</Link>
                     </Button>
                 </div>
@@ -73,31 +73,34 @@ export function Navbar() {
             </div>
 
             {/* Mobile Menu */}
+            {/* Mobile Menu */}
             <div
                 className={cn(
-                    "lg:hidden absolute top-full left-0 right-0 bg-background border-b shadow-xl transition-all duration-300 overflow-hidden",
-                    isOpen ? "max-height-[400px] border-border" : "max-height-0 border-transparent"
+                    "lg:hidden absolute top-full left-0 right-0 bg-background border-b shadow-xl transition-all duration-300 grid",
+                    isOpen ? "grid-rows-[1fr] border-border" : "grid-rows-[0fr] border-transparent"
                 )}
             >
-                <div className="flex flex-col p-6 gap-4">
-                    {NAV_LINKS.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={cn(
-                                "text-lg font-bold py-2 border-b border-muted last:border-0",
-                                pathname === link.href ? "text-primary" : "text-foreground"
-                            )}
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
-                    <Button asChild className="mt-4 font-bold w-full">
-                        <Link href="/contatti" onClick={() => setIsOpen(false)}>
-                            {DICTIONARY.common.demoCta}
-                        </Link>
-                    </Button>
+                <div className="overflow-hidden">
+                    <div className="flex flex-col p-6 gap-4">
+                        {NAV_LINKS.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={cn(
+                                    "text-lg font-bold py-2 border-b border-muted last:border-0",
+                                    pathname === link.href ? "text-primary" : "text-foreground"
+                                )}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                        <Button asChild className="mt-4 font-bold w-full">
+                            <Link href="/contatti" onClick={() => setIsOpen(false)}>
+                                {DICTIONARY.common.demoCta}
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </nav>
