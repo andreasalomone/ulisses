@@ -30,14 +30,26 @@ export function Footer() {
                         <h4 className="font-bold text-sm uppercase tracking-wider mb-6">{DICTIONARY.legal.menuHeader}</h4>
                         <ul className="space-y-4">
                             {NAV_LINKS.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
+                                <React.Fragment key={link.href}>
+                                    <li key={link.href}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-sm text-muted-foreground hover:text-primary transition-colors font-semibold"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                    {link.subLinks?.map((sub) => (
+                                        <li key={sub.href} className="pl-3">
+                                            <Link
+                                                href={sub.href}
+                                                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                            >
+                                                {sub.label}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </React.Fragment>
                             ))}
                         </ul>
                     </div>

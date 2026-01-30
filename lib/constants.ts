@@ -1,10 +1,21 @@
 import { DICTIONARY } from "./dictionary";
 
-export const NAV_LINKS = [
-    { label: DICTIONARY.navigation.soluzioni, href: "/soluzioni" },
-    { label: DICTIONARY.navigation.logistica, href: "/logistica" },
-    { label: DICTIONARY.navigation.ferroviario, href: "/ferroviario" },
-    { label: DICTIONARY.navigation.smartParking, href: "/smart-parking" },
+export interface NavLink {
+    label: string;
+    href: string;
+    subLinks?: { label: string; href: string }[];
+}
+
+export const NAV_LINKS: NavLink[] = [
+    {
+        label: DICTIONARY.navigation.soluzioni,
+        href: "/soluzioni",
+        subLinks: [
+            { label: DICTIONARY.navigation.logistica, href: "/logistica" },
+            { label: DICTIONARY.navigation.ferroviario, href: "/ferroviario" },
+            { label: DICTIONARY.navigation.smartParking, href: "/smart-parking" },
+        ]
+    },
     { label: DICTIONARY.navigation.tecnologia, href: "/tecnologia" },
     { label: DICTIONARY.navigation.azienda, href: "/azienda" },
 ];
