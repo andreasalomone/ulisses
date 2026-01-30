@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BrandText } from "@/components/ui/brand";
 
+import { cn } from "@/lib/utils";
+
 interface CTAButton {
     label: string;
     href: string;
@@ -27,22 +29,27 @@ export function FinalCTASection({ title, subtitle, buttons }: FinalCTASectionPro
                     <BrandText text={subtitle} brandClassName="text-white" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    {buttons.map((btn, i) => (
-                        <Button
-                            key={i}
-                            asChild
-                            size="lg"
-                            variant={btn.variant || (i === 0 ? "secondary" : "outline")}
-                            className={`h-14 px-8 text-base font-bold rounded-full ${btn.variant === "outline" || (!btn.variant && i !== 0)
-                                ? "bg-transparent border-white text-white hover:bg-white hover:text-primary"
-                                : ""
-                                }`}
-                        >
-                            <Link href={btn.href}>
-                                <BrandText text={btn.label} brandClassName={btn.variant === "secondary" || (i === 0 && !btn.variant) ? "text-primary" : "text-white"} />
-                            </Link>
-                        </Button>
-                    ))}
+                    {buttons.map((btn, i) => {
+                        const isPrimary = i === 0 && !btn.variant || btn.variant === "secondary";
+                        return (
+                            <Button
+                                key={i}
+                                asChild
+                                size="lg"
+                                variant={btn.variant || (i === 0 ? "secondary" : "outline")}
+                                className={cn(
+                                    "h-14 px-8 text-base font-bold rounded-full transition-all",
+                                    isPrimary
+                                        ? "bg-white text-primary hover:bg-white/90 border-transparent shadow-lg shadow-black/10"
+                                        : "bg-transparent border-white text-white hover:bg-white hover:text-primary"
+                                )}
+                            >
+                                <Link href={btn.href}>
+                                    <BrandText text={btn.label} brandClassName={isPrimary ? "text-primary" : "text-white"} />
+                                </Link>
+                            </Button>
+                        );
+                    })}
                 </div>
             </div>
         </SectionWrapper>

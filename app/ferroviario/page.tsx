@@ -4,7 +4,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { UseCaseCards } from "@/components/shared/use-case-cards";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download, Wrench, Package, Cpu, FileCheck } from "lucide-react";
+import { Wrench, Package, Cpu, FileCheck } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 import { BrandText } from "@/components/ui/brand";
@@ -23,10 +23,6 @@ export default function FerroviarioPage() {
             >
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{d.hero.cta}</Link>
-                </Button>
-                <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Download className="mr-2 h-5 w-5" />
-                    {d.hero.onePager}
                 </Button>
             </VerticalHero>
 

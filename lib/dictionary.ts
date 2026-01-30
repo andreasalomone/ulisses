@@ -1,6 +1,6 @@
 export const DICTIONARY = {
     common: {
-        demoCta: "Richiedi una demo",
+        demoCta: "Parla con un esperto",
         expertCta: "Parla con un esperto",
         onePagerCta: "Scarica One-Pager",
         contactCta: "Richiedi una demo / assessment",
@@ -56,8 +56,8 @@ export const DICTIONARY = {
             }
         },
         why: {
-            title: "Oltre i limiti del tracking tradizionale",
-            intro: "Smetti di lottare con soluzioni parziali. Ulisses è l'unico sistema progettato per funzionare dove gli altri falliscono, unificando field, rete e dato in una regia unica.",
+            title: "Perché Ulisses è diversa",
+            intro: "Non forniamo “un singolo sensore” o “solo una dashboard”. Costruiamo un sistema completo che porta dati affidabili dal campo alle decisioni — e quando serve integriamo il dato nelle piattaforme già in uso (WMS/CMMS/ITS/BI) tramite API.",
             columns: [
                 {
                     title: "Software gestionali",
@@ -95,8 +95,8 @@ export const DICTIONARY = {
             }
         },
         app: {
-            label: "Web App / Dashboard",
-            title: "La Web App: cosa vedi e cosa puoi fare",
+            label: "Dashboard",
+            title: "La Dashboard: cosa vedi e cosa puoi fare",
             intro: "Non solo “tracking”: trasformiamo segnali ed eventi in decisioni operative.",
             features: [
                 { title: "Monitori", text: "Posizione, eventi, occupancy, health del sistema" },
@@ -247,10 +247,10 @@ export const DICTIONARY = {
     },
     ferroviario: {
         hero: {
-            h1: "Ferroviario: controllo di attrezzature e materiali in depositi e officine",
+            h1: "Ferroviario: controllo di attrezzature e materiali in depositi",
             h1Highlight: "Ferroviario",
             sub: "Riduci dispersioni e tempi improduttivi. Collega eventi sul campo ai workflow di manutenzione.",
-            cta: "Richiedi demo Ferroviario",
+            cta: "Richiedi Demo Ferroviario",
             onePager: "Scarica One-Pager Ferroviario"
         },
         process: [
@@ -295,16 +295,21 @@ export const DICTIONARY = {
             onePager: "Scarica One-Pager Smart Parking"
         },
         segments: [
-            { title: "Per Comuni e PA", text: "Decisioni basate su dati, trasparenza e report." },
-            { title: "Per concessionari", text: "Efficienza operativa ed enforcement mirato." },
-            { title: "Per grandi aree private", text: "Ottimizzazione flussi e qualità del servizio." }
+            { id: "pa", title: "Per Comuni e PA", text: "Decisioni basate su dati, trasparenza e report." },
+            { id: "concessionari", title: "Per concessionari", text: "Efficienza operativa ed enforcement mirato." },
+            { id: "private", title: "Per grandi aree private", text: "Ottimizzazione flussi e qualità del servizio." }
         ],
         useCases: [
-            { title: "Occupancy & disponibilità", text: "Stato stalli in tempo reale + storico affidabile." },
-            { title: "Eventi operativi", text: "Durata sosta, overstay, profili stallo e priorità intervento." },
-            { title: "Qualità del dato e health", text: "Stalli “mute”, copertura, anomalie: controllo continuo e SLA." },
-            { title: "Rollout scalabile", text: "Da pilot a città: rete privata/mesh, continuità operativa, crescita modulare." }
+            { id: "occupancy", title: "Occupancy & disponibilità", text: "Stato stalli in tempo reale + storico affidabile." },
+            { id: "events", title: "Eventi operativi", text: "Durata sosta, overstay, profili stallo e priorità intervento." },
+            { id: "quality", title: "Qualità del dato e health", text: "Stalli “mute”, copertura, anomalie: controllo continuo e SLA." },
+            { id: "rollout", title: "Rollout scalabile", text: "Da pilot a città: rete privata/mesh, continuità operativa, crescita modulare." }
         ],
+        useCaseMapping: {
+            pa: ["occupancy", "quality", "rollout"],
+            concessionari: ["occupancy", "events", "quality"],
+            private: ["occupancy", "events"]
+        },
         privateNetwork: {
             title: "Perché rete privata (senza SIM) cambia il conto economico",
             bullets: [

@@ -73,7 +73,7 @@ export function ContactFormSection() {
                         </div>
                     </div>
 
-                    <div className="bg-background text-foreground p-8 md:p-10 rounded-[2.5rem] shadow-2xl animate-in fade-in slide-in-from-right-8 duration-700 delay-200 fill-mode-both">
+                    <div className="bg-background text-foreground p-8 md:p-10 rounded-[2.5rem] border border-white/10 shadow-xl animate-in fade-in slide-in-from-right-8 duration-700 delay-200 fill-mode-both">
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             {/* [2026 Standard] Nested container queries for form internal layout */}
                             <div className="@container/form">

@@ -1,17 +1,16 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { UseCaseCards } from "@/components/shared/use-case-cards";
+import { SmartParkingExplorer } from "@/components/sections/parking/smart-parking-explorer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download, LayoutDashboard, Bell, Activity, Layers, Signal, HardDrive, Zap } from "lucide-react";
+import { Download, Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 
 export default function SmartParkingPage() {
     const d = DICTIONARY.parking;
-    const icons = [LayoutDashboard, Bell, Activity, Layers];
 
     return (
         <div className="flex flex-col">
@@ -30,31 +29,21 @@ export default function SmartParkingPage() {
                 </Button>
             </VerticalHero>
 
-            {/* Per chi è */}
+            {/* Interactive Explorer */}
             <SectionWrapper>
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                        Per chi è Ulisses Smart Parking
+                        Soluzioni su misura per ogni scenario
                     </h2>
+                    <p className="text-xl text-muted-foreground max-w-2xl">
+                        Esplora come Ulisses Smart Parking risolve sfide specifiche per la tua organizzazione.
+                    </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {d.segments.map((segment, i) => (
-                        <div key={i} className="p-8 rounded-[2rem] bg-muted/30 border shadow-sm">
-                            <h3 className="text-xl font-bold mb-4">{segment.title}</h3>
-                            <p className="text-muted-foreground leading-relaxed">{segment.text}</p>
-                        </div>
-                    ))}
-                </div>
-            </SectionWrapper>
-
-            {/* Use Cases */}
-            <SectionWrapper variant="muted">
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                        Use case operativi
-                    </h2>
-                </div>
-                <UseCaseCards items={d.useCases} icons={icons} />
+                <SmartParkingExplorer
+                    segments={d.segments}
+                    useCases={d.useCases}
+                    mapping={d.useCaseMapping}
+                />
             </SectionWrapper>
 
             {/* Rete Privata */}

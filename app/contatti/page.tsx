@@ -1,6 +1,5 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
-import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ContactFormSection } from "@/components/sections/home/contact-form-section";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, MessageSquare } from "lucide-react";
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
@@ -99,11 +98,9 @@ export default function ContattiPage() {
                 }
             />
 
-            <SectionWrapper className="pt-0 -mt-20">
-                <div className="w-full">
-                    <ContactFormSection />
-                </div>
-            </SectionWrapper>
+            <div className="-mt-20 relative z-10">
+                <ContactFormSection />
+            </div>
         </div>
     );
 }
