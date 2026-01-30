@@ -49,7 +49,7 @@ export default function LogisticaPage() {
                         </ul>
                     </div>
                     <div className="bg-muted/30 rounded-[2.5rem] p-8 md:p-12 border">
-                        <div className="aspect-square bg-card rounded-2xl shadow-inner flex items-center justify-center border-2 border-dashed border-primary/20">
+                        <div className="aspect-video bg-card rounded-2xl shadow-inner flex items-center justify-center border-2 border-dashed border-primary/20">
                             <p className="text-muted-foreground italic">Mockup Dashboard Logistica</p>
                         </div>
                     </div>

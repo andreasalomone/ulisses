@@ -54,8 +54,8 @@ export default function KnowledgeHubPage() {
                                                 <BrandText text={item.text} />
                                             </p>
                                             <Button asChild variant="link" className="p-0 h-auto font-bold group">
-                                                <Link href="/contatti">
-                                                    Ricevi il Pilot Kit <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                <Link href={item.link}>
+                                                    Scopri di più <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                                 </Link>
                                             </Button>
                                         </CardContent>
