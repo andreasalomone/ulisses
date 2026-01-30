@@ -14,7 +14,7 @@ export const DICTIONARY = {
         ferroviario: "Ferroviario",
         smartParking: "Smart Parking",
         tecnologia: "Tecnologia",
-        azienda: "Azienda",
+        azienda: "Chi Siamo",
         contatti: "Contatti",
     },
     home: {
@@ -272,6 +272,12 @@ export const DICTIONARY = {
             text: "La differenza non è solo tecnologica: è la capacità di messa a terra.",
             steps: "Site survey → Design → Commissioning → Integrazione → Go-live con SLA.",
             cta: "Richiedi una demo"
+        },
+        finalCta: {
+            title: "Valutiamo insieme la fattibilità sul tuo scenario",
+            subtitle: "Definiamo area, KPI e tempi. Ti proponiamo architettura e piano di rollout.",
+            ctaPilot: "Richiedi un pilot",
+            ctaExpert: "Parla con un esperto"
         }
     },
     parking: {
@@ -334,6 +340,13 @@ export const DICTIONARY = {
         paCta: {
             title: "Stai preparando un bando o un pilot?",
             text: "Ti supportiamo nel definire KPI, architettura e piano di rollout.",
+            ctaExpert: "Parla con un esperto PA",
+            ctaDemo: "Richiedi demo",
+            ctaOnePager: "Scarica One-Pager"
+        },
+        finalCta: {
+            title: "Stai preparando un bando o un pilot?",
+            subtitle: "Ti supportiamo nel definire KPI, architettura e piano di rollout.",
             ctaExpert: "Parla con un esperto PA",
             ctaDemo: "Richiedi demo",
             ctaOnePager: "Scarica One-Pager"

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Download, Wrench, Package, Cpu, FileCheck } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
+import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 
 export default function FerroviarioPage() {
     const d = DICTIONARY.ferroviario;
@@ -86,23 +87,15 @@ export default function FerroviarioPage() {
                 </div>
             </SectionWrapper>
 
-            {/* Delivery */}
-            <SectionWrapper variant="muted">
-                <div className="max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                        {d.delivery.title}
-                    </h2>
-                    <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                        {d.delivery.text}
-                    </p>
-                    <div className="p-8 bg-card rounded-2xl border mb-12">
-                        <p className="text-2xl font-bold text-primary mb-4">{d.delivery.steps}</p>
-                    </div>
-                    <Button asChild size="lg" className="h-14 px-8 font-bold rounded-full">
-                        <Link href="/contatti">{d.delivery.cta}</Link>
-                    </Button>
-                </div>
-            </SectionWrapper>
+            {/* Final CTA */}
+            <FinalCTASection
+                title={d.finalCta.title}
+                subtitle={d.finalCta.subtitle}
+                buttons={[
+                    { label: d.finalCta.ctaPilot, href: "/contatti" },
+                    { label: d.finalCta.ctaExpert, href: "/contatti", variant: "outline" }
+                ]}
+            />
         </div>
     );
 }

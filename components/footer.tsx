@@ -14,7 +14,7 @@ export function Footer() {
                     <div className="space-y-6">
                         <Link href="/" className="relative h-8 w-32 block">
                             <Image
-                                src="/logos/ulisses_logotipe.svg"
+                                src="/logos/ulisses_trademark-oriz.svg"
                                 alt="Ulisses Logo"
                                 fill
                                 className="object-contain"

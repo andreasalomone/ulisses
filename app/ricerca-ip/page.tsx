@@ -74,7 +74,7 @@ export default function RicercaIpPage() {
                             <Microscope className="h-12 w-12 mb-6 opacity-50" />
                             <h3 className="text-2xl font-bold mb-4">Innovation Lab</h3>
                             <p className="opacity-80 leading-relaxed mb-8">
-                                I nostri laboratori testano costantemente nuove topologie di rete e algoritmi di filtraggio per garantire prestazioni stabili in ambienti metallici e densi.
+                                I nostri laboratori testano costantemente nuove tipologie di rete e algoritmi di filtraggio per garantire prestazioni stabili in ambienti metallici e densi.
                             </p>
                             <Button asChild variant="secondary" className="w-full font-bold">
                                 <Link href="/contatti">{d.hero.ctaTalk}</Link>

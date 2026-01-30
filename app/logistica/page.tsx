@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Download, Search, Navigation2, Shield, BarChart2 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
+import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 
 export default function LogisticaPage() {
     const d = DICTIONARY.logistica;
@@ -117,24 +118,14 @@ export default function LogisticaPage() {
             />
 
             {/* Final CTA */}
-            <SectionWrapper className="bg-primary text-primary-foreground text-center">
-                <div className="max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                        {d.finalCta.title}
-                    </h2>
-                    <p className="text-xl opacity-90 leading-relaxed mb-12">
-                        {d.finalCta.subtitle}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button asChild size="lg" variant="secondary" className="h-14 px-8 text-base font-bold rounded-full">
-                            <Link href="/contatti">{d.finalCta.ctaPilot}</Link>
-                        </Button>
-                        <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base font-bold rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                            <Link href="/contatti">{d.finalCta.ctaExpert}</Link>
-                        </Button>
-                    </div>
-                </div>
-            </SectionWrapper>
+            <FinalCTASection
+                title={d.finalCta.title}
+                subtitle={d.finalCta.subtitle}
+                buttons={[
+                    { label: d.finalCta.ctaPilot, href: "/contatti" },
+                    { label: d.finalCta.ctaExpert, href: "/contatti", variant: "outline" }
+                ]}
+            />
         </div>
     );
 }

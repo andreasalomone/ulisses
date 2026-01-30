@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Download, LayoutDashboard, Bell, Activity, Layers, Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
+import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 
 export default function SmartParkingPage() {
     const d = DICTIONARY.parking;
@@ -111,28 +112,16 @@ export default function SmartParkingPage() {
                 extra={d.benchmarks.extra}
             />
 
-            {/* PA CTA */}
-            <SectionWrapper className="bg-muted border-t">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                        {d.paCta.title}
-                    </h2>
-                    <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-                        {d.paCta.text}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button asChild size="lg" className="h-14 px-8 font-bold rounded-full">
-                            <Link href="/contatti">{d.paCta.ctaExpert}</Link>
-                        </Button>
-                        <Button asChild variant="outline" size="lg" className="h-14 px-8 font-bold rounded-full">
-                            <Link href="/contatti">{d.paCta.ctaDemo}</Link>
-                        </Button>
-                        <Button asChild variant="ghost" size="lg" className="h-14 px-8 font-bold rounded-full">
-                            <Link href="/contatti">{d.paCta.ctaOnePager}</Link>
-                        </Button>
-                    </div>
-                </div>
-            </SectionWrapper>
+            {/* Final CTA */}
+            <FinalCTASection
+                title={d.finalCta.title}
+                subtitle={d.finalCta.subtitle}
+                buttons={[
+                    { label: d.finalCta.ctaExpert, href: "/contatti" },
+                    { label: d.finalCta.ctaDemo, href: "/contatti", variant: "outline" },
+                    { label: d.finalCta.ctaOnePager, href: "/contatti", variant: "ghost" }
+                ]}
+            />
         </div>
     );
 }
