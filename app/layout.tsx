@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://ulisses.ai"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://ulisses.it"),
   title: {
     default: "Ulisses - Intelligent Asset Tracking",
     template: "%s | Ulisses"

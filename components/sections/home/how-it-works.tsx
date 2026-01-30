@@ -31,7 +31,7 @@ export function HowItWorks() {
                             <step.icon className="h-7 w-7 text-primary-foreground" />
                         </div>
                         <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                            <span className="text-primary font-black opacity-30 text-3xl">0{index + 1}</span>
+                            <span className="text-primary-foreground font-black opacity-30 text-3xl">0{index + 1}</span>
                             <BrandText text={step.title} />
                         </h3>
                         <p className="text-secondary-foreground/70 leading-relaxed">
@@ -55,9 +55,6 @@ export function HowItWorks() {
                                 </React.Fragment>
                             ))}
                         </p>
-                    </div>
-                    <div className="px-8 py-4 bg-primary-foreground/10 rounded-full font-bold text-sm tracking-widest uppercase text-center md:text-left shrink-0">
-                        {d.deployment.label}
                     </div>
                 </div>
                 <div className="absolute right-0 top-0 w-64 h-64 bg-white/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />

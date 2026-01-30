@@ -20,10 +20,10 @@ export const DICTIONARY = {
     },
     home: {
         hero: {
-            h1: "Mantieni il controllo e localizza i tuoi asset, ovunque essi siano.",
-            h1Token: "localizza",
-            subheadline: "Ulisses è un’infrastruttura completa: rete + sensori + piattaforma + API, pronta per gli ambienti più complessi.",
-            subheadlineToken: "rete + sensori + piattaforma + API",
+            h1: "Localizza i tuoi asset, ovunque essi siano",
+            h1Token: "Localizza",
+            subheadline: "Con Ulisses hai il controllo totale: una soluzione completa di dashboard, rete, sensori e API pronta per gli ambienti più complessi, indoor e outdoor.",
+            subheadlineToken: "dashboard, rete, sensori e API",
             proofs: [
                 "Brevetto tecnologico",
                 "Planning & commissioning integrati",
@@ -56,23 +56,26 @@ export const DICTIONARY = {
             }
         },
         why: {
-            title: "Perché Ulisses è diversa",
-            intro: "Non forniamo “un singolo sensore” o “solo una dashboard”. Costruiamo un sistema completo che porta dati affidabili dal campo alle decisioni — e quando serve integriamo il dato nelle piattaforme già in uso (WMS/CMMS/ITS/BI) tramite API.",
+            title: "Oltre i limiti del tracking tradizionale",
+            intro: "Smetti di lottare con soluzioni parziali. Ulisses è l'unico sistema progettato per funzionare dove gli altri falliscono, unificando field, rete e dato in una regia unica.",
             columns: [
                 {
                     title: "Software gestionali",
-                    text: "I gestionali organizzano dati e processi, ma non vedono il mondo fisico: posizione reale, eventi sul campo, dinamiche indoor/outdoor."
+                    problem: "Organizzano processi, ma restano ciechi sul mondo fisico.",
+                    solution: "Ulisses porta la verità del campo direttamente nei tuoi sistemi."
                 },
                 {
                     title: "Tracking tradizionale",
-                    text: "Molte soluzioni funzionano bene in demo, ma faticano in ambienti reali: interferenze, scalabilità, manutenance, affidabilità del dato."
+                    problem: "La demo funziona, ma fatica in ambienti reali e ritorna dati inaffidabili.",
+                    solution: "Ulisses è ingegneria industriale nata per vincere interferenze e scalare senza fatica."
                 },
                 {
                     title: "Soluzioni frammentate",
-                    text: "Quando sensori, rete e software non hanno una regia unica, aumentano complessità, integrazioni su misura e costi nel tempo. Ulisses è modulare: piattaforma opzionale e dato integrabile via API, con metodo e ownership chiara."
+                    problem: "Un puzzle di vendor diversi è un incubo di manutenzione.",
+                    solution: "Regia unica. Dalla survey alle API, un solo partner responsabile."
                 }
             ],
-            closure: "Ulisses unifica field, rete e dato: puoi usare la nostra piattaforma oppure integrare via API, riducendo complessità e tempi di messa a terra.",
+            closure: "Ulisses è modulare: piattaforma opzionale e dato integrabile via API, con metodo e ownership chiara. Unifica field, rete e dato: puoi usare la nostra piattaforma oppure integrare via API, riducendo complessità e tempi di messa a terra.",
             quote: "“Non siamo un prototipo, non siamo un PoC eterno. Siamo operativi nel mondo reale.”"
         },
         howItWorks: {
