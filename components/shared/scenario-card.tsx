@@ -4,6 +4,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { BrandText } from "@/components/ui/brand";
 
 interface ScenarioCardProps {
     title: string;
@@ -32,15 +33,15 @@ export function ScenarioCard({
                     alt={title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover scale-110 transition-transform duration-700 group-hover:scale-120"
+                    className="object-cover scale-100 transition-transform duration-700 group-hover:scale-105"
                 />
             </div>
             <CardHeader>
                 <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors">
-                    {title}
+                    <BrandText text={title} />
                 </CardTitle>
                 <CardDescription className="text-muted-foreground/80 leading-relaxed">
-                    {description}
+                    <BrandText text={description} />
                 </CardDescription>
             </CardHeader>
 
@@ -49,7 +50,7 @@ export function ScenarioCard({
                     <ul className="flex flex-wrap gap-2">
                         {resolutions.map((res, i) => (
                             <li key={i} className="text-xs font-semibold px-2 py-1 bg-muted rounded-full text-muted-foreground border">
-                                {res}
+                                <BrandText text={res} />
                             </li>
                         ))}
                     </ul>

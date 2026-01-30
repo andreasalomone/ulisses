@@ -3,7 +3,6 @@ import { VerticalSelector } from "@/components/sections/home/vertical-selector";
 import { WhyUlisses } from "@/components/sections/home/why-ulisses";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
 import { DashboardPreview } from "@/components/sections/home/dashboard-preview";
-import { ProductionProof } from "@/components/sections/home/production-proof";
 import { ContactFormSection } from "@/components/sections/home/contact-form-section";
 
 /**
@@ -19,7 +18,6 @@ export default function Page() {
             <WhyUlisses />
             <HowItWorks />
             <DashboardPreview />
-            <ProductionProof />
             <ContactFormSection />
         </div>
     );

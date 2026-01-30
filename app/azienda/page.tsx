@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Shield, Target, Zap, Users } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
+import { BrandText } from "@/components/ui/brand";
 
 export default function AziendaPage() {
     const d = DICTIONARY.azienda;
@@ -26,10 +27,10 @@ export default function AziendaPage() {
             <SectionWrapper>
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                        {d.mission.title}
+                        <BrandText text={d.mission.title} />
                     </h2>
                     <p className="text-2xl md:text-3xl font-medium leading-relaxed text-muted-foreground italic">
-                        &quot;{d.mission.text}&quot;
+                        &quot;<BrandText text={d.mission.text} />&quot;
                     </p>
                 </div>
             </SectionWrapper>
@@ -49,7 +50,9 @@ export default function AziendaPage() {
                                 <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                                     <Icon className="h-8 w-8" />
                                 </div>
-                                <h3 className="text-2xl font-bold">{value}</h3>
+                                <h3 className="text-2xl font-bold">
+                                    <BrandText text={value} />
+                                </h3>
                             </div>
                         );
                     })}
@@ -60,20 +63,15 @@ export default function AziendaPage() {
             <SectionWrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
+                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 text-wrap-balance">
                             Un ecosistema di competenze
                         </h2>
                         <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                            Ulisses nasce dall&apos;unione di esperti in radiofrequenza, data science e gestione dei processi industriali. Non siamo solo fornitori di tecnologia, ma partner nel percorso di digitalizzazione.
+                            <BrandText text="Ulisses nasce dall'unione di esperti in radiofrequenza, data science e gestione dei processi industriali. Non siamo solo fornitori di tecnologia, ma partner nel percorso di digitalizzazione." />
                         </p>
                         <div className="flex items-center gap-4 p-6 bg-primary/5 rounded-2xl border border-primary/10">
                             <Users className="text-primary h-8 w-8" />
                             <p className="font-bold">Team multidisciplinare dal go-live alla produzione.</p>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className="aspect-square bg-muted rounded-[3rem] border shadow-inner flex items-center justify-center">
-                            <p className="text-muted-foreground italic">Team / Office Visual</p>
                         </div>
                     </div>
                 </div>
@@ -82,7 +80,7 @@ export default function AziendaPage() {
             {/* R&D Link Section */}
             <SectionWrapper variant="muted" className="text-center">
                 <div className="max-w-2xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-6">Investiamo nel futuro</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-wrap-balance">Investiamo nel futuro</h2>
                     <p className="text-lg text-muted-foreground mb-10">La nostra tecnologia evolve costantemente attraverso il reparto R&D e collaborazioni universitarie.</p>
                     <Button asChild variant="outline" size="lg" className="rounded-full px-8 font-bold">
                         <Link href="/tecnologia#ricerca">Scopri Ricerca & IP</Link>

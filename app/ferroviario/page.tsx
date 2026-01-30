@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Download, Wrench, Package, Cpu, FileCheck } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
+import { BrandText } from "@/components/ui/brand";
 
 export default function FerroviarioPage() {
     const d = DICTIONARY.ferroviario;
@@ -42,15 +43,12 @@ export default function FerroviarioPage() {
                                     <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-1">
                                         <div className="h-2 w-2 rounded-full bg-primary" />
                                     </div>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">{item}</p>
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        <BrandText text={item} />
+                                    </p>
                                 </li>
                             ))}
                         </ul>
-                    </div>
-                    <div className="bg-muted/30 rounded-[2.5rem] p-8 md:p-12 border">
-                        <div className="aspect-square bg-card rounded-2xl shadow-inner flex items-center justify-center border-2 border-dashed border-primary/20">
-                            <p className="text-muted-foreground italic">Mockup Dashboard Ferroviario</p>
-                        </div>
                     </div>
                 </div>
             </SectionWrapper>
@@ -62,6 +60,7 @@ export default function FerroviarioPage() {
                         Use case operativi
                     </h2>
                 </div>
+                {/* UseCaseCards should handle BrandText internally if needed, but let's check it */}
                 <UseCaseCards items={d.useCases} icons={icons} />
             </SectionWrapper>
 
@@ -81,7 +80,9 @@ export default function FerroviarioPage() {
                             {d.dashboard.bullets.map((bullet, i) => (
                                 <li key={i} className="flex gap-3 items-center">
                                     <div className="h-2 w-2 rounded-full bg-primary" />
-                                    <span className="text-lg text-muted-foreground">{bullet}</span>
+                                    <span className="text-lg text-muted-foreground">
+                                        <BrandText text={bullet} />
+                                    </span>
                                 </li>
                             ))}
                         </ul>

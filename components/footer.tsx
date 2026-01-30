@@ -5,6 +5,7 @@ import { NAV_LINKS, CONTACT_INFO, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/consta
 import { Separator } from "@/components/ui/separator";
 import { DICTIONARY } from "@/lib/dictionary";
 import { Instagram, Linkedin, Facebook, MessageSquare } from "lucide-react";
+import { BrandText } from "@/components/ui/brand";
 
 export function Footer() {
     return (
@@ -22,7 +23,7 @@ export function Footer() {
                             />
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-                            {SITE_CONFIG.description}
+                            <BrandText text={SITE_CONFIG.description} />
                         </p>
                         <div className="flex gap-4">
                             <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">

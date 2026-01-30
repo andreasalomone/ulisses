@@ -97,7 +97,7 @@ export function Navbar() {
                                     >
                                         <DropdownMenuTrigger className={cn(
                                             "flex items-center gap-1 text-lg font-semibold transition-colors hover:text-primary outline-none py-2",
-                                            isActive ? "text-primary" : "text-foreground/80"
+                                            isActive ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/80"
                                         )}>
                                             {link.label}
                                             <ChevronDown className={cn(
@@ -147,7 +147,7 @@ export function Navbar() {
                                 href={link.href}
                                 className={cn(
                                     "text-lg font-semibold transition-colors hover:text-primary",
-                                    pathname === link.href ? "text-primary" : "text-foreground/80"
+                                    isActive ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/80"
                                 )}
                             >
                                 {link.label}
@@ -193,7 +193,7 @@ export function Navbar() {
                                                 aria-controls={`submenu-${link.label.toLowerCase()}`}
                                                 className={cn(
                                                     "flex items-center justify-between text-lg font-bold py-3 border-b border-muted",
-                                                    isActive ? "text-primary" : "text-foreground"
+                                                    isActive ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground"
                                                 )}
                                             >
                                                 {link.label}
@@ -214,7 +214,7 @@ export function Navbar() {
                                                         href={link.href}
                                                         className={cn(
                                                             "text-xl font-bold py-3 border-b border-muted/50 last:border-0",
-                                                            pathname === link.href ? "text-primary" : "text-foreground/70"
+                                                            pathname === link.href ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/70"
                                                         )}
                                                         onClick={() => setIsOpen(false)}
                                                     >
@@ -226,7 +226,7 @@ export function Navbar() {
                                                             href={sub.href}
                                                             className={cn(
                                                                 "text-xl font-bold py-3 border-b border-muted/50 last:border-0",
-                                                                pathname === sub.href ? "text-primary" : "text-foreground/70"
+                                                                pathname === sub.href ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/70"
                                                             )}
                                                             onClick={() => setIsOpen(false)}
                                                         >
@@ -241,7 +241,7 @@ export function Navbar() {
                                             href={link.href}
                                             className={cn(
                                                 "text-lg font-bold py-3 border-b border-muted",
-                                                pathname === link.href ? "text-primary" : "text-foreground"
+                                                pathname === link.href ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground"
                                             )}
                                             onClick={() => setIsOpen(false)}
                                         >

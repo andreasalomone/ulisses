@@ -7,6 +7,7 @@ import { FileText, Download, ArrowRight } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { FaqSection } from "@/components/shared/faq-section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BrandText } from "@/components/ui/brand";
 
 export default function KnowledgeHubPage() {
     const d = DICTIONARY.knowledgeHub;
@@ -26,8 +27,12 @@ export default function KnowledgeHubPage() {
             {/* Stories Section */}
             <SectionWrapper>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">{stories.title}</h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{stories.text}</p>
+                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+                        <BrandText text={stories.title} />
+                    </h2>
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        <BrandText text={stories.text} />
+                    </p>
                 </div>
 
                 <div className="space-y-16">
@@ -40,11 +45,13 @@ export default function KnowledgeHubPage() {
                                 {section.items.map((item, j) => (
                                     <Card key={j} className="bg-card hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary/20 hover:border-l-primary">
                                         <CardHeader>
-                                            <CardTitle className="text-xl leading-tight">{item.title}</CardTitle>
+                                            <CardTitle className="text-xl leading-tight">
+                                                <BrandText text={item.title} />
+                                            </CardTitle>
                                         </CardHeader>
                                         <CardContent>
                                             <p className="text-muted-foreground mb-6 leading-relaxed">
-                                                {item.text}
+                                                <BrandText text={item.text} />
                                             </p>
                                             <Button asChild variant="link" className="p-0 h-auto font-bold group">
                                                 <Link href="/contatti">
@@ -65,7 +72,7 @@ export default function KnowledgeHubPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                            {d.documents.title}
+                            <BrandText text={d.documents.title} />
                         </h2>
                         <div className="grid grid-cols-1 gap-4">
                             {d.documents.items.map((doc, i) => (
@@ -73,7 +80,9 @@ export default function KnowledgeHubPage() {
                                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                                         <FileText className="h-6 w-6" />
                                     </div>
-                                    <span className="font-bold text-lg grow">{doc}</span>
+                                    <span className="font-bold text-lg grow">
+                                        <BrandText text={doc} />
+                                    </span>
                                     <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </div>
                             ))}

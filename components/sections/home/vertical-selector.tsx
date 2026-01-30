@@ -2,6 +2,7 @@ import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScenarioCard } from "@/components/shared/scenario-card";
 import { DICTIONARY } from "@/lib/dictionary";
+import { BrandText } from "@/components/ui/brand";
 
 export function VerticalSelector() {
     const d = DICTIONARY.home.selector;
@@ -16,11 +17,11 @@ export function VerticalSelector() {
     return (
         <SectionWrapper id="scenari" variant="muted">
             <div className="max-w-2xl mb-16">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-                    {d.title}
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-wrap-balance">
+                    <BrandText text={d.title} />
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                    {d.subtitle}
+                    <BrandText text={d.subtitle} />
                 </p>
             </div>
 

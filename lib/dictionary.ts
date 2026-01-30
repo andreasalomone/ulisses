@@ -20,9 +20,9 @@ export const DICTIONARY = {
     },
     home: {
         hero: {
-            h1: "Localizzazione di asset indoor/outdoor che genera dati operativi per ridurre sprechi e migliorare le decisioni.",
-            h1Token: "indoor/outdoor",
-            subheadline: "Ulisses è un’infrastruttura completa: rete + sensori + piattaforma + API, pronta per essere messa a terra in ambienti complessi.",
+            h1: "Mantieni il controllo e localizza i tuoi asset, ovunque essi siano.",
+            h1Token: "localizza",
+            subheadline: "Ulisses è un’infrastruttura completa: rete + sensori + piattaforma + API, pronta per gli ambienti più complessi.",
             subheadlineToken: "rete + sensori + piattaforma + API",
             proofs: [
                 "Brevetto tecnologico",

@@ -2,6 +2,7 @@ import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { BrandText } from "@/components/ui/brand";
 
 interface CTAButton {
     label: string;
@@ -19,11 +20,11 @@ export function FinalCTASection({ title, subtitle, buttons }: FinalCTASectionPro
     return (
         <SectionWrapper className="bg-primary text-primary-foreground text-center">
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                    {title}
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-wrap-balance">
+                    <BrandText text={title} brandClassName="text-white" />
                 </h2>
                 <p className="text-xl opacity-90 leading-relaxed mb-12">
-                    {subtitle}
+                    <BrandText text={subtitle} brandClassName="text-white" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     {buttons.map((btn, i) => (
@@ -33,11 +34,13 @@ export function FinalCTASection({ title, subtitle, buttons }: FinalCTASectionPro
                             size="lg"
                             variant={btn.variant || (i === 0 ? "secondary" : "outline")}
                             className={`h-14 px-8 text-base font-bold rounded-full ${btn.variant === "outline" || (!btn.variant && i !== 0)
-                                    ? "bg-transparent border-white text-white hover:bg-white hover:text-primary"
-                                    : ""
+                                ? "bg-transparent border-white text-white hover:bg-white hover:text-primary"
+                                : ""
                                 }`}
                         >
-                            <Link href={btn.href}>{btn.label}</Link>
+                            <Link href={btn.href}>
+                                <BrandText text={btn.label} brandClassName={btn.variant === "secondary" || (i === 0 && !btn.variant) ? "text-primary" : "text-white"} />
+                            </Link>
                         </Button>
                     ))}
                 </div>
