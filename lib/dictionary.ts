@@ -368,7 +368,7 @@ export const DICTIONARY = {
         },
         pillars: {
             title: "La differenza è trasformare lo standard in dato affidabile",
-            text: "Gli standard radio più recenti, come il Bluetooth Channel Sounding (RTT + Phase-Based Ranging), aprono nuove possibilità di misura. Il valore però nasce quando quella misura diventa stabile e verificabile sul campo: ambienti complessi, interferenze, densità e vincoli operativi. Ulisses fa questo passaggio e rende il dato pronto da usare e integrabile via API e se serve, è disponibile anche la nostra piattaforma per dashboard e gestione operativa.",
+            text: "Sfruttiamo l'evoluzione degli standard radio, come il Bluetooth Channel Sounding (RTT + Phase-Based Ranging), per sbloccare nuove possibilità.\n\nLa tecnologia Ulisses garantisce precisione, stabilità e affidabilità anche in contesti critici: ambienti complessi, interferenze e alta densità.\n\nTrasformiamo il segnale in un dato pronto all'uso, integrabile via API o gestibile tramite la nostra piattaforma operativa.",
             items: [
                 "Stack e algoritmi per trasformare il segnale in un dato stabile e verificabile sul campo.",
                 "Tool di planning e commissioning per una messa a terra ripetibile: progettazione, validazione e qualità del dato.",

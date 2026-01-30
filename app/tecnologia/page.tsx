@@ -48,7 +48,7 @@ export default function TecnologiaPage() {
                     <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
                         {d.pillars.title}
                     </h2>
-                    <p className="text-xl text-muted-foreground leading-relaxed">
+                    <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
                         {d.pillars.text}
                     </p>
                 </div>
