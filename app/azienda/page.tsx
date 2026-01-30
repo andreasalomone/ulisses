@@ -85,7 +85,7 @@ export default function AziendaPage() {
                     <h2 className="text-3xl font-bold mb-6">Investiamo nel futuro</h2>
                     <p className="text-lg text-muted-foreground mb-10">La nostra tecnologia evolve costantemente attraverso il reparto R&D e collaborazioni universitarie.</p>
                     <Button asChild variant="outline" size="lg" className="rounded-full px-8 font-bold">
-                        <Link href="/ricerca-ip">Scopri Ricerca & IP</Link>
+                        <Link href="/tecnologia#ricerca">Scopri Ricerca & IP</Link>
                     </Button>
                 </div>
             </SectionWrapper>

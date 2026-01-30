@@ -14,6 +14,7 @@ export const DICTIONARY = {
         ferroviario: "Ferroviario",
         smartParking: "Smart Parking",
         tecnologia: "Tecnologia",
+        risorse: "Risorse",
         azienda: "Chi Siamo",
         contatti: "Contatti",
     },
@@ -170,6 +171,7 @@ export const DICTIONARY = {
     logistica: {
         hero: {
             h1: "Logistica: localizzazione asset e dati operativi per ridurre tempi ed errori",
+            h1Highlight: "Logistica",
             sub: "In magazzino e yard, Ulisses rende visibile ciò che oggi è “tempo perso”: ricerca, movimenti, anomalie e rischi.",
             cta: "Richiedi demo Logistica",
             onePager: "Scarica One-Pager Logistica"
@@ -243,6 +245,7 @@ export const DICTIONARY = {
     ferroviario: {
         hero: {
             h1: "Ferroviario: controllo di attrezzature e materiali in depositi e officine",
+            h1Highlight: "Ferroviario",
             sub: "Riduci dispersioni e tempi improduttivi. Collega eventi sul campo ai workflow di manutenzione.",
             cta: "Richiedi demo Ferroviario",
             onePager: "Scarica One-Pager Ferroviario"
@@ -283,6 +286,7 @@ export const DICTIONARY = {
     parking: {
         hero: {
             h1: "Smart Parking: occupazione stalli e eventi operativi, con rollout scalabile",
+            h1Highlight: "Smart Parking",
             sub: "Dati affidabili per gestione della sosta, enforcement, pianificazione e reportistica. Con rete privata: OPEX controllabile e indipendenza.",
             cta: "Richiedi demo Smart Parking",
             onePager: "Scarica One-Pager Smart Parking"

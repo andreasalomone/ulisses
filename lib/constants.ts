@@ -17,7 +17,9 @@ export const NAV_LINKS: NavLink[] = [
         ]
     },
     { label: DICTIONARY.navigation.tecnologia, href: "/tecnologia" },
+    { label: DICTIONARY.navigation.risorse, href: "/knowledge-hub" },
     { label: DICTIONARY.navigation.azienda, href: "/azienda" },
+    { label: "FAQ", href: "/faq" },
 ];
 
 export const CONTACT_INFO = {

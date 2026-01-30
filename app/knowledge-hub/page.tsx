@@ -3,9 +3,9 @@ import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download, FileText, HelpCircle, ArrowRight } from "lucide-react";
+import { FileText, Download, ArrowRight } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { FaqSection } from "@/components/shared/faq-section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function KnowledgeHubPage() {
@@ -97,29 +97,7 @@ export default function KnowledgeHubPage() {
             </SectionWrapper>
 
             {/* FAQ Section */}
-            <SectionWrapper>
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mb-6">
-                            <HelpCircle className="h-8 w-8" />
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">{d.faq.title}</h2>
-                    </div>
-
-                    <Accordion type="single" collapsible className="w-full">
-                        {d.faq.items.map((item, i) => (
-                            <AccordionItem key={i} value={`item-${i}`} className="border-b-muted">
-                                <AccordionTrigger className="text-left text-lg font-bold py-6 hover:text-primary transition-colors">
-                                    {item.q}
-                                </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground text-lg leading-relaxed pb-6">
-                                    {item.a}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                </div>
-            </SectionWrapper>
+            <FaqSection />
         </div>
     );
 }

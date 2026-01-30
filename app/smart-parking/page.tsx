@@ -18,6 +18,8 @@ export default function SmartParkingPage() {
             <VerticalHero
                 title={d.hero.h1}
                 subtitle={d.hero.sub}
+                titleToken={d.hero.h1Highlight}
+                image="/assets/parking-iso.png"
             >
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{d.hero.cta}</Link>
