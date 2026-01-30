@@ -12,9 +12,11 @@ interface VerticalHeroProps {
     description?: string;
     image?: string;
     children?: React.ReactNode;
+    footer?: React.ReactNode;
+    sideContent?: React.ReactNode;
 }
 
-export function VerticalHero({ title, subtitle, titleToken, description, image, children }: VerticalHeroProps) {
+export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent }: VerticalHeroProps) {
     const renderTitle = () => {
         if (!titleToken) return title;
         const parts = title.split(new RegExp(`(${titleToken})`, "gi"));
@@ -32,7 +34,7 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
             <div className="container relative z-10">
                 <div className={cn(
                     "grid grid-cols-1 gap-12 items-center",
-                    image ? "lg:grid-cols-2" : "max-w-4xl"
+                    (image || sideContent) ? "lg:grid-cols-2" : "max-w-4xl"
                 )}>
                     <div className="animate-in fade-in slide-in-from-left duration-1000 ease-out fill-mode-both">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-wrap-balance">
@@ -72,7 +74,19 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                             </div>
                         </div>
                     )}
+
+                    {sideContent && (
+                        <div className="animate-in fade-in slide-in-from-right-8 duration-1000 delay-300 ease-out fill-mode-both">
+                            {sideContent}
+                        </div>
+                    )}
                 </div>
+
+                {footer && (
+                    <div className="mt-16 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
+                        {footer}
+                    </div>
+                )}
             </div>
 
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-linear-to-l from-primary/5 to-transparent -z-10 blur-3xl rounded-full" />

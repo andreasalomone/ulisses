@@ -443,8 +443,9 @@ export const DICTIONARY = {
     legal: {
         privacy: "Privacy Policy",
         cookie: "Cookie Policy",
+        terms: "Termini e Condizioni",
         rightsReserved: "Tutti i diritti riservati.",
-        piva: "P.IVA 12345678901",
+        piva: "P. Iva 02718490697 – REA MI-2746967 – SDI USAL8PV",
         menuHeader: "Menu",
         legalHeader: "Legal"
     },

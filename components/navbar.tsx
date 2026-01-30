@@ -154,7 +154,7 @@ export function Navbar() {
                             </Link>
                         );
                     })}
-                    <Button asChild size="lg" className="text-lg font-bold">
+                    <Button asChild size="lg" className="text-lg font-bold px-8 h-12 rounded-full">
                         <Link href="/contatti">{DICTIONARY.common.demoCta}</Link>
                     </Button>
                 </div>
@@ -251,7 +251,7 @@ export function Navbar() {
                                 </div>
                             );
                         })}
-                        <Button asChild className="mt-4 font-bold w-full h-12 text-lg">
+                        <Button asChild className="mt-4 font-bold w-full h-12 text-lg rounded-full">
                             <Link href="/contatti" onClick={() => setIsOpen(false)}>
                                 {DICTIONARY.common.demoCta}
                             </Link>

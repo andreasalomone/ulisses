@@ -2,8 +2,8 @@ import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ContactFormSection } from "@/components/sections/home/contact-form-section";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
-import { CONTACT_INFO } from "@/lib/constants";
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, MessageSquare } from "lucide-react";
+import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function ContattiPage() {
 
@@ -12,65 +12,96 @@ export default function ContattiPage() {
             <VerticalHero
                 title="Siamo pronti ad ascoltare la tua sfida"
                 subtitle="Dalla demo tecnica alla messa a terra del progetto: il nostro team è a tua disposizione."
-            />
-
-            <SectionWrapper className="pt-0 -mt-20">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div className="lg:col-span-2">
-                        <ContactFormSection />
-                    </div>
-
-                    <div className="space-y-12 lg:pt-20">
-                        <div>
-                            <h2 className="text-2xl font-bold mb-8">Contatti Diretti</h2>
-                            <div className="space-y-6">
-                                <div className="flex gap-4 items-center">
-                                    <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center text-primary">
-                                        <Mail className="h-5 w-5" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-muted-foreground font-bold uppercase tracking-wider">Email</p>
-                                        <p className="text-lg font-medium">{CONTACT_INFO.email}</p>
-                                    </div>
+                sideContent={
+                    <div className="w-fit lg:ml-auto p-8 bg-background/60 backdrop-blur-md rounded-[2.5rem] border shadow-2xl space-y-8 animate-in fade-in slide-in-from-right-12 duration-1000 delay-300">
+                        <div className="space-y-6">
+                            <div className="flex gap-4 items-center group">
+                                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                                    <Mail className="h-5 w-5" />
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                    <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center text-primary">
-                                        <Phone className="h-5 w-5" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-muted-foreground font-bold uppercase tracking-wider">Telefono</p>
-                                        <p className="text-lg font-medium">{CONTACT_INFO.phone}</p>
-                                    </div>
+                                <div className="">
+                                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">Scrivici</p>
+                                    <p className="text-base font-bold truncate">{CONTACT_INFO.email}</p>
                                 </div>
-                                <div className="flex gap-4 items-center">
-                                    <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center text-primary">
-                                        <MapPin className="h-5 w-5" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-muted-foreground font-bold uppercase tracking-wider">Sede</p>
-                                        <p className="text-lg font-medium">{CONTACT_INFO.address}</p>
-                                    </div>
+                            </div>
+
+                            <div className="flex gap-4 items-center group">
+                                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                                    <Phone className="h-5 w-5" />
+                                </div>
+                                <div className="">
+                                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">Chiamaci</p>
+                                    <p className="text-base font-bold">{CONTACT_INFO.phone}</p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4 items-center group">
+                                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                                    <MapPin className="h-5 w-5" />
+                                </div>
+                                <div className="">
+                                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">Vienici a trovare</p>
+                                    <p className="text-base font-bold leading-tight whitespace-pre-line">{CONTACT_INFO.address}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <h2 className="text-2xl font-bold mb-6">Social</h2>
-                            <a href="https://linkedin.com/company/ulisses" className="flex gap-4 items-center group text-muted-foreground hover:text-primary transition-colors">
-                                <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                                    <Linkedin className="h-5 w-5" />
-                                </div>
-                                <span className="text-lg font-medium">LinkedIn</span>
-                            </a>
-                        </div>
-
-                        <div className="p-8 bg-muted/30 rounded-3xl border">
-                            <h3 className="font-bold mb-4">Supporto Tecnico</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                Se sei già un cliente e hai bisogno di supporto per la tua installazione, scrivi a <span className="text-foreground font-medium">support@ulisses.com</span>
-                            </p>
+                        <div className="pt-6 border-t border-primary/10">
+                            <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-4">Social & Chat</p>
+                            <div className="grid grid-cols-2 gap-x-3 gap-y-4">
+                                <a
+                                    href={SOCIAL_LINKS.whatsapp}
+                                    className="flex items-center gap-3 group"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="h-10 w-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300">
+                                        <MessageSquare className="h-5 w-5" />
+                                    </div>
+                                    <p className="text-xs font-bold group-hover:text-primary transition-colors">WhatsApp</p>
+                                </a>
+                                <a
+                                    href={SOCIAL_LINKS.linkedin}
+                                    className="flex items-center gap-3 group"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="h-10 w-10 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center text-[#0A66C2] group-hover:bg-[#0A66C2] group-hover:text-white transition-all duration-300">
+                                        <Linkedin className="h-5 w-5" />
+                                    </div>
+                                    <p className="text-xs font-bold group-hover:text-primary transition-colors">LinkedIn</p>
+                                </a>
+                                <a
+                                    href={SOCIAL_LINKS.instagram}
+                                    className="flex items-center gap-3 group"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="h-10 w-10 rounded-xl bg-[#E4405F]/10 flex items-center justify-center text-[#E4405F] group-hover:bg-[#E4405F] group-hover:text-white transition-all duration-300">
+                                        <Instagram className="h-5 w-5" />
+                                    </div>
+                                    <p className="text-xs font-bold group-hover:text-primary transition-colors">Instagram</p>
+                                </a>
+                                <a
+                                    href={SOCIAL_LINKS.facebook}
+                                    className="flex items-center gap-3 group"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="h-10 w-10 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2] group-hover:bg-[#1877F2] group-hover:text-white transition-all duration-300">
+                                        <Facebook className="h-5 w-5" />
+                                    </div>
+                                    <p className="text-xs font-bold group-hover:text-primary transition-colors">Facebook</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                }
+            />
+
+            <SectionWrapper className="pt-0 -mt-20">
+                <div className="w-full">
+                    <ContactFormSection />
                 </div>
             </SectionWrapper>
         </div>

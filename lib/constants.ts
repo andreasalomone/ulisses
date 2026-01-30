@@ -23,9 +23,16 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const CONTACT_INFO = {
-    email: "info@ulisses.com",
-    phone: "+39 02 1234567",
-    address: "Milano, Italia",
+    email: "info@ulisses.it",
+    phone: "+39 377 0855 535",
+    address: "Corso Monforte, 41, 20122 Milano (MI)",
+};
+
+export const SOCIAL_LINKS = {
+    instagram: "https://www.instagram.com/ulisses.life/",
+    linkedin: "https://www.linkedin.com/company/ulissesai/",
+    facebook: "https://www.facebook.com/ulisses.life",
+    whatsapp: "https://wa.me/393770855535",
 };
 
 export const SITE_CONFIG = {
