@@ -20,6 +20,8 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [openSubMenus, setOpenSubMenus] = useState<Record<string, boolean>>({});
     const [scrolled, setScrolled] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -41,6 +43,17 @@ export function Navbar() {
         if (pathname === link.href) return true;
         if (link.subLinks?.some(sub => pathname === sub.href)) return true;
         return false;
+    };
+
+    const handleMouseEnter = (label: string) => {
+        if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+        setActiveDropdown(label);
+    };
+
+    const handleMouseLeave = () => {
+        closeTimeoutRef.current = setTimeout(() => {
+            setActiveDropdown(null);
+        }, 80);
     };
 
     return (
@@ -67,38 +80,63 @@ export function Navbar() {
                 <div className="hidden lg:flex items-center gap-8">
                     {NAV_LINKS.map((link) => {
                         const isActive = isLinkActive(link);
+                        const isDropdownOpen = activeDropdown === link.label;
 
                         if (link.subLinks) {
                             return (
-                                <DropdownMenu key={link.label} modal={false}>
-                                    <DropdownMenuTrigger className={cn(
-                                        "flex items-center gap-1 text-lg font-semibold transition-colors hover:text-primary outline-none",
-                                        isActive ? "text-primary" : "text-foreground/80"
-                                    )}>
-                                        {link.label}
-                                        <ChevronDown className="size-4" />
-                                    </DropdownMenuTrigger>
-                                    <DropdownMenuContent align="start" className="w-72 p-2">
-                                        <DropdownMenuItem asChild className="py-3 px-4">
-                                            <Link href={link.href} className="w-full cursor-pointer font-bold text-lg">
-                                                Tutte le {link.label}
-                                            </Link>
-                                        </DropdownMenuItem>
-                                        <div className="h-px bg-border my-2 mx-1" />
-                                        {link.subLinks.map((sub) => (
-                                            <DropdownMenuItem key={sub.href} asChild className="py-3 px-4">
-                                                <Link
-                                                    href={sub.href}
-                                                    className={cn(
-                                                        "w-full cursor-pointer text-lg",
-                                                        pathname === sub.href ? "text-primary font-semibold" : ""
-                                                    )}
-                                                >
-                                                    {sub.label}
+                                <DropdownMenu
+                                    key={link.label}
+                                    modal={false}
+                                    open={isDropdownOpen}
+                                    onOpenChange={(open) => !open && setActiveDropdown(null)}
+                                >
+                                    <div
+                                        onMouseEnter={() => handleMouseEnter(link.label)}
+                                        onMouseLeave={handleMouseLeave}
+                                        className="relative"
+                                    >
+                                        <DropdownMenuTrigger className={cn(
+                                            "flex items-center gap-1 text-lg font-semibold transition-colors hover:text-primary outline-none py-2",
+                                            isActive ? "text-primary" : "text-foreground/80"
+                                        )}>
+                                            {link.label}
+                                            <ChevronDown className={cn(
+                                                "size-4 transition-transform duration-200",
+                                                isDropdownOpen ? "rotate-180" : ""
+                                            )} />
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent
+                                            align="start"
+                                            sideOffset={10}
+                                            className="w-[400px] p-2 bg-background/90 backdrop-blur-xl border-border/50 rounded-2xl shadow-2xl"
+                                            onMouseEnter={() => handleMouseEnter(link.label)}
+                                            onMouseLeave={handleMouseLeave}
+                                        >
+                                            <DropdownMenuItem asChild className="py-2.5 px-4 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
+                                                <Link href={link.href} className="w-full font-black text-2xl tracking-tight">
+                                                    Tutte le {link.label}
                                                 </Link>
                                             </DropdownMenuItem>
-                                        ))}
-                                    </DropdownMenuContent>
+                                            <div className="h-px bg-border/20 my-2 mx-2" />
+                                            {link.subLinks.map((sub) => (
+                                                <DropdownMenuItem
+                                                    key={sub.href}
+                                                    asChild
+                                                    className="py-2.5 px-4 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer"
+                                                >
+                                                    <Link
+                                                        href={sub.href}
+                                                        className={cn(
+                                                            "w-full text-2xl transition-colors",
+                                                            pathname === sub.href ? "text-primary font-bold" : "text-foreground/80 font-semibold"
+                                                        )}
+                                                    >
+                                                        {sub.label}
+                                                    </Link>
+                                                </DropdownMenuItem>
+                                            ))}
+                                        </DropdownMenuContent>
+                                    </div>
                                 </DropdownMenu>
                             );
                         }
@@ -175,7 +213,7 @@ export function Navbar() {
                                                     <Link
                                                         href={link.href}
                                                         className={cn(
-                                                            "text-lg font-semibold py-4 border-b border-muted/50 last:border-0",
+                                                            "text-xl font-bold py-3 border-b border-muted/50 last:border-0",
                                                             pathname === link.href ? "text-primary" : "text-foreground/70"
                                                         )}
                                                         onClick={() => setIsOpen(false)}
@@ -187,7 +225,7 @@ export function Navbar() {
                                                             key={sub.href}
                                                             href={sub.href}
                                                             className={cn(
-                                                                "text-lg font-semibold py-4 border-b border-muted/50 last:border-0",
+                                                                "text-xl font-bold py-3 border-b border-muted/50 last:border-0",
                                                                 pathname === sub.href ? "text-primary" : "text-foreground/70"
                                                             )}
                                                             onClick={() => setIsOpen(false)}
