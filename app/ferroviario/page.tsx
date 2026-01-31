@@ -8,6 +8,7 @@ import { Wrench, Package, Cpu, FileCheck } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 import { BrandText } from "@/components/ui/brand";
+import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 export default function FerroviarioPage() {
     const d = DICTIONARY.ferroviario;
@@ -87,14 +88,7 @@ export default function FerroviarioPage() {
             </SectionWrapper>
 
             {/* Final CTA */}
-            <FinalCTASection
-                title={d.finalCta.title}
-                subtitle={d.finalCta.subtitle}
-                buttons={[
-                    { label: d.finalCta.ctaPilot, href: "/contatti" },
-                    { label: d.finalCta.ctaExpert, href: "/contatti", variant: "outline" }
-                ]}
-            />
+            <DemoCTA />
         </div>
     );
 }

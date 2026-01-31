@@ -8,6 +8,7 @@ import { Download, Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
+import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 export default function SmartParkingPage() {
     const d = DICTIONARY.parking;
@@ -104,15 +105,7 @@ export default function SmartParkingPage() {
             />
 
             {/* Final CTA */}
-            <FinalCTASection
-                title={d.finalCta.title}
-                subtitle={d.finalCta.subtitle}
-                buttons={[
-                    { label: d.finalCta.ctaExpert, href: "/contatti" },
-                    { label: d.finalCta.ctaDemo, href: "/contatti", variant: "outline" },
-                    { label: d.finalCta.ctaOnePager, href: "/contatti", variant: "ghost" }
-                ]}
-            />
+            <DemoCTA />
         </div>
     );
 }
