@@ -11,10 +11,10 @@ export function Hero() {
     const d = DICTIONARY.home.hero;
 
     return (
-        <SectionWrapper className="pt-32 pb-16 md:pt-48 md:pb-24 border-b overflow-hidden">
+        <SectionWrapper className="pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
             <div className="flex flex-col lg:flex-row lg:items-center items-start gap-12 lg:gap-8">
                 {/* Left Content - 60% */}
-                <div className="relative z-10 w-full lg:w-[50%]">
+                <div className="relative z-10 w-full lg:w-[60%]">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
                         {d.h1.split(d.h1Token).map((part, i, arr) => (
                             <React.Fragment key={i}>
@@ -44,7 +44,7 @@ export function Hero() {
                 </div>
 
                 {/* Right Image - 40% */}
-                <div className="w-full lg:w-[50%] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
+                <div className="w-full lg:w-[40%] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
                     <Image
                         src="/assets/hero.png"
                         alt="Ulisses AI Platform"
@@ -57,16 +57,16 @@ export function Hero() {
                     <div className="flex flex-col items-center gap-2 mt-6">
                         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors">
                             <ShieldCheck className="h-3.5 w-3.5 text-primary shrink-0" />
-                            <span className="text-xs font-medium">Planning & commissioning integrati</span>
+                            <span className="text-xs font-medium">{d.proofs[0]}</span>
                         </div>
                         <div className="flex flex-wrap justify-center gap-2">
                             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors">
                                 <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
-                                <span className="text-xs font-medium">Brevetto tecnologico</span>
+                                <span className="text-xs font-medium">{d.proofs[1]}</span>
                             </div>
                             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors">
                                 <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
-                                <span className="text-xs font-medium">Integrazioni IT/OT con SLA end-to-end</span>
+                                <span className="text-xs font-medium">{d.proofs[2]}</span>
                             </div>
                         </div>
                     </div>

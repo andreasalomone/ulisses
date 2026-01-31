@@ -25,11 +25,14 @@ export const DICTIONARY = {
             subheadline: "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
             subheadlineToken: "dashboard, rete, sensori e API",
             proofs: [
-                "Brevetto tecnologico",
-                "Planning & commissioning integrati",
-                "Integrazioni IT/OT con SLA end-to-end"
+                "Scalabilità unica: +100,000 asset tracciati",
+                "Precisione estrema: <10cm di margine di errore",
+                "Wireless: alimentazione a batteria con +5 anni di autonomia"
             ],
             expertLink: "Parla con un esperto"
+        },
+        partners: {
+            title: "I Nostri Partner"
         },
         selector: {
             title: "In quale scenario ti serve Ulisses?",

@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/home/hero";
+import { Partners } from "@/components/sections/home/partners";
 import { VerticalSelector } from "@/components/sections/home/vertical-selector";
 import { WhyUlisses } from "@/components/sections/home/why-ulisses";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
@@ -19,6 +20,7 @@ export default function Page() {
             <HowItWorks />
             <DashboardPreview />
             <ContactFormSection />
+            <Partners />
         </div>
     );
 }
