@@ -11,8 +11,8 @@ export function Hero() {
     const d = DICTIONARY.home.hero;
 
     return (
-        <SectionWrapper className="pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
-            <div className="flex flex-col lg:flex-row lg:items-center items-start gap-12 lg:gap-8">
+        <SectionWrapper className="min-h-[85vh] flex items-center pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+            <div className="container mx-auto px-4 md:px-6 w-full flex flex-col lg:flex-row lg:items-center items-start gap-12 lg:gap-8">
                 {/* Left Content - 60% */}
                 <div className="relative z-10 w-full lg:w-[60%]">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
