@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Download, Search, Navigation2, Shield, BarChart2 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
-import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
+import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 export default function LogisticaPage() {
     const d = DICTIONARY.logistica;
@@ -120,14 +120,7 @@ export default function LogisticaPage() {
             />
 
             {/* Final CTA */}
-            <FinalCTASection
-                title={d.finalCta.title}
-                subtitle={d.finalCta.subtitle}
-                buttons={[
-                    { label: d.finalCta.ctaPilot, href: "/contatti" },
-                    { label: d.finalCta.ctaExpert, href: "/contatti", variant: "outline" }
-                ]}
-            />
+            <DemoCTA />
         </div>
     );
 }

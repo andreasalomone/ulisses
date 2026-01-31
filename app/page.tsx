@@ -4,7 +4,7 @@ import { VerticalSelector } from "@/components/sections/home/vertical-selector";
 import { WhyUlisses } from "@/components/sections/home/why-ulisses";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
 import { DashboardPreview } from "@/components/sections/home/dashboard-preview";
-import { ContactFormSection } from "@/components/sections/home/contact-form-section";
+import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 /**
  * Home Page (Section A)
@@ -19,7 +19,7 @@ export default function Page() {
             <WhyUlisses />
             <HowItWorks />
             <DashboardPreview />
-            <ContactFormSection />
+            <DemoCTA />
             <Partners />
         </div>
     );
