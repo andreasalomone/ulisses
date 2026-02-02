@@ -1,16 +1,22 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { Database, Network, LayoutDashboard, Share2, Cloud, Server, Cpu } from "lucide-react";
+import { Cloud, Server, Cpu } from "lucide-react";
+import Image from "next/image";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 
 export function HowItWorks() {
     const d = DICTIONARY.home.howItWorks;
-    const icons = [Database, Network, LayoutDashboard, Share2];
+    const images = [
+        "/assets/tag.png",
+        "/assets/network.png",
+        "/assets/tablet.png",
+        "/assets/api.png"
+    ];
 
     const steps = d.steps.map((step, i) => ({
         ...step,
-        icon: icons[i]
+        image: images[i]
     }));
 
     return (
@@ -31,8 +37,15 @@ export function HowItWorks() {
                         className="group p-8 rounded-3xl bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/20 backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden"
                     >
                         <div className="absolute inset-0 bg-linear-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="h-14 w-14 rounded-2xl bg-white text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-xl transition-all duration-500 relative z-10">
-                            <step.icon className="h-7 w-7" />
+                        <div className="relative h-48 w-full flex items-center justify-center mb-8 z-10">
+                            <Image
+                                src={step.image}
+                                alt={step.title}
+                                width={300}
+                                height={300}
+                                priority={index < 2}
+                                className="object-contain group-hover:scale-105 transition-transform duration-700"
+                            />
                         </div>
                         <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 relative z-10">
                             <span className="text-white font-black opacity-20 text-3xl">0{index + 1}</span>
