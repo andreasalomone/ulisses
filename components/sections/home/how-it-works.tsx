@@ -5,8 +5,14 @@ import Image from "next/image";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 
-export function HowItWorks() {
-    const d = DICTIONARY.home.howItWorks;
+interface HowItWorksProps {
+    title?: string;
+    subtitle?: string;
+    items?: { title: string; text: string }[];
+    withDeployment?: boolean;
+}
+
+export function HowItWorks({ title, subtitle, items, withDeployment = true }: HowItWorksProps) {
     const images = [
         "/assets/tag.png",
         "/assets/network.png",
@@ -14,19 +20,27 @@ export function HowItWorks() {
         "/assets/api.png"
     ];
 
-    const steps = d.steps.map((step, i) => ({
+    // Default data from dictionary if no props provided
+    const defaultData = DICTIONARY.home.howItWorks;
+    const finalTitle = title || defaultData.title;
+    const finalSubtitle = subtitle || defaultData.subtitle;
+
+    // Use passed items or default items
+    const sourceItems = items || defaultData.steps;
+
+    const steps = sourceItems.map((step, i) => ({
         ...step,
-        image: images[i]
+        image: images[i % images.length] // Cycle images just in case
     }));
 
     return (
         <SectionWrapper id="come-funziona" variant="secondary" className="relative overflow-hidden">
             <div className="max-w-3xl mb-16 relative z-10">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-                    <BrandText text={d.title} />
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
+                    <BrandText text={finalTitle} />
                 </h2>
                 <p className="text-xl opacity-80 leading-relaxed">
-                    <BrandText text={d.subtitle} />
+                    <BrandText text={finalSubtitle} />
                 </p>
             </div>
 
@@ -58,55 +72,57 @@ export function HowItWorks() {
                 ))}
             </div>
 
-            <div className="mt-24 space-y-12 relative z-10">
-                <div className="text-center max-w-2xl mx-auto">
-                    <h3 className="text-3xl md:text-4xl font-extrabold mb-4">
-                        Deployment Flessibile
-                    </h3>
-                    <p className="text-xl opacity-80">
-                        Scegli la modalità più adatta alle tue esigenze.
-                    </p>
-                </div>
+            {withDeployment && (
+                <div className="mt-24 space-y-12 relative z-10">
+                    <div className="text-center max-w-2xl mx-auto">
+                        <h3 className="text-3xl md:text-4xl font-extrabold mb-4">
+                            Deployment Flessibile
+                        </h3>
+                        <p className="text-xl opacity-80">
+                            Scegli la modalità più adatta alle tue esigenze.
+                        </p>
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[
-                        {
-                            title: "Cloud",
-                            icon: Cloud,
-                            text: "Sfrutta la scalabilità della nostra infrastruttura cloud gestita, con update automatici e disponibilità garantita.",
-                            delay: "delay-0"
-                        },
-                        {
-                            title: "On-Premise",
-                            icon: Server,
-                            text: "Mantieni il controllo totale sui tuoi dati installando Ulisses direttamente nei tuoi data center o infrastruttura privata.",
-                            delay: "delay-100"
-                        },
-                        {
-                            title: "Edge",
-                            icon: Cpu,
-                            text: "Massimizza la velocità e riduci la latenza elaborando i dati direttamente sul campo, anche in assenza di connettività.",
-                            delay: "delay-200"
-                        },
-                    ].map((item, i) => (
-                        <div key={i} className="group p-6 transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center relative">
-                            <div className="relative mb-8">
-                                <div className="absolute inset-0 bg-primary blur-3xl opacity-20 group-hover:opacity-40 transition-opacity rounded-full scale-110" />
-                                <div className="relative z-10 group-hover:scale-110 transition-transform duration-500">
-                                    <item.icon className="h-14 w-14 text-white" />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                title: "Cloud",
+                                icon: Cloud,
+                                text: "Sfrutta la scalabilità della nostra infrastruttura cloud gestita, con update automatici e disponibilità garantita.",
+                                delay: "delay-0"
+                            },
+                            {
+                                title: "On-Premise",
+                                icon: Server,
+                                text: "Mantieni il controllo totale sui tuoi dati installando Ulisses direttamente nei tuoi data center o infrastruttura privata.",
+                                delay: "delay-100"
+                            },
+                            {
+                                title: "Edge",
+                                icon: Cpu,
+                                text: "Massimizza la velocità e riduci la latenza elaborando i dati direttamente sul campo, anche in assenza di connettività.",
+                                delay: "delay-200"
+                            },
+                        ].map((item, i) => (
+                            <div key={i} className="group p-6 transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center relative">
+                                <div className="relative mb-8">
+                                    <div className="absolute inset-0 bg-primary blur-3xl opacity-20 group-hover:opacity-40 transition-opacity rounded-full scale-110" />
+                                    <div className="relative z-10 group-hover:scale-110 transition-transform duration-500">
+                                        <item.icon className="h-14 w-14 text-white" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <h4 className="text-2xl font-bold mb-3 relative z-10">
-                                {item.title}
-                            </h4>
-                            <p className="text-secondary-foreground/70 leading-relaxed relative z-10 max-w-xs">
-                                {item.text}
-                            </p>
-                        </div>
-                    ))}
+                                <h4 className="text-2xl font-bold mb-3 relative z-10">
+                                    {item.title}
+                                </h4>
+                                <p className="text-secondary-foreground/70 leading-relaxed relative z-10 max-w-xs">
+                                    {item.text}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </SectionWrapper>
     );
 }

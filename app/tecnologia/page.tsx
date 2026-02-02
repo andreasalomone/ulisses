@@ -4,9 +4,10 @@ import Image from "next/image";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { HowItWorks } from "@/components/sections/home/how-it-works";
+import { TechnologyPillars } from "@/components/sections/tecnologia/technology-pillars";
 import {
     Download,
-    Cpu,
     Network,
     Database,
     ShieldCheck,
@@ -15,9 +16,6 @@ import {
     Lightbulb,
     Landmark,
     Microscope,
-    Binary,
-    DraftingCompass,
-    PlugZap,
     Scale
 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
@@ -26,13 +24,14 @@ export default function TecnologiaPage() {
     const d = DICTIONARY.tecnologia;
     const rd = DICTIONARY.ricercaIp;
 
-    const pillarIcons = [Binary, DraftingCompass, PlugZap];
+
 
     return (
         <div className="flex flex-col">
             <VerticalHero
                 title={d.hero.h1}
                 subtitle={d.hero.sub}
+                className="min-h-[60vh]"
             >
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{d.hero.ctaDemo}</Link>
@@ -44,52 +43,19 @@ export default function TecnologiaPage() {
             </VerticalHero>
 
             {/* Pillars */}
-            <SectionWrapper>
-                <div className="max-w-4xl mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                        {d.pillars.title}
-                    </h2>
-                    <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
-                        {d.pillars.text}
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {d.pillars.items.map((pillar: string, i: number) => {
-                        const Icon = pillarIcons[i];
-                        return (
-                            <div key={i} className="p-10 rounded-[2.5rem] bg-muted/30 border border-transparent hover:border-primary/20 hover:bg-card/80 transition-all group cursor-pointer shadow-xs hover:shadow-xl">
-                                <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                                    <Icon className="h-7 w-7" />
-                                </div>
-                                <p className="text-xl font-bold leading-tight group-hover:text-primary transition-colors">{pillar}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-            </SectionWrapper>
+            <TechnologyPillars
+                title={d.pillars.title}
+                text={d.pillars.text}
+                items={d.pillars.items}
+            />
 
-            {/* Infrastructure */}
-            <SectionWrapper variant="muted">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">{d.infrastructure.title}</h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{d.infrastructure.subtitle}</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {d.infrastructure.items.map((item: { title: string, text: string }, i: number) => {
-                        const iconMap = [Cpu, Network, Database, Layers];
-                        const Icon = iconMap[i];
-                        return (
-                            <div key={i} className="p-8 bg-card rounded-[2.5rem] border shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
-                                <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary/60 mb-6">
-                                    <Icon className="h-6 w-6" />
-                                </div>
-                                <h3 className="text-xl font-bold mb-4 capitalize">{item.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-            </SectionWrapper>
+            {/* Infrastructure - Replaced with HowItWorks */}
+            <HowItWorks
+                title={d.infrastructure.title}
+                subtitle={d.infrastructure.subtitle}
+                items={d.infrastructure.items}
+                withDeployment={false}
+            />
 
             {/* IT Architecture */}
             <SectionWrapper>
@@ -233,20 +199,7 @@ export default function TecnologiaPage() {
 
             {/* Integrations & Observability */}
             <SectionWrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div className="p-10 bg-card rounded-[2.5rem] border shadow-sm flex flex-col justify-between hover:border-primary/20 transition-colors">
-                        <div>
-                            <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8">
-                                <Layers className="h-7 w-7" />
-                            </div>
-                            <h3 className="text-3xl font-bold mb-4">{d.integrations.title}</h3>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{d.integrations.subtitle}</p>
-                        </div>
-                        <div className="p-6 bg-muted/50 rounded-2xl border border-muted-foreground/5 italic text-muted-foreground">
-                            {d.integrations.common}
-                        </div>
-                    </div>
-
+                <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
                     <div className="p-10 bg-card rounded-[2.5rem] border shadow-sm hover:border-primary/20 transition-colors">
                         <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8">
                             <Activity className="h-7 w-7" />

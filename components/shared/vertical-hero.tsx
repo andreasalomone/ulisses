@@ -16,11 +16,12 @@ interface VerticalHeroProps {
     children?: React.ReactNode;
     footer?: React.ReactNode;
     sideContent?: React.ReactNode;
+    className?: string; // Add className prop
 }
 
-export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent }: VerticalHeroProps) {
+export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent, className }: VerticalHeroProps) {
     return (
-        <SectionWrapper className="min-h-[90vh] pt-32 pb-16 md:pt-48 md:pb-32 border-b overflow-hidden bg-muted/20">
+        <SectionWrapper className={cn("min-h-[90vh] pt-32 pb-16 md:pt-48 md:pb-32 border-b overflow-hidden bg-muted/20", className)}>
             <div className="container relative z-10">
                 <div className={cn(
                     "grid grid-cols-1 gap-12 items-center",

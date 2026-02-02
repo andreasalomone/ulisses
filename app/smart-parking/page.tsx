@@ -2,6 +2,7 @@ import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { SmartParkingExplorer } from "@/components/sections/parking/smart-parking-explorer";
+import { PrivateNetworkVisualization } from "@/components/sections/parking/private-network-visualization";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Signal, HardDrive, Zap } from "lucide-react";
@@ -44,25 +45,27 @@ export default function SmartParkingPage() {
 
             {/* Rete Privata */}
             <SectionWrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                    <div className="order-2 lg:order-1">
                         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
                             {d.privateNetwork.title}
                         </h2>
-                        <ul className="space-y-6">
+                        <div className="space-y-6">
                             {d.privateNetwork.bullets.map((bullet, i) => (
-                                <li key={i} className="flex gap-4 items-start">
-                                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                        {i === 0 ? <Signal className="h-5 w-5" /> : i === 1 ? <HardDrive className="h-5 w-5" /> : <Zap className="h-5 w-5" />}
+                                <div key={i} className="flex gap-4 items-start p-4 rounded-2xl hover:bg-muted/50 transition-colors duration-200">
+                                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                        {i === 0 ? <Signal className="h-6 w-6" /> : i === 1 ? <HardDrive className="h-6 w-6" /> : <Zap className="h-6 w-6" />}
                                     </div>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">{bullet}</p>
-                                </li>
+                                    <div>
+                                        <p className="text-lg font-medium text-foreground">{bullet}</p>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
-                    <div className="relative">
-                        <div className="aspect-square bg-primary/5 rounded-[3rem] border-2 border-dashed border-primary/20 flex items-center justify-center">
-                            <p className="text-muted-foreground italic">Visual Rete Privata / Gateway</p>
+                    <div className="order-1 lg:order-2 flex justify-center">
+                        <div className="w-full max-w-md lg:max-w-full">
+                            <PrivateNetworkVisualization />
                         </div>
                     </div>
                 </div>
