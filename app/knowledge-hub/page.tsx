@@ -6,8 +6,22 @@ import Link from "next/link";
 import { FileText, Download, ArrowRight } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { FaqSection } from "@/components/shared/faq-section";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import { BrandText } from "@/components/ui/brand";
+
+
+
+const GRADIENTS = [
+    "bg-linear-to-br from-primary to-slate-950",
+    "bg-linear-to-br from-secondary to-slate-950",
+    "bg-linear-to-br from-accent to-slate-950",
+    "bg-linear-to-br from-chart-1 to-slate-950",
+    "bg-linear-to-br from-chart-2 to-slate-950",
+    "bg-linear-to-br from-chart-3 to-slate-950",
+    "bg-linear-to-br from-chart-4 to-slate-950",
+    "bg-linear-to-br from-chart-5 to-slate-950",
+];
+
 
 export default function KnowledgeHubPage() {
     const d = DICTIONARY.knowledgeHub;
@@ -18,6 +32,7 @@ export default function KnowledgeHubPage() {
             <VerticalHero
                 title={d.hero.h1}
                 subtitle={d.hero.sub}
+                className="min-h-[60vh]"
             >
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{DICTIONARY.home.cta.button}</Link>
@@ -35,32 +50,72 @@ export default function KnowledgeHubPage() {
                     </p>
                 </div>
 
-                <div className="space-y-16">
+                <div className="space-y-24">
                     {stories.sections.map((section, i) => (
-                        <div key={i}>
-                            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm uppercase tracking-wider">{section.vertical}</span>
+                        <div key={i} className="relative">
+                            <h3 className="text-3xl font-bold mb-10 flex items-center gap-4">
+                                <span className="bg-primary/10 text-primary px-4 py-2 rounded-xl text-lg uppercase tracking-widest">{section.vertical}</span>
                             </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {section.items.map((item, j) => (
-                                    <Card key={j} className="bg-card hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary/20 hover:border-l-primary">
-                                        <CardHeader>
-                                            <CardTitle className="text-xl leading-tight">
-                                                <BrandText text={item.title} />
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <p className="text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                                <BrandText text={item.text} />
-                                            </p>
-                                            <Button asChild variant="link" className="p-0 h-auto font-bold group">
-                                                <Link href={item.link}>
-                                                    Scopri di più <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
-                                            </Button>
-                                        </CardContent>
-                                    </Card>
-                                ))}
+
+                            {/* Grid wrapper for the "Book Covers" */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
+                                {section.items.map((item, j) => {
+                                    // Deterministic gradient selection based on index
+                                    const gradientIndex = (i * 3 + j) % GRADIENTS.length;
+                                    const gradientClass = GRADIENTS[gradientIndex];
+
+                                    return (
+                                        <Link
+                                            key={j}
+                                            href={item.link}
+                                            className="group relative block aspect-[3/4.5] w-full max-w-[320px] mx-auto perspective-[1000px]"
+                                        >
+                                            <div
+                                                className={`
+                                                    relative h-full w-full rounded-tr-2xl rounded-bl-2xl rounded-tl-sm rounded-br-2xl
+                                                    p-8 flex flex-col justify-between
+                                                    transition-all duration-500 ease-out
+                                                    shadow-xl group-hover:shadow-2xl
+                                                    group-hover:transform-[rotateY(-4deg)_translateY(-10px)]
+                                                    overflow-hidden text-white
+                                                    ${gradientClass}
+                                                `}
+                                            >
+                                                {/* "Spine" effect overlay */}
+                                                <div className="absolute left-0 top-0 bottom-0 w-4 bg-linear-to-r from-black/40 to-transparent z-10" />
+
+                                                {/* Top Content: Title & Vertical Label */}
+                                                <div className="relative z-20 space-y-4 ml-2">
+                                                    {/* Decorative line */}
+                                                    <div className="w-12 h-1 bg-white/30 rounded-full" />
+
+                                                    <h3 className="text-2xl font-bold leading-tight tracking-tight drop-shadow-md">
+                                                        <BrandText text={item.title} />
+                                                    </h3>
+
+                                                    <p className="text-sm font-medium text-white/80 line-clamp-3 leading-relaxed">
+                                                        <BrandText text={item.text} />
+                                                    </p>
+                                                </div>
+
+                                                {/* Bottom Content: CTA */}
+                                                <div className="relative z-20 pt-6 border-t border-white/20 mt-auto ml-2">
+                                                    <div className="flex items-center justify-between group/btn">
+                                                        <span className="font-semibold text-white tracking-wide uppercase text-sm">
+                                                            Scopri
+                                                        </span>
+                                                        <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm group-hover/btn:bg-white group-hover/btn:text-black transition-colors">
+                                                            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Shadow element for depth */}
+                                            <div className="absolute inset-x-8 bottom-0 h-8 bg-black/40 blur-xl rounded-[100%]translate-y-4 opacity-0 group-hover:opacity-60 transition-all duration-500 z-[-1]" />
+                                        </Link>
+                                    );
+                                })}
                             </div>
                         </div>
                     ))}
