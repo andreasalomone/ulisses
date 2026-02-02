@@ -3,6 +3,7 @@ import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
@@ -35,8 +36,13 @@ export default function FerroviarioPage() {
             <SectionWrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="order-2 lg:order-1">
-                        <div className="aspect-video bg-muted rounded-2xl shadow-2xl border flex items-center justify-center">
-                            <p className="text-muted-foreground italic">Dettaglio Dashboard</p>
+                        <div className="relative aspect-video rounded-2xl shadow-2xl border-2 border-primary overflow-hidden">
+                            <Image
+                                src="/assets/dashboard-ferroviario.png"
+                                alt="Dashboard Ferroviario"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                     <div className="order-1 lg:order-2">

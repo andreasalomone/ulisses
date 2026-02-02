@@ -30,7 +30,7 @@ export default function KnowledgeHubPage() {
                     <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
                         <BrandText text={stories.title} />
                     </h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto whitespace-pre-line">
                         <BrandText text={stories.text} />
                     </p>
                 </div>
@@ -50,7 +50,7 @@ export default function KnowledgeHubPage() {
                                             </CardTitle>
                                         </CardHeader>
                                         <CardContent>
-                                            <p className="text-muted-foreground mb-6 leading-relaxed">
+                                            <p className="text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
                                                 <BrandText text={item.text} />
                                             </p>
                                             <Button asChild variant="link" className="p-0 h-auto font-bold group">

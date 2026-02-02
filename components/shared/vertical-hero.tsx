@@ -20,7 +20,7 @@ interface VerticalHeroProps {
 
 export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent }: VerticalHeroProps) {
     return (
-        <SectionWrapper className="pt-32 pb-16 md:pt-48 md:pb-32 border-b overflow-hidden bg-muted/20">
+        <SectionWrapper className="min-h-[90vh] pt-32 pb-16 md:pt-48 md:pb-32 border-b overflow-hidden bg-muted/20">
             <div className="container relative z-10">
                 <div className={cn(
                     "grid grid-cols-1 gap-12 items-center",

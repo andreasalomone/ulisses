@@ -42,9 +42,16 @@ export default async function StoryPage({ params }: StoryPageProps) {
                 title={story.title}
                 subtitle={content.scenario}
             >
-                <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Link href="/contatti">{content.cta}</Link>
-                </Button>
+                <div className="flex flex-col gap-6 items-start">
+                    {content.introCTA && (
+                        <p className="text-xl font-medium text-foreground max-w-2xl leading-relaxed whitespace-pre-line">
+                            {content.introCTA}
+                        </p>
+                    )}
+                    <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
+                        <Link href="/contatti">{DICTIONARY.common.expertCta}</Link>
+                    </Button>
+                </div>
             </VerticalHero>
 
             <SectionWrapper>
@@ -57,14 +64,14 @@ export default async function StoryPage({ params }: StoryPageProps) {
                     <div>
                         <div className="mb-12">
                             <h3 className="text-2xl font-bold mb-4">La Sfida</h3>
-                            <p className="text-xl text-muted-foreground leading-relaxed">
+                            <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
                                 {content.challenge}
                             </p>
                         </div>
 
                         <div className="mb-12">
                             <h3 className="text-2xl font-bold mb-4">Risoluzione Operativa</h3>
-                            <p className="text-lg leading-relaxed">
+                            <p className="text-lg leading-relaxed whitespace-pre-line">
                                 {content.resolution}
                             </p>
                         </div>
@@ -72,7 +79,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
                     <div className="bg-muted/30 rounded-[2.5rem] p-8 md:p-12 border">
                         <h3 className="text-2xl font-bold mb-6">Production Ready</h3>
-                        <p className="opacity-80 leading-relaxed mb-8">
+                        <p className="opacity-80 leading-relaxed mb-8 whitespace-pre-line">
                             {content.productionReady}
                         </p>
 
@@ -81,7 +88,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
                                 <CheckCircle2 className="h-5 w-5" />
                                 Risultato Atteso
                             </h4>
-                            <p className="text-lg font-medium">
+                            <p className="text-lg font-medium whitespace-pre-line">
                                 {content.result}
                             </p>
                         </div>

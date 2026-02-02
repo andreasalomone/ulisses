@@ -518,7 +518,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses introduce una visibilità progettata per l’uso quotidiano: ricerca immediata dell’asset (ID/nome/categoria), stato e disponibilità per area (es. “in uso”, “disponibile”, “fermo”, “fuori area”), storico movimenti/eventi per capire cosa è successo. La piattaforma restituisce dashboard operative, con filtri per turno/reparto e un livello di semplicità che aiuta l’adozione.",
                                 productionReady: "Si parte con una site survey per mappare aree e punti critici (non solo planimetrie), poi commissioning per validare che l’esperienza sia coerente in campo. Si definisce un set minimo di regole (ingresso/uscita/sosta) e si allinea il modello “stati” a come lavora davvero l’Operations (non a come “dovrebbe” lavorare).",
                                 result: "Meno tempo perso, riduzione dei micro-fermi, maggiore utilizzo degli asset e una base dati affidabile per miglioramento continuo.",
-                                cta: "Vuoi misurare il “tempo nascosto” oggi speso a cercare asset? Richiedi un assessment logistica."
+                                introCTA: "Vuoi misurare il “tempo nascosto” oggi speso a cercare asset?",
+                                cta: "Richiedi un'assessment"
                             }
                         },
                         {
@@ -531,7 +532,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses abilita regole operative semplici ma robuste: geofence per aree sensibili e perimetri di processo, soglie temporali (permanenze anomale, tempi massimi in area), alert mirati con priorità e log consultabile (chi, cosa, quando, dove). L’obiettivo non è “avere più notifiche”: è creare un sistema che supporti decisioni e responsabilità operative.",
                                 productionReady: "La parte critica è la governance: definire insieme a Operations/HSE le regole davvero utili, impostare escalation e ownership (chi riceve cosa), e dare una dashboard che mostri trend e ripetitività (non solo l’evento singolo). Con l’osservabilità (health) eviti l’effetto “falsi allarmi” che distrugge la fiducia.",
                                 result: "Riduzione dispersioni e non conformità, maggiore sicurezza, processi più stabili e tracciabilità utile anche per audit interni.",
-                                cta: "Vuoi definire regole e alert senza creare allarmismo? Parla con un esperto Ulisses."
+                                introCTA: "Vuoi definire regole e alert senza creare allarmismo?",
+                                cta: "Parla con un esperto"
                             }
                         },
                         {
@@ -544,7 +546,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses lavora con un approccio industriale: progettazione, validazione sul campo, e piattaforma che misura anche la “salute” del sistema. In questo modo la tecnologia non resta “promessa”: diventa una base affidabile per processi e KPI.",
                                 productionReady: "Si parte con progettazione e validazione sul campo. L'osservabilità (health) garantisce continuità: se qualcosa degrada, lo vedi prima che diventi disservizio.",
                                 result: "Meno falsi eventi, maggiore continuità, adozione reale da parte dei team.",
-                                cta: "Vuoi approfondire come gestiamo gli ambienti difficili? Parla con un esperto Ulisses."
+                                introCTA: "Vuoi approfondire come gestiamo gli ambienti difficili?",
+                                cta: "Parla con un esperto"
                             }
                         }
                     ]
@@ -552,6 +555,20 @@ export const DICTIONARY = {
                 {
                     vertical: "Ferroviario",
                     items: [
+                        {
+                            title: "Con Trenord, portare la localizzazione dei treni in deposito dal problema al dato operativo",
+                            text: "In un grande deposito ferroviario, Ulisses e Trenord hanno realizzato un PoC per la localizzazione di precisione di 50 convogli su 12 binari.",
+                            link: "/knowledge-hub/ferroviario/trenord",
+                            fullContent: {
+                                scenario: "In un grande deposito ferroviario, la manutenzione è una macchina complessa fatta di movimentazioni continue, vincoli fisici e sequenze precise.Per Trenord, conoscere con precisione la posizione dei convogli in deposito è un prerequisito per garantire efficienza e affidabilità.",
+                                challenge: "La sfida non era 'sapere dove sono i treni' in astratto, ma ottenere un dato affidabile, preciso e utilizzabile nei processi reali. Le tecnologie tradizionali risultavano poco efficaci in ambienti indoor complessi o troppo invasive per la scala industriale.",
+                                resolution: "Ulisses ha realizzato un Proof of Concept operativo: installazione di transponder su 50 convogli, copertura di 12 binari a Milano Fiorenza e tracciamento continuo con visualizzazione tramite Digital Twin dell’impianto.",
+                                productionReady: "Precisione di localizzazione inferiore al metro, dispositivi autoalimentati e resistenti, integrazione nativa via API REST per la condivisione dei dati e scalabilità pronta per l'estensione all'intero sito.",
+                                result: "Ottimizzazione dei flussi manutentivi, migliore pianificazione delle attività in deposito e creazione di un layer dati centralizzato per modelli predittivi e future integrazioni AI.",
+                                introCTA: "Vuoi replicare un Proof of Concept simile?",
+                                cta: "Parla con un esperto"
+                            }
+                        },
                         {
                             title: "In officina la manutenzione si ferma… perché manca un’attrezzatura",
                             text: "Se un’attrezzatura critica non è disponibile, il piano si rompe. Ulisses rende tracciabili materiali e asset con stati operativi chiari.",
@@ -562,7 +579,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses rende tracciabili attrezzature e materiali con un approccio orientato alla manutenzione: visibilità su posizione e disponibilità per categoria/area, gestione di stati operativi (disponibile / in uso / fermo / in manutenzione), timeline eventi e report consultabili per verifiche. In questo modo il team smette di “cercare” e inizia a “gestire”.",
                                 productionReady: "La differenza la fa la messa a terra: mappa aree e flussi reali, commissioning e definizione degli stati che servono davvero al team (pochi, chiari, utili). L’osservabilità (health) garantisce continuità: se qualcosa degrada, lo vedi prima che diventi disservizio.",
                                 result: "Riduzione tempi di ricerca, minori ritardi, maggiore controllo su ciò che impatta la disponibilità operativa e maggiore auditabilità.",
-                                cta: "Vuoi definire un pilot in officina/deposito con KPI chiari? Richiedi una demo Ferroviario."
+                                introCTA: "Vuoi definire un pilot in officina/deposito con KPI chiari?",
+                                cta: "Richiedi una demo"
                             }
                         },
                         {
@@ -575,7 +593,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses produce eventi strutturati (posizione, stato, anomalie, soglie) e li rende integrabili via API nei workflow: ticketing e assegnazione, priorità e dispatch, report e audit trail. Così campo e ufficio tornano coerenti: il dato genera un’azione, non solo un report.",
                                 productionReady: "Serve mapping dei processi (cosa scatena cosa), un commissioning che validi la qualità dell’evento, e una governance SLA: chi gestisce gli alert, quali tempi, quali livelli di priorità. L’integrazione diventa “pulita” perché l’evento è già progettato per essere consumato.",
                                 result: "Interventi più rapidi e mirati, riduzione downtime e maggiore prevedibilità nella manutenzione.",
-                                cta: "Vuoi vedere un esempio di flusso evento→ticket→intervento? Parla con un esperto Ulisses."
+                                introCTA: "Vuoi vedere un esempio di flusso evento→ticket→intervento?",
+                                cta: "Parla con un esperto"
                             }
                         },
                         {
@@ -588,7 +607,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses abilita una tracciabilità eventi semplice: ingressi/uscite, permanenze, spostamenti anomali. Con alert mirati e report standard, la tracciabilità diventa parte del processo.",
                                 productionReady: "Configurazione aree sensibili e reportistica di compliance per garantire che ogni spostamento sia tracciato e autorizzabile.",
                                 result: "Riduzione dispersioni e maggiore auditabilità senza appesantire il lavoro degli operatori.",
-                                cta: "Vuoi approfondire la tracciabilità sicura per materiali critici? Parla con un esperto Ulisses."
+                                introCTA: "Vuoi approfondire la tracciabilità sicura per materiali critici?",
+                                cta: "Parla con un esperto"
                             }
                         }
                     ]
@@ -606,7 +626,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses abilita occupancy per stallo e per zona, con storico e trend. La dashboard rende immediata la lettura operativa: stato per area e priorità operative, anomalie e variazioni, report periodici utilizzabili da PA e concessionari. In parallelo, la piattaforma include indicatori di “health” per non perdere qualità nel tempo.",
                                 productionReady: "Zonizzazione corretta, commissioning iniziale e monitor continuo qualità dato: stalli “mute”, degrado prestazioni, anomalie ripetitive. Il sistema non è solo installato: è governato come servizio, con KPI e responsabilità chiare.",
                                 result: "Decisioni basate su dati, report solidi, migliore servizio e trasparenza.",
-                                cta: "Stai preparando un pilot o un bando? Parla con un esperto PA / Smart Parking."
+                                introCTA: "Stai preparando un pilot o un bando?",
+                                cta: "Parla con un esperto PA / Smart Parking"
                             }
                         },
                         {
@@ -619,7 +640,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses produce eventi operativi: durata sosta, overstay, profili di stallo e priorità. La dashboard mette in evidenza cosa richiede attenzione adesso e cosa è trend. In progetti che devono scalare, l’architettura prevede opzioni per governare prestazioni e costi nel tempo (inclusa rete privata dove opportuno), riducendo dipendenze e rendendo il rollout più sostenibile.",
                                 productionReady: "Regole condivise, workflow controlli, reportistica e soprattutto osservabilità: se un sensore degrada o diventa silenzioso, lo vedi prima che diventi disservizio. La differenza è trattare il sistema come servizio: KPI, SLA e manutenzione mirata.",
                                 result: "Enforcement più efficace, migliore uso delle risorse, qualità dato mantenuta nel tempo e rollout più prevedibile.",
-                                cta: "Vuoi impostare un rollout per lotti con KPI e SLA chiari? Richiedi un assessment Smart Parking."
+                                introCTA: "Vuoi impostare un rollout per lotti con KPI e SLA chiari?",
+                                cta: "Richiedi un assessment Smart Parking"
                             }
                         },
                         {
@@ -632,7 +654,8 @@ export const DICTIONARY = {
                                 resolution: "Ulisses introduce osservabilità: health rete/sensori, alert, indicatori di qualità dato, report SLA. Così la manutenzione diventa mirata e prevedibile.",
                                 productionReady: "In un rollout reale, monitoraggio health e procedure di intervento garantiscono fiducia nel sistema nel lungo periodo.",
                                 result: "Riduzione tempi di ripristino, meno disservizi, fiducia nel sistema nel lungo periodo.",
-                                cta: "Vuoi scoprire come garantiamo la qualità del dato nel tempo? Parla con un esperto Ulisses."
+                                introCTA: "Vuoi scoprire come garantiamo la qualità del dato nel tempo?",
+                                cta: "Parla con un esperto Ulisses"
                             }
                         }
                     ]
