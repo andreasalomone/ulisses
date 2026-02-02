@@ -1,7 +1,13 @@
 "use client";
 
-import React, { useMemo } from "react";
-import { motion } from "motion/react";
+import React, {
+    useMemo,
+    useRef,
+    useEffect,
+    useState,
+    useCallback
+} from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
     Database,
     Factory,
@@ -13,187 +19,337 @@ import {
     ArrowRightLeft,
     Layers,
     Activity,
-    CloudIcon
+    CloudIcon,
+    LucideIcon,
+    ArrowRight
 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
+import { cn } from "@/lib/utils";
 
 const externalSystems = [
-    { name: "WMS", icon: Database },
-    { name: "MES", icon: Factory },
-    { name: "CMMS", icon: Wrench },
-    { name: "ERP", icon: Cpu },
-    { name: "ITS", icon: Globe },
-    { name: "Security", icon: Shield },
-    { name: "BI", icon: BarChart3 },
+    { name: "WMS", icon: Database, color: "blue" },
+    { name: "MES", icon: Factory, color: "indigo" },
+    { name: "CMMS", icon: Wrench, color: "sky" },
+    { name: "ERP", icon: Cpu, color: "blue" },
+    { name: "ITS", icon: Globe, color: "indigo" },
+    { name: "Security", icon: Shield, color: "sky" },
+    { name: "BI", icon: BarChart3, color: "blue" },
 ];
 
 const benefitIcons = [ArrowRightLeft, Layers, Activity];
 
-export function IntegrationHub() {
-    const d = DICTIONARY.logistica;
+// --- Types & Constants ---
+interface Point3D {
+    x: number;
+    y: number;
+    z: number;
+}
 
-    // Use deterministic values based on index to ensure component purity while maintaining visual variance
-    const systemVitals = useMemo(() =>
-        externalSystems.map((_, i) => ({
-            duration: 2 + (i % 3) * 0.8,
-            delay: (i % 5) * 0.5
-        })), []
-    );
+interface Node3D extends Point3D {
+    name: string;
+    icon: LucideIcon;
+    angle: number;
+}
 
+interface Particle {
+    targetNodeIndex: number;
+    progress: number;
+    speed: number;
+    type: "inbound" | "outbound";
+}
+
+interface ProjectedNode extends Node3D {
+    x2d: number;
+    y2d: number;
+    scale: number;
+    zIndex: number;
+    index: number;
+}
+
+const CANVAS_SIZE = 800;
+const FOCAL_LENGTH = 1000;
+const TILT_ANGLE = 0.6; // ~35 degrees perspective
+
+// --- Helper: Core Visual Node ---
+function CoreNode({ x, y, scale }: { x: number; y: number; scale: number }) {
     return (
-        <SectionWrapper variant="muted" className="overflow-hidden">
-            <div className="relative z-10">
-                <div className="max-w-4xl mb-16">
+        <motion.div
+            className="absolute z-50 pointer-events-none"
+            style={{
+                left: `${(x / CANVAS_SIZE) * 100}%`,
+                top: `${(y / CANVAS_SIZE) * 100}%`,
+                transform: `rotateX(0deg) translate(-50%, -50%) scale(${scale})`,
+            }}
+        >
+            <div className="relative group">
+                {/* Immersive Auras */}
+                <div className="absolute inset-0 -m-8 bg-primary/20 blur-3xl rounded-full animate-pulse" />
+                <div className="absolute inset-0 -m-4 bg-primary/10 blur-xl rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+
+                <div className="h-24 w-24 md:h-32 md:w-32 rounded-[2rem] bg-primary flex items-center justify-center shadow-[0_0_60px_rgba(var(--primary-rgb),0.3)] border border-white/20 relative overflow-hidden">
+                    <CloudIcon className="h-10 w-10 md:h-12 md:w-12 text-white relative z-10" />
+
+                    {/* Rotating Background */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                            {d.integration.title}
-                        </h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
-                            {d.integration.text}
-                        </p>
-                    </motion.div>
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 bg-linear-to-tr from-white/10 via-transparent to-white/10"
+                    />
+
+                    {/* Internal Pulsing */}
+                    <div className="absolute inset-0 bg-white/5 animate-ping opacity-20" />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    {/* Visual Connector Hub */}
-                    <div className="lg:col-span-7 relative h-[450px] md:h-[600px] flex items-center justify-center">
-                        {/* Background Grid Accent */}
-                        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                            style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-80">
+                    <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-primary/80 uppercase">ULISSES_CORE</span>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
 
-                        {/*
-                          CRITICAL FIX: Explicit aspect-square container to unify
-                          SVG (px) and CSS (%) coordinate systems.
-                        */}
-                        <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
-                            {/* Central Node (Ulisses) */}
-                            <motion.div
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                viewport={{ once: true }}
-                                className="z-30 relative"
-                            >
-                                <div className="h-24 w-24 md:h-28 md:w-28 rounded-3xl bg-primary flex items-center justify-center shadow-[0_0_50px_rgba(var(--primary-rgb),0.3)] border border-white/20">
-                                    <CloudIcon className="h-10 w-10 md:h-12 md:w-12 text-white" />
+// --- Helper: External Node ---
+function HubNode({
+    node,
+    isHovered,
+    onHover
+}: {
+    node: ProjectedNode;
+    isHovered: boolean;
+    onHover: (hovered: boolean) => void
+}) {
+    const Icon = node.icon;
 
-                                    {/* Pulse effect */}
-                                    <div className="absolute inset-0 rounded-3xl bg-primary animate-ping opacity-20" />
-                                </div>
-                                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                                    <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-primary uppercase">Ulisses_Core</span>
-                                </div>
-                            </motion.div>
+    return (
+        <motion.div
+            onMouseEnter={() => onHover(true)}
+            onMouseLeave={() => onHover(false)}
+            className="absolute pointer-events-auto cursor-pointer"
+            style={{
+                left: `${(node.x2d / CANVAS_SIZE) * 100}%`,
+                top: `${(node.y2d / CANVAS_SIZE) * 100}%`,
+                transform: `translate(-50%, -50%) scale(${node.scale})`,
+                zIndex: node.zIndex,
+            }}
+        >
+            <div className={cn(
+                "h-14 w-14 rounded-2xl bg-card border shadow-lg flex items-center justify-center transition-all duration-300",
+                isHovered ? 'border-primary ring-8 ring-primary/5 -translate-y-2' : 'hover:border-primary/40'
+            )}>
+                <Icon className={cn(
+                    "h-6 w-6 transition-colors duration-300",
+                    isHovered ? 'text-primary' : 'text-muted-foreground'
+                )} />
+            </div>
 
-                            {/* Connection Lines & Peripheral Nodes (Desktop Only) */}
-                            <div className="hidden md:block absolute inset-0 z-10">
-                                <svg className="w-full h-full overflow-visible" viewBox="0 0 500 500">
-                                    {externalSystems.map((_, i) => {
-                                        const angle = (i * (360 / externalSystems.length) * Math.PI) / 180;
-                                        // radius 180 here corresponds to 36% distance in CSS (180/500 = 0.36)
-                                        const x2 = 250 + 180 * Math.cos(angle);
-                                        const y2 = 250 + 180 * Math.sin(angle);
-                                        return (
-                                            <g key={i}>
-                                                <line
-                                                    x1="250" y1="250" x2={x2} y2={y2}
-                                                    stroke="currentColor"
-                                                    strokeWidth="1"
-                                                    className="text-primary/20"
-                                                />
-                                                <motion.circle
-                                                    r="2.5"
-                                                    className="fill-primary"
-                                                    initial={{ offsetDistance: "0%" }}
-                                                    animate={{ offsetDistance: "100%" }}
-                                                    transition={{
-                                                        duration: systemVitals[i].duration,
-                                                        repeat: Infinity,
-                                                        ease: "linear",
-                                                        delay: systemVitals[i].delay
-                                                    }}
-                                                    style={{ offsetPath: `path('M 250 250 L ${x2} ${y2}')` }}
-                                                />
-                                            </g>
-                                        );
-                                    })}
-                                </svg>
-                            </div>
-
-                            {/* Peripheral Nodes (Desktop Overlay) */}
-                            <div className="hidden md:block absolute inset-0 z-20">
-                                {externalSystems.map((sys, i) => {
-                                    const angle = (i * (360 / externalSystems.length) * Math.PI) / 180;
-                                    const Icon = sys.icon;
-
-                                    return (
-                                        <motion.div
-                                            key={sys.name}
-                                            initial={{ opacity: 0, scale: 0.5 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 0.2 + i * 0.1 }}
-                                            className="absolute h-14 w-14 rounded-xl bg-card border shadow-sm flex items-center justify-center group hover:border-primary transition-colors cursor-default"
-                                            style={{
-                                                left: `${50 + 36 * Math.cos(angle)}%`,
-                                                top: `${50 + 36 * Math.sin(angle)}%`,
-                                                transform: 'translate(-50%, -50%)'
-                                            }}
-                                        >
-                                            <Icon className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
-                                            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                                                <span className="text-[9px] font-mono font-bold text-muted-foreground uppercase">{sys.name}</span>
-                                            </div>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
-
-                            {/* Mobile Node Ribbon (Mobile Only) */}
-                            <div className="md:hidden absolute w-full bottom-0 flex flex-wrap justify-center gap-3 px-4 z-20">
-                                {externalSystems.map((sys, i) => {
-                                    const Icon = sys.icon;
-                                    return (
-                                        <motion.div
-                                            key={sys.name}
-                                            initial={{ opacity: 0, y: 10 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: i * 0.05 }}
-                                            className="h-10 w-10 rounded-lg bg-card border shadow-xs flex items-center justify-center"
-                                        >
-                                            <Icon className="h-4 w-4 text-primary" />
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
+            <AnimatePresence>
+                {isHovered && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                        animate={{ opacity: 1, y: 32, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                        className="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap bg-background/95 backdrop-blur-md px-3 py-1.5 rounded-lg border shadow-xl z-50 pointer-events-none"
+                    >
+                        <div className="flex items-center gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                            <span className="text-[11px] font-mono font-bold text-primary uppercase tracking-wider">{node.name}</span>
                         </div>
-                    </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    );
+}
 
-                    {/* Bento Benefits */}
-                    <div className="lg:col-span-5 space-y-6">
-                        <div className="grid grid-cols-1 gap-6">
+export function IntegrationHub() {
+    const d = DICTIONARY.logistica;
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [hoveredNode, setHoveredNode] = useState<number | null>(null);
+    const [currentProjectedNodes, setCurrentProjectedNodes] = useState<ProjectedNode[]>([]);
+
+    // --- 3D Projection Engine ---
+    const project = useCallback((p: Point3D, currentRotation: number) => {
+        const cosR = Math.cos(currentRotation);
+        const sinR = Math.sin(currentRotation);
+        const rx = p.x * cosR - p.z * sinR;
+        const rz = p.x * sinR + p.z * cosR;
+
+        const cosT = Math.cos(TILT_ANGLE);
+        const sinT = Math.sin(TILT_ANGLE);
+        const ry = p.y * cosT - rz * sinT;
+        const finalZ = p.y * sinT + rz * cosT;
+
+        // Guard against negative scale or division by zero
+        const scale = Math.max(0.1, FOCAL_LENGTH / (FOCAL_LENGTH + finalZ));
+        const x2d = (CANVAS_SIZE / 2) + rx * scale;
+        const y2d = (CANVAS_SIZE / 2) + ry * scale;
+
+        return { x: x2d, y: y2d, scale, zIndex: Math.round(1000 - finalZ) };
+    }, []);
+
+    const nodes = useMemo<Node3D[]>(() =>
+        externalSystems.map((sys, i) => {
+            const angle = (i * (360 / externalSystems.length) * Math.PI) / 180;
+            const radius = 280;
+            return {
+                ...sys,
+                x: radius * Math.cos(angle),
+                y: 0,
+                z: radius * Math.sin(angle),
+                angle
+            } as Node3D;
+        }), []
+    );
+
+    // --- Animation & Draw Loop ---
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d", { alpha: true });
+        if (!ctx) return;
+
+        let particles: Particle[] = [];
+        let frame = 0;
+        let lastTime = 0;
+
+        const animate = (time: number) => {
+            const dt = (time - lastTime) / 1000 || 0;
+            lastTime = time;
+            frame++;
+
+            const currentRotation = (time * 0.00018) % (Math.PI * 2);
+
+            // Particles Management
+            if (frame % 10 === 0) {
+                const targetIdx = Math.floor(Math.random() * nodes.length);
+                particles.push({
+                    targetNodeIndex: targetIdx,
+                    progress: 0,
+                    speed: 0.3 + Math.random() * 0.5,
+                    type: Math.random() > 0.5 ? "inbound" : "outbound"
+                });
+            }
+
+            // Drawing logic
+            ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+
+            // 1. Draw Static Connections (Background)
+            nodes.forEach((node, i) => {
+                const pCore = project({ x: 0, y: 0, z: 0 }, currentRotation);
+                const pNode = project(node, currentRotation);
+                const isPathHovered = hoveredNode === i;
+
+                ctx.beginPath();
+                ctx.moveTo(pCore.x, pCore.y);
+                ctx.lineTo(pNode.x, pNode.y);
+
+                ctx.strokeStyle = isPathHovered ? `rgba(37, 99, 235, 0.2)` : `rgba(37, 99, 235, 0.05)`;
+                ctx.lineWidth = isPathHovered ? 2 : 1;
+                ctx.setLineDash([4, 12]);
+                ctx.lineDashOffset = -frame * 0.5;
+                ctx.stroke();
+            });
+
+            // 2. Update and Draw Particles
+            particles = particles.filter(p => p.progress < 1);
+            particles.forEach(p => {
+                p.progress += p.speed * dt;
+                const node = nodes[p.targetNodeIndex];
+                const t = p.type === "outbound" ? p.progress : 1 - p.progress;
+
+                const proj = project({
+                    x: node.x * t,
+                    y: node.y * t,
+                    z: node.z * t
+                }, currentRotation);
+
+                // Fix: Ensure radius is never negative
+                const radius = Math.max(0, 3 * proj.scale);
+                const alpha = Math.sin(p.progress * Math.PI);
+
+                ctx.beginPath();
+                ctx.arc(proj.x, proj.y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(37, 99, 235, ${alpha})`;
+                ctx.shadowBlur = Math.max(0, 10 * proj.scale);
+                ctx.shadowColor = "rgba(37, 99, 235, 0.5)";
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                // Trail
+                ctx.beginPath();
+                const trailT = p.type === "outbound" ? Math.max(0, p.progress - 0.1) : Math.min(1, 1 - p.progress + 0.1);
+                const trailProj = project({ x: node.x * trailT, y: node.y * trailT, z: node.z * trailT }, currentRotation);
+                ctx.moveTo(proj.x, proj.y);
+                ctx.lineTo(trailProj.x, trailProj.y);
+                ctx.strokeStyle = `rgba(37, 99, 235, ${alpha * 0.3})`;
+                ctx.lineWidth = Math.max(0.5, 1 * proj.scale);
+                ctx.stroke();
+            });
+
+            // 3. Update Sync States (Lower frequency sync for DOM elements)
+            if (frame % 1 === 0) {
+                const projected = nodes.map((n, i) => {
+                    const proj = project(n, currentRotation);
+                    return { ...n, x2d: proj.x, y2d: proj.y, scale: proj.scale, zIndex: proj.zIndex, index: i };
+                });
+                const coreProj = project({ x: 0, y: 0, z: 0 }, currentRotation);
+                const coreNode = { name: "CORE", x: 0, y: 0, z: 0, x2d: coreProj.x, y2d: coreProj.y, scale: coreProj.scale, zIndex: coreProj.zIndex, index: -1 } as ProjectedNode;
+                setCurrentProjectedNodes([coreNode, ...projected]);
+            }
+
+            requestAnimationFrame(animate);
+        };
+
+        const reqId = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(reqId);
+    }, [nodes, project, hoveredNode]);
+
+    return (
+        <SectionWrapper variant="muted" className="relative overflow-hidden py-24 md:py-32">
+            {/* Background elements */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full" />
+                <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-400/5 blur-[100px] rounded-full" />
+            </div>
+
+            <div className="container relative z-10 mx-auto px-4">
+                <div className="flex flex-col lg:flex-row gap-16 xl:gap-24 items-start">
+
+                    {/* LEFT: Content */}
+                    <div className="flex-1 w-full lg:max-w-none space-y-10 lg:pt-8">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="space-y-6"
+                        >
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                                {d.integration.title}
+                            </h2>
+                            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
+                                {d.integration.text}
+                            </p>
+                        </motion.div>
+
+                        <div className="space-y-4">
                             {d.integration.bullets.map((bullet, i) => {
                                 const Icon = benefitIcons[i] || Activity;
                                 return (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, x: 20 }}
+                                        initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                                        className="group p-6 bg-card rounded-[1.5rem] border hover:border-primary/50 transition-all duration-300 shadow-xs"
+                                        transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                                        className="group p-5 bg-card/50 backdrop-blur-md rounded-2xl border border-border/50 hover:border-primary/40 hover:bg-card transition-all duration-300 shadow-sm"
                                     >
-                                        <div className="flex gap-5 items-start">
-                                            <div className="h-10 w-10 shrink-0 rounded-lg bg-muted flex items-center justify-center text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                                        <div className="flex gap-4 items-center">
+                                            <div className="h-10 w-10 shrink-0 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                                                 <Icon className="h-5 w-5" />
                                             </div>
-                                            <p className="font-bold leading-relaxed pt-1.5">{bullet}</p>
+                                            <p className="text-[15px] font-semibold text-foreground/90">{bullet}</p>
                                         </div>
                                     </motion.div>
                                 );
@@ -204,20 +360,67 @@ export function IntegrationHub() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.8 }}
-                            className="pt-8 border-t border-border"
+                            transition={{ delay: 0.6 }}
+                            className="pt-6"
                         >
-                            <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Typical_Integrations</p>
-                            <div className="p-4 bg-muted/30 rounded-xl border border-dashed border-border flex flex-wrap gap-2">
-                                {d.integration.common.split(" • ").map((tag, i) => (
-                                    <span key={i} className="text-sm font-medium px-2 py-0.5 bg-background rounded-md border text-foreground/80">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                            <button className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-bold transition-all hover:gap-5 hover:pr-5 shadow-lg shadow-primary/20">
+                                {DICTIONARY.common.demoCta}
+                                <ArrowRight className="h-4 w-4" />
+                            </button>
                         </motion.div>
                     </div>
+
+                    {/* RIGHT: Visual Hub */}
+                    <div className="flex-1 w-full relative h-[450px] md:h-[600px] lg:h-[700px] flex items-start justify-center select-none lg:-mt-12">
+
+                        <div className="relative w-full h-full max-w-[800px] flex items-start justify-center">
+                            <canvas
+                                ref={canvasRef}
+                                width={CANVAS_SIZE}
+                                height={CANVAS_SIZE}
+                                className="absolute inset-0 w-full h-full pointer-events-none opacity-90"
+                            />
+
+                            {currentProjectedNodes.map((p) => {
+                                const yOffset = -50;
+                                if (p.index === -1) {
+                                    return <CoreNode key="core" x={p.x2d} y={p.y2d + yOffset} scale={p.scale} />;
+                                }
+                                return (
+                                    <HubNode
+                                        key={p.name}
+                                        node={{ ...p, y2d: p.y2d + yOffset }}
+                                        isHovered={hoveredNode === p.index}
+                                        onHover={(h) => setHoveredNode(h ? p.index : null)}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
+
+                {/* Bottom Tags */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8 }}
+                    className="mt-16 pt-8 border-t border-border/40"
+                >
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div>
+                            <p className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-primary mb-2">Network_Protocols</p>
+                            <h3 className="text-xl font-bold">{DICTIONARY.logistica.integration.common.split(" • ").length} Connectivity Modules</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2 md:max-w-xl justify-end">
+                            {d.integration.common.split(" • ").map((tag, i) => (
+                                <span key={i} className="text-[11px] font-bold px-4 py-1.5 bg-background rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all cursor-default">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </SectionWrapper>
     );

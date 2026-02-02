@@ -224,13 +224,13 @@ export const DICTIONARY = {
         },
         integration: {
             title: "Come si inserisce nei tuoi sistemi",
-            text: "Ulisses non ti chiede di cambiare stack: genera eventi e dati operativi dal campo e li rende disponibili via API. Puoi usare la piattaforma Ulisses quando utile, oppure portare i dati direttamente nei sistemi già in uso.",
+            text: "Ulisses non ti chiede di cambiare stack: genera eventi e dati operativi dal campo e li rende disponibili via dashboard oAPI.",
             bullets: [
                 "Eventi e misure normalizzati (coerenti e riutilizzabili)",
                 "Integrazione pulita (meno custom, meno manutenzione)",
                 "Dato affidabile e governato (health, qualità dato, storico)"
             ],
-            common: "WMS • MES • CMMS • ERP • ITS / Smart City • sistemi di sicurezza • BI / Data Lake"
+            common: "WMS • MES • CMMS • ERP • ITS / Smart City • BI / Data Lake"
         },
         finalCta: {
             title: "Valutiamo insieme la fattibilità sul tuo scenario",
@@ -423,7 +423,7 @@ export const DICTIONARY = {
         integrations: {
             title: "Integrazione nativa, non adattamenti “su misura”",
             subtitle: "Ulisses espone eventi e misure con un modello dati coerente, così l’integrazione resta pulita e manutenibile nel tempo.",
-            common: "API e connettori verso: WMS • MES • CMMS • ERP • ITS / Smart City • sistemi di sicurezza • BI / Data Lake"
+            common: "API e connettori verso: WMS • MES • CMMS • ERP • ITS / Smart City • BI / Data Lake"
         },
         observability: {
             title: "Continuità e qualità del dato nel tempo",
