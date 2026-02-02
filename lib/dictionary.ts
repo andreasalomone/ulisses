@@ -3,7 +3,7 @@ export const DICTIONARY = {
         demoCta: "Parla con un esperto",
         expertCta: "Parla con un esperto",
         onePagerCta: "Scarica One-Pager",
-        contactCta: "Richiedi una demo / assessment",
+        contactCta: "Richiedi un'assessment",
         learnMore: "Scopri di più",
         backToHome: "Torna alla Home",
         sending: "Invio in corso...",
@@ -160,7 +160,7 @@ export const DICTIONARY = {
     solutions: {
         hero: {
             h1: "Soluzioni per Logistica, Ferroviario e Smart Parking",
-            intro: "Ulisses porta dati affidabili dal campo alle decisioni nei contesti dove contano continuità, qualità del dato e integrazione con sistemi già esistenti. Puoi usare la piattaforma Ulisses oppure integrare eventi e misure nelle tue piattaforme tramite API."
+            intro: "Ulisses porta dati affidabili dal campo alle decisioni nei contesti dove contano continuità, qualità del dato e integrazione con sistemi già esistenti."
         },
         method: {
             title: "Dal primo sito al rollout: un percorso chiaro",
