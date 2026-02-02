@@ -15,7 +15,7 @@ export default function CompareDemo() {
                     secondImage="/assets/yes-uli.png"
                     firstImageClassName="object-cover object-top-left"
                     secondImageClassname="object-cover object-top-left"
-                    className="h-[250px] w-[200px] md:h-[500px] md:w-[500px] rounded-[22px] md:rounded-lg"
+                    className="h-[250px] w-[200px] md:h-[400px] md:w-[400px] rounded-[22px] md:rounded-lg"
                     slideMode="hover"
                     initialSliderPercentage={100}
                     autoplay={true}
