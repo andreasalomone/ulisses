@@ -1,4 +1,5 @@
 import React from "react";
+import { Check } from "lucide-react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import { BenchmarkSection } from "@/components/sections/shared/benchmark-section
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 import { ProcessUnlock } from "@/components/sections/logistica/process-unlock";
 import { LogisticsUseCases } from "@/components/sections/logistica/logistics-use-cases";
+import { IntegrationHub } from "@/components/sections/logistica/integration-hub";
 
 export default function LogisticaPage() {
     const d = DICTIONARY.logistica;
@@ -45,9 +47,11 @@ export default function LogisticaPage() {
                         </h2>
                         <ul className="space-y-4">
                             {d.dashboard.bullets.map((bullet, i) => (
-                                <li key={i} className="flex gap-3 items-center">
-                                    <div className="h-2 w-2 rounded-full bg-primary" />
-                                    <span className="text-lg text-muted-foreground">{bullet}</span>
+                                <li key={i} className="flex gap-4 items-start">
+                                    <div className="mt-1.5 shrink-0">
+                                        <Check className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <span className="text-lg text-muted-foreground leading-relaxed">{bullet}</span>
                                 </li>
                             ))}
                         </ul>
@@ -56,27 +60,7 @@ export default function LogisticaPage() {
             </SectionWrapper>
 
             {/* Integrazione */}
-            <SectionWrapper variant="muted">
-                <div className="max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                        {d.integration.title}
-                    </h2>
-                    <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                        {d.integration.text}
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                        {d.integration.bullets.map((bullet, i) => (
-                            <div key={i} className="p-6 bg-card rounded-2xl border shadow-sm">
-                                <p className="font-bold leading-relaxed">{bullet}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="pt-8 border-t border-muted-foreground/20">
-                        <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">Integrazioni tipiche</p>
-                        <p className="text-xl font-medium">{d.integration.common}</p>
-                    </div>
-                </div>
-            </SectionWrapper>
+            <IntegrationHub />
 
             {/* Benchmarks */}
             <BenchmarkSection

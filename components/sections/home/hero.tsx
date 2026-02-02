@@ -1,9 +1,11 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { Download, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 
@@ -31,9 +33,13 @@ export function Hero() {
                         <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
                             <Link href="/contatti">{DICTIONARY.common.demoCta}</Link>
                         </Button>
-                        <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-full hover:bg-muted/50 transition-colors">
-                            <Download className="mr-2 h-5 w-5" />
-                            {DICTIONARY.common.onePagerCta}
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="h-14 px-8 text-base font-bold rounded-full hover:bg-muted/50 transition-colors cursor-pointer"
+                            onClick={() => document.getElementById("scenari")?.scrollIntoView({ behavior: "smooth" })}
+                        >
+                            {DICTIONARY.common.learnMore}
                         </Button>
                     </div>
                 </div>
