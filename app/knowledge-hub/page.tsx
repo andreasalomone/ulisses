@@ -13,13 +13,13 @@ import { BrandText } from "@/components/ui/brand";
 
 const GRADIENTS = [
     "bg-linear-to-br from-primary to-slate-950",
-    "bg-linear-to-br from-secondary to-slate-950",
-    "bg-linear-to-br from-accent to-slate-950",
-    "bg-linear-to-br from-chart-1 to-slate-950",
-    "bg-linear-to-br from-chart-2 to-slate-950",
-    "bg-linear-to-br from-chart-3 to-slate-950",
-    "bg-linear-to-br from-chart-4 to-slate-950",
-    "bg-linear-to-br from-chart-5 to-slate-950",
+    "bg-linear-to-br from-secondary to-teal-950",
+    "bg-linear-to-br from-accent to-indigo-950",
+    "bg-linear-to-br from-blue-600 to-indigo-900",
+    "bg-linear-to-br from-teal-600 to-emerald-900",
+    "bg-linear-to-br from-violet-600 to-purple-950",
+    "bg-linear-to-br from-cyan-600 to-blue-950",
+    "bg-linear-to-br from-slate-700 to-slate-950",
 ];
 
 

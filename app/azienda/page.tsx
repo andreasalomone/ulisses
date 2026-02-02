@@ -1,13 +1,16 @@
+
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Shield, Target, Zap, Users, Lightbulb } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
+import { ReviewSection } from "@/components/sections/azienda/review-section";
+import { TeamGrid } from "@/components/sections/azienda/team-grid";
 
-const icons = [Shield, Zap, Target];
+
 
 export default function AziendaPage() {
     const d = DICTIONARY.azienda;
@@ -35,31 +38,29 @@ export default function AziendaPage() {
                 </div>
             </SectionWrapper>
 
-            {/* Values */}
-            <SectionWrapper variant="muted">
-                <div className="mb-16 text-center">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                        I nostri valori
-                    </h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {d.values.map((value, i) => {
-                        const Icon = icons[i];
-                        return (
-                            <div key={i} className="p-10 rounded-[2.5rem] bg-card border shadow-sm text-center group hover:border-primary/30 transition-all">
-                                <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                                    <Icon className="h-8 w-8" />
-                                </div>
-                                <h3 className="text-2xl font-bold">
-                                    <BrandText text={value} />
-                                </h3>
-                            </div>
-                        );
-                    })}
-                </div>
+            {/* Review Trenord */}
+            {d.review && (
+                <ReviewSection
+                    text={d.review.text}
+                    author={d.review.author}
+                    role={d.review.role}
+                />
+            )}
 
-                {/* Awards - Re-styled for premium feel */}
-                <div id="awards" className="mt-24 pt-24 border-t border-primary/10">
+            {/* Team & Board */}
+            <SectionWrapper>
+                <div className="max-w-5xl mx-auto space-y-12">
+                    {/* Team */}
+                    {d.team && <TeamGrid title="Questo il team 👇" members={d.team} />}
+
+                    {/* Board */}
+                    {d.board && <TeamGrid title="Questo il board 👇" members={d.board} />}
+                </div>
+            </SectionWrapper>
+
+            {/* Awards - Re-styled for premium feel */}
+            <SectionWrapper variant="muted">
+                <div id="awards" className="">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6 uppercase tracking-widest">
                             <Lightbulb className="h-4 w-4" />
@@ -83,26 +84,8 @@ export default function AziendaPage() {
                 </div>
             </SectionWrapper>
 
-            {/* Team Placeholder */}
-            <SectionWrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 text-wrap-balance">
-                            Un ecosistema di competenze
-                        </h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                            <BrandText text="Ulisses nasce dall'unione di esperti in radiofrequenza, data science e gestione dei processi industriali. Non siamo solo fornitori di tecnologia, ma partner nel percorso di digitalizzazione." />
-                        </p>
-                        <div className="flex items-center gap-4 p-6 bg-primary/5 rounded-2xl border border-primary/10">
-                            <Users className="text-primary h-8 w-8" />
-                            <p className="font-bold">Team multidisciplinare dal go-live alla produzione.</p>
-                        </div>
-                    </div>
-                </div>
-            </SectionWrapper>
-
             {/* R&D Link Section */}
-            <SectionWrapper variant="muted" className="text-center">
+            <SectionWrapper className="text-center">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-3xl font-bold mb-6 text-wrap-balance">Investiamo nel futuro</h2>
                     <p className="text-lg text-muted-foreground mb-10">La nostra tecnologia evolve costantemente attraverso il reparto R&D e collaborazioni universitarie.</p>

@@ -11,9 +11,7 @@ import {
     Network,
     Database,
     ShieldCheck,
-    Activity,
     Layers,
-    Lightbulb,
     Landmark,
     Microscope,
     Scale
