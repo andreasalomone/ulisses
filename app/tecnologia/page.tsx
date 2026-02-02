@@ -1,5 +1,6 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
+import Image from "next/image";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -118,9 +119,15 @@ export default function TecnologiaPage() {
                             })}
                         </div>
                     </div>
-                    <div className="relative aspect-square bg-linear-to-br from-muted to-muted/30 rounded-[4rem] border shadow-inner flex items-center justify-center p-12 overflow-hidden">
-                        <Database className="w-1/2 h-1/2 text-primary/10" />
-                        <div className="absolute inset-0 bg-radial-[at_50%_50%] from-primary/5 to-transparent"></div>
+                    <div className="relative aspect-square bg-linear-to-br from-muted to-muted/30 rounded-[4rem] border shadow-inner flex items-center justify-center p-12 overflow-hidden group">
+                        <Image
+                            src="/assets/tag.png"
+                            alt="Ulisses Tag"
+                            fill
+                            className="object-contain p-8 group-hover:scale-105 transition-transform duration-500"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-radial-[at_50%_50%] from-primary/5 to-transparent pointer-events-none"></div>
                     </div>
                 </div>
             </SectionWrapper>
