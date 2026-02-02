@@ -272,18 +272,36 @@ export const DICTIONARY = {
             h1Highlight: "Ferroviario",
             sub: "Riduci dispersioni e tempi improduttivi. Collega eventi sul campo ai workflow di manutenzione.",
             cta: "Richiedi Demo Ferroviario",
-            onePager: "Scarica One-Pager Ferroviario"
+            onePager: "Scarica One-Pager Ferroviario",
+            unlockTitle: "Cosa sblocchiamo nel processo",
+            unlockSubtitle: "Ottimizziamo la manutenzione e la gestione materiali nei depositi ferroviari, trasformando la ricerca manuale in dati operativi."
         },
         process: [
-            "Attrezzature e materiali non rintracciabili quando servono",
-            "Tempi di manutenzione allungati per logistica interna inefficiente",
-            "Difficoltà nel dimostrare tracciabilità e auditabilità",
-            "Ambienti complessi e regolati con requisiti di affidabilità"
+            {
+                problem: "Attrezzature e materiali non rintracciabili quando servono",
+                solution: "Posizione real-time e ricerca istantanea in deposito."
+            },
+            {
+                problem: "Difficoltà nel dimostrare tracciabilità e auditabilità",
+                solution: "Storico eventi immutabile e report per compliance."
+            },
+            {
+                problem: "Tempi di manutenzione allungati per logistica inefficiente",
+                solution: "Ottimizzazione dei flussi basata su dati di campo certi."
+            },
+            {
+                problem: "Workflow scollegato tra campo e sistemi gestionali",
+                solution: "Integrazione nativa API per alimentare CMMS e ticketing."
+            },
+            {
+                problem: "Mancanza di dati certi sull'utilizzo delle attrezzature",
+                solution: "Dashboard con KPI di utilizzo e saturation rate degli asset."
+            }
         ],
         useCases: [
-            { title: "Tracciamento attrezzature in officina", text: "Riduci tempi di ricerca e fermi: posizione + storico eventi." },
+            { title: "Tracciamento attrezzature", text: "Riduci tempi di ricerca e fermi: posizione + storico eventi." },
             { title: "Materiali e componenti critici", text: "Controllo aree, permanenze, alert su spostamenti non previsti." },
-            { title: "Workflow manutenzione (integrazione CMMS)", text: "Eventi e disponibilità asset alimentano ticket e processi." },
+            { title: "Workflow manutenzione", text: "Integrazione CMMS: Eventi e disponibilità asset alimentano ticket e processi." },
             { title: "Report per audit", text: "Storico e KPI a supporto di compliance e controllo." }
         ],
         dashboard: {

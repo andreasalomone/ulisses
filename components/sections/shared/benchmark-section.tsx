@@ -19,11 +19,12 @@ interface BenchmarkSectionProps {
         title: string;
         text: string;
     };
+    variant?: "default" | "muted" | "primary" | "secondary";
 }
 
-export function BenchmarkSection({ title, items, extra }: BenchmarkSectionProps) {
+export function BenchmarkSection({ title, items, extra, variant = "muted" }: BenchmarkSectionProps) {
     return (
-        <SectionWrapper variant="muted">
+        <SectionWrapper variant={variant}>
             <div className="mb-16">
                 <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
                     <BrandText text={title} />

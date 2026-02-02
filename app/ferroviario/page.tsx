@@ -1,17 +1,16 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { UseCaseCards } from "@/components/shared/use-case-cards";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Wrench, Package, Cpu, FileCheck } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
+import { ProcessUnlock } from "@/components/sections/ferroviario/process-unlock";
+import { FerroviarioUseCases } from "@/components/sections/ferroviario/ferroviario-use-cases";
 
 export default function FerroviarioPage() {
     const d = DICTIONARY.ferroviario;
-    const icons = [Wrench, Package, Cpu, FileCheck];
 
     return (
         <div className="flex flex-col">
@@ -27,38 +26,10 @@ export default function FerroviarioPage() {
             </VerticalHero>
 
             {/* Cosa sblocchiamo */}
-            <SectionWrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div>
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                            Cosa sblocchiamo nel processo
-                        </h2>
-                        <ul className="space-y-6">
-                            {d.process.map((item, i) => (
-                                <li key={i} className="flex gap-4 items-start">
-                                    <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-1">
-                                        <div className="h-2 w-2 rounded-full bg-primary" />
-                                    </div>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">
-                                        <BrandText text={item} />
-                                    </p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </SectionWrapper>
+            <ProcessUnlock />
 
             {/* Use Cases */}
-            <SectionWrapper variant="muted">
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                        Use case operativi
-                    </h2>
-                </div>
-                {/* UseCaseCards should handle BrandText internally if needed, but let's check it */}
-                <UseCaseCards items={d.useCases} icons={icons} />
-            </SectionWrapper>
+            <FerroviarioUseCases />
 
             {/* Dashboard Detail */}
             <SectionWrapper>

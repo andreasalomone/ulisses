@@ -66,6 +66,7 @@ export default function LogisticaPage() {
             <BenchmarkSection
                 title={d.benchmarks.title}
                 items={d.benchmarks.items}
+                variant="default"
             />
 
             {/* Final CTA */}
