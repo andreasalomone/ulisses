@@ -180,7 +180,10 @@ export const DICTIONARY = {
             h1Highlight: "Logistica",
             sub: "In magazzino e yard, Ulisses rende visibile ciò che oggi è “tempo perso”: ricerca, movimenti, anomalie e rischi.",
             cta: "Richiedi demo Logistica",
-            onePager: "Scarica One-Pager Logistica"
+            onePager: "Scarica One-Pager Logistica",
+            unlockTitle: "Cosa sblocchiamo nel processo",
+            unlockSubtitle: "Trasformiamo le frizioni operative in flussi di dati certi, eliminando i colli di bottiglia che frenano la tua logistica.",
+            radarStatus: "Live Signal: Authenticated"
         },
         process: [
             "Troppo tempo per trovare carrelli/roll/pallet speciali/attrezzature",

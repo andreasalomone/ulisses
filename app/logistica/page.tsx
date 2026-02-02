@@ -1,17 +1,16 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { UseCaseCards } from "@/components/shared/use-case-cards";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download, Search, Navigation2, Shield, BarChart2 } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
+import { ProcessUnlock } from "@/components/sections/logistica/process-unlock";
+import { LogisticsUseCases } from "@/components/sections/logistica/logistics-use-cases";
 
 export default function LogisticaPage() {
     const d = DICTIONARY.logistica;
-    const icons = [Search, Navigation2, Shield, BarChart2];
 
     return (
         <div className="flex flex-col">
@@ -27,40 +26,10 @@ export default function LogisticaPage() {
             </VerticalHero>
 
             {/* Cosa sblocchiamo */}
-            <SectionWrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div>
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                            Cosa sblocchiamo nel processo
-                        </h2>
-                        <ul className="space-y-6">
-                            {d.process.map((item, i) => (
-                                <li key={i} className="flex gap-4 items-start">
-                                    <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-1">
-                                        <div className="h-2 w-2 rounded-full bg-primary" />
-                                    </div>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">{item}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="bg-muted/30 rounded-[2.5rem] p-8 md:p-12 border">
-                        <div className="aspect-video bg-card rounded-2xl shadow-inner flex items-center justify-center border-2 border-dashed border-primary/20">
-                            <p className="text-muted-foreground italic">Mockup Dashboard Logistica</p>
-                        </div>
-                    </div>
-                </div>
-            </SectionWrapper>
+            <ProcessUnlock />
 
             {/* Use Cases */}
-            <SectionWrapper variant="muted">
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                        Use case operativi
-                    </h2>
-                </div>
-                <UseCaseCards items={d.useCases} icons={icons} />
-            </SectionWrapper>
+            <LogisticsUseCases />
 
             {/* Dashboard Detail */}
             <SectionWrapper>
