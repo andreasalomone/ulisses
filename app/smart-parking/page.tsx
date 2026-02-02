@@ -4,7 +4,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { SmartParkingExplorer } from "@/components/sections/parking/smart-parking-explorer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Download, Signal, HardDrive, Zap } from "lucide-react";
+import { Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
@@ -22,10 +22,6 @@ export default function SmartParkingPage() {
             >
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{d.hero.cta}</Link>
-                </Button>
-                <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Download className="mr-2 h-5 w-5" />
-                    {d.hero.onePager}
                 </Button>
             </VerticalHero>
 
