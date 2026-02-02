@@ -51,10 +51,10 @@ export default function AziendaPage() {
             <SectionWrapper>
                 <div className="max-w-5xl mx-auto space-y-12">
                     {/* Team */}
-                    {d.team && <TeamGrid title="Questo il team 👇" members={d.team} />}
+                    {d.team && <TeamGrid title={d.team.title} members={d.team.members} />}
 
                     {/* Board */}
-                    {d.board && <TeamGrid title="Questo il board 👇" members={d.board} />}
+                    {d.board && <TeamGrid title={d.board.title} members={d.board.members} />}
                 </div>
             </SectionWrapper>
 

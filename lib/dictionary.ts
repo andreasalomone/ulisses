@@ -495,21 +495,27 @@ export const DICTIONARY = {
             author: "Massimo Pasquini",
             role: "Innovation Manager di Trenord"
         },
-        team: [
-            { name: "Mattia Tartaglia", role: "Founder & CEO" },
-            { name: "Alessandro Spadaro", role: "CTO" },
-            { name: "Stefano Nordio", role: "VP Sales & Growth" },
-            { name: "Francesco Dell’Onze", role: "Sales Manager" },
-            { name: "Giulia Mora", role: "Account Sales Manager" },
-            { name: "Jessica Faicchio", role: "Operations Manager" }
-        ],
-        board: [
-            { name: "Stefano Ceci", role: "Presidente" },
-            { name: "Teresa Trivisonno", role: "Vice Presidente" },
-            { name: "Mattia Tartaglia", role: "Amministratore Delegato" },
-            { name: "Gabriele Benedetto", role: "Consigliere" },
-            { name: "Luca Palermo", role: "Consigliere" }
-        ],
+        team: {
+            title: "Il Nostro Team",
+            members: [
+                { name: "Mattia Tartaglia", role: "Founder & CEO" },
+                { name: "Alessandro Spadaro", role: "CTO" },
+                { name: "Stefano Nordio", role: "VP Sales & Growth" },
+                { name: "Francesco Dell’Onze", role: "Sales Manager" },
+                { name: "Giulia Mora", role: "Account Sales Manager" },
+                { name: "Jessica Faicchio", role: "Operations Manager" }
+            ]
+        },
+        board: {
+            title: "Board & Advisors",
+            members: [
+                { name: "Stefano Ceci", role: "Presidente" },
+                { name: "Teresa Trivisonno", role: "Vice Presidente" },
+                { name: "Mattia Tartaglia", role: "Amministratore Delegato" },
+                { name: "Gabriele Benedetto", role: "Consigliere" },
+                { name: "Luca Palermo", role: "Consigliere" }
+            ]
+        },
         cta: "Parla con noi",
         awards: {
             title: "Eccellenza Riconosciuta",
