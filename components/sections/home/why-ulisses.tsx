@@ -54,19 +54,27 @@ function DifferentiatorCard({ title, problem, solution, icon: Icon, index }: Dif
     );
 }
 
+import CompareDemo from "@/components/compare-demo";
+
 export function WhyUlisses() {
     const d = DICTIONARY.home.why;
     const icons = [Boxes, Radio, Unplug];
 
     return (
         <SectionWrapper className="bg-background/50 overflow-hidden">
-            <div className="max-w-3xl mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.1]">
-                    <BrandText text={d.title} />
-                </h2>
-                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                    <BrandText text={d.intro} />
-                </p>
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16 lg:mb-24">
+                <div className="flex-1 max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+                        <BrandText text={d.title} />
+                    </h2>
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                        <BrandText text={d.intro} />
+                    </p>
+                </div>
+
+                <div className="shrink-0 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
+                    <CompareDemo />
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-24 relative z-10">
