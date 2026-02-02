@@ -54,7 +54,7 @@ export function LogisticsUseCases() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-2xl lg:text-6xl md:text-5xl font-extrabold tracking-tighter mb-6"
+                        className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8"
                     >
                         Use case operativi
                     </motion.h2>

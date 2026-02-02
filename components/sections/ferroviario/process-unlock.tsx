@@ -55,7 +55,7 @@ export function ProcessUnlock() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="text-3xl md:text-6xl font-extrabold tracking-tighter mb-6"
+                        className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8"
                     >
                         {d.hero.unlockTitle}
                     </motion.h2>

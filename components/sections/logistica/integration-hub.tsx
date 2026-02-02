@@ -325,7 +325,7 @@ export function IntegrationHub() {
                             transition={{ duration: 0.6 }}
                             className="space-y-6"
                         >
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
                                 {d.integration.title}
                             </h2>
                             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
