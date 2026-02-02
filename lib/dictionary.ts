@@ -186,11 +186,26 @@ export const DICTIONARY = {
             radarStatus: "Live Signal: Authenticated"
         },
         process: [
-            "Troppo tempo per trovare carrelli/roll/pallet speciali/attrezzature",
-            "Dispersioni e utilizzo inefficiente degli asset",
-            "Errori di allocazione, movimentazioni non tracciate",
-            "Aree sensibili e rischi safety non monitorati",
-            "Difficoltà a misurare performance reali per area/processo"
+            {
+                problem: "Troppo tempo per trovare carrelli/roll/pallet speciali/attrezzature",
+                solution: "Localizzazione istantanea con precisione <1m."
+            },
+            {
+                problem: "Dispersioni e utilizzo inefficiente degli asset",
+                solution: "Ottimizzazione dei flussi basata su dati di utilizzo reali."
+            },
+            {
+                problem: "Errori di allocazione, movimentazioni non tracciate",
+                solution: "Tracciabilità automatica di ogni movimento indoor e outdoor."
+            },
+            {
+                problem: "Aree sensibili e rischi safety non monitorati",
+                solution: "Geofencing attivo e alert in tempo reale su aree di rischio."
+            },
+            {
+                problem: "Difficoltà a misurare performance reali per area/processo",
+                solution: "Dashboard con KPI certi e reportistica automatizzata."
+            }
         ],
         useCases: [
             { title: "Ricerca asset in tempo reale", text: "Riduci tempi di ricerca e fermi operativi con posizione e storico." },
