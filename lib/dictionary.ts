@@ -88,7 +88,7 @@ export const DICTIONARY = {
                 { title: "Field", text: "Sensori/tag/anchor rilevano eventi e presenza" },
                 { title: "Rete", text: "La connettività porta i dati in modo robusto" },
                 { title: "Piattaforma", text: "Normalizza, storicizza, abilita dashboard e regole" },
-                { title: "API / Integrazioni", text: "Collega sistemi esistenti (WMS/MES/CMMS/ITS)" }
+                { title: "Integrazioni", text: "Collega sistemi esistenti (WMS/MES/CMMS/ITS)" }
             ],
             deployment: {
                 label: "Scegli il tuo deployment",
