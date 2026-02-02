@@ -24,10 +24,6 @@ export default function LogisticaPage() {
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{d.hero.cta}</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Download className="mr-2 h-5 w-5" />
-                    {d.hero.onePager}
-                </Button>
             </VerticalHero>
 
             {/* Cosa sblocchiamo */}
