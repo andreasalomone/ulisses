@@ -42,9 +42,9 @@ export function LogisticsUseCases() {
     const d = DICTIONARY.logistica;
 
     return (
-        <section className="py-24 bg-[#080c18] text-white overflow-hidden relative">
+        <section className="py-24 bg-primary text-white overflow-hidden relative">
             {/* Background elements */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,1)_0%,rgba(8,12,24,1)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,oklch(0.35_0.14_250)_0%,var(--primary)_100%)]" />
             <div className="absolute inset-0 opacity-[0.15] bg-size-[40px_40px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
 
             <div className="container px-4 mx-auto relative z-10">
@@ -58,7 +58,7 @@ export function LogisticsUseCases() {
                     >
                         Use case operativi
                     </motion.h2>
-                    <div className="h-1 w-24 bg-primary rounded-full mb-8" />
+                    <div className="h-1 w-24 bg-white rounded-full mb-8" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -79,7 +79,7 @@ export function LogisticsUseCases() {
                                     {/* Content side */}
                                     <div className="p-6 sm:p-8 flex flex-col justify-center">
                                         <div className="flex items-center gap-4 mb-4">
-                                            <div className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-primary border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                                            <div className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-white border border-white/10 group-hover:scale-110 transition-transform duration-500">
                                                 <Icon className="h-4.5 w-4.5" />
                                             </div>
                                             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/30">Case_S_0{i + 1}</span>
@@ -120,10 +120,10 @@ function AssetSearchVisual() {
                 {/* Scanning sweep */}
                 <motion.rect
                     width="160" height="2" x="20"
-                    fill="var(--primary)"
+                    fill="var(--muted)"
                     animate={{ y: [20, 180, 20] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    style={{ filter: "drop-shadow(0 0 4px var(--primary))" }}
+                    style={{ filter: "drop-shadow(0 0 4px var(--muted))" }}
                     opacity="0.3"
                 />
 
@@ -133,18 +133,18 @@ function AssetSearchVisual() {
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
                 >
-                    <circle cx="110" cy="85" r="4" fill="var(--primary)" />
+                    <circle cx="110" cy="85" r="4" fill="var(--muted)" />
                     <motion.circle
                         cx="110" cy="85" r="12"
-                        fill="none" stroke="var(--primary)" strokeWidth="1"
+                        fill="none" stroke="var(--muted)" strokeWidth="1"
                         animate={{ scale: [0.5, 1.5], opacity: [1, 0] }}
                         transition={{ duration: 1, repeat: Infinity }}
                     />
-                    <path d="M100 85 H120 M110 75 V95" stroke="var(--primary)" strokeWidth="0.5" opacity="0.5" />
+                    <path d="M100 85 H120 M110 75 V95" stroke="var(--muted)" strokeWidth="0.5" opacity="0.5" />
                 </motion.g>
             </svg>
 
-            <div className="absolute bottom-4 right-4 text-[8px] font-mono text-primary/60">
+            <div className="absolute bottom-4 right-4 text-[8px] font-mono text-muted/60">
                 COORD: [110, 85]
             </div>
         </div>

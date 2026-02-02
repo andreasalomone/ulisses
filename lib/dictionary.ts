@@ -188,7 +188,7 @@ export const DICTIONARY = {
         process: [
             {
                 problem: "Troppo tempo per trovare carrelli/roll/pallet speciali/attrezzature",
-                solution: "Localizzazione istantanea con precisione <1m."
+                solution: "Localizzazione istantanea con precisione <10 cm."
             },
             {
                 problem: "Dispersioni e utilizzo inefficiente degli asset",

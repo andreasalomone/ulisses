@@ -111,7 +111,8 @@ function FrictionCard({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className={cn(
-                "relative p-8 rounded-[2rem] border overflow-hidden group transition-all duration-500 h-full flex flex-col",
+                "relative p-8 rounded-[2rem] border overflow-hidden group h-full flex flex-col will-change-[transform,box-shadow]",
+                "transition-[background-color,border-color,transform,box-shadow] duration-500",
                 isHovered
                     ? "bg-primary border-primary shadow-2xl shadow-primary/20 scale-[1.02] z-20"
                     : "bg-card border-border/50 hover:border-border/80",
@@ -121,14 +122,16 @@ function FrictionCard({
             {/* Status HUD */}
             <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className={cn(
-                    "h-12 w-12 rounded-2xl flex items-center justify-center transition-all duration-500 shadow-sm",
+                    "h-12 w-12 rounded-2xl flex items-center justify-center shadow-sm will-change-transform",
+                    "transition-[background-color,color,transform] duration-500",
                     isHovered ? "bg-white text-primary scale-110" : "bg-muted text-muted-foreground"
                 )}>
                     <Icon className="h-6 w-6" />
                 </div>
 
                 <div className={cn(
-                    "px-3 py-1 rounded-full border text-[9px] font-mono tracking-widest flex items-center gap-2 transition-all duration-500",
+                    "px-3 py-1 rounded-full border text-[9px] font-mono tracking-widest flex items-center gap-2 shadow-sm",
+                    "transition-[border-color,color,background-color] duration-500",
                     isHovered
                         ? "border-white/40 text-white bg-white/10"
                         : "border-border text-muted-foreground bg-muted/30"
@@ -148,7 +151,7 @@ function FrictionCard({
             </div>
 
             <div className="relative z-10 flex-1 flex flex-col">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout">
                     {!isHovered ? (
                         <motion.div
                             key="problem"
@@ -172,7 +175,7 @@ function FrictionCard({
                             transition={{ duration: 0.3 }}
                             className="space-y-4"
                         >
-                            <h3 className="text-xl md:text-2xl font-black leading-tight text-white">
+                            <h3 className="text-xl font-bold leading-tight text-white">
                                 {content.solution}
                             </h3>
                             <div className="h-1 w-12 bg-white/40 rounded-full" />
@@ -201,7 +204,8 @@ function FrictionCard({
 function RadarAnimation({ active }: { active: boolean }) {
     return (
         <div className={cn(
-            "relative h-64 w-full flex items-center justify-center rounded-[2rem] border transition-all duration-700 overflow-hidden",
+            "relative h-64 w-full flex items-center justify-center rounded-[2rem] border overflow-hidden will-change-[background-color,border-color]",
+            "transition-[background-color,border-color] duration-700",
             active ? "bg-white/10 border-white/20" : "bg-muted/30 border-border/50"
         )}>
             {/* Grid overlay */}
@@ -215,7 +219,7 @@ function RadarAnimation({ active }: { active: boolean }) {
                 <div
                     key={i}
                     className={cn(
-                        "absolute border rounded-full transition-colors duration-700",
+                        "absolute border rounded-full will-change-colors transition-colors duration-700",
                         active ? "border-white/20" : "border-border/30"
                     )}
                     style={{
@@ -233,7 +237,8 @@ function RadarAnimation({ active }: { active: boolean }) {
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
                 <div className={cn(
-                    "absolute top-0 left-1/2 -ml-px w-[2px] h-1/2 transition-colors duration-700",
+                    "absolute top-0 left-1/2 -ml-px w-[2px] h-1/2 will-change-[background-color,box-shadow]",
+                    "transition-[background-color,box-shadow] duration-700",
                     active ? "bg-linear-to-t from-white/40 to-transparent shadow-[0_0_15px_white]" : "bg-linear-to-t from-muted-foreground/20 to-transparent"
                 )} />
             </motion.div>
