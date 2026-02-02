@@ -276,6 +276,12 @@ export const DICTIONARY = {
             unlockTitle: "Cosa sblocchiamo nel processo",
             unlockSubtitle: "Ottimizziamo la manutenzione e la gestione materiali nei depositi ferroviari, trasformando la ricerca manuale in dati operativi."
         },
+        featuredStory: {
+            title: "Con Trenord, rendere visibile ciò che accade in deposito",
+            text: "In collaborazione con Trenord, prima azienda ferroviaria regionale in Italia, Ulisses ha realizzato un Proof of Concept per la localizzazione dei convogli all’interno del deposito di Milano Fiorenza, il più grande d’Europa.",
+            cta: "Scopri di più",
+            link: "/knowledge-hub/ferroviario/trenord"
+        },
         process: [
             {
                 problem: "Attrezzature e materiali non rintracciabili quando servono",
@@ -560,7 +566,7 @@ export const DICTIONARY = {
                             text: "In un grande deposito ferroviario, Ulisses e Trenord hanno realizzato un PoC per la localizzazione di precisione di 50 convogli su 12 binari.",
                             link: "/knowledge-hub/ferroviario/trenord",
                             fullContent: {
-                                scenario: "In un grande deposito ferroviario, la manutenzione è una macchina complessa fatta di movimentazioni continue, vincoli fisici e sequenze precise.Per Trenord, conoscere con precisione la posizione dei convogli in deposito è un prerequisito per garantire efficienza e affidabilità.",
+                                scenario: "In un grande deposito ferroviario, la manutenzione è una macchina complessa fatta di movimentazioni continue, vincoli fisici e sequenze precise. Per Trenord, conoscere con precisione la posizione dei convogli in deposito è un prerequisito per garantire efficienza e affidabilità.",
                                 challenge: "La sfida non era 'sapere dove sono i treni' in astratto, ma ottenere un dato affidabile, preciso e utilizzabile nei processi reali. Le tecnologie tradizionali risultavano poco efficaci in ambienti indoor complessi o troppo invasive per la scala industriale.",
                                 resolution: "Ulisses ha realizzato un Proof of Concept operativo: installazione di transponder su 50 convogli, copertura di 12 binari a Milano Fiorenza e tracciamento continuo con visualizzazione tramite Digital Twin dell’impianto.",
                                 productionReady: "Precisione di localizzazione inferiore al metro, dispositivi autoalimentati e resistenti, integrazione nativa via API REST per la condivisione dei dati e scalabilità pronta per l'estensione all'intero sito.",

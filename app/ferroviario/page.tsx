@@ -9,6 +9,7 @@ import { BrandText } from "@/components/ui/brand";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 import { ProcessUnlock } from "@/components/sections/ferroviario/process-unlock";
 import { FerroviarioUseCases } from "@/components/sections/ferroviario/ferroviario-use-cases";
+import { FeaturedStory } from "@/components/sections/ferroviario/featured-story";
 
 export default function FerroviarioPage() {
     const d = DICTIONARY.ferroviario;
@@ -28,6 +29,9 @@ export default function FerroviarioPage() {
 
             {/* Cosa sblocchiamo */}
             <ProcessUnlock />
+
+            {/* Featured Story: Trenord */}
+            <FeaturedStory />
 
             {/* Use Cases */}
             <FerroviarioUseCases />
