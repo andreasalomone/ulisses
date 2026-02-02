@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Wrench, Package, Cpu, FileCheck } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
-import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 import { BrandText } from "@/components/ui/brand";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 

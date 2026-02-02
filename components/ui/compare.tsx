@@ -38,8 +38,6 @@ export const Compare = ({
 
     const sliderRef = useRef<HTMLDivElement>(null);
 
-    const [isMouseOver, setIsMouseOver] = useState(false);
-
     const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
     const startAutoplay = useCallback(() => {
@@ -102,12 +100,10 @@ export const Compare = ({
     }, [startAutoplay, stopAutoplay]);
 
     function mouseEnterHandler() {
-        setIsMouseOver(true);
         stopAutoplay();
     }
 
     function mouseLeaveHandler() {
-        setIsMouseOver(false);
         if (slideMode === "hover") {
             setSliderXPercent(initialSliderPercentage);
         }
@@ -118,7 +114,7 @@ export const Compare = ({
     }
 
     const handleStart = useCallback(
-        (clientX: number) => {
+        () => {
             if (slideMode === "drag") {
                 setIsDragging(true);
             }
@@ -148,7 +144,7 @@ export const Compare = ({
     );
 
     const handleMouseDown = useCallback(
-        (e: React.MouseEvent) => handleStart(e.clientX),
+        () => handleStart(),
         [handleStart]
     );
     const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
@@ -158,9 +154,9 @@ export const Compare = ({
     );
 
     const handleTouchStart = useCallback(
-        (e: React.TouchEvent) => {
+        () => {
             if (!autoplay) {
-                handleStart(e.touches[0].clientX);
+                handleStart();
             }
         },
         [handleStart, autoplay]
@@ -229,19 +225,24 @@ export const Compare = ({
             {/* Background Image (Clean/Second) - Shows on the right */}
             <div className="absolute inset-0 z-10 w-full h-full select-none overflow-hidden rounded-2xl">
                 {secondImage && (
-                    <motion.img
-                        alt="second image"
-                        src={secondImage}
-                        className={cn(
-                            "absolute inset-0 w-full h-full object-cover object-top-left",
-                            secondImageClassname
-                        )}
+                    <motion.div
+                        className="absolute inset-0 w-full h-full"
                         style={{
                             clipPath: `inset(0 0 0 ${sliderXPercent}%)`,
                         }}
                         transition={{ duration: 0 }}
-                        draggable={false}
-                    />
+                    >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            alt="second image"
+                            src={secondImage}
+                            className={cn(
+                                "absolute inset-0 w-full h-full object-cover object-top-left",
+                                secondImageClassname
+                            )}
+                            draggable={false}
+                        />
+                    </motion.div>
                 )}
             </div>
 
@@ -256,6 +257,7 @@ export const Compare = ({
                             }}
                             transition={{ duration: 0 }}
                         >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 alt="first image"
                                 src={firstImage}

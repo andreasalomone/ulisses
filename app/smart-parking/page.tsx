@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Download, Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
-import { FinalCTASection } from "@/components/sections/shared/final-cta-section";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 export default function SmartParkingPage() {
