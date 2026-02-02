@@ -32,7 +32,7 @@ export function DashboardPreview() {
                 <div className="order-1 lg:order-2">
                     <div className="animate-in fade-in slide-in-from-right-8 duration-700">
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{d.label}</span>
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
                             {d.title}
                         </h2>
                         <p className="text-xl text-muted-foreground leading-relaxed mb-10">

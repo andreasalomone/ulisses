@@ -60,22 +60,22 @@ export const DICTIONARY = {
         },
         why: {
             title: "Perché Ulisses è diversa",
-            intro: "Non forniamo “un singolo sensore” o “solo una dashboard”. Costruiamo un sistema completo che porta dati affidabili dal campo alle decisioni — e quando serve integriamo il dato nelle piattaforme già in uso (WMS/CMMS/ITS/BI) tramite API.",
+            intro: "Oltre il singolo sensore: un sistema completo che porta dati certi dal campo alle decisioni, integrandosi via API con i tuoi sistemi (WMS/CMMS/ITS/BI).",
             columns: [
                 {
                     title: "Software gestionali",
                     problem: "Organizzano processi, ma restano ciechi sul mondo fisico.",
-                    solution: "Ulisses porta la verità del campo direttamente nei tuoi sistemi."
+                    solution: "Ulisses porta la verità del campo direttamente nei tuoi sistemi, migliorando efficienza e precisione."
                 },
                 {
                     title: "Tracking tradizionale",
                     problem: "La demo funziona, ma fatica in ambienti reali e ritorna dati inaffidabili.",
-                    solution: "Ulisses è ingegneria industriale nata per vincere interferenze e scalare senza fatica."
+                    solution: "Ulisses è ingegneria industriale nata per vincere interferenze e scalare a centinaia di migliaia di sensori senza fatica."
                 },
                 {
                     title: "Soluzioni frammentate",
                     problem: "Un puzzle di vendor diversi è un incubo di manutenzione.",
-                    solution: "Regia unica. Dalla survey alle API, un solo partner responsabile."
+                    solution: "Ulisses è regia unica. Dalla survey alle API, una soluzione completa per tutto il ciclo di vita del dato."
                 }
             ],
             closure: "Ulisses è modulare: piattaforma opzionale e dato integrabile via API, con metodo e ownership chiara. Unifica field, rete e dato: puoi usare la nostra piattaforma oppure integrare via API, riducendo complessità e tempi di messa a terra.",

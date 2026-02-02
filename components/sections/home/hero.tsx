@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { ArrowRight, Download, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
+import { Download, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 
@@ -11,7 +11,7 @@ export function Hero() {
     const d = DICTIONARY.home.hero;
 
     return (
-        <SectionWrapper className="min-h-[85vh] flex items-center pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        <SectionWrapper className="min-h-[95vh] flex items-center pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 w-full flex flex-col lg:flex-row lg:items-center items-start gap-12 lg:gap-8">
                 {/* Left Content - 60% */}
                 <div className="relative z-10 w-full lg:w-[60%]">
@@ -36,11 +36,6 @@ export function Hero() {
                             {DICTIONARY.common.onePagerCta}
                         </Button>
                     </div>
-
-                    <Link href="/contatti" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both w-fit">
-                        {d.expertLink}
-                        <ArrowRight className="h-4 w-4" />
-                    </Link>
                 </div>
 
                 {/* Right Image - 40% */}

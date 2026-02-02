@@ -58,7 +58,7 @@ export function ContactFormSection() {
                 {/* [2026 Standard] Use @lg (approx 32rem/512px) for safer container split */}
                 <div className="grid grid-cols-1 @lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center relative z-10">
                     <div className="animate-in fade-in slide-in-from-left-8 duration-700">
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
                             {d.title}
                         </h2>
                         <p className="text-xl opacity-90 leading-relaxed mb-8">

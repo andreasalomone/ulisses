@@ -21,7 +21,7 @@ export function FaqSection({ variant = "default" }: FaqSectionProps) {
                     <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mb-6">
                         <HelpCircle className="h-8 w-8" />
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
                         <BrandText text={faq.title} />
                     </h2>
                 </div>

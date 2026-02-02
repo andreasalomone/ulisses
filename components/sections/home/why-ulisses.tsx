@@ -61,7 +61,7 @@ export function WhyUlisses() {
     return (
         <SectionWrapper className="bg-background/50 overflow-hidden">
             <div className="max-w-3xl mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                <h2 className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.1]">
                     <BrandText text={d.title} />
                 </h2>
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">

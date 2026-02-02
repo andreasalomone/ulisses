@@ -16,7 +16,7 @@ export function HowItWorks() {
     return (
         <SectionWrapper id="come-funziona" variant="secondary" className="relative overflow-hidden">
             <div className="max-w-3xl mb-16 relative z-10">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
                     <BrandText text={d.title} />
                 </h2>
                 <p className="text-xl opacity-80 leading-relaxed">

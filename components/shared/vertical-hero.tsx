@@ -27,7 +27,7 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                     (image || sideContent) ? "lg:grid-cols-2" : "max-w-4xl"
                 )}>
                     <div className="animate-in fade-in slide-in-from-left duration-1000 ease-out fill-mode-both">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-wrap-balance">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-wrap-pretty">
                             {titleToken ? (
                                 title.split(new RegExp(`(${titleToken})`, "gi")).map((part, i) =>
                                     part.toLowerCase() === titleToken.toLowerCase() ? (
