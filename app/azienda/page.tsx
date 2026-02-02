@@ -3,14 +3,14 @@ import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Shield, Target, Zap, Users } from "lucide-react";
+import { Shield, Target, Zap, Users, Lightbulb } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 
+const icons = [Shield, Zap, Target];
+
 export default function AziendaPage() {
     const d = DICTIONARY.azienda;
-    const values = DICTIONARY.azienda.values;
-    const icons = [Shield, Zap, Target];
 
     return (
         <div className="flex flex-col">
@@ -43,7 +43,7 @@ export default function AziendaPage() {
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {values.map((value, i) => {
+                    {d.values.map((value, i) => {
                         const Icon = icons[i];
                         return (
                             <div key={i} className="p-10 rounded-[2.5rem] bg-card border shadow-sm text-center group hover:border-primary/30 transition-all">
@@ -56,6 +56,30 @@ export default function AziendaPage() {
                             </div>
                         );
                     })}
+                </div>
+
+                {/* Awards - Re-styled for premium feel */}
+                <div id="awards" className="mt-24 pt-24 border-t border-primary/10">
+                    <div className="text-center max-w-3xl mx-auto mb-20">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6 uppercase tracking-widest">
+                            <Lightbulb className="h-4 w-4" />
+                            {d.awards.label}
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">{d.awards.title}</h2>
+                        <p className="text-xl text-muted-foreground">{d.awards.text}</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                        {d.awards.items.map((item, i) => (
+                            <div key={i} className="flex flex-col items-center text-center p-10 rounded-[3rem] bg-card border shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all hover:-translate-y-2 group">
+                                <div className="h-20 w-20 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                                    <Lightbulb className="h-10 w-10" />
+                                </div>
+                                <p className="font-extrabold text-2xl mb-2 tracking-tight">{item.title}</p>
+                                <p className="text-primary font-bold text-xl">{item.year}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </SectionWrapper>
 

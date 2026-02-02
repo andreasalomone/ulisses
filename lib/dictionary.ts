@@ -12,7 +12,7 @@ export const DICTIONARY = {
         soluzioni: "Soluzioni",
         logistica: "Logistica",
         ferroviario: "Ferroviario",
-        smartParking: "Smart Parking",
+        smartParking: "Smart City",
         tecnologia: "Tecnologia",
         risorse: "Risorse",
         azienda: "Chi Siamo",
@@ -51,9 +51,9 @@ export const DICTIONARY = {
                     resolutions: ["Disponibilità attrezzature", "Storico eventi", "CMMS"]
                 },
                 parking: {
-                    title: "Smart City — Smart Parking",
+                    title: "Smart City",
                     description: "Dati di occupazione e eventi operativi, rollout scalabile e OPEX controllabile con rete privata.",
-                    cta: "Scopri Smart Parking",
+                    cta: "Scopri Smart City",
                     resolutions: ["Occupancy", "Durata sosta", "Qualità dato"]
                 }
             }
@@ -159,7 +159,7 @@ export const DICTIONARY = {
     },
     solutions: {
         hero: {
-            h1: "Soluzioni per Logistica, Ferroviario e Smart Parking",
+            h1: "Soluzioni per Logistica, Ferroviario e Smart City",
             intro: "Ulisses porta dati affidabili dal campo alle decisioni nei contesti dove contano continuità, qualità del dato e integrazione con sistemi già esistenti."
         },
         method: {
@@ -491,7 +491,17 @@ export const DICTIONARY = {
             text: "Semplificare la complessità operativa tramite dati di campo affidabili."
         },
         values: ["Affidabilità", "Scalabilità", "Integrazione"],
-        cta: "Parla con noi"
+        cta: "Parla con noi",
+        awards: {
+            title: "Eccellenza Riconosciuta",
+            text: "Premi e certificazioni che confermano il valore della nostra tecnologia e l'impatto delle soluzioni Ulisses sul mercato.",
+            label: "Certificazioni & Premi",
+            items: [
+                { title: "Premio Innovazione", year: "2021" },
+                { title: "Premio Innovazione", year: "2022" },
+                { title: "Premio Innovazione", year: "2023" }
+            ]
+        }
     },
     legal: {
         privacy: "Privacy Policy",
@@ -695,7 +705,7 @@ export const DICTIONARY = {
             cards: [
                 { title: "Logistica", href: "/logistica" },
                 { title: "Ferroviario", href: "/ferroviario" },
-                { title: "Smart Parking", href: "/smart-parking" }
+                { title: "Smart City", href: "/smart-city" }
             ]
         }
     },
@@ -706,7 +716,7 @@ export const DICTIONARY = {
         fields: {
             scenario: {
                 label: "In quale scenario ti serve Ulisses?",
-                options: ["Logistica", "Ferroviario", "Smart Parking", "Altro"]
+                options: ["Logistica", "Ferroviario", "Smart Parking", "Smart Building", "Altro"]
             },
             objective: {
                 label: "Obiettivo principale",
@@ -716,6 +726,7 @@ export const DICTIONARY = {
                     "Occupancy stalli",
                     "Durata / overstay",
                     "Tracciabilità materiali/attrezzature",
+                    "Monitoraggio ingressi/flussi",
                     "Integrazione con sistemi esistenti",
                     "Altro"
                 ]
@@ -734,5 +745,53 @@ export const DICTIONARY = {
             }
         },
         noSpam: "Nessuna spam. Usiamo i dati solo per rispondere alla tua richiesta."
+    },
+    smartCity: {
+        cards: {
+            building: {
+                subtitle: "Visibilità asset, accessi e flussi in ospedali e campus"
+            },
+            parking: {
+                subtitle: "Occupancy, enforcement e gestione sosta su larga scala"
+            }
+        }
+    },
+    smartBuilding: {
+        hero: {
+            h1: "Smart Building: visibilità su asset, accessi e flussi all’interno di edifici critici",
+            h1Highlight: "Smart Building",
+            sub: "Dati affidabili per rintracciare asset, monitorare ingressi/uscite e ottimizzare i flussi in edifici complessi come ospedali, campus e grandi strutture.",
+            cta: "Parla con un esperto",
+            onePager: "Scarica One-Pager Smart Building"
+        },
+        segments: [
+            { id: "hospital", title: "Smart Hospital", text: "Sicurezza dei percorsi, asset sanitari tracciati, prevenzione perdita dispositivi" },
+            { id: "campus", title: "Smart Campus", text: "Controllo automazioni, gestione edifici, ottimizzazione spazi e persone" },
+            { id: "facility", title: "Smart Facility / Large Buildings", text: "Visibilità su accessi, log asset, supporto alla manutenzione" }
+        ],
+        useCases: [
+            { id: "asset", title: "Asset Tracking in tempo reale", text: "Identifica e monitora dove si trovano dispositivi critici, macchine e strumenti." },
+            { id: "access", title: "Monitoraggio ingressi/uscite", text: "Controlla ingressi e usciti per una maggiore compliance e sicurezza antintrusione." },
+            { id: "events", title: "Eventi operativi e anomalie", text: "Allarmi per utilizzi non autorizzati, asset fuori area, accessi sospetti." },
+            { id: "quality", title: "Qualità del dato & osservabilità", text: "Sensori con health monitoring per continuità e affidabilità delle tracce." }
+        ],
+        useCaseMapping: {
+            hospital: ["asset", "events", "quality", "access"],
+            campus: ["access", "events", "quality"],
+            facility: ["asset", "access", "events", "quality"]
+        },
+        dashboard: {
+            title: "Dashboard & Insights",
+            bullets: [
+                "Mappa dell’edificio con asset e presenze",
+                "Timeline eventi (ingressi, spostamenti, warning)",
+                "Report operativi per reparto/area",
+                "Health rete sensori & SLA"
+            ]
+        },
+        benchmarks: {
+            title: "Esempi dal mercato",
+            items: [] // No benchmarks provided in prompt, leaving empty or I can infer/omit
+        }
     }
 };

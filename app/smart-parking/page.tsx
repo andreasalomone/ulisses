@@ -2,9 +2,10 @@ import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { SmartParkingExplorer } from "@/components/sections/parking/smart-parking-explorer";
-import { PrivateNetworkVisualization } from "@/components/sections/parking/private-network-visualization";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Signal, HardDrive, Zap } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
@@ -63,9 +64,15 @@ export default function SmartParkingPage() {
                             ))}
                         </div>
                     </div>
-                    <div className="order-1 lg:order-2 flex justify-center">
-                        <div className="w-full max-w-md lg:max-w-full">
-                            <PrivateNetworkVisualization />
+                    <div className="order-1 lg:order-2 flex justify-center items-center">
+                        <div className="relative w-7/12 max-w-lg lg:max-w-full aspect-square md:aspect-auto rounded-2xl overflow-hidden">
+                            <Image
+                                src="/assets/mockup-parking.png"
+                                alt="Smart Parking Network Visualization"
+                                width={450}
+                                height={338}
+                                className="w-full h-auto object-contain"
+                            />
                         </div>
                     </div>
                 </div>
