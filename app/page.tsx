@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/home/hero";
 import { Partners } from "@/components/sections/home/partners";
+import { TechnologyPillars } from "@/components/sections/home/technology-pillars";
 import { VerticalSelector } from "@/components/sections/home/vertical-selector";
 import { WhyUlisses } from "@/components/sections/home/why-ulisses";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
@@ -15,6 +16,7 @@ export default function Page() {
     return (
         <div className="flex flex-col">
             <Hero />
+            <TechnologyPillars />
             <VerticalSelector />
             <WhyUlisses />
             <HowItWorks />

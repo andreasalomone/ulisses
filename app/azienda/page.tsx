@@ -4,7 +4,6 @@ import { Articoli } from "@/components/sections/chi-siamo/articoli";
 import { IntroSection } from "@/components/sections/chi-siamo/intro";
 import { MissionSection } from "@/components/sections/chi-siamo/mission";
 import { StorySection } from "@/components/sections/chi-siamo/story";
-import { EngineRoomSection } from "@/components/sections/chi-siamo/engine-room";
 import { TeamBoardSection } from "@/components/sections/chi-siamo/team-board";
 import { TestimonialSection } from "@/components/sections/chi-siamo/testimonial";
 import { AwardsSection } from "@/components/sections/chi-siamo/awards";

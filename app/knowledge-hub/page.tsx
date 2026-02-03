@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
@@ -12,14 +14,18 @@ import { BrandText } from "@/components/ui/brand";
 
 
 const GRADIENTS = [
-    "bg-linear-to-br from-primary to-slate-950",
-    "bg-linear-to-br from-secondary to-teal-950",
-    "bg-linear-to-br from-accent to-indigo-950",
-    "bg-linear-to-br from-blue-600 to-indigo-900",
-    "bg-linear-to-br from-teal-600 to-emerald-900",
-    "bg-linear-to-br from-violet-600 to-purple-950",
-    "bg-linear-to-br from-cyan-600 to-blue-950",
-    "bg-linear-to-br from-slate-700 to-slate-950",
+    // Premium Dark Blue / Primary
+    "bg-linear-to-br from-primary/90 via-primary/70 to-slate-950 border border-primary/20",
+    // Deep Teal / Secondary
+    "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
+    // Violet / Accent
+    "bg-linear-to-br from-accent/90 via-accent/70 to-slate-950 border border-accent/20",
+    // Indigo / Chart-1
+    "bg-linear-to-br from-[oklch(0.45_0.14_260)]/90 via-[oklch(0.35_0.10_260)]/70 to-slate-950 border border-[oklch(0.45_0.14_260)]/20",
+    // Deep Slate / Industrial
+    "bg-linear-to-br from-slate-600 via-slate-800 to-slate-950 border border-slate-500/30",
+    // Slate / Muted Luxury
+    "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950 border border-slate-600/30",
 ];
 
 
@@ -75,12 +81,17 @@ export default function KnowledgeHubPage() {
                                                     relative h-full w-full rounded-tr-2xl rounded-bl-2xl rounded-tl-sm rounded-br-2xl
                                                     p-8 flex flex-col justify-between
                                                     transition-all duration-500 ease-out
-                                                    shadow-xl group-hover:shadow-2xl
+                                                    shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20
                                                     group-hover:transform-[rotateY(-4deg)_translateY(-10px)]
                                                     overflow-hidden text-white
+                                                    backdrop-blur-sm
                                                     ${gradientClass}
                                                 `}
                                             >
+                                                {/* Noise Texture Overlay */}
+                                                <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"
+                                                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+                                                />
                                                 {/* "Spine" effect overlay */}
                                                 <div className="absolute left-0 top-0 bottom-0 w-4 bg-linear-to-r from-black/40 to-transparent z-10" />
 

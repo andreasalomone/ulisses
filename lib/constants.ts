@@ -14,6 +14,7 @@ export const NAV_LINKS: NavLink[] = [
             { label: DICTIONARY.navigation.logistica, href: "/logistica" },
             { label: DICTIONARY.navigation.ferroviario, href: "/ferroviario" },
             { label: DICTIONARY.navigation.smartParking, href: "/smart-city" },
+            { label: DICTIONARY.navigation.nautica, href: "/nautica" },
         ]
     },
     { label: DICTIONARY.navigation.tecnologia, href: "/tecnologia" },
