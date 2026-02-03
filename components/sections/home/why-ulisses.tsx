@@ -61,7 +61,7 @@ export function WhyUlisses() {
     const icons = [Boxes, Radio, Unplug];
 
     return (
-        <SectionWrapper className="bg-background/50 overflow-hidden">
+        <SectionWrapper className="bg-background/50 overflow-hidden pb-8 md:pb-12">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16 lg:mb-24">
                 <div className="flex-1 max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.1]">
@@ -77,7 +77,7 @@ export function WhyUlisses() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-24 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-12 relative z-10">
                 {d.columns.map((col, i) => (
                     <DifferentiatorCard
                         key={i}

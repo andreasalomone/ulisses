@@ -26,9 +26,9 @@ export const DICTIONARY = {
             subheadline: "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
             subheadlineToken: "dashboard, rete, sensori e API",
             proofs: [
-                "Scalabilità unica: +100,000 asset tracciati",
-                "Precisione estrema: <10cm di margine di errore",
-                "Wireless: alimentazione a batteria con +5 anni di autonomia"
+                "Planning & commissioning integrati",
+                "Brevetto tecnologico",
+                "Integrazioni IT/OT con SLA end-to-end"
             ],
             expertLink: "Parla con un esperto"
         },
@@ -264,7 +264,7 @@ export const DICTIONARY = {
             title: "Esempi dal mercato",
             items: [
                 {
-                    title: "Pallet tracking in magazzino - ",
+                    title: "Pallet tracking in magazzino",
                     context: "Warehouse con pallet che si 'perdono' tra aree.",
                     challenge: "Spreco di tempo ricerca, scarsa precisione inventario.",
                     solution: "Pallet-tracking con posizione precisa e aggiornamenti operativi.",
@@ -396,14 +396,14 @@ export const DICTIONARY = {
             title: "Esempi dal mercato",
             items: [
                 {
-                    title: "Occupancy e durata sosta - ",
+                    title: "Occupancy e durata sosta",
                     context: "Parcheggi ad alta rotazione con bisogno di dati affidabili.",
                     challenge: "Metodi manuali aumentano errori e ritardi.",
                     solution: "Sensori su singolo stallo per arrivo/partenza e calcolo durata.",
                     impact: "Dati tempestivi, riduzione errori, ottimizzazione gestione."
                 },
                 {
-                    title: "Sensori dual detection - ",
+                    title: "Sensori dual detection",
                     context: "Parcheggi outdoor con pioggia e interferenze.",
                     challenge: "Mantenere alta accuratezza (99%) e ridurre manutenzione.",
                     solution: "Fusione radar + geomagnetico per stabilità del dato.",
