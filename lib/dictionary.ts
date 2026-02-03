@@ -33,21 +33,21 @@ export const DICTIONARY = {
             expertLink: "Parla con un esperto"
         },
         technologyPillars: {
-            title: "I pilastri della nostra tecnologia proprietaria",
+            title: "I pilastri della nostra tecnologia brevettata",
             cards: [
                 {
                     title: "Scalabilità Unica",
-                    subtitle: "+100,000 asset tracciati",
+                    subtitle: "Servizio affidabile e garantito su +100,000 dispositivi connessi senza interruzioni",
                     icon: "Scale"
                 },
                 {
                     title: "Precisione Estrema",
-                    subtitle: "<10cm di margine d'errore",
+                    subtitle: "Grazie alla nostra tecnologia proprietaria, garantiamo un'accuratezza <10cm",
                     icon: "Target"
                 },
                 {
                     title: "Wireless",
-                    subtitle: "+5 anni di autonomia",
+                    subtitle: "I nostri devices sono alimentati a batteria e funzionano fino a 5 anni senza manutenzione",
                     icon: "BatteryCharging"
                 }
             ]
@@ -61,7 +61,7 @@ export const DICTIONARY = {
             cards: {
                 logistica: {
                     title: "Logistica & Operations",
-                    description: "Riduci tempi di ricerca asset, errori operativi e rischi in magazzino e yard.",
+                    description: "Riduci i tempi di ricerca dei tuoi asset, errori operativi e di posizione, e rischi in magazzino e yard.",
                     cta: "Scopri Logistica",
                     resolutions: ["Ricerca asset", "Geofencing", "KPI flussi"]
                 },
@@ -552,7 +552,7 @@ export const DICTIONARY = {
     },
     azienda: {
         hero: {
-            label: "About Ulisses",
+            label: "About Us",
             h1: "Costruiamo l'intelligenza che muove il mondo fisico.",
             text: "Non siamo solo dev. Siamo ingegneri del campo. Trasformiamo il caos di magazzini e città in dati certi, stabili e pronti per decidere."
         },
