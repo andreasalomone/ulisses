@@ -10,8 +10,7 @@ export function DemoCTA() {
             title={d.finalCta.title}
             subtitle={d.finalCta.subtitle}
             buttons={[
-                { label: d.finalCta.ctaPilot, href: "/contatti" },
-                { label: d.finalCta.ctaExpert, href: "/contatti", variant: "outline" }
+                { label: d.finalCta.ctaExpert, href: "/contatti" },
             ]}
         />
     );

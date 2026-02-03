@@ -33,7 +33,7 @@ export default function NauticaPage() {
             {/* Diportista CTA */}
             {d.diportistaCta && (
                 <SectionWrapper>
-                    <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 p-12 md:p-24 text-center">
+                    <div className="relative overflow-hidden rounded-[2.5rem] bg-linear-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 p-12 md:p-24 text-center">
                         <div className="max-w-2xl mx-auto space-y-8 relative z-10">
                             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
                                 {d.diportistaCta.title}
@@ -42,7 +42,7 @@ export default function NauticaPage() {
                                 {d.diportistaCta.subtitle}
                             </p>
                             <Button asChild size="lg" className="h-14 px-8 text-lg font-bold rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:scale-105">
-                                <Link href="https://app.ulisses.life">{d.diportistaCta.cta}</Link>
+                                <Link href="https://app.ulisses.it">{d.diportistaCta.cta}</Link>
                             </Button>
                         </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { SmartParkingExplorer } from "@/components/sections/parking/smart-parking-explorer";
+import { SmartParkingUseCases } from "@/components/sections/parking/smart-parking-use-cases";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -37,11 +37,7 @@ export default function SmartParkingPage() {
                         Esplora come Ulisses Smart Parking risolve sfide specifiche per la tua organizzazione.
                     </p>
                 </div>
-                <SmartParkingExplorer
-                    segments={d.segments}
-                    useCases={d.useCases}
-                    mapping={d.useCaseMapping}
-                />
+                <SmartParkingUseCases />
             </SectionWrapper>
 
             {/* Rete Privata */}

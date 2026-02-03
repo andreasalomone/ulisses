@@ -11,6 +11,8 @@ import {
     CheckCircle2,
     Database
 } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { BrandText } from "@/components/ui/brand";
 import { DICTIONARY } from "@/lib/dictionary";
 
 const useCases = [
@@ -47,26 +49,37 @@ export function FerroviarioUseCases() {
         <section className="py-24 bg-primary text-white overflow-hidden relative">
             {/* Background elements */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,oklch(0.35_0.14_250)_0%,var(--primary)_100%)]" />
-            <div className="absolute inset-0 opacity-[0.15] bg-size-[40px_40px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
+            <div className="absolute inset-0 opacity-[0.1] bg-size-[40px_40px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
 
             <div className="container px-4 mx-auto relative z-10">
                 <div className="mb-20">
                     <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-2xl lg:text-6xl md:text-5xl font-extrabold tracking-tighter mb-6"
+                        className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8"
                     >
-                        Use case operativi
+                        <BrandText text="Use case operativi" />
                     </motion.h2>
-                    <div className="h-1 w-24 bg-white rounded-full mb-8" />
+                    <div className="h-1.5 w-32 bg-white/20 rounded-full mb-8 relative overflow-hidden">
+                        <motion.div
+                            className="absolute inset-0 bg-white"
+                            initial={{ x: "-100%" }}
+                            whileInView={{ x: "0%" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: "circOut" }}
+                        />
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
                     {useCases.map((uc, i) => {
                         const content = d.useCases[i];
                         const Icon = uc.icon;
+
+                        // Bento Grid logic: 3:3, 4:2 pattern (different from logistica for subtle variety)
+                        const colSpan = i < 2 ? "lg:col-span-3" : i === 2 ? "lg:col-span-4" : "lg:col-span-2";
 
                         return (
                             <motion.div
@@ -74,32 +87,39 @@ export function FerroviarioUseCases() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: i * 0.1 }}
-                                className="group relative"
+                                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+                                className={cn(
+                                    "group relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:bg-white/10",
+                                    colSpan
+                                )}
                             >
-                                <div className="grid grid-cols-1 lg:grid-cols-2 bg-zinc-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-colors duration-500">
-                                    {/* Content side */}
-                                    <div className="p-6 sm:p-8 flex flex-col justify-center">
-                                        <div className="flex items-center gap-4 mb-4">
-                                            <div className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-white border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                                                <Icon className="h-4.5 w-4.5" />
-                                            </div>
-                                            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/30">Case_S_0{i + 1}</span>
-                                        </div>
+                                {/* Inner Gradient mapping */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.05)_0%,transparent_70%)]" />
+                                </div>
 
-                                        <h3 className="text-lg md:text-xl font-bold mb-3 tracking-tight">
-                                            {content.title}
-                                        </h3>
-                                        <p className="text-zinc-400 leading-relaxed text-xs md:text-sm">
-                                            {content.text}
-                                        </p>
+                                <div className="h-full flex flex-col p-8 md:p-10">
+                                    <div className="flex items-start justify-between mb-8">
+                                        <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500 shadow-xl">
+                                            <Icon className="h-6 w-6" />
+                                        </div>
+                                        <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-white/40">S_0{i + 1}</span>
                                     </div>
 
-                                    {/* Visual side */}
-                                    <div className="h-48 lg:h-auto bg-black/40 border-l border-white/5 flex items-center justify-center p-6 relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)]" />
-                                        <div className="w-full max-w-[140px] aspect-square">
-                                            {uc.visual}
+                                    <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+                                        <div className="space-y-4">
+                                            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                                                <BrandText text={content.title} />
+                                            </h3>
+                                            <p className="text-zinc-400 leading-relaxed text-sm md:text-base max-w-sm">
+                                                <BrandText text={content.text} />
+                                            </p>
+                                        </div>
+
+                                        <div className="flex justify-end items-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                                            <div className="w-full max-w-[160px] aspect-square flex items-center justify-center">
+                                                {uc.visual}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
