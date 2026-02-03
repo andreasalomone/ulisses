@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2 } from "lucide-react";
@@ -10,6 +11,7 @@ interface BenchmarkItem {
     challenge: string;
     solution: string;
     impact: string;
+    link?: string;
 }
 
 interface BenchmarkSectionProps {
@@ -54,9 +56,22 @@ export function BenchmarkSection({ title, items, extra, variant = "muted" }: Ben
                                     <span className="font-bold text-primary block mb-1">Soluzione</span>
                                     <p className="text-muted-foreground"><BrandText text={item.solution} /></p>
                                 </div>
-                                <div className="pt-4 mt-4 border-t">
-                                    <span className="font-bold text-foreground block mb-1">Impatto</span>
-                                    <p className="font-medium italic text-foreground/80"><BrandText text={item.impact} /></p>
+                                <div className="pt-4 mt-4 border-t flex flex-col gap-4">
+                                    <div>
+                                        <span className="font-bold text-foreground block mb-1">Impatto</span>
+                                        <p className="font-medium italic text-foreground/80"><BrandText text={item.impact} /></p>
+                                    </div>
+                                    {item.link && (
+                                        <div className="pt-2">
+                                            <Link
+                                                href={item.link}
+                                                className="text-primary font-bold hover:underline inline-flex items-center gap-1 group transition-all"
+                                            >
+                                                Scopri di più
+                                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </CardContent>
                         </Card>

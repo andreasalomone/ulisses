@@ -268,21 +268,24 @@ export const DICTIONARY = {
                     context: "Warehouse con pallet che si 'perdono' tra aree.",
                     challenge: "Spreco di tempo ricerca, scarsa precisione inventario.",
                     solution: "Pallet-tracking con posizione precisa e aggiornamenti operativi.",
-                    impact: "Riduzione costi e inventario più snello."
+                    impact: "Riduzione costi e inventario più snello.",
+                    link: "/knowledge-hub/logistica/geofencing"
                 },
                 {
                     title: "Carrelli e asset mobili",
                     context: "Asset mobili distribuiti su aree ampie.",
                     challenge: "Localizzare rapidamente asset critici e ridurre tempi improduttivi.",
                     solution: "Tag BLE + gateway per visualizzare posizione in app.",
-                    impact: "Riduzione search-time e migliore utilizzo asset."
+                    impact: "Riduzione search-time e migliore utilizzo asset.",
+                    link: "/knowledge-hub/logistica/carrelli"
                 },
                 {
                     title: "Asset tracking in ambienti difficili",
                     context: "Magazzini con metallo e interferenze.",
                     challenge: "Mantenere precisione e stabilità.",
                     solution: "Bluetooth Channel Sounding per gestire multipath.",
-                    impact: "Meno asset misplaced, audit rapidi."
+                    impact: "Meno asset misplaced, audit rapidi.",
+                    link: "/knowledge-hub/logistica/ambienti-difficili"
                 }
             ]
         }
@@ -400,14 +403,16 @@ export const DICTIONARY = {
                     context: "Parcheggi ad alta rotazione con bisogno di dati affidabili.",
                     challenge: "Metodi manuali aumentano errori e ritardi.",
                     solution: "Sensori su singolo stallo per arrivo/partenza e calcolo durata.",
-                    impact: "Dati tempestivi, riduzione errori, ottimizzazione gestione."
+                    impact: "Dati tempestivi, riduzione errori, ottimizzazione gestione.",
+                    link: "/knowledge-hub/smart-parking/occupancy"
                 },
                 {
                     title: "Sensori dual detection",
                     context: "Parcheggi outdoor con pioggia e interferenze.",
                     challenge: "Mantenere alta accuratezza (99%) e ridurre manutenzione.",
-                    solution: "Fusione radar + geomagnetico per stabilità del dato.",
-                    impact: "Reportistica affidabile e confidenza nel sistema."
+                    solution: "Sensori dual detection (Radar + Magnetic).",
+                    impact: "Affidabilità del dato anche in condizioni meteorologiche avverse.",
+                    link: "/knowledge-hub/smart-parking/enforcement"
                 }
             ],
             extra: {
