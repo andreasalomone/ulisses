@@ -17,7 +17,7 @@ export function TestimonialSection() {
                 <Quote className="w-64 h-64 rotate-180" />
             </div>
 
-            <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center text-center space-y-10">
+            <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center text-center space-y-10">
 
                 {/* Badge / Label */}
                 <Badge variant="secondary" className="bg-white/10 text-white border-white/20 hover:bg-white/20 uppercase tracking-widest px-4 py-1.5 backdrop-blur-sm">
@@ -25,7 +25,7 @@ export function TestimonialSection() {
                 </Badge>
 
                 {/* The Quote */}
-                <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed tracking-tight font-serif text-balance">
+                <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed tracking-tight font-serif">
                     &ldquo;{d.text}.&rdquo;
                 </blockquote>
 

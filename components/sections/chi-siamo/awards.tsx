@@ -1,9 +1,17 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Trophy } from "lucide-react";
 import { DICTIONARY } from "@/lib/dictionary";
+
+interface AwardItem {
+    title: string;
+    year: string;
+    image: string;
+}
+
 
 export function AwardsSection() {
     const d = DICTIONARY.azienda.awards;
@@ -20,14 +28,28 @@ export function AwardsSection() {
                     <p className="text-xl text-muted-foreground">{d.text}</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                    {d.items.map((item, i) => (
-                        <div key={i} className="flex flex-col items-center text-center p-10 rounded-[3rem] bg-card border shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all hover:-translate-y-2 group">
-                            <div className="h-20 w-20 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                                <Trophy className="h-10 w-10" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {d.items.map((item: AwardItem, i: number) => (
+                        <div
+                            key={i}
+                            className="flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-card/50 backdrop-blur-sm border shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden"
+                        >
+                            {/* Decorative background glow */}
+                            <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
+
+                            <div className="relative h-32 w-full mb-8 flex items-center justify-center p-4 bg-white/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-white/20">
+                                <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    fill
+                                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                                />
                             </div>
-                            <p className="font-extrabold text-2xl mb-2 tracking-tight">{item.title}</p>
-                            <p className="text-primary font-bold text-xl">{item.year}</p>
+
+                            <div className="grow">
+                                <h3 className="font-extrabold text-xl mb-2 tracking-tight line-clamp-2">{item.title}</h3>
+                                <p className="text-primary font-bold text-lg">{item.year}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

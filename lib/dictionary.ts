@@ -542,10 +542,10 @@ export const DICTIONARY = {
             author: "Massimo Pasquini",
             role: "Innovation Manager di Trenord",
             logo: "/partners/Trenord_Logo.png",
-            label: "Field Report"
+            label: "Testimonial"
         },
         team: {
-            title: "Le persone dietro la tecnologia",
+            title: "Il Nostro Team",
             members: [
                 { name: "Mattia Tartaglia", role: "Founder & CEO", image: "/team/mattia-tartaglia.png", stack: "Ex-Strategy | IoT Architecture | Product Vision", linkedin: "https://www.linkedin.com/in/mattia-tartaglia-88510351/" },
                 { name: "Alessandro Spadaro", role: "CTO", image: "/team/AlessandroSpadaro.jpeg", stack: "Full-Stack Arch | Embedded Systems | Signal Processing", linkedin: "https://www.linkedin.com/in/alessandrospadaro/" },
@@ -568,17 +568,20 @@ export const DICTIONARY = {
         },
         cta: {
             title: "Hai un problema complesso? Ci piace.",
-            text: "Se la tua sfida operativa spaventa gli altri vendor, probabilmente è perfetta per Ulisses.",
+            text: "Se la tua sfida operativa sembra complicata, probabilmente è perfetta per Ulisses.",
             button: "Parla con il team Engineering"
         },
         awards: {
             title: "Eccellenza Riconosciuta",
-            text: "Non cerchiamo i premi, ma siamo orgogliosi quando il mercato riconosce la solidità del nostro approccio.",
+            text: "Non cerchiamo i premi, ma siamo orgogliosi quando il mercato riconosce la solidità del nostro approccio e l'impatto delle nostre soluzioni.",
             label: "Certificazioni & Riconoscimenti",
             items: [
-                { title: "Premio Innovazione", year: "2021" },
-                { title: "Scaleup Program", year: "2022" },
-                { title: "Best Industrial IoT", year: "2023" }
+                { title: "Premio Innovazione SMAU", year: "2025", image: "/premi/premio innovazione smau.png" },
+                { title: "IoMobility Awards", year: "2024", image: "/premi/Iomobility-awards-2024-1030x295.png" },
+                { title: "Top of the PID", year: "2024", image: "/premi/topofthepid24.png" },
+                { title: "InnovAzioni", year: "2024", image: "/premi/innovazionilogo.svg" },
+                { title: "Paperless & Digital Awards", year: "2023", image: "/premi/paperless & digital award.jpg" },
+                { title: "Visionaria", year: "2023", image: "/premi/Logo-Visionaria-def-col.png" }
             ]
         }
     },

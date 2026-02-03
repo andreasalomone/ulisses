@@ -35,9 +35,6 @@ export default function AziendaPage() {
             {/* 6. Brain Trust (Team) */}
             <TeamBoardSection />
 
-            {/* 6. Engine Room (Technical Expertise) */}
-            <EngineRoomSection />
-
             {/* 7. Review (Social Proof) */}
             <TestimonialSection />
 
