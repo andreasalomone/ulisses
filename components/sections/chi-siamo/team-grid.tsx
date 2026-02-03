@@ -47,7 +47,7 @@ const getAvatarColor = (name: string) => {
 
 export const TeamGrid = ({ title, members }: TeamGridProps) => {
     return (
-        <div className="py-24">
+        <div className="pt-4 pb-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

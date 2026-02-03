@@ -10,13 +10,10 @@ export function TeamBoardSection() {
 
     return (
         <SectionWrapper variant="muted">
-            <div className="max-w-5xl mx-auto space-y-20">
+            <div className="max-w-5xl mx-auto space-y-0">
                 {/* Team */}
                 {d.team && (
-                    <div className="space-y-8">
-                        <div className="max-w-2xl" />
-                        <TeamGrid title={d.team.title} members={d.team.members} />
-                    </div>
+                    <TeamGrid title={d.team.title} members={d.team.members} />
                 )}
 
                 {/* Board */}
