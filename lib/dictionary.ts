@@ -832,7 +832,7 @@ export const DICTIONARY = {
                     vertical: "Nautica",
                     items: [
                         {
-                            title: "Con il Ministero del Turismo, portare la gestione dei marina dal problema al dato operativo",
+                            title: "Con il Ministero del Turismo, risolviamo la gestione dei marina",
                             text: "In collaborazione con il Ministero del Turismo, Ulisses sta contribuendo alla digitalizzazione dei porti turistici italiani.",
                             link: "/knowledge-hub/nautica/ministero-turismo",
                             fullContent: {
