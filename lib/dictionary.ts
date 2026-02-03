@@ -484,11 +484,26 @@ export const DICTIONARY = {
     azienda: {
         hero: {
             h1: "Chi siamo",
-            text: "Ulisses sviluppa soluzioni IoT industriali per localizzazione e dati operativi in contesti complessi. Uniamo competenze di campo e prodotto: dalla progettazione al go-live."
+            text: "Non siamo solo un provider tecnologico. Siamo il partner che porta la verità del campo nei tuoi processi decisionali."
         },
         mission: {
-            title: "Mission",
-            text: "Semplificare la complessità operativa tramite dati di campo affidabili."
+            title: "La nostra Mission",
+            text: "Trasformiamo il caos delle operazioni reali in dati puliti, affidabili e azionabili, restituendo il controllo a chi gestisce processi complessi."
+        },
+        story: {
+            title: "La nostra storia",
+            spark: "Tutto è iniziato nel 2021 con una domanda semplice ma scomoda: 'Perché il tracking funziona benissimo per trovare le chiavi di casa, ma fallisce miseramente in un magazzino industriale?'",
+            narrative: "Abbiamo visto troppe demo perfette crollare di fronte alla realtà: interferenze, metallo, processi caotici. I 'puntini sulla mappa' non bastavano più. Le aziende avevano bisogno di risposte, non di giocattoli.",
+            evolution: "Da quel momento, abbiamo smesso di cercare la tecnologia 'più cool' e abbiamo iniziato a costruire quella più *robusta*. Abbiamo unito l'ingegneria radio alla logica di processo industriale. Oggi Ulisses non è solo un sistema di localizzazione: è una piattaforma di intelligence operativa che governa decine di migliaia di asset in ambienti dove altri segnali si perdono."
+        },
+        stats: {
+            title: "I numeri che contano",
+            items: [
+                { value: "2021", label: "Anno di fondazione" },
+                { value: "100k+", label: "Asset gestiti" },
+                { value: "99.9%", label: "Uptime medio" },
+                { value: "3", label: "Verticali industriali" }
+            ]
         },
         review: {
             text: "La sperimentazione ha coinvolto diverse aree aziendali, dalla funzione IT alla Manutenzione, mettendo in campo un grande spirito di squadra e una collaborazione proattiva",
@@ -496,7 +511,8 @@ export const DICTIONARY = {
             role: "Innovation Manager di Trenord"
         },
         team: {
-            title: "Il Nostro Team",
+            title: "Le persone dietro la tecnologia",
+            description: "Esperti di IoT, ingegneri del software e specialisti di processo. Un team che non ha paura di sporcarsi le mani sul campo.",
             members: [
                 { name: "Mattia Tartaglia", role: "Founder & CEO" },
                 { name: "Alessandro Spadaro", role: "CTO" },
@@ -516,15 +532,18 @@ export const DICTIONARY = {
                 { name: "Luca Palermo", role: "Consigliere" }
             ]
         },
-        cta: "Parla con noi",
+        cta: {
+            text: "Siamo pronti a risolvere la tua sfida",
+            button: "Parla con noi"
+        },
         awards: {
             title: "Eccellenza Riconosciuta",
-            text: "Premi e certificazioni che confermano il valore della nostra tecnologia e l'impatto delle soluzioni Ulisses sul mercato.",
-            label: "Certificazioni & Premi",
+            text: "Non cerchiamo i premi, ma siamo orgogliosi quando il mercato riconosce la solidità del nostro approccio.",
+            label: "Certificazioni & Riconoscimenti",
             items: [
                 { title: "Premio Innovazione", year: "2021" },
-                { title: "Premio Innovazione", year: "2022" },
-                { title: "Premio Innovazione", year: "2023" }
+                { title: "Scaleup Program", year: "2022" },
+                { title: "Best Industrial IoT", year: "2023" }
             ]
         }
     },
