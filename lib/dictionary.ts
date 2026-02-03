@@ -26,8 +26,8 @@ export const DICTIONARY = {
             subheadline: "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
             subheadlineToken: "dashboard, rete, sensori e API",
             proofs: [
-                "Planning & commissioning integrati",
                 "Brevetto tecnologico",
+                "Planning & commissioning integrati",
                 "Integrazioni IT/OT con SLA end-to-end"
             ],
             expertLink: "Parla con un esperto"

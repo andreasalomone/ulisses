@@ -16,7 +16,7 @@ export function Hero() {
         <SectionWrapper className="min-h-[95vh] flex items-center pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 w-full flex flex-col lg:flex-row lg:items-center items-start gap-12 lg:gap-8">
                 {/* Left Content - 60% */}
-                <div className="relative z-10 w-full lg:w-[65%]">
+                <div className="relative z-10 w-full lg:w-[70%]">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
                         {d.h1.split(d.h1Token).map((part, i, arr) => (
                             <React.Fragment key={i}>
@@ -45,7 +45,7 @@ export function Hero() {
                 </div>
 
                 {/* Right Image - 40% */}
-                <div className="w-full lg:w-[50%] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
+                <div className="w-full lg:w-[40%] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
                     <Image
                         src="/assets/hero.png"
                         alt="Ulisses AI Platform"
