@@ -16,18 +16,23 @@ interface VerticalHeroProps {
     children?: React.ReactNode;
     footer?: React.ReactNode;
     sideContent?: React.ReactNode;
-    className?: string; // Add className prop
+    className?: string;
+    centered?: boolean;
 }
 
-export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent, className }: VerticalHeroProps) {
+export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent, className, centered }: VerticalHeroProps) {
     return (
         <SectionWrapper className={cn("min-h-[90vh] pt-32 pb-16 md:pt-48 md:pb-32 border-b overflow-hidden bg-muted/20", className)}>
             <div className="container relative z-10">
                 <div className={cn(
                     "grid grid-cols-1 gap-12 items-center",
-                    (image || sideContent) ? "lg:grid-cols-2" : "max-w-4xl"
+                    (image || sideContent) ? "lg:grid-cols-2" : "max-w-4xl",
+                    centered && "mx-auto text-center"
                 )}>
-                    <div className="animate-in fade-in slide-in-from-left duration-1000 ease-out fill-mode-both">
+                    <div className={cn(
+                        "animate-in fade-in slide-in-from-left duration-1000 ease-out fill-mode-both",
+                        centered && "mx-auto"
+                    )}>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-wrap-pretty">
                             {titleToken ? (
                                 title.split(new RegExp(`(${titleToken})`, "gi")).map((part, i) =>
@@ -41,16 +46,25 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                                 <BrandText text={title} />
                             )}
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
+                        <p className={cn(
+                            "text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10",
+                            centered && "mx-auto"
+                        )}>
                             <BrandText text={subtitle} />
                         </p>
                         {description && (
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-10">
+                            <p className={cn(
+                                "text-lg text-muted-foreground leading-relaxed max-w-3xl mb-10",
+                                centered && "mx-auto"
+                            )}>
                                 <BrandText text={description} />
                             </p>
                         )}
                         {children && (
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className={cn(
+                                "flex flex-col sm:flex-row gap-4",
+                                centered && "justify-center"
+                            )}>
                                 {children}
                             </div>
                         )}

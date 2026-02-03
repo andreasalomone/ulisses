@@ -38,33 +38,21 @@ export default function KnowledgeHubPage() {
             <VerticalHero
                 title={d.hero.h1}
                 subtitle={d.hero.sub}
-                className="min-h-[60vh]"
-            >
-                <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Link href="/contatti">{DICTIONARY.home.cta.button}</Link>
-                </Button>
-            </VerticalHero>
+                className="min-h-[40vh] border-none bg-linear-to-b from-muted/20 via-muted/10 to-background pb-0 md:pb-0"
+                centered
+            />
 
             {/* Stories Section */}
-            <SectionWrapper>
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
-                        <BrandText text={stories.title} />
-                    </h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto whitespace-pre-line">
-                        <BrandText text={stories.text} />
-                    </p>
-                </div>
-
+            <SectionWrapper className="pt-4 md:pt-8">
                 <div className="space-y-24">
                     {stories.sections.map((section, i) => (
                         <div key={i} className="relative">
-                            <h3 className="text-3xl font-bold mb-10 flex items-center gap-4">
+                            <h3 className="text-3xl font-bold mb-10 flex items-center justify-center gap-4">
                                 <span className="bg-primary/10 text-primary px-4 py-2 rounded-xl text-lg uppercase tracking-widest">{section.vertical}</span>
                             </h3>
 
                             {/* Grid wrapper for the "Book Covers" */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 justify-center">
                                 {section.items.map((item, j) => {
                                     // Deterministic gradient selection based on index
                                     const gradientIndex = (i * 3 + j) % GRADIENTS.length;

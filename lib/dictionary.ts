@@ -724,8 +724,8 @@ export const DICTIONARY = {
                     vertical: "Ferroviario",
                     items: [
                         {
-                            title: "Con Trenord, portare la localizzazione dei treni in deposito dal problema al dato operativo",
-                            text: "In un grande deposito ferroviario, Ulisses e Trenord hanno realizzato un PoC per la localizzazione di precisione di 50 convogli su 12 binari.",
+                            title: "Con Trenord, portiamo la localizzazione dei treni in deposito",
+                            text: "In un grande deposito ferroviario, abbiamo realizzato un PoC per la localizzazione di precisione di 50 convogli su 12 binari.",
                             link: "/knowledge-hub/ferroviario/trenord",
                             fullContent: {
                                 scenario: "In un grande deposito ferroviario, la manutenzione è una macchina complessa fatta di movimentazioni continue, vincoli fisici e sequenze precise. Per Trenord, conoscere con precisione la posizione dei convogli in deposito è un prerequisito per garantire efficienza e affidabilità.",
