@@ -547,7 +547,7 @@ export const DICTIONARY = {
         team: {
             title: "Le persone dietro la tecnologia",
             members: [
-                { name: "Mattia Tartaglia", role: "Founder & CEO", image: "/team/MattiaTartaglia.jpeg", stack: "Ex-Strategy | IoT Architecture | Product Vision", linkedin: "https://www.linkedin.com/in/mattia-tartaglia-88510351/" },
+                { name: "Mattia Tartaglia", role: "Founder & CEO", image: "/team/mattia-tartaglia.png", stack: "Ex-Strategy | IoT Architecture | Product Vision", linkedin: "https://www.linkedin.com/in/mattia-tartaglia-88510351/" },
                 { name: "Alessandro Spadaro", role: "CTO", image: "/team/AlessandroSpadaro.jpeg", stack: "Full-Stack Arch | Embedded Systems | Signal Processing", linkedin: "https://www.linkedin.com/in/alessandrospadaro/" },
                 { name: "Stefano Nordio", role: "VP Sales & Growth", image: "/team/Stefano Nordio.jpeg", stack: "Enterprise Sales | Market Strategy", linkedin: "https://www.linkedin.com/in/stefanonordio/" },
                 { name: "Francesco Dell’Onze", role: "Sales Manager", image: "/team/Francesco Dell_Onze.jpeg", stack: "Tech Sales | Client Success", linkedin: "https://www.linkedin.com/in/dell-onze-francesco/" },
