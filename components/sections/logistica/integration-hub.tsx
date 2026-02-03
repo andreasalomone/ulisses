@@ -371,9 +371,8 @@ export function IntegrationHub() {
                     </div>
 
                     {/* RIGHT: Visual Hub */}
-                    <div className="flex-1 w-full relative h-[450px] md:h-[600px] lg:h-[700px] flex items-start justify-center select-none lg:-mt-12">
-
-                        <div className="relative w-full h-full max-w-[800px] flex items-start justify-center">
+                    <div className="flex-1 w-full flex flex-col items-center lg:-mt-12 select-none">
+                        <div className="relative w-full h-[400px] md:h-[550px] lg:h-[650px] max-w-[800px] flex items-start justify-center">
                             <canvas
                                 ref={canvasRef}
                                 width={CANVAS_SIZE}
@@ -396,31 +395,24 @@ export function IntegrationHub() {
                                 );
                             })}
                         </div>
-                    </div>
-                </div>
 
-                {/* Bottom Tags */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.8 }}
-                    className="mt-16 pt-8 border-t border-border/40"
-                >
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <p className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-primary mb-2">Network_Protocols</p>
-                            <h3 className="text-xl font-bold">{DICTIONARY.logistica.integration.common.split(" • ").length} Connectivity Modules</h3>
-                        </div>
-                        <div className="flex flex-wrap gap-2 md:max-w-xl justify-end">
+                        {/* Integration Pills */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.5 }}
+                            className="flex flex-wrap gap-2 justify-center max-w-xl -mt-16 relative z-20"
+                        >
                             {d.integration.common.split(" • ").map((tag, i) => (
-                                <span key={i} className="text-[11px] font-bold px-4 py-1.5 bg-background rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all cursor-default">
+                                <span key={i} className="text-[11px] font-bold px-4 py-1.5 bg-background rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all cursor-default shadow-sm">
                                     {tag}
                                 </span>
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
-                </motion.div>
+                </div>
+
             </div>
         </SectionWrapper>
     );
