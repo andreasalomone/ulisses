@@ -61,19 +61,19 @@ export const DICTIONARY = {
             cards: {
                 logistica: {
                     title: "Logistica & Operations",
-                    description: "Riduci i tempi di ricerca dei tuoi asset, errori operativi e di posizione, e rischi in magazzino e yard.",
+                    description: "Riduci i tempi di ricerca dei tuoi asset, errori operativi, e rischi in magazzino.",
                     cta: "Scopri Logistica",
                     resolutions: ["Ricerca asset", "Geofencing", "KPI flussi"]
                 },
                 ferroviario: {
                     title: "Ferroviario",
-                    description: "Controllo attrezzature e materiali in depositi e officine, con integrazione ai workflow di manutenzione.",
+                    description: "Controllo materiali in depositi, con integrazione ai workflow di manutenzione.",
                     cta: "Scopri Ferroviario",
                     resolutions: ["Disponibilità attrezzature", "Storico eventi", "CMMS"]
                 },
                 parking: {
                     title: "Smart City",
-                    description: "Dati di occupazione e eventi operativi, rollout scalabile e OPEX controllabile con rete privata.",
+                    description: "Dati di occupazione e eventi operativi, rollout scalabile e OPEX con rete privata.",
                     cta: "Scopri Smart City",
                     resolutions: ["Occupancy", "Durata sosta", "Qualità dato"]
                 }

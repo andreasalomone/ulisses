@@ -40,14 +40,14 @@ export function ScenarioCard({
                 <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors">
                     <BrandText text={title} />
                 </CardTitle>
-                <CardDescription className="text-muted-foreground/80 leading-relaxed">
+                <CardDescription className="text-lg text-muted-foreground/80 leading-relaxed">
                     <BrandText text={description} />
                 </CardDescription>
             </CardHeader>
 
             {resolutions && resolutions.length > 0 && (
-                <CardContent className="grow">
-                    <ul className="flex flex-wrap gap-2">
+                <CardContent className="grow flex flex-col justify-end">
+                    <ul className="flex flex-wrap gap-2 list-none p-0 m-0 justify-start">
                         {resolutions.map((res, i) => (
                             <li key={i} className="text-xs font-semibold px-2 py-1 bg-muted rounded-full text-muted-foreground border">
                                 <BrandText text={res} />
