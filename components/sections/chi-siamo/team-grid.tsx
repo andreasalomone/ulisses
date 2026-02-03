@@ -66,8 +66,6 @@ export const TeamGrid = ({ title, members }: TeamGridProps) => {
                 {members.map((member, i) => {
                     const initials = getInitials(member.name);
                     const colorClasses = getAvatarColor(member.name);
-                    const skills = member.stack ? member.stack.split("|").map(s => s.trim()) : [];
-
                     return (
                         <motion.div
                             key={i}
@@ -89,7 +87,7 @@ export const TeamGrid = ({ title, members }: TeamGridProps) => {
                             </div>
 
                             {/* Info */}
-                            <div className="space-y-2 mb-6">
+                            <div className="space-y-2 mb-8">
                                 <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">
                                     {member.name}
                                 </h3>
@@ -97,20 +95,6 @@ export const TeamGrid = ({ title, members }: TeamGridProps) => {
                                     {member.role}
                                 </p>
                             </div>
-
-                            {/* Skill Stack Tags */}
-                            {skills.length > 0 && (
-                                <div className="flex flex-wrap gap-2 mb-8">
-                                    {skills.map((skill, si) => (
-                                        <span
-                                            key={si}
-                                            className="px-3 py-1 rounded-full bg-muted/50 border border-border/40 text-[10px] uppercase tracking-widest font-bold text-muted-foreground group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary transition-all duration-300"
-                                        >
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
-                            )}
 
                             {/* Footer: LinkedIn Link */}
                             <div className="mt-auto pt-6 border-t border-border/10 flex items-center justify-between">

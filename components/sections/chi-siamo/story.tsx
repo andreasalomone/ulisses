@@ -21,18 +21,8 @@ export function StorySection() {
     });
 
     return (
-        <SectionWrapper className="py-20 md:py-32 overflow-hidden">
+        <SectionWrapper className="pt-10 pb-20 md:pt-16 md:pb-32 overflow-hidden">
             <div className="max-w-4xl mx-auto px-4 md:px-0" ref={containerRef}>
-                <div className="mb-16 md:mb-24">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6"
-                    >
-                        {d.title}
-                    </motion.h2>
-                </div>
 
                 <div className="relative ml-4 md:ml-6 pl-8 md:pl-16 py-4">
                     {/* Background Progress Line */}
