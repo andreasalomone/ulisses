@@ -16,7 +16,7 @@ export function AwardsSection() {
                         <Trophy className="h-4 w-4" />
                         {d.label}
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">{d.title}</h2>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-8">{d.title}</h2>
                     <p className="text-xl text-muted-foreground">{d.text}</p>
                 </div>
 

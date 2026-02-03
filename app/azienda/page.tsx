@@ -4,7 +4,7 @@ import { Articoli } from "@/components/sections/chi-siamo/articoli";
 import { IntroSection } from "@/components/sections/chi-siamo/intro";
 import { MissionSection } from "@/components/sections/chi-siamo/mission";
 import { StorySection } from "@/components/sections/chi-siamo/story";
-import { StatsSection } from "@/components/sections/chi-siamo/stats";
+import { EngineRoomSection } from "@/components/sections/chi-siamo/engine-room";
 import { TeamBoardSection } from "@/components/sections/chi-siamo/team-board";
 import { TestimonialSection } from "@/components/sections/chi-siamo/testimonial";
 import { AwardsSection } from "@/components/sections/chi-siamo/awards";
@@ -12,8 +12,8 @@ import { FinalCtaSection } from "@/components/sections/chi-siamo/final-cta";
 
 export default function AziendaPage() {
     return (
-        <div className="flex flex-col pt-32 pb-12">
-            {/* 1. Premium Intro (No Hero) */}
+        <div className="flex flex-col pt-32 pb-0">
+            {/* 1. Architecture & Hook (Hero) */}
             <IntroSection />
 
             {/* 2. Partners (Clienti) */}
@@ -26,25 +26,25 @@ export default function AziendaPage() {
                 <Articoli />
             </div>
 
-            {/* 4. Mission */}
+            {/* 4. Mission (Vision) */}
             <MissionSection />
 
-            {/* 5. Origin Story */}
+            {/* 5. Story (History/Timeline) */}
             <StorySection />
 
-            {/* 6. Stats "By The Numbers" */}
-            <StatsSection />
-
-            {/* 7. Team & Board */}
+            {/* 6. Brain Trust (Team) */}
             <TeamBoardSection />
 
-            {/* 8. Review */}
+            {/* 6. Engine Room (Technical Expertise) */}
+            <EngineRoomSection />
+
+            {/* 7. Review (Social Proof) */}
             <TestimonialSection />
 
-            {/* 9. Awards */}
+            {/* 8. Validation (Awards) */}
             <AwardsSection />
 
-            {/* 10. Final CTA */}
+            {/* 9. Conversion (CTA) */}
             <FinalCtaSection />
         </div>
     );

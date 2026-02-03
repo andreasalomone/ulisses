@@ -483,18 +483,50 @@ export const DICTIONARY = {
     },
     azienda: {
         hero: {
-            h1: "Chi siamo",
-            text: "Non siamo solo un provider tecnologico. Siamo il partner che porta la verità del campo nei tuoi processi decisionali."
+            label: "About Ulisses",
+            h1: "Costruiamo l'intelligenza che muove il mondo fisico.",
+            text: "Non siamo solo dev. Siamo ingegneri del campo. Trasformiamo il caos di magazzini e città in dati certi, stabili e pronti per decidere."
         },
         mission: {
             title: "La nostra Mission",
             text: "Trasformiamo il caos delle operazioni reali in dati puliti, affidabili e azionabili, restituendo il controllo a chi gestisce processi complessi."
         },
         story: {
-            title: "La nostra storia",
-            spark: "Tutto è iniziato nel 2021 con una domanda semplice ma scomoda: 'Perché il tracking funziona benissimo per trovare le chiavi di casa, ma fallisce miseramente in un magazzino industriale?'",
-            narrative: "Abbiamo visto troppe demo perfette crollare di fronte alla realtà: interferenze, metallo, processi caotici. I 'puntini sulla mappa' non bastavano più. Le aziende avevano bisogno di risposte, non di giocattoli.",
-            evolution: "Da quel momento, abbiamo smesso di cercare la tecnologia 'più cool' e abbiamo iniziato a costruire quella più *robusta*. Abbiamo unito l'ingegneria radio alla logica di processo industriale. Oggi Ulisses non è solo un sistema di localizzazione: è una piattaforma di intelligence operativa che governa decine di migliaia di asset in ambienti dove altri segnali si perdono."
+            title: "La genesi",
+            acts: [
+                {
+                    label: "Il Problema",
+                    title: "Il tracking tradizionale mente.",
+                    text: "Nel 2021 abbiamo notato un pattern: le demo in ufficio erano perfette. Ma in acciaieria, tra i container o nei depositi ferroviari, il segnale spariva. I clienti compravano promesse e si ritrovavano con 'puntini a caso' sulla mappa."
+                },
+                {
+                    label: "La Svolta",
+                    title: "Dati, non solo segnali.",
+                    text: "Abbiamo capito che l'hardware da solo non bastava. Serviva un layer di intelligenza capace di filtrare il rumore industriale. Abbiamo smesso di cercare il sensore perfetto e abbiamo costruito l'algoritmo che lo corregge."
+                },
+                {
+                    label: "Oggi",
+                    title: "Operating System for the Field.",
+                    text: "Oggi Ulisses non è un tracker. È l'infrastruttura di verità per aziende che muovono il mondo reale. Dalla logistica alla smart city."
+                }
+            ]
+        },
+        values: {
+            title: "Il nostro Codice Operativo",
+            items: [
+                { title: "Field First", text: "Il codice si scrive in ufficio, ma la verità si trova nel fango. Non ci fidiamo finché non lo vediamo funzionare tra metallo e cemento." },
+                { title: "Radical Truth", text: "Vendiamo dati certi. Se un dato è incerto, lo dichiariamo. Non mascheriamo mai l'errore." },
+                { title: "Ship & Iterate", text: "La perfezione è nemica dell'operatività. Consegniamo valore subito, poi raffiniamo." }
+            ]
+        },
+        engineRoom: {
+            title: "Come lavoriamo",
+            stack: [
+                { key: "Method", val: "Agile / Field-Test Driven" },
+                { key: "Stack", val: "Next.js / Rust / Python / Embedded C" },
+                { key: "Infra", val: "Edge Native + Cloud Agnostic" }
+            ],
+            text: "Siamo un team di prodotto, non una software house a progetto. Ogni riga di codice entra in un sistema condiviso che migliora per tutti i clienti ogni settimana."
         },
         stats: {
             title: "I numeri che contano",
@@ -508,33 +540,35 @@ export const DICTIONARY = {
         review: {
             text: "La sperimentazione ha coinvolto diverse aree aziendali, dalla funzione IT alla Manutenzione, mettendo in campo un grande spirito di squadra e una collaborazione proattiva",
             author: "Massimo Pasquini",
-            role: "Innovation Manager di Trenord"
+            role: "Innovation Manager di Trenord",
+            logo: "/partners/Trenord_Logo.png",
+            label: "Field Report"
         },
         team: {
             title: "Le persone dietro la tecnologia",
-            description: "Esperti di IoT, ingegneri del software e specialisti di processo. Un team che non ha paura di sporcarsi le mani sul campo.",
             members: [
-                { name: "Mattia Tartaglia", role: "Founder & CEO" },
-                { name: "Alessandro Spadaro", role: "CTO" },
-                { name: "Stefano Nordio", role: "VP Sales & Growth" },
-                { name: "Francesco Dell’Onze", role: "Sales Manager" },
-                { name: "Giulia Mora", role: "Account Sales Manager" },
-                { name: "Jessica Faicchio", role: "Operations Manager" }
+                { name: "Mattia Tartaglia", role: "Founder & CEO", image: "/team/MattiaTartaglia.jpeg", stack: "Ex-Strategy | IoT Architecture | Product Vision", linkedin: "#" },
+                { name: "Alessandro Spadaro", role: "CTO", image: "/team/AlessandroSpadaro.jpeg", stack: "Full-Stack Arch | Embedded Systems | Signal Processing", linkedin: "#" },
+                { name: "Stefano Nordio", role: "VP Sales & Growth", image: "/team/Stefano Nordio.jpeg", stack: "Enterprise Sales | Market Strategy", linkedin: "#" },
+                { name: "Francesco Dell’Onze", role: "Sales Manager", image: "/team/Francesco Dell_Onze.jpeg", stack: "Tech Sales | Client Success", linkedin: "#" },
+                { name: "Giulia Mora", role: "Account Sales Manager", image: "/team/GiuliaMora.jpeg", stack: "Account Mgmt | Customer Relations", linkedin: "#" },
+                { name: "Jessica Faicchio", role: "Operations Manager", image: "/team/JessicaFaicchio.jpeg", stack: "Ops Excellence | Agile PM", linkedin: "#" }
             ]
         },
         board: {
             title: "Board & Advisors",
             members: [
-                { name: "Stefano Ceci", role: "Presidente" },
-                { name: "Teresa Trivisonno", role: "Vice Presidente" },
-                { name: "Mattia Tartaglia", role: "Amministratore Delegato" },
-                { name: "Gabriele Benedetto", role: "Consigliere" },
-                { name: "Luca Palermo", role: "Consigliere" }
+                { name: "Stefano Ceci", role: "Presidente", image: "/team/StefanoCeci.jpeg", linkedin: "#" },
+                { name: "Teresa Trivisonno", role: "Vice Presidente", image: "/team/Teresa Trivisonno.jpeg", linkedin: "#" },
+                { name: "Mattia Tartaglia", role: "Amministratore Delegato", image: "/team/MattiaTartaglia.jpeg", linkedin: "#" },
+                { name: "Gabriele Benedetto", role: "Consigliere", image: "/team/GabrieleBenedetto.jpeg", linkedin: "#" },
+                { name: "Luca Palermo", role: "Consigliere", image: "/team/LucaPalermo.jpeg", linkedin: "#" }
             ]
         },
         cta: {
-            text: "Siamo pronti a risolvere la tua sfida",
-            button: "Parla con noi"
+            title: "Hai un problema complesso? Ci piace.",
+            text: "Se la tua sfida operativa spaventa gli altri vendor, probabilmente è perfetta per Ulisses.",
+            button: "Parla con il team Engineering"
         },
         awards: {
             title: "Eccellenza Riconosciuta",

@@ -41,9 +41,9 @@ export default function SmartCityPage() {
                                 {DICTIONARY.smartCity.cards.parking.subtitle}
                             </p>
 
-                            <div className="flex items-center gap-2 text-primary font-semibold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <div className="flex items-center gap-2 text-primary font-semibold transition-all duration-300">
                                 <span>Scopri di più</span>
-                                <ArrowRight className="w-4 h-4" />
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </div>
                     </Link>
@@ -74,9 +74,9 @@ export default function SmartCityPage() {
                                 {DICTIONARY.smartCity.cards.building.subtitle}
                             </p>
 
-                            <div className="flex items-center gap-2 text-primary font-semibold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <div className="flex items-center gap-2 text-primary font-semibold transition-all duration-300">
                                 <span>Scopri di più</span>
-                                <ArrowRight className="w-4 h-4" />
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </div>
                     </Link>

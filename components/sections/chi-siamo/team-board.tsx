@@ -14,13 +14,7 @@ export function TeamBoardSection() {
                 {/* Team */}
                 {d.team && (
                     <div className="space-y-8">
-                        <div className="max-w-2xl">
-                            {d.team.description && (
-                                <p className="text-xl text-muted-foreground mb-8">
-                                    {d.team.description}
-                                </p>
-                            )}
-                        </div>
+                        <div className="max-w-2xl" />
                         <TeamGrid title={d.team.title} members={d.team.members} />
                     </div>
                 )}
