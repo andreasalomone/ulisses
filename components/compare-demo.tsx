@@ -3,7 +3,7 @@ import { Compare } from "@/components/ui/compare";
 
 export default function CompareDemo() {
     return (
-        <div className="px-1 md:px-8 flex items-center justify-center perspective-midrange transform-3d">
+        <div className="px-6 md:px-8 flex items-center justify-center perspective-midrange transform-3d">
             <div
                 style={{
                     transform: "rotateX(15deg) translateZ(80px)",
@@ -15,7 +15,7 @@ export default function CompareDemo() {
                     secondImage="/assets/yes-uli.png"
                     firstImageClassName="object-cover object-top-left"
                     secondImageClassname="object-cover object-top-left"
-                    className="h-[250px] w-[200px] md:h-[400px] md:w-[400px] rounded-[22px] md:rounded-lg"
+                    className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] rounded-[22px] md:rounded-lg"
                     slideMode="hover"
                     initialSliderPercentage={100}
                     autoplay={true}

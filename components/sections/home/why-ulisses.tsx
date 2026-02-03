@@ -72,7 +72,7 @@ export function WhyUlisses() {
                     </p>
                 </div>
 
-                <div className="shrink-0 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
+                <div className="shrink-0 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300 overflow-visible">
                     <CompareDemo />
                 </div>
             </div>
