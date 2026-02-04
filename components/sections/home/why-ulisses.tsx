@@ -1,9 +1,9 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
 import { Boxes, Radio, Unplug, XCircle, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface DifferentiatorCardProps {
     title: string;
@@ -57,7 +57,13 @@ function DifferentiatorCard({ title, problem, solution, icon: Icon, index }: Dif
 import CompareDemo from "@/components/compare-demo";
 
 export function WhyUlisses() {
-    const d = DICTIONARY.home.why;
+    const t = useTranslations('home.why');
+    type ColumnType = {
+        title: string;
+        problem: string;
+        solution: string;
+    };
+    const columns = t.raw('columns') as ColumnType[];
     const icons = [Boxes, Radio, Unplug];
 
     return (
@@ -65,10 +71,10 @@ export function WhyUlisses() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16 lg:mb-24">
                 <div className="flex-1 max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-[1.1]">
-                        <BrandText text={d.title} />
+                        <BrandText text={t('title')} />
                     </h2>
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                        <BrandText text={d.intro} />
+                        <BrandText text={t('intro')} />
                     </p>
                 </div>
 
@@ -78,7 +84,7 @@ export function WhyUlisses() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-12 relative z-10">
-                {d.columns.map((col, i) => (
+                {columns.map((col, i) => (
                     <DifferentiatorCard
                         key={i}
                         title={col.title}

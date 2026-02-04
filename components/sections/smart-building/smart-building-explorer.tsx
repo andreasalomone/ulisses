@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { CheckCircle2, MapPin, Users, Bell, Activity, LucideIcon } from "lucide-react";
 
@@ -27,6 +28,8 @@ export function SmartBuildingExplorer({
     useCases,
     mapping,
 }: SmartBuildingExplorerProps) {
+    const t = useTranslations("smartBuilding.ui");
+
     // AUDIT FIX: Map icons by ID to avoid breakage if dictionary order changes.
     const iconMap: Record<string, LucideIcon> = {
         asset: MapPin,
@@ -44,7 +47,7 @@ export function SmartBuildingExplorer({
             <div
                 className="grid grid-cols-1 md:grid-cols-3 gap-6"
                 role="tablist"
-                aria-label="Seleziona scenario Smart Building"
+                aria-label={t("selectScenario")}
             >
                 {segments.map((segment) => (
                     <button
@@ -86,10 +89,10 @@ export function SmartBuildingExplorer({
             >
                 <div className="mb-10 flex items-center justify-between">
                     <h4 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                        Use Case per questa selezione
+                        {t("useCasesTitle")}
                     </h4>
                     <div className="hidden md:block text-sm font-medium text-muted-foreground bg-primary/5 px-4 py-1.5 rounded-full border border-primary/10">
-                        {activeUseCases.length} Casi operativi
+                        {activeUseCases.length} {t("operationalCases")}
                     </div>
                 </div>
 

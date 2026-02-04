@@ -1,12 +1,11 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Marquee } from "@/components/ui/marquee";
+import { useTranslations } from "next-intl";
 
 export function Articoli() {
-    const title = "Parlano di noi";
+    const t = useTranslations('azienda.articles');
+    const title = t('title');
 
     const articles = [
         {
@@ -70,7 +69,7 @@ export function Articoli() {
             <Marquee>
                 <div className="flex items-center gap-20 md:gap-32 pr-20 md:pr-32">
                     {articles.map((item) => (
-                        <Link
+                        <a
                             key={item.name}
                             href={item.href}
                             target="_blank"
@@ -84,7 +83,7 @@ export function Articoli() {
                                 height={item.height}
                                 className="h-10 md:h-12 w-auto object-contain"
                             />
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </Marquee>

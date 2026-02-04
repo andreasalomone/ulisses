@@ -23,7 +23,7 @@ import {
     LucideIcon,
     ArrowRight
 } from "lucide-react";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { cn } from "@/lib/utils";
 
@@ -163,7 +163,10 @@ function HubNode({
 }
 
 export function IntegrationHub() {
-    const d = DICTIONARY.logistica;
+    const t = useTranslations('logistica');
+    const tCommon = useTranslations('common');
+    const integrationBullets = t.raw('integration.bullets') as string[];
+
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [hoveredNode, setHoveredNode] = useState<number | null>(null);
     const [currentProjectedNodes, setCurrentProjectedNodes] = useState<ProjectedNode[]>([]);
@@ -326,15 +329,15 @@ export function IntegrationHub() {
                             className="space-y-6"
                         >
                             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
-                                {d.integration.title}
+                                {t('integration.title')}
                             </h2>
                             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
-                                {d.integration.text}
+                                {t('integration.text')}
                             </p>
                         </motion.div>
 
                         <div className="space-y-4">
-                            {d.integration.bullets.map((bullet, i) => {
+                            {integrationBullets.map((bullet, i) => {
                                 const Icon = benefitIcons[i] || Activity;
                                 return (
                                     <motion.div
@@ -364,7 +367,7 @@ export function IntegrationHub() {
                             className="pt-6"
                         >
                             <button className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-bold transition-all hover:gap-5 hover:pr-5 shadow-lg shadow-primary/20">
-                                {DICTIONARY.common.demoCta}
+                                {tCommon('demoCta')}
                                 <ArrowRight className="h-4 w-4" />
                             </button>
                         </motion.div>
@@ -404,7 +407,7 @@ export function IntegrationHub() {
                             transition={{ delay: 0.5 }}
                             className="flex flex-wrap gap-2 justify-center max-w-xl -mt-16 relative z-20"
                         >
-                            {d.integration.common.split(" • ").map((tag, i) => (
+                            {t('integration.common').split(" • ").map((tag, i) => (
                                 <span key={i} className="text-[11px] font-bold px-4 py-1.5 bg-background rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all cursor-default shadow-sm">
                                     {tag}
                                 </span>

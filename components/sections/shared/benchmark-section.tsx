@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2 } from "lucide-react";
@@ -64,7 +64,7 @@ export function BenchmarkSection({ title, items, extra, variant = "muted" }: Ben
                                     {item.link && (
                                         <div className="pt-2">
                                             <Link
-                                                href={item.link}
+                                                href={item.link as "/knowledge-hub"}
                                                 className="text-primary font-bold hover:underline inline-flex items-center gap-1 group transition-all"
                                             >
                                                 Scopri di più

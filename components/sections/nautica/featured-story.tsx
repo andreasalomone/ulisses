@@ -1,16 +1,15 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { BrandText } from "@/components/ui/brand";
 import { Button } from "@/components/ui/button";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 export function FeaturedStory() {
-    const d = DICTIONARY.nautica.featuredStory;
-
-    if (!d) return null;
+    const t = useTranslations('nautica.featuredStory');
+    const tA11y = useTranslations('accessibility');
 
     return (
         <SectionWrapper className="py-20">
@@ -31,17 +30,17 @@ export function FeaturedStory() {
 
                         <div className="space-y-6">
                             <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
-                                <BrandText text={d.title} />
+                                <BrandText text={t('title')} />
                             </h2>
                             <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl whitespace-pre-line">
-                                <BrandText text={d.text} />
+                                <BrandText text={t('text')} />
                             </p>
                         </div>
 
                         {/* Link Style Button */}
                         <Button asChild variant="link" className="group/btn h-auto p-0 text-lg font-bold text-foreground hover:no-underline">
-                            <Link href={d.link} className="inline-flex items-center gap-3">
-                                {d.cta}
+                            <Link href={t('link') as "/knowledge-hub"} className="inline-flex items-center gap-3">
+                                {t('cta')}
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background transition-all group-hover/btn:border-primary group-hover/btn:bg-primary group-hover/btn:text-primary-foreground group-hover/btn:scale-110 shadow-sm">
                                     <ArrowRight className="h-5 w-5" />
                                 </div>
@@ -54,7 +53,7 @@ export function FeaturedStory() {
                         <div className="relative aspect-3/2 w-full max-w-[320px] transition-all duration-500 hover:scale-105">
                             <Image
                                 src="/partners/logo_Ministero del Turismo.png"
-                                alt="Ministero del Turismo Logo"
+                                alt={tA11y('ministryLogo')}
                                 fill
                                 className="object-contain drop-shadow-sm"
                             />

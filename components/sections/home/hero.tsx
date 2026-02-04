@@ -1,16 +1,21 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { CheckCircle2, ShieldCheck, Zap } from "lucide-react";
-import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export function Hero() {
-    const d = DICTIONARY.home.hero;
+    const t = useTranslations('home.hero');
+    const tCommon = useTranslations('common');
+    const tA11y = useTranslations('accessibility');
+    const h1 = t('h1');
+    const h1Token = t('h1Token');
+    const proofs = t.raw('proofs') as string[];
 
     return (
         <SectionWrapper className="min-h-[95vh] flex items-center pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -18,20 +23,20 @@ export function Hero() {
                 {/* Left Content - 60% */}
                 <div className="relative z-10 w-full lg:w-[70%]">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
-                        {d.h1.split(d.h1Token).map((part, i, arr) => (
+                        {h1.split(h1Token).map((part, i, arr) => (
                             <React.Fragment key={i}>
                                 {part}
-                                {i < arr.length - 1 && <span className="text-primary italic">{d.h1Token}</span>}
+                                {i < arr.length - 1 && <span className="text-primary italic">{h1Token}</span>}
                             </React.Fragment>
                         ))}
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-150 fill-mode-both">
-                        <BrandText text={d.subheadline} />
+                        <BrandText text={t('subheadline')} />
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
                         <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
-                            <Link href="/contatti">{DICTIONARY.common.demoCta}</Link>
+                            <Link href="/contatti">{tCommon('demoCta')}</Link>
                         </Button>
                         <Button
                             variant="outline"
@@ -39,7 +44,7 @@ export function Hero() {
                             className="h-14 px-8 text-base font-bold rounded-full hover:bg-muted/50 transition-colors cursor-pointer"
                             onClick={() => document.getElementById("scenari")?.scrollIntoView({ behavior: "smooth" })}
                         >
-                            {DICTIONARY.common.learnMore}
+                            {tCommon('learnMore')}
                         </Button>
                     </div>
                 </div>
@@ -48,7 +53,7 @@ export function Hero() {
                 <div className="w-full lg:w-[40%] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
                     <Image
                         src="/assets/hero.png"
-                        alt="Ulisses AI Platform"
+                        alt={tA11y('ulissesPlatform')}
                         width={900}
                         height={900}
                         className="w-[150%] h-auto object-contain"
@@ -58,16 +63,16 @@ export function Hero() {
                     <div className="flex flex-col items-center gap-2 mt-6">
                         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors">
                             <ShieldCheck className="h-3.5 w-3.5 text-primary shrink-0" />
-                            <span className="text-xs font-medium">{d.proofs[0]}</span>
+                            <span className="text-xs font-medium">{proofs[0]}</span>
                         </div>
                         <div className="flex flex-wrap justify-center gap-2">
                             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors">
                                 <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
-                                <span className="text-xs font-medium">{d.proofs[1]}</span>
+                                <span className="text-xs font-medium">{proofs[1]}</span>
                             </div>
                             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 hover:border-primary/30 transition-colors">
                                 <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
-                                <span className="text-xs font-medium">{d.proofs[2]}</span>
+                                <span className="text-xs font-medium">{proofs[2]}</span>
                             </div>
                         </div>
                     </div>

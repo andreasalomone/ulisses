@@ -11,7 +11,7 @@ import {
     Lock,
     Unlock
 } from "lucide-react";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 const cards = [
@@ -44,7 +44,8 @@ const cards = [
 ];
 
 export function ProcessUnlock() {
-    const d = DICTIONARY.ferroviario;
+    const t = useTranslations('ferroviario');
+    const processItems = t.raw('process') as { problem: string; solution: string }[];
 
     return (
         <section className="py-24 overflow-hidden relative">
@@ -57,7 +58,7 @@ export function ProcessUnlock() {
                         transition={{ duration: 0.5 }}
                         className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8"
                     >
-                        {d.hero.unlockTitle}
+                        {t('hero.unlockTitle')}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -66,7 +67,7 @@ export function ProcessUnlock() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium"
                     >
-                        {d.hero.unlockSubtitle}
+                        {t('hero.unlockSubtitle')}
                     </motion.p>
                 </div>
 
@@ -74,7 +75,7 @@ export function ProcessUnlock() {
                     {cards.map((card, i) => (
                         <FrictionCard
                             key={card.key}
-                            content={d.process[i]}
+                            content={processItems[i]}
                             Icon={card.icon}
                             className={card.className}
                             hasAnimation={card.hasAnimation}

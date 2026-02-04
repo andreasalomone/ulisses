@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -59,7 +59,7 @@ export function ScenarioCard({
 
             <CardFooter>
                 <Link
-                    href={href}
+                    href={href as "/"}
                     className="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all"
                 >
                     {linkText}

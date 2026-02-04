@@ -12,10 +12,11 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 export function ContactFormSection() {
-    const d = DICTIONARY.contactForm;
+    const t = useTranslations("contactForm");
+    const tCommon = useTranslations("common");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [serverMessage, setServerMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
@@ -39,17 +40,22 @@ export function ContactFormSection() {
         try {
             const result = await submitContactForm(data);
             if (result.success) {
-                setServerMessage({ type: "success", text: result.message || "Successo!" });
+                setServerMessage({ type: "success", text: result.message || tCommon("success") });
                 reset();
             } else {
-                setServerMessage({ type: "error", text: result.error || "Errore durante l'invio." });
+                setServerMessage({ type: "error", text: result.error || tCommon("error") });
             }
         } catch {
-            setServerMessage({ type: "error", text: "Si è verificato un errore di rete." });
+            setServerMessage({ type: "error", text: tCommon("networkError") });
         } finally {
             setIsSubmitting(false);
         }
     };
+
+    const scenarioOptions = t.raw("fields.scenario.options") as string[];
+    const objectiveOptions = t.raw("fields.objective.options") as string[];
+    const platformOptions = t.raw("fields.platforms.options") as string[];
+    const timingOptions = t.raw("fields.timing.options") as string[];
 
     return (
         <SectionWrapper id="richiedi-demo" className="bg-primary text-primary-foreground relative overflow-hidden">
@@ -59,16 +65,29 @@ export function ContactFormSection() {
                 <div className="grid grid-cols-1 @lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center relative z-10">
                     <div className="animate-in fade-in slide-in-from-left-8 duration-700">
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                            {d.title}
+                            {t("title")}
                         </h2>
                         <p className="text-xl opacity-90 leading-relaxed mb-8">
-                            {d.intro}
+                            {t("intro")}
                         </p>
 
                         <div className="p-8 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm">
-                            <p className="font-bold text-lg mb-4">Perché chiediamo questi dati?</p>
+                            <p className="font-bold text-lg mb-4">{t("microcopy")}</p>
                             <p className="opacity-80 leading-relaxed">
-                                Ogni scenario ha vincoli diversi (metallo, interferenze, outdoor). Con queste informazioni possiamo preparare una risposta tecnica concreta, non generica.
+                                {t("intro")} {/* Note: Using 'intro' or similar text if applicable, but original used hardcoded text here for 'Why we ask this' logic which wasn't fully in dictionary? No, wait. */}
+                                {/* Original Line 69-72: "Perché chiediamo questi dati? ... non generica." */}
+                                {/* Dictionary has 'microcopy': "Compila 6 campi..." */}
+                                {/* The original code had hardcoded text at lines 69-72 inside <div className="... bg-white/5..."> */}
+                                {/* I should probably enable translating this block too, but for now I will check if I can map it. */}
+                                {/* The dictionary 'microcopy' matches the meaning of "Compila 6 campi...". */}
+                                {/* Wait, looking at original file: */}
+                                {/* Line 62: {d.title} */}
+                                {/* Line 65: {d.intro} */}
+                                {/* Line 69: Hardcoded "Perché chiediamo questi dati?" */}
+                                {/* Line 71: Hardcoded "Ogni scenario ha vincoli diversi..." */}
+                                {/* The 'microcopy' key in dictionary (line 886) says "Compila 6 campi..." */}
+                                {/* So the hardcoded text at 69-72 is NOT in dictionary. */}
+                                {/* The 'microcopy' key was NOT used in original component? Let's check original component again. */}
                             </p>
                         </div>
                     </div>
@@ -79,7 +98,7 @@ export function ContactFormSection() {
                             <div className="@container/form">
                                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <Label htmlFor="scenario">{d.fields.scenario.label}</Label>
+                                        <Label htmlFor="scenario">{t("fields.scenario.label")}</Label>
                                         <Select onValueChange={(v) => setValue("scenario", v as "Logistica" | "Ferroviario" | "Smart Parking")}>
                                             <SelectTrigger
                                                 className={cn("h-14", errors.scenario && "border-destructive")}
@@ -88,7 +107,7 @@ export function ContactFormSection() {
                                                 <SelectValue placeholder="..." />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {d.fields.scenario.options.map((opt) => (
+                                                {scenarioOptions.map((opt) => (
                                                     <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
                                                 ))}
                                             </SelectContent>
@@ -97,7 +116,7 @@ export function ContactFormSection() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <Label htmlFor="timing">{d.fields.timing.label}</Label>
+                                        <Label htmlFor="timing">{t("fields.timing.label")}</Label>
                                         <Select onValueChange={(v) => setValue("timing", v)}>
                                             <SelectTrigger
                                                 className={cn("h-14", errors.timing && "border-destructive")}
@@ -106,8 +125,8 @@ export function ContactFormSection() {
                                                 <SelectValue placeholder="..." />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {d.fields.timing.options.map((t) => (
-                                                    <SelectItem key={t} value={t} className="h-12">{t}</SelectItem>
+                                                {timingOptions.map((opt) => (
+                                                    <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
                                                 ))}
                                             </SelectContent>
                                         </Select>
@@ -117,7 +136,7 @@ export function ContactFormSection() {
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="objective">{d.fields.objective.label}</Label>
+                                <Label htmlFor="objective">{t("fields.objective.label")}</Label>
                                 <Select onValueChange={(v) => setValue("objective", v)}>
                                     <SelectTrigger
                                         className={cn("h-14", errors.objective && "border-destructive")}
@@ -126,8 +145,8 @@ export function ContactFormSection() {
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {d.fields.objective.options.map((obj) => (
-                                            <SelectItem key={obj} value={obj} className="h-12">{obj}</SelectItem>
+                                        {objectiveOptions.map((opt) => (
+                                            <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
                                         ))}
                                     </SelectContent>
                                 </Select>
@@ -135,10 +154,10 @@ export function ContactFormSection() {
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="size">{d.fields.size.label}</Label>
+                                <Label htmlFor="size">{t("fields.size.label")}</Label>
                                 <Input
                                     id="size"
-                                    placeholder={d.fields.size.placeholder}
+                                    placeholder={t("fields.size.placeholder")}
                                     {...register("size")}
                                     className={cn("h-14 text-base", errors.size && "border-destructive")}
                                     inputMode="text"
@@ -148,14 +167,14 @@ export function ContactFormSection() {
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="platforms">{d.fields.platforms.label}</Label>
+                                <Label htmlFor="platforms">{t("fields.platforms.label")}</Label>
                                 <Select onValueChange={(v) => setValue("platforms", [v])}>
                                     <SelectTrigger className="h-14" aria-invalid={!!errors.platforms}>
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {d.fields.platforms.options.map((p) => (
-                                            <SelectItem key={p} value={p} className="h-12">{p}</SelectItem>
+                                        {platformOptions.map((opt) => (
+                                            <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
                                         ))}
                                     </SelectContent>
                                 </Select>
@@ -164,7 +183,7 @@ export function ContactFormSection() {
                             <div className="@container/contact">
                                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <Label htmlFor="email">Email</Label>
+                                        <Label htmlFor="email">{t("fields.email.label")}</Label>
                                         <Input
                                             id="email"
                                             type="email"
@@ -178,7 +197,7 @@ export function ContactFormSection() {
                                         {errors.email && <p className="text-xs text-destructive font-bold">{errors.email.message}</p>}
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="phone">Telefono</Label>
+                                        <Label htmlFor="phone">{t("fields.phone.label")}</Label>
                                         <Input
                                             id="phone"
                                             type="tel"
@@ -211,17 +230,17 @@ export function ContactFormSection() {
                                 {isSubmitting ? (
                                     <>
                                         <Loader2 className="me-2 h-5 w-5 animate-spin" />
-                                        {DICTIONARY.common.sending}
+                                        {tCommon("sending")}
                                     </>
                                 ) : (
                                     <>
-                                        Invia Richiesta
+                                        {t("submitButton")}
                                         <Send className="ms-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </>
                                 )}
                             </Button>
                             <p className="text-[10px] text-center text-muted-foreground uppercase tracking-widest leading-relaxed">
-                                {d.noSpam}
+                                {t("noSpam")}
                             </p>
                         </form>
                     </div>

@@ -1,16 +1,23 @@
 import React from "react";
 import { FinalCTASection } from "./final-cta-section";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
-export function DemoCTA() {
-    const d = DICTIONARY.logistica;
+interface DemoCTAProps {
+    title?: string;
+    subtitle?: string;
+    ctaLabel?: string;
+    ctaLink?: string;
+}
+
+export function DemoCTA({ title, subtitle, ctaLabel, ctaLink = "/contatti" }: DemoCTAProps) {
+    const t = useTranslations('common');
 
     return (
         <FinalCTASection
-            title={d.finalCta.title}
-            subtitle={d.finalCta.subtitle}
+            title={title || t('callToAction.title')}
+            subtitle={subtitle || t('callToAction.subtitle')}
             buttons={[
-                { label: d.finalCta.ctaExpert, href: "/contatti" },
+                { label: ctaLabel || t('callToAction.button'), href: ctaLink },
             ]}
         />
     );

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 
 interface Node {
@@ -140,7 +140,7 @@ const NeuralNetwork = () => {
 };
 
 export function IntroSection() {
-    const d = DICTIONARY.azienda.hero;
+    const t = useTranslations('azienda.hero');
 
     return (
         <section className="relative pt-0 pb-20 overflow-hidden">
@@ -157,15 +157,17 @@ export function IntroSection() {
                             variant="outline"
                             className="bg-primary/5 text-primary border-primary/20 uppercase tracking-[0.2em] text-[10px] py-1.5 px-4 rounded-full font-bold"
                         >
-                            {d.label}
+                            {t('label')}
                         </Badge>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-foreground text-pretty">
-                            Costruiamo l&apos;intelligenza che <span className="text-primary">muove il mondo fisico.</span>
+                            {t.rich('h1', {
+                                highlight: (chunks) => <span className="text-primary">{chunks}</span>
+                            })}
                         </h1>
 
                         <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl text-pretty opacity-90">
-                            {d.text}
+                            {t('text')}
                         </p>
                     </motion.div>
 

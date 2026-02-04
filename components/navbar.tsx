@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -23,6 +22,10 @@ export function Navbar() {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
+    const tNav = useTranslations('navigation');
+    const tCommon = useTranslations('common');
+    const tA11y = useTranslations('accessibility');
+    const locale = useLocale();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,7 +56,7 @@ export function Navbar() {
     const handleMouseLeave = () => {
         closeTimeoutRef.current = setTimeout(() => {
             setActiveDropdown(null);
-        }, 80);
+        }, 120);
     };
 
     return (
@@ -69,7 +72,7 @@ export function Navbar() {
                 <Link href="/" className="relative h-8 w-32 md:w-40 transition-transform hover:scale-105">
                     <Image
                         src="/logos/ulisses_trademark-oriz.svg"
-                        alt="Ulisses Logo"
+                        alt={tA11y('ulissesLogo')}
                         fill
                         className="object-contain"
                         priority
@@ -81,6 +84,7 @@ export function Navbar() {
                     {NAV_LINKS.map((link) => {
                         const isActive = isLinkActive(link);
                         const isDropdownOpen = activeDropdown === link.label;
+                        const label = tNav(link.label);
 
                         if (link.subLinks) {
                             return (
@@ -99,7 +103,7 @@ export function Navbar() {
                                             "flex items-center gap-1 text-lg font-semibold transition-colors hover:text-primary outline-none py-2",
                                             isActive ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/80"
                                         )}>
-                                            {link.label}
+                                            {label}
                                             <ChevronDown className={cn(
                                                 "size-4 transition-transform duration-200",
                                                 isDropdownOpen ? "rotate-180" : ""
@@ -113,8 +117,8 @@ export function Navbar() {
                                             onMouseLeave={handleMouseLeave}
                                         >
                                             <DropdownMenuItem asChild className="py-2.5 px-4 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
-                                                <Link href={link.href} className="w-full font-black text-2xl tracking-tight">
-                                                    Tutte le {link.label}
+                                                <Link href={link.href as "/"} className="w-full font-black text-2xl tracking-tight">
+                                                    {tNav('viewAll')} {label}
                                                 </Link>
                                             </DropdownMenuItem>
                                             <div className="h-px bg-border/20 my-2 mx-2" />
@@ -125,13 +129,13 @@ export function Navbar() {
                                                     className="py-2.5 px-4 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer"
                                                 >
                                                     <Link
-                                                        href={sub.href}
+                                                        href={sub.href as "/"}
                                                         className={cn(
                                                             "w-full text-2xl transition-colors",
                                                             pathname === sub.href ? "text-primary font-bold" : "text-foreground/80 font-semibold"
                                                         )}
                                                     >
-                                                        {sub.label}
+                                                        {tNav(sub.label)}
                                                     </Link>
                                                 </DropdownMenuItem>
                                             ))}
@@ -144,30 +148,102 @@ export function Navbar() {
                         return (
                             <Link
                                 key={link.href}
-                                href={link.href}
+                                href={link.href as "/"}
                                 className={cn(
                                     "text-lg font-semibold transition-colors hover:text-primary",
                                     isActive ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/80"
                                 )}
                             >
-                                {link.label}
+                                {label}
                             </Link>
                         );
                     })}
-                    <Button asChild size="lg" className="text-lg font-bold px-8 h-12 rounded-full">
-                        <Link href="/contatti">{DICTIONARY.common.demoCta}</Link>
-                    </Button>
+
+                    <div className="flex items-center gap-4">
+                        <DropdownMenu
+                            modal={false}
+                            open={activeDropdown === 'language'}
+                            onOpenChange={(open) => !open && setActiveDropdown(null)}
+                        >
+                            <div
+                                onMouseEnter={() => handleMouseEnter('language')}
+                                onMouseLeave={handleMouseLeave}
+                                className="relative"
+                            >
+                                <DropdownMenuTrigger asChild>
+                                    <button
+                                        className={cn(
+                                            "flex items-center gap-2 text-base font-semibold transition-all duration-200 hover:scale-110 px-2 py-1 rounded-lg hover:bg-muted/50 outline-none",
+                                            activeDropdown === 'language' ? "text-primary bg-muted/50 scale-110" : "text-foreground/80 scale-100"
+                                        )}
+                                        aria-label={tA11y(locale === 'it' ? 'switchToEnglish' : 'switchToItalian')}
+                                    >
+                                        <span className="text-xl">{locale === 'it' ? '🇮🇹' : '🇬🇧'}</span>
+                                        <ChevronDown className={cn(
+                                            "h-4 w-4 transition-transform duration-200",
+                                            activeDropdown === 'language' ? "rotate-180" : ""
+                                        )} />
+                                    </button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent
+                                    align="end"
+                                    sideOffset={10}
+                                    className="w-[180px] p-1.5 bg-background/90 backdrop-blur-xl border-border/50 rounded-2xl shadow-2xl"
+                                    onMouseEnter={() => handleMouseEnter('language')}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    <DropdownMenuItem asChild className="py-2.5 px-3 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
+                                        <Link
+                                            href={pathname as "/"}
+                                            locale="it"
+                                            className={cn(
+                                                "flex items-center gap-3 w-full font-semibold text-lg",
+                                                locale === 'it' ? "text-primary" : "text-foreground/80"
+                                            )}
+                                        >
+                                            <span className="text-xl">🇮🇹</span> {tNav('italian')}
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild className="py-2.5 px-3 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
+                                        <Link
+                                            href={pathname as "/"}
+                                            locale="en"
+                                            className={cn(
+                                                "flex items-center gap-3 w-full font-semibold text-lg",
+                                                locale === 'en' ? "text-primary" : "text-foreground/80"
+                                            )}
+                                        >
+                                            <span className="text-xl">🇬🇧</span> {tNav('english')}
+                                        </Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </div>
+                        </DropdownMenu>
+
+                        <Button asChild size="lg" className="text-lg font-bold px-8 h-12 rounded-full">
+                            <Link href="/contatti">{tCommon('demoCta')}</Link>
+                        </Button>
+                    </div>
                 </div>
 
                 {/* Mobile Toggle */}
-                <button
-                    className="lg:hidden text-foreground p-2"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle menu"
-                    aria-expanded={isOpen}
-                >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                <div className="lg:hidden flex items-center gap-4">
+                    <a
+                        href={`/${locale === 'it' ? 'en' : 'it'}${pathname}`}
+                        className="flex items-center text-xl transition-all hover:scale-110"
+                        aria-label={locale === 'it' ? tA11y('switchToEnglish') : tA11y('switchToItalian')}
+                    >
+                        {locale === 'it' ? '🇮🇹' : '🇬🇧'}
+                    </a>
+                    <button
+                        className="text-foreground p-2"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label={tA11y('toggleMenu')}
+                        aria-expanded={isOpen}
+                    >
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -182,6 +258,7 @@ export function Navbar() {
                         {NAV_LINKS.map((link) => {
                             const isExpanded = !!openSubMenus[link.label];
                             const isActive = isLinkActive(link);
+                            const label = tNav(link.label);
 
                             return (
                                 <div key={link.label} className="flex flex-col">
@@ -196,7 +273,7 @@ export function Navbar() {
                                                     isActive ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground"
                                                 )}
                                             >
-                                                {link.label}
+                                                {label}
                                                 <ChevronDown className={cn(
                                                     "size-5 transition-transform duration-200",
                                                     isExpanded ? "rotate-180" : ""
@@ -211,26 +288,26 @@ export function Navbar() {
                                             >
                                                 <div className="overflow-hidden flex flex-col pl-4">
                                                     <Link
-                                                        href={link.href}
+                                                        href={link.href as "/"}
                                                         className={cn(
                                                             "text-xl font-bold py-3 border-b border-muted/50 last:border-0",
                                                             pathname === link.href ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/70"
                                                         )}
                                                         onClick={() => setIsOpen(false)}
                                                     >
-                                                        Panoramica {link.label}
+                                                        {tNav('viewAll')} {label}
                                                     </Link>
                                                     {link.subLinks.map((sub) => (
                                                         <Link
                                                             key={sub.href}
-                                                            href={sub.href}
+                                                            href={sub.href as "/"}
                                                             className={cn(
                                                                 "text-xl font-bold py-3 border-b border-muted/50 last:border-0",
                                                                 pathname === sub.href ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground/70"
                                                             )}
                                                             onClick={() => setIsOpen(false)}
                                                         >
-                                                            {sub.label}
+                                                            {tNav(sub.label)}
                                                         </Link>
                                                     ))}
                                                 </div>
@@ -238,14 +315,14 @@ export function Navbar() {
                                         </>
                                     ) : (
                                         <Link
-                                            href={link.href}
+                                            href={link.href as "/"}
                                             className={cn(
                                                 "text-lg font-bold py-3 border-b border-muted",
                                                 pathname === link.href ? "text-primary underline underline-offset-12 decoration-2 decoration-primary" : "text-foreground"
                                             )}
                                             onClick={() => setIsOpen(false)}
                                         >
-                                            {link.label}
+                                            {label}
                                         </Link>
                                     )}
                                 </div>
@@ -253,7 +330,7 @@ export function Navbar() {
                         })}
                         <Button asChild className="mt-4 font-bold w-full h-12 text-lg rounded-full">
                             <Link href="/contatti" onClick={() => setIsOpen(false)}>
-                                {DICTIONARY.common.demoCta}
+                                {tCommon('demoCta')}
                             </Link>
                         </Button>
                     </div>

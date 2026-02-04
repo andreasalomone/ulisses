@@ -1,22 +1,20 @@
-"use client";
-
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
-import { Lightbulb, Shield, Zap, Target, Rocket, Heart } from "lucide-react";
+import { Lightbulb, Shield, Rocket, Microscope } from "lucide-react";
 
 export function ValuesSection() {
-    const d = DICTIONARY.azienda.values;
+    const t = useTranslations('azienda.values');
+    const items = t.raw('items') as { title: string; text: string }[];
 
-    const getIcon = (title: string) => {
-        const t = title.toLowerCase();
-        if (t.includes("innov") || t.includes("tech")) return <Zap className="w-8 h-8" />;
-        if (t.includes("integ") || t.includes("etic")) return <Shield className="w-8 h-8" />;
-        if (t.includes("eccel") || t.includes("qual")) return <Target className="w-8 h-8" />;
-        if (t.includes("passio") || t.includes("cuor")) return <Heart className="w-8 h-8" />;
-        if (t.includes("vision") || t.includes("futur")) return <Rocket className="w-8 h-8" />;
-        return <Lightbulb className="w-8 h-8" />;
+    const getIcon = (index: number) => {
+        switch (index) {
+            case 0: return <Microscope className="w-8 h-8" />; // Field First / Research
+            case 1: return <Shield className="w-8 h-8" />; // Radical Truth / Integrity
+            case 2: return <Rocket className="w-8 h-8" />; // Ship & Iterate / Speed
+            default: return <Lightbulb className="w-8 h-8" />;
+        }
     };
 
     return (
@@ -24,13 +22,13 @@ export function ValuesSection() {
             <div className="container max-w-6xl mx-auto px-4 md:px-6">
                 <div className="text-center mb-16 space-y-4">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-                        {d.title}
+                        {t('title')}
                     </h2>
                     <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                    {d.items.map((v, i) => (
+                    {items.map((v, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +43,7 @@ export function ValuesSection() {
 
                                 <div className="relative z-10 flex flex-col h-full">
                                     <div className="mb-6 p-4 rounded-2xl bg-primary/5 text-primary inline-flex self-start group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-                                        {getIcon(v.title)}
+                                        {getIcon(i)}
                                     </div>
 
                                     <h3 className="font-bold text-2xl mb-4 group-hover:text-primary transition-colors">

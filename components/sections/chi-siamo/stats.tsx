@@ -1,14 +1,11 @@
-"use client";
-
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 
 export function StatsSection() {
-    const d = DICTIONARY.azienda.stats;
-
-    if (!d) return null;
+    const t = useTranslations('azienda.stats');
+    const items = t.raw('items') as { value: string; label: string }[];
 
     return (
         <SectionWrapper className="py-24 bg-muted/20">
@@ -20,13 +17,13 @@ export function StatsSection() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground mb-4">
-                        {d.title}
+                        {t('title')}
                     </h2>
                     <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
                 </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                    {d.items.map((stat, i) => (
+                    {items.map((stat, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, scale: 0.9 }}

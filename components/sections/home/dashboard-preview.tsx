@@ -3,14 +3,15 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ImagePlaceholder } from "@/components/shared/image-placeholder";
 import { Button } from "@/components/ui/button";
 import { Search, Map, BellRing, ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { DICTIONARY } from "@/lib/dictionary";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export function DashboardPreview() {
-    const d = DICTIONARY.home.app;
+    const t = useTranslations('home.app');
     const icons = [Search, Map, BellRing];
 
-    const features = d.features.map((f, i) => ({
+    const featuresRaw = t.raw('features') as { title: string; text: string }[];
+    const features = featuresRaw.map((f, i) => ({
         ...f,
         icon: icons[i]
     }));
@@ -31,12 +32,12 @@ export function DashboardPreview() {
 
                 <div className="order-1 lg:order-2">
                     <div className="animate-in fade-in slide-in-from-right-8 duration-700">
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{d.label}</span>
+                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{t('label')}</span>
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                            {d.title}
+                            {t('title')}
                         </h2>
                         <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                            {d.intro}
+                            {t('intro')}
                         </p>
 
                         <div className="space-y-10">
@@ -57,7 +58,7 @@ export function DashboardPreview() {
 
                         <Button asChild variant="ghost" className="mt-12 group font-bold">
                             <Link href="/tecnologia">
-                                {d.cta}
+                                {t('cta')}
                                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </Button>

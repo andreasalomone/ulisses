@@ -1,0 +1,1574 @@
+{
+    "metadata": {
+        "title": "Ulisses - Intelligent Asset Tracking",
+        "siteName": "Ulisses",
+        "description": "Advanced real-time asset tracking and monitoring solutions for Logistics, Smart Parking, and Industrial applications.",
+        "twitterDescription": "Advanced real-time asset tracking and monitoring solutions.",
+        "ogImageAlt": "Ulisses Intelligent Asset Tracking",
+        "keywords": {
+            "assetTracking": "Asset Tracking",
+            "logistics": "Logistics",
+            "iot": "IoT",
+            "smartParking": "Smart Parking",
+            "industrialAI": "Industrial AI",
+            "ulisses": "Ulisses",
+            "realTimeMonitoring": "Real-time Monitoring"
+        }
+    },
+    "accessibility": {
+        "ulissesLogo": "Ulisses Logo",
+        "toggleMenu": "Toggle menu",
+        "switchToEnglish": "Switch to English",
+        "switchToItalian": "Switch to Italian",
+        "ulissesPlatform": "Ulisses AI Platform",
+        "trenordLogo": "Trenord Logo",
+        "ministryLogo": "Ministry of Tourism Logo",
+        "dashboardFerroviario": "Railway Dashboard",
+        "smartParkingVisualization": "Smart Parking Visualization",
+        "smartBuildingVisualization": "Smart Building Visualization",
+        "smartParkingNetwork": "Smart Parking Network Visualization",
+        "firstImage": "First image",
+        "secondImage": "Second image"
+    },
+    "common": {
+        "demoCta": "Talk to an Expert",
+        "expertCta": "Talk to an Expert",
+        "onePagerCta": "Download One-Pager",
+        "contactCta": "Request Assessment",
+        "learnMore": "Learn More",
+        "backToHome": "Back to Home",
+        "sending": "Sending...",
+        "success": "Success!",
+        "error": "Error during sending.",
+        "networkError": "A network error occurred.",
+        "callToAction": {
+            "title": "Ready to optimize your processes?",
+            "subtitle": "Discover how our technology can transform your operations.",
+            "button": "Talk to an Expert"
+        }
+    },
+    "contactForm": {
+        "title": "Request a Demo / Assessment",
+        "intro": "Tell us about your scenario and goals: we'll propose a clear path (pilot → rollout).",
+        "microcopy": "Fill in 6 fields: it helps us give you a useful, non-generic answer.",
+        "fields": {
+            "scenario": {
+                "label": "Which scenario do you need Ulisses for?",
+                "options": [
+                    "Logistics",
+                    "Railway",
+                    "Smart Parking",
+                    "Smart Building",
+                    "Other"
+                ]
+            },
+            "objective": {
+                "label": "Main Objective",
+                "options": [
+                    "Reduce asset search times",
+                    "Geofencing / alerts",
+                    "Parking occupancy",
+                    "Duration / overstay",
+                    "Material/equipment traceability",
+                    "Entrance/flow monitoring",
+                    "Integration with existing systems",
+                    "Other"
+                ]
+            },
+            "size": {
+                "label": "Scenario Size",
+                "placeholder": "Ex: # assets / # spots / # sites"
+            },
+            "platforms": {
+                "label": "Platforms already in use",
+                "options": [
+                    "WMS",
+                    "CMMS",
+                    "ITS",
+                    "BI",
+                    "ERP",
+                    "None",
+                    "Other"
+                ]
+            },
+            "timing": {
+                "label": "Estimated Timing",
+                "options": [
+                    "0–3 months",
+                    "3–6 months",
+                    "6–12 months",
+                    "Exploration"
+                ]
+            },
+            "email": {
+                "label": "Email"
+            },
+            "phone": {
+                "label": "Phone"
+            }
+        },
+        "submitButton": "Submit Request",
+        "noSpam": "No spam. We only use data to respond to your request."
+    },
+    "navigation": {
+        "soluzioni": "Solutions",
+        "nautica": "Boating",
+        "logistica": "Logistics",
+        "ferroviario": "Railway",
+        "smartParking": "Smart City",
+        "tecnologia": "Technology",
+        "risorse": "Resources",
+        "azienda": "About Us",
+        "contatti": "Contacts",
+        "faq": "FAQ",
+        "viewAll": "All",
+        "italian": "Italian",
+        "english": "English"
+    },
+    "legal": {
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy",
+        "terms": "Terms and Conditions",
+        "rightsReserved": "All rights reserved.",
+        "piva": "VAT ID 02718490697 – REA MI-2746967 – SDI USAL8PV",
+        "menuHeader": "Menu",
+        "legalHeader": "Legal",
+        "description": "Intelligent asset localization for logistics, railway, boating, and smart city."
+    },
+    "contatti": {
+        "title": "We're ready to hear your challenge",
+        "subtitle": "From technical demo to project implementation: our team is at your disposal.",
+        "writeUs": "Write to us",
+        "callUs": "Call us",
+        "visitUs": "Visit us",
+        "socialChat": "Social & Chat"
+    },
+    "cookiePolicy": {
+        "title": "Cookie Policy",
+        "lastUpdated": "Last updated: 09/01/2025",
+        "intro": "This Cookie Policy explains how we use cookies and other similar tracking technologies on our website www.ulisses.it.",
+        "readCarefully": "Please read this policy carefully to understand how cookies are used on our site and how you can manage them.",
+        "whatAreCookies": {
+            "title": "What are cookies?",
+            "text": "Cookies are small text files that are stored on your device when you visit a website. They are widely used to enable the site to function properly, improve the user's browsing experience, provide information to site owners, and for statistical purposes."
+        },
+        "typesOfCookies": {
+            "title": "Types of cookies used",
+            "technical": {
+                "label": "Technical cookies:",
+                "text": "These cookies are essential to enable our website to function properly. They are used, for example, to store your language preferences or to allow access to certain site features."
+            },
+            "analytics": {
+                "label": "Analytics cookies:",
+                "text": "We use analytics cookies to collect information about how our website is used, such as the number of visitors and the most visited pages. This information helps us improve the site and provide an optimal browsing experience for users."
+            },
+            "marketing": {
+                "label": "Marketing cookies:",
+                "text": "These cookies are used to show you relevant advertisements based on your interests. They may also be used to limit the number of times you see an ad and to measure the effectiveness of advertising campaigns."
+            }
+        },
+        "management": {
+            "title": "Cookie management",
+            "text": "You can manage your cookie preferences by changing your browser settings. Most browsers allow you to accept, reject, or delete cookies. Please note that disabling cookies may affect the proper functioning of the website and limit some features."
+        },
+        "privacyInfo": {
+            "title": "Privacy information",
+            "text": "For more information on how we handle users' personal data and to learn about your privacy rights, please read our",
+            "linkText": "Privacy Policy"
+        },
+        "contact": {
+            "title": "Contacts",
+            "text": "If you have any questions, concerns, or requests regarding this Cookie Policy, please contact us at:"
+        }
+    },
+    "termsConditions": {
+        "title": "Terms and Conditions",
+        "lastUpdated": "Last updated: 09/01/2025",
+        "acceptance": {
+            "title": "Acceptance of Terms",
+            "text1": "Welcome to the Ulisses website. Access and use of this site are subject to the following Terms and Conditions.",
+            "text2": "By using this website, you agree to be bound by these terms. If you do not fully accept these terms, please do not use the site."
+        },
+        "intellectualProperty": {
+            "title": "Intellectual Property",
+            "text": "All content, trademarks, logos, and data on this site are the property of Ulisses or are used under license. Any unauthorized reproduction, distribution, or use of such materials is prohibited."
+        },
+        "liability": {
+            "title": "Limitation of Liability",
+            "text": "Ulisses does not guarantee that the site is free from errors or interruptions. The information contained on the site is provided \"as is\" and may be subject to change without notice. Ulisses shall not be liable for any damages arising from the use or inability to use the site."
+        },
+        "privacyCookie": {
+            "title": "Privacy and Cookies",
+            "text": "Use of the site is also governed by our",
+            "privacyLink": "Privacy Policy",
+            "and": "and our",
+            "cookieLink": "Cookie Policy",
+            "ending": ", which are incorporated herein by reference."
+        },
+        "modifications": {
+            "title": "Modifications to Terms",
+            "text": "Ulisses reserves the right to modify these Terms and Conditions at any time. Changes will be effective from the moment they are published on the site."
+        },
+        "contact": {
+            "title": "Contacts",
+            "text": "For any questions regarding these Terms and Conditions, please contact us:"
+        }
+    },
+    "privacyPolicy": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: 09/01/2025",
+        "intro": "Dear User, thank you for choosing to use our website. At Ulisses, we are committed to protecting your privacy and ensuring the security of the personal information you provide to us. This privacy policy explains how we collect, use, and protect your personal data during your visit to our website.",
+        "sections": [
+            {
+                "title": "Collection of Personal Information",
+                "content": "During your visit to our website, we may collect certain personal information, such as name, email address, phone number, and other contact details, only if voluntarily provided by you through contact forms or site registration."
+            },
+            {
+                "title": "Use of Personal Information",
+                "content": "The personal information we collect is used to provide requested services, answer your questions or provide support, personalize your experience on our website, send marketing communications (if you have consented), and improve our services. We will not sell, rent, or provide your personal information to third parties without your consent, except as required by law or in compliance with legal obligations."
+            },
+            {
+                "title": "Protection of Personal Data",
+                "content": "We adopt appropriate security measures to protect your personal data from unauthorized access, modification, disclosure, or destruction. However, we cannot guarantee the complete security of information transmitted over the Internet. Although we do our best to protect your personal data, sending personal information is at your own risk."
+            },
+            {
+                "title": "Cookies and Similar Technologies",
+                "content": "We use cookies and similar technologies to collect information about your preferences and improve your experience on our website. You can manage cookie settings through your browser settings. Please note that disabling cookies may limit some features of our website."
+            },
+            {
+                "title": "Links to Third-Party Sites",
+                "content": "Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of such websites. We recommend that you read the privacy policies of the third-party websites you visit."
+            },
+            {
+                "title": "Changes to Privacy Policy",
+                "content": "We reserve the right to make changes to this privacy policy. Changes will be published on this page and the effective date will be updated accordingly. We recommend that you check this page periodically for any updates."
+            },
+            {
+                "title": "Consent",
+                "content": "By using our website, you consent to the collection and use of your personal information as described in this privacy policy."
+            }
+        ],
+        "contact": {
+            "title": "Contacts",
+            "text": "If you have questions or concerns regarding our privacy policy or the processing of your personal information, please contact us via email:",
+            "email": "privacy@ulisses.it"
+        }
+    },
+    "home": {
+        "hero": {
+            "h1": "Track your assets, wherever they are",
+            "h1Token": "Track",
+            "subheadline": "With Ulisses you have total control: a complete solution of network, sensors, dashboard and API ready for the most complex environments, indoor and outdoor.",
+            "subheadlineToken": "dashboard, network, sensors and API",
+            "proofs": [
+                "Technological patent",
+                "Integrated planning & commissioning",
+                "IT/OT integrations with end-to-end SLA"
+            ],
+            "expertLink": "Talk to an expert"
+        },
+        "technologyPillars": {
+            "title": "The pillars of our patented technology",
+            "cards": [
+                {
+                    "title": "Unique Scalability",
+                    "subtitle": "Reliable and guaranteed service on 100,000+ connected devices without interruptions",
+                    "icon": "Scale"
+                },
+                {
+                    "title": "Extreme Precision",
+                    "subtitle": "Thanks to our proprietary technology, we guarantee accuracy <10cm",
+                    "icon": "Target"
+                },
+                {
+                    "title": "Wireless",
+                    "subtitle": "Our devices are battery powered and run up to 5 years without maintenance",
+                    "icon": "BatteryCharging"
+                }
+            ]
+        },
+        "partners": {
+            "title": "Our Partners"
+        },
+        "selector": {
+            "title": "In which scenario do you need Ulisses?",
+            "subtitle": "Operational resolutions, expected results and project path.",
+            "cards": {
+                "logistica": {
+                    "title": "Logistics & Operations",
+                    "description": "Reduce asset search times, operational errors, and warehouse risks.",
+                    "cta": "Discover Logistics",
+                    "resolutions": [
+                        "Asset search",
+                        "Geofencing",
+                        "Flow KPIs"
+                    ]
+                },
+                "ferroviario": {
+                    "title": "Railway",
+                    "description": "Material control in depots, with integration into maintenance workflows.",
+                    "cta": "Discover Railway",
+                    "resolutions": [
+                        "Equipment availability",
+                        "Event history",
+                        "CMMS"
+                    ]
+                },
+                "parking": {
+                    "title": "Smart City",
+                    "description": "Occupancy data and operational events, scalable rollout and OPEX with private network.",
+                    "cta": "Discover Smart City",
+                    "resolutions": [
+                        "Occupancy",
+                        "Parking duration",
+                        "Data quality"
+                    ]
+                }
+            }
+        },
+        "why": {
+            "title": "Why Ulisses is different",
+            "intro": "Beyond the single sensor: a complete system that brings certain data from the field to decisions, integrating via API with your systems (WMS/CMMS/ITS/BI).",
+            "columns": [
+                {
+                    "title": "Management Software",
+                    "problem": "They organize processes, but remain blind to the physical world.",
+                    "solution": "Ulisses brings the truth of the field directly into your systems, improving efficiency and precision."
+                },
+                {
+                    "title": "Traditional Tracking",
+                    "problem": "The demo works, but struggles in real environments and returns unreliable data.",
+                    "solution": "Ulisses is industrial engineering born to beat interference and scale to hundreds of thousands of sensors effortlessly."
+                },
+                {
+                    "title": "Fragmented Solutions",
+                    "problem": "A puzzle of different vendors is a maintenance nightmare.",
+                    "solution": "Ulisses is a single direction. From survey to API, a complete solution for the entire data lifecycle."
+                }
+            ],
+            "closure": "Ulisses is modular: optional platform and data integrable via API, with method and clear ownership. Unifies field, network and data: you can use our platform or integrate via API, reducing complexity and implementation times.",
+            "quote": "“We are not a prototype, we are not an eternal PoC. We operate in the real world.”"
+        },
+        "howItWorks": {
+            "title": "How it works, in practice",
+            "subtitle": "From field detection to operational data: a simple flow, easier to industrialize and integrate.",
+            "steps": [
+                {
+                    "title": "Field",
+                    "text": "Sensors/tags/anchors detect events and presence"
+                },
+                {
+                    "title": "Network",
+                    "text": "Connectivity carries data robustly"
+                },
+                {
+                    "title": "Platform",
+                    "text": "Normalizes, historicizes, enables dashboards and rules"
+                },
+                {
+                    "title": "Integrations",
+                    "text": "Connect existing systems (WMS/MES/CMMS/ITS)"
+                }
+            ],
+            "deployment": {
+                "label": "Choose your deployment",
+                "title": "Flexible Deployment",
+                "text": "Cloud / On-prem / Edge: choose the mode that best suits security, latency and sector requirements.",
+                "tokens": "Cloud / On-prem / Edge"
+            },
+            "deploymentCards": [
+                {
+                    "title": "Cloud",
+                    "text": "Leverage the scalability of our managed cloud infrastructure, with automatic updates and guaranteed availability."
+                },
+                {
+                    "title": "On-Premise",
+                    "text": "Keep total control over your data by installing Ulisses directly in your data centers or private infrastructure."
+                },
+                {
+                    "title": "Edge",
+                    "text": "Maximize speed and reduce latency by processing data directly in the field, even without connectivity."
+                }
+            ]
+        },
+        "proof": {
+            "title": "Production Ready",
+            "subtitle": "Ulisses is designed to work continuously in complex contexts. Not just technology: a complete method to reduce project risks, time, and costs.",
+            "items": [
+                {
+                    "title": "Site Survey & Design",
+                    "text": "We start from real constraints (coverage, interference, layout, processes)."
+                },
+                {
+                    "title": "Commissioning",
+                    "text": "We validate data quality and performance in the field before go-live."
+                },
+                {
+                    "title": "IT/OT Integrations via API",
+                    "text": "We bring events and data into systems already in use (WMS/CMMS/ITS/BI)."
+                },
+                {
+                    "title": "SLA & Support",
+                    "text": "Observability, alerts, data quality reports, and operational continuity."
+                }
+            ],
+            "cta": "Learn more about the Method",
+            "closure": "The result is an adoptable solution: reliable data, clear governance, and scalable rollout."
+        },
+        "app": {
+            "label": "Dashboard",
+            "title": "The Dashboard: what you see and what you can do",
+            "intro": "Not just \"tracking\": we transform signals and events into operational decisions.",
+            "features": [
+                {
+                    "title": "Monitor",
+                    "text": "Position, events, occupancy, system health"
+                },
+                {
+                    "title": "Analyze",
+                    "text": "History, trends, anomalies, performance by area/site"
+                },
+                {
+                    "title": "Act",
+                    "text": "With alerts, rules, reports, workflow integrations"
+                }
+            ],
+            "cta": "See dashboard examples"
+        },
+        "cta": {
+            "title": "Ready to optimize your processes?",
+            "text": "Discover how our technology can transform your operations.",
+            "button": "Talk to an expert",
+            "formMicrocopy": "Fill in 6 fields: it helps us give you a useful, not generic, response."
+        }
+    },
+    "solutions": {
+        "hero": {
+            "h1": "Solutions for Logistics, Railway and Smart City",
+            "intro": "Ulisses brings reliable data from the field to decisions in contexts where continuity, data quality, and integration with existing systems matter."
+        },
+        "method": {
+            "title": "From the first site to rollout: a clear path",
+            "intro": "A solution truly works when data quality and continuity are governed. That's why we follow a method that reduces project risks, time, and surprises.",
+            "steps": [
+                {
+                    "title": "Objectives and KPIs",
+                    "text": "We align operational objective, KPIs, and constraints (process, areas, users, requirements)."
+                },
+                {
+                    "title": "Site survey & design",
+                    "text": "We design coverage and architecture based on layout, interference, and critical points."
+                },
+                {
+                    "title": "Installation & commissioning",
+                    "text": "We commission and validate in the field: data quality, events, performance."
+                },
+                {
+                    "title": "Dashboard or integration into existing systems",
+                    "text": "Ulisses platform when useful, or events and data in existing platforms via API (WMS/CMMS/ITS/BI)."
+                },
+                {
+                    "title": "Go-live and continuity",
+                    "text": "Monitor health, data quality reports, support, and SLA when required."
+                }
+            ]
+        }
+    },
+    "logistica": {
+        "hero": {
+            "h1": "Logistics: asset localization and operational data to reduce time and errors",
+            "h1Highlight": "Logistics",
+            "sub": "In warehouse and yard, Ulisses makes visible what is now 'lost time': search, movements, anomalies, and risks.",
+            "cta": "Request Logistics Demo",
+            "onePager": "Download Logistics One-Pager",
+            "unlockTitle": "What we unlock in the process",
+            "unlockSubtitle": "We transform operational friction into reliable data flows, eliminating bottlenecks that slow down your logistics.",
+            "radarStatus": "Live Signal: Authenticated"
+        },
+        "process": [
+            {
+                "problem": "Too much time finding carts/rolls/special pallets/equipment",
+                "solution": "Instant localization with <10 cm precision."
+            },
+            {
+                "problem": "Asset dispersion and inefficient utilization",
+                "solution": "Flow optimization based on real usage data."
+            },
+            {
+                "problem": "Allocation errors, untracked movements",
+                "solution": "Automatic traceability of every indoor and outdoor movement."
+            },
+            {
+                "problem": "Sensitive areas and unmonitored safety risks",
+                "solution": "Active geofencing and real-time alerts on risk areas."
+            },
+            {
+                "problem": "Difficulty measuring real performance by area/process",
+                "solution": "Dashboard with reliable KPIs and automated reporting."
+            }
+        ],
+        "useCasesHeader": "What you can do with Ulisses",
+        "useCases": [
+            {
+                "title": "Real-time asset search",
+                "text": "Reduce search times and operational stops with position and history."
+            },
+            {
+                "title": "Geofencing & alerts",
+                "text": "Alerts on unauthorized exits, restricted areas, anomalous dwell times."
+            },
+            {
+                "title": "Operational safety",
+                "text": "Events and rules on risk areas, presence, and anomalies."
+            },
+            {
+                "title": "Operational KPIs",
+                "text": "Reports on asset utilization, bottlenecks, areas with recurring inefficiencies."
+            }
+        ],
+        "dashboard": {
+            "title": "Logistics dashboard: fast decisions, reliable data",
+            "bullets": [
+                "Asset search by name/ID/area",
+                "Area map + usage heatmap",
+                "Events and alerts with priority",
+                "Weekly/monthly reports (usage, anomalies, times)"
+            ]
+        },
+        "integration": {
+            "title": "How it fits into your systems",
+            "text": "Ulisses doesn't ask you to change your stack: it generates events and operational data from the field and makes them available via dashboard or API.",
+            "bullets": [
+                "Normalized events and measures (coherent and reusable)",
+                "Clean integration (less custom, less maintenance)",
+                "Reliable and governed data (health, data quality, history)"
+            ],
+            "common": "WMS • MES • CMMS • ERP • ITS / Smart City • BI / Data Lake"
+        },
+        "finalCta": {
+            "title": "Let's evaluate feasibility for your scenario together",
+            "subtitle": "Define area, KPIs, and timing. We'll propose architecture and rollout plan.",
+            "ctaPilot": "Request a pilot",
+            "ctaExpert": "Talk to an expert",
+            "ctaOnePager": "Download One-Pager"
+        },
+        "benchmarks": {
+            "title": "Market examples",
+            "items": [
+                {
+                    "title": "Pallet tracking in warehouse",
+                    "context": "Warehouse with pallets that 'get lost' between areas.",
+                    "challenge": "Wasted search time, poor inventory accuracy.",
+                    "solution": "Pallet tracking with precise position and operational updates.",
+                    "impact": "Cost reduction and leaner inventory.",
+                    "link": "/knowledge-hub/logistics/geofencing"
+                },
+                {
+                    "title": "Carts and mobile assets",
+                    "context": "Mobile assets distributed across large areas.",
+                    "challenge": "Quickly locate critical assets and reduce unproductive time.",
+                    "solution": "BLE tags + gateway to display position in app.",
+                    "impact": "Reduced search time and better asset utilization.",
+                    "link": "/knowledge-hub/logistics/forklifts"
+                },
+                {
+                    "title": "Asset tracking in difficult environments",
+                    "context": "Warehouses with metal and interference.",
+                    "challenge": "Maintain precision and stability.",
+                    "solution": "Bluetooth Channel Sounding to manage multipath.",
+                    "impact": "Fewer misplaced assets, quick audits.",
+                    "link": "/knowledge-hub/logistics/tough-environments"
+                }
+            ]
+        }
+    },
+    "ferroviario": {
+        "hero": {
+            "h1": "Railway: equipment and material control in depots",
+            "h1Highlight": "Railway",
+            "sub": "Reduce dispersion and unproductive time. Connect field events to maintenance workflows.",
+            "cta": "Request Railway Demo",
+            "onePager": "Download Railway One-Pager",
+            "unlockTitle": "What we unlock in the process",
+            "unlockSubtitle": "We optimize maintenance and material management in railway depots, transforming manual search into operational data."
+        },
+        "featuredStory": {
+            "title": "With Trenord, making depot activity visible",
+            "text": "In collaboration with Trenord, the leading regional railway company in Italy, Ulisses realized a Proof of Concept for train localization within the Milan Fiorenza depot, the largest in Europe.",
+            "cta": "Learn more",
+            "link": "/knowledge-hub/railway/trenord"
+        },
+        "process": [
+            {
+                "problem": "Equipment and materials not traceable when needed",
+                "solution": "Real-time position and instant search in depot."
+            },
+            {
+                "problem": "Difficulty proving traceability and auditability",
+                "solution": "Immutable event history and compliance reports."
+            },
+            {
+                "problem": "Maintenance times extended by inefficient logistics",
+                "solution": "Flow optimization based on reliable field data."
+            },
+            {
+                "problem": "Workflow disconnected between field and management systems",
+                "solution": "Native API integration to feed CMMS and ticketing."
+            },
+            {
+                "problem": "Lack of reliable data on equipment utilization",
+                "solution": "Dashboard with utilization KPIs and asset saturation rate."
+            }
+        ],
+        "useCases": [
+            {
+                "title": "Equipment tracking",
+                "text": "Reduce search times and stops: position + event history."
+            },
+            {
+                "title": "Critical materials and components",
+                "text": "Area control, dwell times, alerts on unexpected movements."
+            },
+            {
+                "title": "Maintenance workflow",
+                "text": "CMMS integration: Events and asset availability feed tickets and processes."
+            },
+            {
+                "title": "Audit reports",
+                "text": "History and KPIs supporting compliance and control."
+            }
+        ],
+        "dashboard": {
+            "bullets": [
+                "Area map + asset status by category",
+                "Events and anomalies with timeline",
+                "Availability and utilization reports",
+                "System health and SLA"
+            ]
+        },
+        "delivery": {
+            "title": "Integrations and Delivery",
+            "text": "The difference isn't just technological: it's the implementation capability.",
+            "steps": "Site survey → Design → Commissioning → Integration → Go-live with SLA.",
+            "cta": "Request a demo"
+        },
+        "finalCta": {
+            "title": "Let's evaluate feasibility for your scenario together",
+            "subtitle": "Define area, KPIs, and timing. We'll propose architecture and rollout plan.",
+            "ctaPilot": "Request a pilot",
+            "ctaExpert": "Talk to an expert"
+        }
+    },
+    "parking": {
+        "hero": {
+            "h1": "Smart Parking: stall occupancy and operational events, with scalable rollout",
+            "h1Highlight": "Smart Parking",
+            "sub": "Reliable data for parking management, enforcement, planning, and reporting. With private network: controllable OPEX and independence.",
+            "cta": "Request Smart Parking Demo",
+            "onePager": "Download Smart Parking One-Pager"
+        },
+        "segments": [
+            {
+                "id": "pa",
+                "title": "For Cities and PA",
+                "text": "Data-driven decisions, transparency, and reports."
+            },
+            {
+                "id": "concessionari",
+                "title": "For Concessionaires",
+                "text": "Operational efficiency and targeted enforcement."
+            },
+            {
+                "id": "private",
+                "title": "For Large Private Areas",
+                "text": "Flow optimization and service quality."
+            }
+        ],
+        "useCasesTitle": "Reference operational cases",
+        "customSolutions": {
+            "title": "Tailored solutions for every scenario",
+            "text": "Explore how Ulisses Smart Parking solves specific challenges for your organization."
+        },
+        "useCases": [
+            {
+                "id": "occupancy",
+                "title": "Occupancy & availability",
+                "text": "Real-time stall status + reliable history."
+            },
+            {
+                "id": "events",
+                "title": "Operational events",
+                "text": "Parking duration, overstay, stall profiles and intervention priority."
+            },
+            {
+                "id": "quality",
+                "title": "Data quality and health",
+                "text": "Mute stalls, coverage, anomalies: continuous monitoring and SLA."
+            },
+            {
+                "id": "rollout",
+                "title": "Scalable rollout",
+                "text": "From pilot to city: private/mesh network, operational continuity, modular growth."
+            }
+        ],
+        "privateNetwork": {
+            "title": "Why private network (no SIM) changes the economics",
+            "bullets": [
+                "Reduces dependency on operators and recurring connectivity costs",
+                "Greater control over performance and continuity",
+                "More predictable and scalable rollout"
+            ]
+        },
+        "dashboard": {
+            "title": "Dashboard and Insights",
+            "bullets": [
+                "Zone map + occupancy by area",
+                "Events and anomalies (overstay, critical stalls)",
+                "Reports for PA (usage, rotation, KPIs)",
+                "Network/sensor health monitor"
+            ]
+        },
+        "benchmarks": {
+            "title": "Market examples",
+            "items": [
+                {
+                    "title": "Occupancy and parking duration",
+                    "context": "High-rotation parking with need for reliable data.",
+                    "challenge": "Manual methods increase errors and delays.",
+                    "solution": "Per-stall sensors for arrival/departure and duration calculation.",
+                    "impact": "Timely data, reduced errors, optimized management.",
+                    "link": "/knowledge-hub/smart-parking/occupancy"
+                },
+                {
+                    "title": "Dual detection sensors",
+                    "context": "Outdoor parking with rain and interference.",
+                    "challenge": "Maintain high accuracy (99%) and reduce maintenance.",
+                    "solution": "Dual detection sensors (Radar + Magnetic).",
+                    "impact": "Data reliability even in adverse weather conditions.",
+                    "link": "/knowledge-hub/smart-parking/enforcement"
+                }
+            ],
+            "extra": {
+                "title": "Why 'data quality' is the true differentiator",
+                "text": "A smart parking solution isn't valuable for 'having a map', but for having reliable data: correct occupancy, correct times, identified 'mute' stalls. That's where ROI is measured."
+            }
+        },
+        "paCta": {
+            "title": "Are you preparing a tender or pilot?",
+            "text": "We support you in defining KPIs, architecture, and rollout plan.",
+            "ctaExpert": "Talk to a PA expert",
+            "ctaDemo": "Request demo",
+            "ctaOnePager": "Download One-Pager"
+        },
+        "finalCta": {
+            "title": "Are you preparing a tender or pilot?",
+            "subtitle": "We support you in defining KPIs, architecture, and rollout plan.",
+            "ctaExpert": "Talk to a PA expert",
+            "ctaDemo": "Request demo",
+            "ctaOnePager": "Download One-Pager"
+        }
+    },
+    "tecnologia": {
+        "hero": {
+            "h1": "Ulisses Technology: from signal to reliable data",
+            "sub": "We are the evolution of the Bluetooth ecosystem: not because it's new, but because we make it reliable, measurable, and ready for field use.",
+            "ctaDemo": "Request demo",
+            "ctaSheet": "Download technical sheet"
+        },
+        "pillars": {
+            "title": "The difference is transforming the standard into reliable data",
+            "text": "We leverage the evolution of radio standards, like Bluetooth Channel Sounding (RTT + Phase-Based Ranging), to unlock new possibilities.\n\nUlisses technology guarantees precision, stability, and reliability even in critical contexts: complex environments, interference, and high density.\n\nWe transform the signal into data ready for use, integrable via API or manageable through our operational platform.",
+            "items": [
+                "Stack and algorithms to transform the signal into stable and verifiable field data.",
+                "Planning and commissioning tools for repeatable implementation: design, validation, and data quality.",
+                "Platform and integrations to bring events and measures to dashboards, workflows, and existing systems via API."
+            ]
+        },
+        "infrastructure": {
+            "title": "A complete infrastructure",
+            "subtitle": "From field detection to operational data: modular components, same goal — reliable and integrable data.",
+            "items": [
+                {
+                    "title": "Field",
+                    "text": "Sensors / Tags / Anchors to detect events and presence"
+                },
+                {
+                    "title": "Network",
+                    "text": "Robust and scalable connectivity to transport data"
+                },
+                {
+                    "title": "Platform",
+                    "text": "Dashboard, rules, historicization, and operational management (when useful)"
+                },
+                {
+                    "title": "API",
+                    "text": "Integration with existing systems and workflows"
+                }
+            ]
+        },
+        "itArchitecture": {
+            "title": "Choose the architecture that facilitates the project",
+            "subtitle": "We support various modes, based on security, latency, and data governance requirements.",
+            "items": [
+                {
+                    "title": "Cloud",
+                    "text": "faster start, centralized updates, multi-site management"
+                },
+                {
+                    "title": "On-prem",
+                    "text": "security/compliance requirements, on-site data, complete control"
+                },
+                {
+                    "title": "Edge / Hybrid",
+                    "text": "low latency, continuity even with limited connectivity, local management + sync"
+                }
+            ]
+        },
+        "integrations": {
+            "title": "Native integration, not custom adaptations",
+            "subtitle": "Ulisses exposes events and measures with a coherent data model, so integration stays clean and maintainable over time.",
+            "common": "APIs and connectors for: WMS • MES • CMMS • ERP • ITS / Smart City • BI / Data Lake"
+        },
+        "observability": {
+            "title": "Continuity and data quality over time",
+            "subtitle": "A system is only useful if the data remains reliable. That's why we include observability, quality control, and operational support.",
+            "items": [
+                "Network and device health monitoring",
+                "Alerts on anomalies and performance degradation",
+                "Data quality reports (coverage, 'mute' stalls/assets, trends)",
+                "Support and SLA (when requested) for operational continuity"
+            ]
+        }
+    },
+    "ricercaIp": {
+        "hero": {
+            "h1": "R&D: innovation that becomes field solutions",
+            "sub": "We invest to maintain an advantage over time: radio robustness, data quality, and repeatable implementation. For us, R&D means transforming standards and components into a stable, measurable, and integrable system.",
+            "ctaTalk": "Talk to us",
+            "ctaSheet": "Download 'Research & IP' sheet"
+        },
+        "collaborations": {
+            "title": "Collaborations that accelerate innovation",
+            "text": "We collaborate with technical and academic partners to validate approaches and transform them into applicable field solutions.",
+            "partner": {
+                "name": "Politecnico di Milano — IoT Lab",
+                "link": "#"
+            }
+        },
+        "ip": {
+            "title": "IP that protects the advantage",
+            "text": "Part of Ulisses' value is protected by intellectual property and know-how on algorithms, radio stack, and commissioning tooling."
+        },
+        "awards": {
+            "title": "Awards and citations",
+            "text": "Selection of awards, articles, and public contributions that reinforce credibility and solidity."
+        }
+    },
+    "nautica": {
+        "hero": {
+            "h1": "Boating: localization, occupancy and operational data to manage your marina in real time",
+            "h1Highlight": "Boating",
+            "sub": "In marinas, Ulisses makes visible what is fragmented today: boats, service vehicles, access, berth occupancy and attendance.",
+            "cta": "Request Boating demo",
+            "unlockTitle": "What we unlock in the process",
+            "unlockSubtitle": "We transform marina management by bringing real-time visibility on occupancy, access and resource usage."
+        },
+        "process": [
+            {
+                "problem": "Difficulty in knowing occupied and available berths in real time",
+                "solution": "Real-time occupancy monitoring for every single berth."
+            },
+            {
+                "problem": "Manual or partial tracking of boats and service vehicles",
+                "solution": "Automatic localization of vessels and service assets."
+            },
+            {
+                "problem": "Non-automated access and attendance, impacting security and control",
+                "solution": "Digitized access control and attendance history."
+            },
+            {
+                "problem": "Inefficient use of port resources (quays, spaces, staff)",
+                "solution": "Space and resource optimization based on real data."
+            },
+            {
+                "problem": "Dispersed data that supports neither operational decisions nor planning",
+                "solution": "Unified dashboard for data-driven decisions."
+            }
+        ],
+        "featuredStory": {
+            "title": "With the Ministry of Tourism, digitizing marina management",
+            "text": "In collaboration with the Ministry of Tourism, Ulisses is contributing to the digitization of Italian marinas, enabling the collection and analysis of operational data on berth occupancy, access and attendance, to support more efficient, secure and data-driven marina management.",
+            "cta": "Find out more",
+            "link": "/knowledge-hub/nautica/ministero-turismo"
+        },
+        "diportistaCta": {
+            "title": "Are you a boater?",
+            "subtitle": "Discover how Ulisses can improve your experience in the port.",
+            "cta": "Discover our web app"
+        }
+    },
+    "azienda": {
+        "hero": {
+            "label": "About Us",
+            "h1": "We build the intelligence that <highlight>moves the physical world.</highlight>",
+            "text": "We are not just devs. We are field engineers. We transform the chaos of warehouses and cities into certain, stable and ready-for-decision data."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "text": "We transform the chaos of real operations into clean, reliable and actionable data, returning control to those who manage complex processes."
+        },
+        "story": {
+            "title": "The Genesis",
+            "acts": [
+                {
+                    "label": "The Problem",
+                    "title": "Traditional tracking lies.",
+                    "text": "In 2021 we noticed a pattern: office demos were perfect. But in steelworks, among containers or in railway depots, the signal disappeared. Clients bought promises and ended up with 'random dots' on the map."
+                },
+                {
+                    "label": "The Turning Point",
+                    "title": "Data, not just signals.",
+                    "text": "We realized that hardware alone was not enough. An intelligence layer capable of filtering industrial noise was needed. We stopped looking for the perfect sensor and built the algorithm that corrects it."
+                },
+                {
+                    "label": "Today",
+                    "title": "Operating System for the Field.",
+                    "text": "Today Ulisses is not a tracker. It is the infrastructure of truth for companies that move the real world. From logistics to smart city."
+                }
+            ]
+        },
+        "values": {
+            "title": "Our Operating Code",
+            "items": [
+                {
+                    "title": "Field First",
+                    "text": "Code is written in the office, but truth is found in the mud. We don't trust it until we see it working between metal and concrete."
+                },
+                {
+                    "title": "Radical Truth",
+                    "text": "We sell certain data. If a datum is uncertain, we declare it. We never mask the error."
+                },
+                {
+                    "title": "Ship & Iterate",
+                    "text": "Perfection is the enemy of operations. We deliver value immediately, then refine."
+                }
+            ]
+        },
+        "engineRoom": {
+            "title": "How we work",
+            "stack": [
+                {
+                    "key": "Method",
+                    "val": "Agile / Field-Test Driven"
+                },
+                {
+                    "key": "Stack",
+                    "val": "Next.js / Rust / Python / Embedded C"
+                },
+                {
+                    "key": "Infra",
+                    "val": "Edge Native + Cloud Agnostic"
+                }
+            ],
+            "text": "We are a product team, not a project-based software house. Every line of code enters a shared system that improves for all clients every week."
+        },
+        "stats": {
+            "title": "Numbers that count",
+            "items": [
+                {
+                    "value": "2021",
+                    "label": "Founded"
+                },
+                {
+                    "value": "100k+",
+                    "label": "Assets managed"
+                },
+                {
+                    "value": "99.9%",
+                    "label": "Avg uptime"
+                },
+                {
+                    "value": "3",
+                    "label": "Industrial verticals"
+                }
+            ]
+        },
+        "review": {
+            "text": "The experimentation involved various company areas, from IT to Maintenance, fielding great team spirit and proactive collaboration",
+            "author": "Massimo Pasquini",
+            "role": "Innovation Manager at Trenord",
+            "logo": "/partners/Trenord_Logo.png",
+            "label": "Testimonial"
+        },
+        "team": {
+            "title": "Our Team",
+            "members": [
+                {
+                    "name": "Mattia Tartaglia",
+                    "role": "Founder & CEO",
+                    "image": "/team/mattia-tartaglia.png",
+                    "stack": "Ex-Strategy | IoT Architecture | Product Vision",
+                    "linkedin": "https://www.linkedin.com/in/mattia-tartaglia-88510351/"
+                },
+                {
+                    "name": "Alessandro Spadaro",
+                    "role": "CTO",
+                    "image": "/team/AlessandroSpadaro.jpeg",
+                    "stack": "Full-Stack Arch | Embedded Systems | Signal Processing",
+                    "linkedin": "https://www.linkedin.com/in/alessandrospadaro/"
+                },
+                {
+                    "name": "Stefano Nordio",
+                    "role": "VP Sales & Growth",
+                    "image": "/team/Stefano Nordio.jpeg",
+                    "stack": "Enterprise Sales | Market Strategy",
+                    "linkedin": "https://www.linkedin.com/in/stefanonordio/"
+                },
+                {
+                    "name": "Francesco Dell’Onze",
+                    "role": "Sales Manager",
+                    "image": "/team/Francesco Dell_Onze.jpeg",
+                    "stack": "Tech Sales | Client Success",
+                    "linkedin": "https://www.linkedin.com/in/dell-onze-francesco/"
+                },
+                {
+                    "name": "Giulia Mora",
+                    "role": "Account Sales Manager",
+                    "image": "/team/GiuliaMora.jpeg",
+                    "stack": "Account Mgmt | Customer Relations",
+                    "linkedin": "https://www.linkedin.com/in/jessica-faicchio-7b8996150/"
+                },
+                {
+                    "name": "Jessica Faicchio",
+                    "role": "Operations Manager",
+                    "image": "/team/JessicaFaicchio.jpeg",
+                    "stack": "Ops Excellence | Agile PM",
+                    "linkedin": "https://www.linkedin.com/in/jessica-faicchio-7b8996150/"
+                },
+                {
+                    "name": "Lorenzo Giardina",
+                    "role": "Communications Advisor",
+                    "image": "/team/LorenzoGiardina.jpeg",
+                    "stack": "Communications | Brand Strategy | Media Relations",
+                    "linkedin": "https://www.linkedin.com/in/lorenzo-giardina/"
+                }
+            ]
+        },
+        "board": {
+            "title": "Board & Advisors",
+            "members": [
+                {
+                    "name": "Stefano Ceci",
+                    "role": "President",
+                    "image": "/team/StefanoCeci.jpeg",
+                    "linkedin": "https://www.linkedin.com/in/cecistefano/"
+                },
+                {
+                    "name": "Teresa Trivisonno",
+                    "role": "Vice President",
+                    "image": "/team/Teresa Trivisonno.jpeg",
+                    "linkedin": "https://www.linkedin.com/in/teresa-trivisonno-3949a86/"
+                },
+                {
+                    "name": "Mattia Tartaglia",
+                    "role": "CEO",
+                    "image": "/team/MattiaTartaglia.jpeg",
+                    "linkedin": "https://www.linkedin.com/in/mattia-tartaglia-88510351/"
+                },
+                {
+                    "name": "Gabriele Benedetto",
+                    "role": "Board Member",
+                    "image": "/team/GabrieleBenedetto.jpeg",
+                    "linkedin": "https://www.linkedin.com/in/gabrielebenedetto/"
+                },
+                {
+                    "name": "Luca Palermo",
+                    "role": "Board Member",
+                    "image": "/team/LucaPalermo.jpeg",
+                    "linkedin": "https://www.linkedin.com/in/lucapalermo/?originalSubdomain=it"
+                }
+            ]
+        },
+        "cta": {
+            "title": "Have a complex problem? We like it.",
+            "text": "If your operational challenge seems complicated, it is probably perfect for Ulisses.",
+            "button": "Talk to the Engineering team"
+        },
+        "awards": {
+            "title": "Recognized Excellence",
+            "text": "We don't seek awards, but we are proud when the market recognizes the solidity of our approach and the impact of our solutions.",
+            "label": "Certifications & Awards",
+            "items": [
+                {
+                    "title": "SMAU Innovation Award",
+                    "year": "2025",
+                    "image": "/premi/premio innovazione smau.png"
+                },
+                {
+                    "title": "IoMobility Awards",
+                    "year": "2024",
+                    "image": "/premi/Iomobility-awards-2024-1030x295.png"
+                },
+                {
+                    "title": "Top of the PID",
+                    "year": "2024",
+                    "image": "/premi/topofthepid24.png"
+                },
+                {
+                    "title": "InnovAzioni",
+                    "year": "2024",
+                    "image": "/premi/innovazionilogo.svg"
+                },
+                {
+                    "title": "Paperless & Digital Awards",
+                    "year": "2023",
+                    "image": "/premi/paperless & digital award.jpg"
+                },
+                {
+                    "title": "Visionaria",
+                    "year": "2023",
+                    "image": "/premi/Logo-Visionaria-def-col.png"
+                }
+            ]
+        },
+        "articles": {
+            "title": "Press"
+        }
+    },
+    "knowledgeHub": {
+        "hero": {
+            "h1": "Knowledge Hub",
+            "sub": "Deep dives, technical use cases and operational details on how we digitize physical assets."
+        },
+        "supportCta": {
+            "title": "Need technical support?",
+            "subtitle": "Our experts can guide you in choosing the architecture and sizing your project.",
+            "button": "Talk to an expert"
+        },
+        "stories": {
+            "title": "Typical Scenarios & Stories",
+            "text": "Operational resolutions based on real challenges in warehousing, workshops, and Smart City.",
+            "sections": [
+                {
+                    "vertical": "Logistics",
+                    "items": [
+                        {
+                            "title": "Forklifts are there... but every shift starts from zero",
+                            "text": "In a busy warehouse, forklifts and rolls are never where they should be. Ulisses introduces visibility for shifts and departments.",
+                            "link": "/knowledge-hub/logistics/forklifts",
+                            "fullContent": {
+                                "scenario": "In a warehouse with intense shifts and flows, forklifts, rolls, and equipment are never 'where they should be'. They move between aisles, bays, picking and staging areas. On paper they are present, but in operational reality they become invisible. The team doesn't just lose minutes: it loses process continuity.",
+                                "challenge": "The problem isn't simply 'finding an object'. It's the domino effect: delays, micro-stoppages, friction between departments, allocation errors, and worsening KPIs without a clear cause.",
+                                "resolution": "Ulisses introduces visibility designed for daily use: immediate asset search (ID/name/category), status and availability by area (e.g., 'in use', 'available', 'stopped', 'out of area'), movement/event history. The platform delivers operational dashboards with simple filtering.",
+                                "productionReady": "It starts with a site survey to map areas, then commissioning to validate field experience. A minimal set of rules is defined (entry/exit/dwell) and the state model is aligned to how Operations actually works.",
+                                "result": "Less wasted time, reduced micro-stoppages, increased asset utilization, and a reliable data foundation for continuous improvement.",
+                                "introCTA": "Want to measure the 'hidden time' spent searching for assets?",
+                                "cta": "Request an assessment"
+                            }
+                        },
+                        {
+                            "title": "Geofencing & Anomalies: When process has boundaries",
+                            "text": "Without automatic rules, problems are noticed too late. Ulisses enables geofencing and time thresholds for proactive control.",
+                            "link": "/knowledge-hub/logistics/geofencing",
+                            "fullContent": {
+                                "scenario": "In logistics, some areas aren't just physical zones: they are process boundaries. Exits, gates, restricted areas, HSE zones, temporary buffers. Without operational control, exceptions become habits.",
+                                "challenge": "Without automatic rules, problems are noticed too late: an asset leaves and disappears, a pallet stays in a critical area, equipment enters where it shouldn't. The cost is safety, compliance, and control.",
+                                "resolution": "Ulisses enables simple but robust operational rules: geofences for sensitive areas, time thresholds (dwell time, max time), targeted alerts with priority. The goal is to create a system that supports decisions.",
+                                "productionReady": "Governance is critical: defining useful rules with Operations/HSE, setting escalation and ownership. Observability prevents false alarms.",
+                                "result": "Reduced dispersion and non-compliance, greater safety, stable processes, and useful traceability for audits.",
+                                "introCTA": "Want to define rules and alerts without creating noise?",
+                                "cta": "Talk to an expert"
+                            }
+                        },
+                        {
+                            "title": "Tough Environments: Data quality makes the difference",
+                            "text": "Metal structures, interference, multipath. Ulisses works with an industrial approach for stable data.",
+                            "link": "/knowledge-hub/logistics/tough-environments",
+                            "fullContent": {
+                                "scenario": "Metal structures, interference, multipath: the real context where many solutions work 'intermittently'. When data is unstable, operators stop trusting it.",
+                                "challenge": "It's not enough to 'detect'. You need data that withstands daily use: repeatable, monitorable, with clear anomaly management.",
+                                "resolution": "Ulisses works with an industrial approach: design, field validation, and a platform that measures system health. Technology becomes a reliable foundation for processes.",
+                                "productionReady": "Design and field validation. Health observability guarantees continuity.",
+                                "result": "Fewer false events, greater continuity, real adoption by teams.",
+                                "introCTA": "Want to learn how we manage tough environments?",
+                                "cta": "Talk to an expert"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "vertical": "Railway",
+                    "items": [
+                        {
+                            "title": "With Trenord, bringing train tracking to the depot",
+                            "text": "In a large railway depot, we realized a PoC for precision localization of 50 trains across 12 tracks.",
+                            "link": "/knowledge-hub/ferroviario/trenord",
+                            "fullContent": {
+                                "scenario": "In a large railway depot, maintenance is a complex machine of continuous movements, physical constraints, and precise sequences. For Trenord, knowing train positions precisely is a prerequisite for efficiency.",
+                                "challenge": "The challenge wasn't just abstract tracking, but obtaining reliable, precise data usable in real processes. Traditional technologies were ineffective indoors or too invasive.",
+                                "resolution": "Ulisses realized an operational PoC: installation on 50 trains, coverage of 12 tracks at Milan Fiorenza, and continuous tracking via Digital Twin.",
+                                "productionReady": "Sub-meter precision, self-powered devices, native API integration, and scalability ready for the entire site.",
+                                "result": "Optimized maintenance flows, better planning, and creation of a centralized data layer for predictive models.",
+                                "introCTA": "Want to replicate a similar Proof of Concept?",
+                                "cta": "Talk to an expert"
+                            }
+                        },
+                        {
+                            "title": "Maintenance stops when equipment is missing",
+                            "text": "If a critical tool is unavailable, the plan breaks. Ulisses makes tools and assets trackable with clear states.",
+                            "link": "/knowledge-hub/railway/maintenance",
+                            "fullContent": {
+                                "scenario": "In a depot or workshop, maintenance lives on sequences. If a critical tool isn't available, the plan breaks. In railway contexts, this inefficiency impacts service reliability.",
+                                "challenge": "The problem isn't knowing everything always. It's knowing where critical elements are when needed. In complex environments, technology must hold up.",
+                                "resolution": "Ulisses makes tools trackable: visibility on position/availability, operational states (available/in use/maintenance), event timeline. The team stops 'searching' and starts 'managing'.",
+                                "productionReady": "Mapping real flows, commissioning, and defining useful states. Health observability guarantees continuity.",
+                                "result": "Reduced search times, fewer delays, greater control over operational availability.",
+                                "introCTA": "Want to define a pilot in your workshop?",
+                                "cta": "Request a demo"
+                            }
+                        },
+                        {
+                            "title": "From event to action: Connecting field to CMMS",
+                            "text": "Native API integration to connect the field to maintenance and ticketing workflows.",
+                            "link": "/knowledge-hub/railway/cmms",
+                            "fullContent": {
+                                "scenario": "Many organizations have a CMMS. But often the 'field' is disconnected: events and anomalies are discovered late and reported without context.",
+                                "challenge": "If data remains isolated, complexity increases. Value comes when the event is reliable, contextualized, and integrated.",
+                                "resolution": "Ulisses produces structured events (position, state, anomalies) and makes them integrable via API into workflows like ticketing and dispatch.",
+                                "productionReady": "Process mapping, commissioning data quality, and SLA governance. Integration becomes clean because the event is designed for consumption.",
+                                "result": "Faster interventions, reduced downtime, greater predictability.",
+                                "introCTA": "Want to see an event-to-ticket workflow example?",
+                                "cta": "Talk to an expert"
+                            }
+                        },
+                        {
+                            "title": "Critical materials: control, permissions, history",
+                            "text": "Some components can't 'roam free'. Simple but rigorous event traceability.",
+                            "link": "/knowledge-hub/railway/critical-materials",
+                            "fullContent": {
+                                "scenario": "Some components cannot roam free. Area control and movement traceability are needed.",
+                                "challenge": "The problem isn't just loss. It's the lack of evidence: who moved what, when, and where.",
+                                "resolution": "Ulisses enables simple event traceability: entry/exit, dwell time, anomalous movements.",
+                                "productionReady": "Configuration of sensitive areas and compliance reporting.",
+                                "result": "Reduced dispersion and greater auditability without burdening operators.",
+                                "introCTA": "Want to explore secure traceability?",
+                                "cta": "Talk to an expert"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "vertical": "Smart Parking",
+                    "items": [
+                        {
+                            "title": "Reliable Occupancy: The city stops guessing",
+                            "text": "Real occupancy data for planning, enforcement, and reporting.",
+                            "link": "/knowledge-hub/smart-parking/occupancy",
+                            "fullContent": {
+                                "scenario": "A city needs to govern parking with concrete goals. Without reliable data, management remains reactive.",
+                                "challenge": "The point isn't a 'pretty map'. It's reliable data. If occupancy isn't credible, trust collapses. Outdoor data quality is the challenge.",
+                                "resolution": "Ulisses enables occupancy per stall/zone, with history and trends. Dashboards show operational status, anomalies, and health indicators.",
+                                "productionReady": "Correct zoning, commissioning, and continuous quality monitoring.",
+                                "result": "Data-driven decisions, solid reports, better service.",
+                                "introCTA": "Preparing a pilot or tender?",
+                                "cta": "Talk to a PA expert"
+                            }
+                        },
+                        {
+                            "title": "Duration, overstay & data quality: targeted enforcement with controlled OPEX",
+                            "text": "Move from visual control to prioritized control, with private network and controllable OPEX.",
+                            "link": "/knowledge-hub/smart-parking/enforcement",
+                            "fullContent": {
+                                "scenario": "Field operators have limited time. Random checks lose effectiveness. When checks are driven by data (duration, overstay, priority), management becomes more efficient and measurable.",
+                                "challenge": "The quality leap is to move from 'visual check' to 'prioritized check' without creating noise. At scale, sustainability and recurring costs come into play: you need a predictable rollout with governance.",
+                                "resolution": "Ulisses produces operational events: parking duration, overstay, stall profiles and priority. The dashboard shows what needs attention now. For scaling projects, architecture includes options for managing performance and costs (including private network).",
+                                "productionReady": "Shared rules, control workflows, reports, and above all observability. Treat the system as a service: KPIs, SLAs, and targeted maintenance.",
+                                "result": "More effective enforcement, better resource use, data quality maintained over time, more predictable rollout.",
+                                "introCTA": "Want to set up a phased rollout with clear KPIs and SLAs?",
+                                "cta": "Request Smart Parking assessment"
+                            }
+                        },
+                        {
+                            "title": "Data quality & health: 'mute' stalls under control",
+                            "text": "Manage data quality as a service. Health observability for targeted maintenance.",
+                            "link": "/knowledge-hub/smart-parking/health",
+                            "fullContent": {
+                                "scenario": "In a real rollout, some sensors degrade, change behavior, or go silent. If you don't see it, you find out from citizens (too late).",
+                                "challenge": "Manage data quality and continuity as a service, not a one-time project.",
+                                "resolution": "Ulisses introduces observability: network/sensor health, alerts, data quality indicators, SLA reports. Maintenance becomes targeted and predictable.",
+                                "productionReady": "Health monitoring and intervention procedures ensure long-term system trust.",
+                                "result": "Reduced recovery time, fewer outages, long-term system trust.",
+                                "introCTA": "Want to discover how we guarantee data quality over time?",
+                                "cta": "Talk to an Ulisses expert"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "vertical": "Nautical",
+                    "items": [
+                        {
+                            "title": "With Ministry of Tourism, we resolve marina management",
+                            "text": "Collaborating with the Ministry of Tourism to digitize Italian marinas.",
+                            "link": "/knowledge-hub/nautica/ministero-turismo",
+                            "fullContent": {
+                                "scenario": "In a marina, daily management involves arrivals, departures, occupancy, and access. Reliable vision is a prerequisite for efficiency.",
+                                "challenge": "In complex contexts like Italian ports, inefficiencies translate to lost time and poor resource use.",
+                                "resolution": "Ulisses initiated a digitalization project: data collection, reservation management, localization sensors, real-time occupancy.",
+                                "productionReady": "Real-time occupancy status without invasive infrastructure, ready for integration.",
+                                "result": "Improved operational efficiency, safety, and reception quality.",
+                                "introCTA": "Are you a marina manager?",
+                                "cta": "Talk to an expert"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "documents": {
+            "title": "Technical Documentation",
+            "items": [
+                "System Architecture",
+                "API Reference",
+                "Hardware Specifications",
+                "Security Whitepaper"
+            ]
+        },
+        "faq": {
+            "title": "Frequent Questions",
+            "items": [
+                {
+                    "q": "Can we integrate with existing systems?",
+                    "a": "Yes, Ulisses exposes robust APIs and normalized data models for WMS, CMMS, ERP and other platforms."
+                },
+                {
+                    "q": "Is it necessary to use the Ulisses platform?",
+                    "a": "No, the platform is optional. You can consume data directly via API in your systems."
+                },
+                {
+                    "q": "Indoor and outdoor: what changes?",
+                    "a": "Ulisses manages both with optimized technologies for each context, ensuring continuity between areas."
+                },
+                {
+                    "q": "How do you guarantee data quality over time?",
+                    "a": "Through network and device health monitoring, proactive alerts and quality reports."
+                },
+                {
+                    "q": "What are typical pilot timelines?",
+                    "a": "A typical pilot takes 4 to 8 weeks, depending on complexity and integration requirements."
+                }
+            ]
+        },
+        "deepDive": {
+            "title": "Dive deeper by scenario",
+            "intro": "For more detail, visit the dedicated pages with architecture, integrations, and project path.",
+            "cards": [
+                {
+                    "title": "Logistics",
+                    "href": "/logistica"
+                },
+                {
+                    "title": "Railway",
+                    "href": "/ferroviario"
+                },
+                {
+                    "title": "Smart City",
+                    "href": "/smart-city"
+                }
+            ]
+        }
+    },
+    "smartCity": {
+        "cards": {
+            "building": {
+                "subtitle": "Asset visibility, access, and flow monitoring in hospitals and campuses"
+            },
+            "parking": {
+                "subtitle": "Occupancy, enforcement, and large-scale parking management"
+            }
+        },
+        "hero": {
+            "title": "Smart City: reliable data to manage what moves in the city",
+            "subtitle": "Parking lots, buildings, assets, and people generate continuous data: without operational visibility, the city reacts instead of governing.",
+            "titleToken": "Smart City"
+        },
+        "ui": {
+            "discoverMore": "Discover more"
+        }
+    },
+    "smartBuilding": {
+        "hero": {
+            "h1": "Smart Building: visibility of assets, access, and flows within critical buildings",
+            "h1Highlight": "Smart Building",
+            "sub": "Reliable data to track assets, monitor entrances/exits, and optimize flows in complex buildings like hospitals, campuses, and large structures.",
+            "cta": "Talk to an Expert",
+            "onePager": "Download Smart Building One-Pager"
+        },
+        "segments": [
+            {
+                "id": "hospital",
+                "title": "Smart Hospital",
+                "text": "Path safety, tracked medical assets, device loss prevention"
+            },
+            {
+                "id": "campus",
+                "title": "Smart Campus",
+                "text": "Automation control, building management, space and people optimization"
+            },
+            {
+                "id": "facility",
+                "title": "Smart Facility / Large Buildings",
+                "text": "Visibility on access, asset logs, maintenance support"
+            }
+        ],
+        "useCases": [
+            {
+                "id": "asset",
+                "title": "Real-time Asset Tracking",
+                "text": "Identify and monitor where critical devices, machines, and tools are located."
+            },
+            {
+                "id": "access",
+                "title": "Entrance/Exit Monitoring",
+                "text": "Control entrances and exits for greater compliance and intrusion security."
+            },
+            {
+                "id": "events",
+                "title": "Operational Events and Anomalies",
+                "text": "Alarms for unauthorized use, assets out of area, suspicious access."
+            },
+            {
+                "id": "quality",
+                "title": "Data Quality & Observability",
+                "text": "Sensors with health monitoring for trace continuity and reliability."
+            }
+        ],
+        "useCaseMapping": {
+            "hospital": [
+                "asset",
+                "events",
+                "quality",
+                "access"
+            ],
+            "campus": [
+                "access",
+                "events",
+                "quality"
+            ],
+            "facility": [
+                "asset",
+                "access",
+                "events",
+                "quality"
+            ]
+        },
+        "dashboard": {
+            "title": "Dashboard & Insights",
+            "bullets": [
+                "Building map with assets and presence",
+                "Event timeline (entrances, movements, warnings)",
+                "Operational reports per department/area",
+                "Sensor network health & SLA"
+            ]
+        },
+        "ui": {
+            "selectScenario": "Select Smart Building Scenario",
+            "useCasesTitle": "Use Cases for this selection",
+            "operationalCases": "Operational Cases"
+        },
+        "explorer": {
+            "title": "Tailored solutions for every scenario",
+            "description": "Critical asset monitoring, along with secure entry and exit management, is often fragmented across disparate systems."
+        }
+    },
+    "specialStories": {
+        "backToHub": "Back to Knowledge Hub",
+        "useCaseLabel": "Use Case",
+        "trenord": {
+            "title": "With <highlight>Trenord</highlight>, bringing train localization in depots from a problem to operational data",
+            "narrative": {
+                "p1": "In a large railway depot, maintenance is a complex machine made up of continuous movements, physical constraints, and precise sequences.",
+                "p2": "For Trenord, the first regional railway company in Italy, knowing with precision the position of convoys in the depot is a prerequisite for ensuring efficiency, service reliability, and operational continuity.",
+                "p3": "In the Milano Fiorenza depot, the largest in Europe, even small inefficiencies in train localization translate into delays, unnecessary movements, and greater complexity in maintenance planning."
+            },
+            "challenge": {
+                "title": "The Shared Challenge",
+                "text": "It wasn't enough to \"know where the trains are\" in the abstract. The real challenge was to obtain reliable, precise, and usable data in real processes. Traditional technologies were ineffective in complex indoor environments or too invasive for large-scale adoption."
+            },
+            "resolution": {
+                "title": "Operational Resolution",
+                "text1": "In collaboration with Trenord, Ulisses carried out an operational Proof of Concept for the localization of convoys in the depot. The PoC included the installation of Ulisses transponders on 50 convoys and full coverage of 12 tracks, ensuring continuous tracking of movements and visualization via Digital Twin.",
+                "text2": "The solution allowed Trenord to accurately monitor train movement via a dedicated platform, without invasive infrastructure interventions."
+            },
+            "stats": {
+                "title": "The Project in Numbers",
+                "convogliLabel": "Convoys",
+                "convogli": "50",
+                "binariLabel": "Tracks Covered",
+                "binari": "12",
+                "precisionLabel": "Precision",
+                "precision": "< 1m"
+            },
+            "results": {
+                "title": "Results",
+                "items": [
+                    "Flow optimization",
+                    "Precise planning",
+                    "Predictive analytics"
+                ]
+            },
+            "footer": {
+                "title": "Production Ready",
+                "text": "The project was developed together with the IT, Innovation, and Maintenance functions of Trenord. The potential that emerged led to evaluating the extension to the entire Milano Fiorenza site."
+            },
+            "cta": {
+                "title": "Ready for your depot?",
+                "text": "Replicate Trenord's success in your operational context.",
+                "button": "Talk to an expert"
+            }
+        },
+        "ministero": {
+            "title": "With the <highlight>Ministry of Tourism</highlight>, bringing marina management from a problem to operational data",
+            "narrative": {
+                "p1": "In a marina, daily management consists of arrivals and departures, berth occupancy, access, service vehicles, and attendance to be monitored in real time.",
+                "p2": "For marina managers and the Ministry of Tourism, having a reliable view of what happens in the port is a prerequisite for improving operational efficiency, safety, and reception quality.",
+                "p3": "In complex contexts like Italian marinas, even small inefficiencies in managing occupancy and attendance translate into lost time, inefficient resource use, and difficulties in ensuring control and traceability."
+            },
+            "challenge": {
+                "title": "The Shared Challenge",
+                "text": "It wasn't enough to just census the berths. The real challenge was to monitor effective occupancy in real time and track the movements of boats and service vehicles, obtaining precise data to support strategic and operational decisions, both locally and nationally."
+            },
+            "resolution": {
+                "title": "Operational Resolution",
+                "text1": "Within the collaboration with the Ministry of Tourism, Ulisses initiated a digitalization project based on operational localization. The project included the installation of a network of sensors for monitoring berth occupancy and tracking service vehicles.",
+                "text2": "The solution allowed for collecting and analyzing data on: real-time occupancy, attendance history, access flows, and resource usage, all visualized on a unified dashboard for data-driven management."
+            },
+            "stats": {
+                "title": "Areas of Intervention",
+                "occupancy": "Occupancy",
+                "tracking": "Tracking",
+                "analysis": "Analysis",
+                "realtime": "Real-time",
+                "assets": "Assets & Vehicles",
+                "history": "Historical Data"
+            },
+            "results": {
+                "title": "Key Results",
+                "items": [
+                    "Complete occupancy visibility",
+                    "Space and resource optimization",
+                    "Data-driven decision support"
+                ]
+            },
+            "footer": {
+                "title": "Production Ready",
+                "text": "The solution allows marina managers to know the occupancy status of the port in real time, without invasive infrastructure interventions and with data ready for integration into existing systems."
+            },
+            "cta": {
+                "title": "Are you a marina manager?",
+                "text": "Discover how to digitalize your marina with Ulisses.",
+                "button": "Talk to an expert"
+            }
+        }
+    }
+}

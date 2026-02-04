@@ -2,11 +2,12 @@
 
 import React, { useRef } from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { motion, useScroll, useSpring } from "motion/react";
 
 export function StorySection() {
-    const d = DICTIONARY.azienda.story;
+    const t = useTranslations('azienda.story');
+    const acts = t.raw('acts') as { label: string; title: string; text: string }[];
     const containerRef = useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
@@ -35,7 +36,7 @@ export function StorySection() {
                     />
 
                     <div className="space-y-24 md:space-y-40">
-                        {d.acts.map((act, idx) => (
+                        {acts.map((act, idx) => (
                             <motion.div
                                 key={idx}
                                 className="relative group"

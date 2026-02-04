@@ -1,8 +1,8 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Scale, Target, BatteryCharging, LucideIcon } from "lucide-react";
-import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
+import { useTranslations } from "next-intl";
 
 // Map icon strings to components
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -12,7 +12,9 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 export function TechnologyPillars() {
-    const { title, cards } = DICTIONARY.home.technologyPillars;
+    const t = useTranslations('home.technologyPillars');
+    const cards = t.raw('cards') as { title: string; subtitle: string; icon: string }[];
+    const title = t('title');
 
     return (
         <SectionWrapper id="technology-pillars" variant="primary" className="py-20 relative overflow-hidden">

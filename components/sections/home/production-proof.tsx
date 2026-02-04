@@ -1,13 +1,15 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { CheckCircle2, ShieldCheck, Zap, BarChart3 } from "lucide-react";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 export function ProductionProof() {
-    const d = DICTIONARY.home.proof;
+    const t = useTranslations("home.proof");
     const icons = [CheckCircle2, ShieldCheck, Zap, BarChart3];
 
-    const proofs = d.items.map((item, i) => ({
+    const items = t.raw("items") as Array<{ title: string; text: string }>;
+
+    const proofs = items.map((item, i) => ({
         ...item,
         icon: icons[i]
     }));

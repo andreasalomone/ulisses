@@ -1,13 +1,12 @@
-"use client";
-
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import { Terminal, Cpu, Network, Code2, Database, Cloud } from "lucide-react";
 import { motion } from "motion/react";
 
 export function EngineRoomSection() {
-    const d = DICTIONARY.azienda.engineRoom;
+    const t = useTranslations('azienda.engineRoom');
+    const stack = t.raw('stack') as { key: string; val: string }[];
 
     const icons = {
         Method: <Terminal className="w-5 h-5" />,
@@ -42,10 +41,10 @@ export function EngineRoomSection() {
                             </div>
 
                             <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-8 bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent">
-                                {d.title}
+                                {t('title')}
                             </h2>
                             <p className="text-lg md:text-2xl text-zinc-400 leading-relaxed font-light text-pretty">
-                                {d.text}
+                                {t('text')}
                             </p>
 
                             <div className="mt-12 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 backdrop-blur-xl">
@@ -66,7 +65,7 @@ export function EngineRoomSection() {
 
                     {/* Right: Stack List */}
                     <div className="flex-1 w-full space-y-4">
-                        {d.stack.map((item, idx) => (
+                        {stack.map((item, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, y: 10 }}

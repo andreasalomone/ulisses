@@ -3,7 +3,6 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Linkedin, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 interface TeamMember {
@@ -98,7 +97,7 @@ export const TeamGrid = ({ title, members }: TeamGridProps) => {
 
                             {/* Footer: LinkedIn Link */}
                             <div className="mt-auto pt-6 border-t border-border/10 flex items-center justify-between">
-                                <Link
+                                <a
                                     href={!member.linkedin || member.linkedin === "#" ? "https://linkedin.com" : member.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -114,7 +113,7 @@ export const TeamGrid = ({ title, members }: TeamGridProps) => {
                                             <ArrowUpRight className="w-3 h-3 group-hover/ln:translate-x-0.5 group-hover/ln:-translate-y-0.5 transition-transform" />
                                         </span>
                                     </div>
-                                </Link>
+                                </a>
                             </div>
                         </motion.div>
                     );

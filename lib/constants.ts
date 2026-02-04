@@ -1,5 +1,3 @@
-import { DICTIONARY } from "./dictionary";
-
 export interface NavLink {
     label: string;
     href: string;
@@ -8,19 +6,19 @@ export interface NavLink {
 
 export const NAV_LINKS: NavLink[] = [
     {
-        label: DICTIONARY.navigation.soluzioni,
+        label: "soluzioni",
         href: "/soluzioni",
         subLinks: [
-            { label: DICTIONARY.navigation.logistica, href: "/logistica" },
-            { label: DICTIONARY.navigation.ferroviario, href: "/ferroviario" },
-            { label: DICTIONARY.navigation.smartParking, href: "/smart-city" },
-            { label: DICTIONARY.navigation.nautica, href: "/nautica" },
+            { label: "logistica", href: "/logistica" },
+            { label: "ferroviario", href: "/ferroviario" },
+            { label: "smartParking", href: "/smart-city" },
+            { label: "nautica", href: "/nautica" },
         ]
     },
-    { label: DICTIONARY.navigation.tecnologia, href: "/tecnologia" },
-    { label: DICTIONARY.navigation.risorse, href: "/knowledge-hub" },
-    { label: DICTIONARY.navigation.azienda, href: "/azienda" },
-    { label: "FAQ", href: "/faq" },
+    { label: "tecnologia", href: "/tecnologia" },
+    { label: "risorse", href: "/knowledge-hub" },
+    { label: "azienda", href: "/azienda" },
+    { label: "faq", href: "/faq" },
 ];
 
 export const CONTACT_INFO = {
@@ -38,6 +36,6 @@ export const SOCIAL_LINKS = {
 
 export const SITE_CONFIG = {
     name: "Ulisses",
-    description: DICTIONARY.home.hero.h1.slice(0, 160),
+    description: "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
     url: "https://ulisses.com",
 };

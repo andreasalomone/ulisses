@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { BrandText } from "@/components/ui/brand";
 
 import { cn } from "@/lib/utils";
@@ -44,7 +44,7 @@ export function FinalCTASection({ title, subtitle, buttons }: FinalCTASectionPro
                                         : "bg-transparent border-white text-white hover:bg-white hover:text-primary"
                                 )}
                             >
-                                <Link href={btn.href}>
+                                <Link href={btn.href as "/"}>
                                     <BrandText text={btn.label} brandClassName={isPrimary ? "text-primary" : "text-white"} />
                                 </Link>
                             </Button>

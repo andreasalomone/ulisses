@@ -13,19 +13,21 @@ import {
     Users
 } from "lucide-react";
 import { BrandText } from "@/components/ui/brand";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 const icons = [LayoutDashboard, Bell, Activity, Layers];
 const segmentIcons = [Target, Building2, Users];
 
 export function SmartParkingUseCases() {
-    const d = DICTIONARY.parking;
+    const t = useTranslations('parking');
+    const segments = t.raw('segments') as { id: string; title: string; text: string }[];
+    const useCases = t.raw('useCases') as { id: string; title: string; text: string }[];
 
     return (
         <div className="flex flex-col gap-16">
             {/* Top Row: Segments / Targeted Solutions */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {d.segments.map((segment, i) => {
+                {segments.map((segment, i) => {
                     const Icon = segmentIcons[i] || Target;
                     return (
                         <motion.div
@@ -55,13 +57,13 @@ export function SmartParkingUseCases() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div className="space-y-2">
                         <h4 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-                            <BrandText text="Casi operativi di riferimento" />
+                            <BrandText text={t('useCasesTitle')} />
                         </h4>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-[280px] md:auto-rows-[300px]">
-                    {d.useCases.map((useCase, i) => {
+                    {useCases.map((useCase, i) => {
                         const Icon = icons[i] || Activity;
 
                         // Bento logic: 4:2 then 2:4

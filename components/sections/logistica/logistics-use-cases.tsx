@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BrandText } from "@/components/ui/brand";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 const useCases = [
     {
@@ -41,7 +41,8 @@ const useCases = [
 ];
 
 export function LogisticsUseCases() {
-    const d = DICTIONARY.logistica;
+    const t = useTranslations('logistica');
+    const cases = t.raw('useCases') as { title: string; text: string }[];
 
     return (
         <section className="py-24 bg-primary text-white overflow-hidden relative">
@@ -58,7 +59,7 @@ export function LogisticsUseCases() {
                         transition={{ duration: 0.6 }}
                         className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8"
                     >
-                        <BrandText text="Use case operativi" />
+                        <BrandText text={t('useCasesHeader')} />
                     </motion.h2>
                     <div className="h-1.5 w-32 bg-white/20 rounded-full mb-8 relative overflow-hidden">
                         <motion.div
@@ -73,7 +74,7 @@ export function LogisticsUseCases() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
                     {useCases.map((uc, i) => {
-                        const content = d.useCases[i];
+                        const content = cases[i];
                         const Icon = uc.icon;
 
                         // Bento Grid logic: 3:3, 2:4 pattern

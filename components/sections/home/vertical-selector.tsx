@@ -1,12 +1,20 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScenarioCard } from "@/components/shared/scenario-card";
-import { DICTIONARY } from "@/lib/dictionary";
 import { BrandText } from "@/components/ui/brand";
+import { useTranslations } from "next-intl";
 
 export function VerticalSelector() {
-    const d = DICTIONARY.home.selector;
-    const { cards } = d;
+    const t = useTranslations('home.selector');
+    type CardData = {
+        title: string;
+        description: string;
+        cta: string;
+        resolutions: string[];
+    };
+
+    // Explicitly type the structure we expect from translations
+    const cards = t.raw('cards') as Record<string, CardData>;
 
     const scenarios = [
         { ...cards.logistica, href: "/logistica", resolutions: cards.logistica.resolutions, image: "/assets/stock.webp" },
@@ -18,10 +26,10 @@ export function VerticalSelector() {
         <SectionWrapper id="scenari" variant="muted">
             <div className="max-w-2xl mb-16">
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-wrap-pretty md:whitespace-nowrap">
-                    <BrandText text={d.title} />
+                    <BrandText text={t('title')} />
                 </h2>
                 <p className="text-2xl text-muted-foreground leading-relaxed">
-                    <BrandText text={d.subtitle} />
+                    <BrandText text={t('subtitle')} />
                 </p>
             </div>
 

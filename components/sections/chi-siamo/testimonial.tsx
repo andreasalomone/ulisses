@@ -1,14 +1,12 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Quote } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function TestimonialSection() {
-    const d = DICTIONARY.azienda.review;
-
-    if (!d) return null;
+    const t = useTranslations('azienda.review');
 
     return (
         <SectionWrapper className="bg-primary text-primary-foreground py-24 md:py-32 relative overflow-hidden">
@@ -21,22 +19,22 @@ export function TestimonialSection() {
 
                 {/* Badge / Label */}
                 <Badge variant="secondary" className="bg-white/10 text-white border-white/20 hover:bg-white/20 uppercase tracking-widest px-4 py-1.5 backdrop-blur-sm">
-                    {d.label}
+                    {t('label')}
                 </Badge>
 
                 {/* The Quote */}
                 <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed tracking-tight font-serif">
-                    &ldquo;{d.text}.&rdquo;
+                    &ldquo;{t('text')}.&rdquo;
                 </blockquote>
 
                 {/* Author & Logo */}
                 <div className="flex flex-col items-center space-y-6 pt-4">
                     <div className="space-y-1">
                         <cite className="not-italic font-bold text-lg md:text-xl block">
-                            {d.author}
+                            {t('author')}
                         </cite>
                         <span className="text-primary-foreground/80 font-mono text-sm uppercase tracking-wider block">
-                            {d.role}
+                            {t('role')}
                         </span>
                     </div>
 
@@ -45,8 +43,8 @@ export function TestimonialSection() {
 
                     <div className="relative h-12 w-48 grayscale brightness-0 invert opacity-90 transition-opacity hover:opacity-100">
                         <Image
-                            src={d.logo}
-                            alt={`${d.role} logo`}
+                            src={t('logo')}
+                            alt={`${t('role')} logo`}
                             fill
                             className="object-contain"
                         />

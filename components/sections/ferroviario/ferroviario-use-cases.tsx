@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BrandText } from "@/components/ui/brand";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 const useCases = [
     {
@@ -43,7 +43,8 @@ const useCases = [
 ];
 
 export function FerroviarioUseCases() {
-    const d = DICTIONARY.ferroviario;
+    const t = useTranslations('ferroviario');
+    const useCasesContent = t.raw('useCases') as { title: string; text: string }[];
 
     return (
         <section className="py-24 bg-primary text-white overflow-hidden relative">
@@ -75,7 +76,7 @@ export function FerroviarioUseCases() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
                     {useCases.map((uc, i) => {
-                        const content = d.useCases[i];
+                        const content = useCasesContent[i];
                         const Icon = uc.icon;
 
                         // Bento Grid logic: 3:3, 4:2 pattern (different from logistica for subtle variety)

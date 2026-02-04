@@ -3,10 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { Marquee } from "@/components/ui/marquee";
-import { DICTIONARY } from "@/lib/dictionary";
+import { useTranslations } from "next-intl";
 
 export function Partners() {
-    const d = DICTIONARY.home.partners;
+    const t = useTranslations('home.partners');
 
     const partners = [
         {
@@ -63,7 +63,7 @@ export function Partners() {
         <section className="w-full bg-background py-12 md:py-16 overflow-hidden">
             <div className="container px-4 mx-auto mb-5 text-center">
                 <h2 className="text-md font-bold uppercase tracking-[0.3em] text-muted-foreground/80 font-sans">
-                    {d.title}
+                    {t('title')}
                 </h2>
             </div>
             <Marquee>
