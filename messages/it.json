@@ -112,16 +112,16 @@
             },
             "objective": {
                 "label": "Obiettivo principale",
-                "options": [
-                    "Ridurre tempi di ricerca asset",
-                    "Geofencing / alert",
-                    "Occupancy stalli",
-                    "Durata / overstay",
-                    "Tracciabilità materiali/attrezzature",
-                    "Monitoraggio ingressi/flussi",
-                    "Integrazione con sistemi esistenti",
-                    "Altro"
-                ]
+                "options": {
+                    "reduce_search": "Ridurre tempi di ricerca asset",
+                    "geofencing": "Geofencing / alert",
+                    "occupancy": "Occupancy stalli",
+                    "duration": "Durata / overstay",
+                    "traceability": "Tracciabilità materiali/attrezzature",
+                    "flow_monitoring": "Monitoraggio ingressi/flussi",
+                    "integration": "Integrazione con sistemi esistenti",
+                    "other": "Altro"
+                }
             },
             "size": {
                 "label": "Dimensione dello scenario",
@@ -129,24 +129,24 @@
             },
             "platforms": {
                 "label": "Piattaforme già in uso",
-                "options": [
-                    "WMS",
-                    "CMMS",
-                    "ITS",
-                    "BI",
-                    "ERP",
-                    "Nessuna",
-                    "Altro"
-                ]
+                "options": {
+                    "wms": "WMS",
+                    "cmms": "CMMS",
+                    "its": "ITS",
+                    "bi": "BI",
+                    "erp": "ERP",
+                    "none": "Nessuna",
+                    "other": "Altro"
+                }
             },
             "timing": {
                 "label": "Timing stimato",
-                "options": [
-                    "0–3 mesi",
-                    "3–6 mesi",
-                    "6–12 mesi",
-                    "Esplorazione"
-                ]
+                "options": {
+                    "0_3_months": "0–3 mesi",
+                    "3_6_months": "3–6 mesi",
+                    "6_12_months": "6–12 mesi",
+                    "exploration": "Esplorazione"
+                }
             },
             "email": {
                 "label": "Email",
@@ -157,7 +157,7 @@
                 "placeholder": "+39 ..."
             }
         },
-        "submitButton": "Invia Richiesta",
+        "submitButton": "Sblocca Soluzione",
         "noSpam": "Nessuna spam. Usiamo i dati solo per rispondere alla tua richiesta."
     },
     "navigation": {

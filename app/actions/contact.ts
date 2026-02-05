@@ -17,7 +17,11 @@ export async function submitContactForm(data: ContactFormValues, locale: string)
         };
     }
 
-    // In a real scenario, we would send an email or store in a database here.
+    // TODO: IMPLEMENT DATA PERSISTENCE
+    // Current implementation only logs to console.
+    // 1. Send email via Resend/SendGrid
+    // 2. Store in DB (Supabase/Postgres)
+    // 3. Integrate with CRM
     console.log("Form submitted:", validatedFields.data);
 
     return {

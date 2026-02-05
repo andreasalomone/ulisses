@@ -54,9 +54,9 @@ export function ContactFormSection() {
     };
 
     const scenarioOptions = t.raw("fields.scenario.options") as Record<string, string>;
-    const objectiveOptions = t.raw("fields.objective.options") as string[];
-    const platformOptions = t.raw("fields.platforms.options") as string[];
-    const timingOptions = t.raw("fields.timing.options") as string[];
+    const objectiveOptions = t.raw("fields.objective.options") as Record<string, string>;
+    const platformOptions = t.raw("fields.platforms.options") as Record<string, string>;
+    const timingOptions = t.raw("fields.timing.options") as Record<string, string>;
 
     return (
         <SectionWrapper id="richiedi-demo" className="bg-primary text-primary-foreground relative overflow-hidden">
@@ -100,7 +100,7 @@ export function ContactFormSection() {
 
                                     <div className="space-y-2">
                                         <Label htmlFor="timing-trigger">{t("fields.timing.label")}</Label>
-                                        <Select onValueChange={(v) => setValue("timing", v)}>
+                                        <Select onValueChange={(v) => setValue("timing", v as ContactFormValues["timing"])}>
                                             <SelectTrigger
                                                 id="timing-trigger"
                                                 className={cn("h-14 cursor-pointer", errors.timing && "border-destructive")}
@@ -110,8 +110,8 @@ export function ContactFormSection() {
                                                 <SelectValue placeholder="..." />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {timingOptions.map((opt) => (
-                                                    <SelectItem key={opt} value={opt} className="h-12 cursor-pointer">{opt}</SelectItem>
+                                                {Object.entries(timingOptions).map(([key, label]) => (
+                                                    <SelectItem key={key} value={key} className="h-12 cursor-pointer">{label}</SelectItem>
                                                 ))}
                                             </SelectContent>
                                         </Select>
@@ -122,7 +122,7 @@ export function ContactFormSection() {
 
                             <div className="space-y-2">
                                 <Label htmlFor="objective-trigger">{t("fields.objective.label")}</Label>
-                                <Select onValueChange={(v) => setValue("objective", v)}>
+                                <Select onValueChange={(v) => setValue("objective", v as ContactFormValues["objective"])}>
                                     <SelectTrigger
                                         id="objective-trigger"
                                         className={cn("h-14 cursor-pointer", errors.objective && "border-destructive")}
@@ -132,8 +132,8 @@ export function ContactFormSection() {
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {objectiveOptions.map((opt) => (
-                                            <SelectItem key={opt} value={opt} className="h-12 cursor-pointer">{opt}</SelectItem>
+                                        {Object.entries(objectiveOptions).map(([key, label]) => (
+                                            <SelectItem key={key} value={key} className="h-12 cursor-pointer">{label}</SelectItem>
                                         ))}
                                     </SelectContent>
                                 </Select>
@@ -156,7 +156,7 @@ export function ContactFormSection() {
 
                             <div className="space-y-2">
                                 <Label htmlFor="platforms-trigger">{t("fields.platforms.label")}</Label>
-                                <Select onValueChange={(v) => setValue("platforms", [v])}>
+                                <Select onValueChange={(v) => setValue("platforms", [v as NonNullable<ContactFormValues["platforms"]>[number]])}>
                                     <SelectTrigger
                                         id="platforms-trigger"
                                         className={cn("h-14 cursor-pointer", errors.platforms && "border-destructive")}
@@ -166,8 +166,8 @@ export function ContactFormSection() {
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {platformOptions.map((opt) => (
-                                            <SelectItem key={opt} value={opt} className="h-12 cursor-pointer">{opt}</SelectItem>
+                                        {Object.entries(platformOptions).map(([key, label]) => (
+                                            <SelectItem key={key} value={key} className="h-12 cursor-pointer">{label}</SelectItem>
                                         ))}
                                     </SelectContent>
                                 </Select>

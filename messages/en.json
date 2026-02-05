@@ -112,16 +112,16 @@
             },
             "objective": {
                 "label": "Main Objective",
-                "options": [
-                    "Reduce asset search times",
-                    "Geofencing / alerts",
-                    "Parking occupancy",
-                    "Duration / overstay",
-                    "Material/equipment traceability",
-                    "Entrance/flow monitoring",
-                    "Integration with existing systems",
-                    "Other"
-                ]
+                "options": {
+                    "reduce_search": "Reduce asset search times",
+                    "geofencing": "Geofencing / alerts",
+                    "occupancy": "Parking occupancy",
+                    "duration": "Duration / overstay",
+                    "traceability": "Material/equipment traceability",
+                    "flow_monitoring": "Entrance/flow monitoring",
+                    "integration": "Integration with existing systems",
+                    "other": "Other"
+                }
             },
             "size": {
                 "label": "Scenario Size",
@@ -129,24 +129,24 @@
             },
             "platforms": {
                 "label": "Platforms already in use",
-                "options": [
-                    "WMS",
-                    "CMMS",
-                    "ITS",
-                    "BI",
-                    "ERP",
-                    "None",
-                    "Other"
-                ]
+                "options": {
+                    "wms": "WMS",
+                    "cmms": "CMMS",
+                    "its": "ITS",
+                    "bi": "BI",
+                    "erp": "ERP",
+                    "none": "None",
+                    "other": "Other"
+                }
             },
             "timing": {
                 "label": "Estimated Timing",
-                "options": [
-                    "0–3 months",
-                    "3–6 months",
-                    "6–12 months",
-                    "Exploration"
-                ]
+                "options": {
+                    "0_3_months": "0–3 months",
+                    "3_6_months": "3–6 months",
+                    "6_12_months": "6–12 months",
+                    "exploration": "Exploration"
+                }
             },
             "email": {
                 "label": "Email",
@@ -157,7 +157,7 @@
                 "placeholder": "+39 ..."
             }
         },
-        "submitButton": "Submit Request",
+        "submitButton": "Get Started",
         "noSpam": "No spam. We only use data to respond to your request."
     },
     "navigation": {
