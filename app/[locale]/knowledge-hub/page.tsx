@@ -5,6 +5,26 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { FileText, Download, ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('knowledgeHub.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/knowledge-hub`,
+            languages: getLocalizedAlternates('/knowledge-hub', SITE_CONFIG.url)
+        }
+    };
+}
 import { FaqSection } from "@/components/shared/faq-section";
 
 import { BrandText } from "@/components/ui/brand";

@@ -12,11 +12,12 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function ContactFormSection() {
     const t = useTranslations("contactForm");
     const tCommon = useTranslations("common");
+    const locale = useLocale();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [serverMessage, setServerMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
@@ -38,7 +39,7 @@ export function ContactFormSection() {
         setServerMessage(null);
 
         try {
-            const result = await submitContactForm(data);
+            const result = await submitContactForm(data, locale);
             if (result.success) {
                 setServerMessage({ type: "success", text: result.message || tCommon("success") });
                 reset();
@@ -52,7 +53,7 @@ export function ContactFormSection() {
         }
     };
 
-    const scenarioOptions = t.raw("fields.scenario.options") as string[];
+    const scenarioOptions = t.raw("fields.scenario.options") as Record<string, string>;
     const objectiveOptions = t.raw("fields.objective.options") as string[];
     const platformOptions = t.raw("fields.platforms.options") as string[];
     const timingOptions = t.raw("fields.timing.options") as string[];
@@ -70,26 +71,6 @@ export function ContactFormSection() {
                         <p className="text-xl opacity-90 leading-relaxed mb-8">
                             {t("intro")}
                         </p>
-
-                        <div className="p-8 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm">
-                            <p className="font-bold text-lg mb-4">{t("microcopy")}</p>
-                            <p className="opacity-80 leading-relaxed">
-                                {t("intro")} {/* Note: Using 'intro' or similar text if applicable, but original used hardcoded text here for 'Why we ask this' logic which wasn't fully in dictionary? No, wait. */}
-                                {/* Original Line 69-72: "Perché chiediamo questi dati? ... non generica." */}
-                                {/* Dictionary has 'microcopy': "Compila 6 campi..." */}
-                                {/* The original code had hardcoded text at lines 69-72 inside <div className="... bg-white/5..."> */}
-                                {/* I should probably enable translating this block too, but for now I will check if I can map it. */}
-                                {/* The dictionary 'microcopy' matches the meaning of "Compila 6 campi...". */}
-                                {/* Wait, looking at original file: */}
-                                {/* Line 62: {d.title} */}
-                                {/* Line 65: {d.intro} */}
-                                {/* Line 69: Hardcoded "Perché chiediamo questi dati?" */}
-                                {/* Line 71: Hardcoded "Ogni scenario ha vincoli diversi..." */}
-                                {/* The 'microcopy' key in dictionary (line 886) says "Compila 6 campi..." */}
-                                {/* So the hardcoded text at 69-72 is NOT in dictionary. */}
-                                {/* The 'microcopy' key was NOT used in original component? Let's check original component again. */}
-                            </p>
-                        </div>
                     </div>
 
                     <div className="bg-background text-foreground p-8 md:p-10 rounded-[2.5rem] border border-white/10 shadow-xl animate-in fade-in slide-in-from-right-8 duration-700 delay-200 fill-mode-both">
@@ -98,59 +79,65 @@ export function ContactFormSection() {
                             <div className="@container/form">
                                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <Label htmlFor="scenario">{t("fields.scenario.label")}</Label>
-                                        <Select onValueChange={(v) => setValue("scenario", v as "Logistica" | "Ferroviario" | "Smart Parking")}>
+                                        <Label htmlFor="scenario-trigger">{t("fields.scenario.label")}</Label>
+                                        <Select onValueChange={(v) => setValue("scenario", v as ContactFormValues["scenario"])}>
                                             <SelectTrigger
-                                                className={cn("h-14", errors.scenario && "border-destructive")}
+                                                id="scenario-trigger"
+                                                className={cn("h-14 cursor-pointer", errors.scenario && "border-destructive")}
                                                 aria-invalid={!!errors.scenario}
+                                                aria-describedby={errors.scenario ? "scenario-error" : undefined}
                                             >
                                                 <SelectValue placeholder="..." />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {scenarioOptions.map((opt) => (
-                                                    <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
+                                                {Object.entries(scenarioOptions).map(([id, label]) => (
+                                                    <SelectItem key={id} value={id} className="h-12 cursor-pointer">{label}</SelectItem>
                                                 ))}
                                             </SelectContent>
                                         </Select>
-                                        {errors.scenario && <p className="text-xs text-destructive font-bold">{errors.scenario.message}</p>}
+                                        {errors.scenario && <p id="scenario-error" className="text-xs text-destructive font-bold">{errors.scenario.message}</p>}
                                     </div>
 
                                     <div className="space-y-2">
-                                        <Label htmlFor="timing">{t("fields.timing.label")}</Label>
+                                        <Label htmlFor="timing-trigger">{t("fields.timing.label")}</Label>
                                         <Select onValueChange={(v) => setValue("timing", v)}>
                                             <SelectTrigger
-                                                className={cn("h-14", errors.timing && "border-destructive")}
+                                                id="timing-trigger"
+                                                className={cn("h-14 cursor-pointer", errors.timing && "border-destructive")}
                                                 aria-invalid={!!errors.timing}
+                                                aria-describedby={errors.timing ? "timing-error" : undefined}
                                             >
                                                 <SelectValue placeholder="..." />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {timingOptions.map((opt) => (
-                                                    <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
+                                                    <SelectItem key={opt} value={opt} className="h-12 cursor-pointer">{opt}</SelectItem>
                                                 ))}
                                             </SelectContent>
                                         </Select>
-                                        {errors.timing && <p className="text-xs text-destructive font-bold">{errors.timing.message}</p>}
+                                        {errors.timing && <p id="timing-error" className="text-xs text-destructive font-bold">{errors.timing.message}</p>}
                                     </div>
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="objective">{t("fields.objective.label")}</Label>
+                                <Label htmlFor="objective-trigger">{t("fields.objective.label")}</Label>
                                 <Select onValueChange={(v) => setValue("objective", v)}>
                                     <SelectTrigger
-                                        className={cn("h-14", errors.objective && "border-destructive")}
+                                        id="objective-trigger"
+                                        className={cn("h-14 cursor-pointer", errors.objective && "border-destructive")}
                                         aria-invalid={!!errors.objective}
+                                        aria-describedby={errors.objective ? "objective-error" : undefined}
                                     >
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
                                         {objectiveOptions.map((opt) => (
-                                            <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
+                                            <SelectItem key={opt} value={opt} className="h-12 cursor-pointer">{opt}</SelectItem>
                                         ))}
                                     </SelectContent>
                                 </Select>
-                                {errors.objective && <p className="text-xs text-destructive font-bold">{errors.objective.message}</p>}
+                                {errors.objective && <p id="objective-error" className="text-xs text-destructive font-bold">{errors.objective.message}</p>}
                             </div>
 
                             <div className="space-y-2">
@@ -162,22 +149,29 @@ export function ContactFormSection() {
                                     className={cn("h-14 text-base", errors.size && "border-destructive")}
                                     inputMode="text"
                                     aria-invalid={!!errors.size}
+                                    aria-describedby={errors.size ? "size-error" : undefined}
                                 />
-                                {errors.size && <p className="text-xs text-destructive font-bold">{errors.size.message}</p>}
+                                {errors.size && <p id="size-error" className="text-xs text-destructive font-bold">{errors.size.message}</p>}
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="platforms">{t("fields.platforms.label")}</Label>
+                                <Label htmlFor="platforms-trigger">{t("fields.platforms.label")}</Label>
                                 <Select onValueChange={(v) => setValue("platforms", [v])}>
-                                    <SelectTrigger className="h-14" aria-invalid={!!errors.platforms}>
+                                    <SelectTrigger
+                                        id="platforms-trigger"
+                                        className={cn("h-14 cursor-pointer", errors.platforms && "border-destructive")}
+                                        aria-invalid={!!errors.platforms}
+                                        aria-describedby={errors.platforms ? "platforms-error" : undefined}
+                                    >
                                         <SelectValue placeholder="..." />
                                     </SelectTrigger>
                                     <SelectContent>
                                         {platformOptions.map((opt) => (
-                                            <SelectItem key={opt} value={opt} className="h-12">{opt}</SelectItem>
+                                            <SelectItem key={opt} value={opt} className="h-12 cursor-pointer">{opt}</SelectItem>
                                         ))}
                                     </SelectContent>
                                 </Select>
+                                {errors.platforms && <p id="platforms-error" className="text-xs text-destructive font-bold">{errors.platforms.message}</p>}
                             </div>
 
                             <div className="@container/contact">
@@ -187,14 +181,15 @@ export function ContactFormSection() {
                                         <Input
                                             id="email"
                                             type="email"
-                                            placeholder="name@company.com"
+                                            placeholder={t("fields.email.placeholder")}
                                             {...register("email")}
                                             className={cn("h-14 text-base", errors.email && "border-destructive")}
                                             inputMode="email"
                                             autoComplete="email"
                                             aria-invalid={!!errors.email}
+                                            aria-describedby={errors.email ? "email-error" : undefined}
                                         />
-                                        {errors.email && <p className="text-xs text-destructive font-bold">{errors.email.message}</p>}
+                                        {errors.email && <p id="email-error" className="text-xs text-destructive font-bold">{errors.email.message}</p>}
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="phone">{t("fields.phone.label")}</Label>
@@ -203,11 +198,13 @@ export function ContactFormSection() {
                                             type="tel"
                                             inputMode="tel"
                                             autoComplete="tel"
-                                            placeholder="+39 ..."
+                                            placeholder={t.has("fields.phone.placeholder") ? t("fields.phone.placeholder") : "+39 ..."}
                                             {...register("phone")}
-                                            className="h-14 text-base"
+                                            className={cn("h-14 text-base", errors.phone && "border-destructive")}
                                             aria-invalid={!!errors.phone}
+                                            aria-describedby={errors.phone ? "phone-error" : undefined}
                                         />
+                                        {errors.phone && <p id="phone-error" className="text-xs text-destructive font-bold">{errors.phone.message}</p>}
                                     </div>
                                 </div>
                             </div>
@@ -247,8 +244,8 @@ export function ContactFormSection() {
                 </div>
 
                 {/* Decorative gradients */}
-                <div className="absolute left-0 top-0 w-96 h-96 bg-white/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute right-0 bottom-0 w-64 h-64 bg-black/10 blur-[80px] rounded-full translate-x-1/3 translate-y-1/3" />
+                <div className="absolute inset-inline-start-0 top-0 w-96 h-96 bg-white/5 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute inset-inline-end-0 bottom-0 w-64 h-64 bg-black/10 blur-[80px] rounded-full translate-x-1/3 translate-y-1/3" />
             </div>
         </SectionWrapper>
     );

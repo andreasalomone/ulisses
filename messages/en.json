@@ -13,6 +13,51 @@
             "industrialAI": "Industrial AI",
             "ulisses": "Ulisses",
             "realTimeMonitoring": "Real-time Monitoring"
+        },
+        "contact": {
+            "title": "Contact"
+        },
+        "about": {
+            "title": "About Us"
+        },
+        "tecnologia": {
+            "title": "Technology"
+        },
+        "soluzioni": {
+            "title": "Solutions"
+        },
+        "parking": {
+            "title": "Smart Parking"
+        },
+        "knowledgeHub": {
+            "title": "Knowledge Hub"
+        },
+        "privacyPolicy": {
+            "title": "Privacy Policy"
+        },
+        "cookiePolicy": {
+            "title": "Cookie Policy"
+        },
+        "faq": {
+            "title": "FAQ"
+        },
+        "ferroviario": {
+            "title": "Railway Solutions"
+        },
+        "nautica": {
+            "title": "Nautical Solutions"
+        },
+        "smartCity": {
+            "title": "Smart City"
+        },
+        "logistica": {
+            "title": "Logistics"
+        },
+        "smartBuilding": {
+            "title": "Smart Building"
+        },
+        "termsConditions": {
+            "title": "Terms & Conditions"
         }
     },
     "accessibility": {
@@ -31,6 +76,8 @@
         "secondImage": "Second image"
     },
     "common": {
+        "withUlisses": "With Ulisses",
+        "withoutUlisses": "Without Ulisses",
         "demoCta": "Talk to an Expert",
         "expertCta": "Talk to an Expert",
         "onePagerCta": "Download One-Pager",
@@ -39,7 +86,8 @@
         "backToHome": "Back to Home",
         "sending": "Sending...",
         "success": "Success!",
-        "error": "Error during sending.",
+        "error": "Invalid data. Please double check the form.",
+        "successMessage": "Request sent successfully! We will contact you soon.",
         "networkError": "A network error occurred.",
         "callToAction": {
             "title": "Ready to optimize your processes?",
@@ -54,13 +102,13 @@
         "fields": {
             "scenario": {
                 "label": "Which scenario do you need Ulisses for?",
-                "options": [
-                    "Logistics",
-                    "Railway",
-                    "Smart Parking",
-                    "Smart Building",
-                    "Other"
-                ]
+                "options": {
+                    "logistics": "Logistics",
+                    "railway": "Railway",
+                    "smart-parking": "Smart Parking",
+                    "smart-building": "Smart Building",
+                    "other": "Other"
+                }
             },
             "objective": {
                 "label": "Main Objective",
@@ -101,10 +149,12 @@
                 ]
             },
             "email": {
-                "label": "Email"
+                "label": "Email",
+                "placeholder": "name@company.com"
             },
             "phone": {
-                "label": "Phone"
+                "label": "Phone",
+                "placeholder": "+39 ..."
             }
         },
         "submitButton": "Submit Request",
@@ -129,6 +179,7 @@
         "privacy": "Privacy Policy",
         "cookie": "Cookie Policy",
         "terms": "Terms and Conditions",
+        "copyright": "© Copyright 2024 I2T2C S.r.l.",
         "rightsReserved": "All rights reserved.",
         "piva": "VAT ID 02718490697 – REA MI-2746967 – SDI USAL8PV",
         "menuHeader": "Menu",
@@ -256,8 +307,8 @@
     },
     "home": {
         "hero": {
-            "h1": "Track your assets, wherever they are",
-            "h1Token": "Track",
+            "h1": "<highlight>Track</highlight> your assets, wherever they are",
+            "highlight": "Track",
             "subheadline": "With Ulisses you have total control: a complete solution of network, sensors, dashboard and API ready for the most complex environments, indoor and outdoor.",
             "subheadlineToken": "dashboard, network, sensors and API",
             "proofs": [
@@ -440,7 +491,21 @@
             "text": "Discover how our technology can transform your operations.",
             "button": "Talk to an expert",
             "formMicrocopy": "Fill in 6 fields: it helps us give you a useful, not generic, response."
-        }
+        },
+        "deploymentCards": [
+            {
+                "title": "Cloud",
+                "text": "Leverage the scalability of our managed cloud infrastructure, with automatic updates and guaranteed availability."
+            },
+            {
+                "title": "On-Premise",
+                "text": "Maintain total control over your data by installing Ulisses directly in your data centers or private infrastructure."
+            },
+            {
+                "title": "Edge",
+                "text": "Maximize speed and reduce latency by processing data directly in the field, even in the absence of connectivity."
+            }
+        ]
     },
     "solutions": {
         "hero": {
@@ -1136,6 +1201,16 @@
         }
     },
     "knowledgeHub": {
+        "ui": {
+            "back": "Back to Knowledge Hub",
+            "challenge": "The Challenge",
+            "resolution": "Operational Resolution",
+            "productionReady": "Production Ready",
+            "result": "Expected Result"
+        },
+        "articles": {
+            "title": "In the Media, Press & Awards"
+        },
         "hero": {
             "h1": "Knowledge Hub",
             "sub": "Deep dives, technical use cases and operational details on how we digitize physical assets."

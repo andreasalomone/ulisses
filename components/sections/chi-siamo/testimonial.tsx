@@ -11,7 +11,7 @@ export function TestimonialSection() {
     return (
         <SectionWrapper className="bg-primary text-primary-foreground py-24 md:py-32 relative overflow-hidden">
             {/* Abstract background pattern for depth */}
-            <div className="absolute top-0 right-0 p-12 opacity-10">
+            <div className="absolute top-0 end-0 p-12 opacity-10">
                 <Quote className="w-64 h-64 rotate-180" />
             </div>
 

@@ -9,6 +9,26 @@ import { Signal, HardDrive, Zap } from "lucide-react";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('parking.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/smart-parking`,
+            languages: getLocalizedAlternates('/smart-parking', SITE_CONFIG.url)
+        }
+    };
+}
 
 export default async function SmartParkingPage() {
     const t = await getTranslations('parking');

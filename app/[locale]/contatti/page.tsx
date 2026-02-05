@@ -4,6 +4,26 @@ import { ContactFormSection } from "@/components/sections/home/contact-form-sect
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, MessageSquare } from "lucide-react";
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('contact.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/contatti`,
+            languages: getLocalizedAlternates('/contatti', SITE_CONFIG.url)
+        }
+    };
+}
 
 export default async function ContattiPage() {
     const t = await getTranslations("contatti");

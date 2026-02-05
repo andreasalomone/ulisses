@@ -21,7 +21,7 @@ export function ScenarioCard({
     image,
     description,
     href,
-    linkText = "Scopri di più",
+    linkText,
     resolutions,
     className,
 }: ScenarioCardProps) {
@@ -62,8 +62,8 @@ export function ScenarioCard({
                     href={href as "/"}
                     className="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all"
                 >
-                    {linkText}
-                    <ArrowRight className="ml-1 h-4 w-4" />
+                    <BrandText text={linkText || "Scopri di più"} />
+                    <ArrowRight className="ms-1 h-4 w-4" />
                 </Link>
             </CardFooter>
         </Card>

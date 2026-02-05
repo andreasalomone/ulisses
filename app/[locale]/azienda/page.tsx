@@ -12,16 +12,23 @@ import { FinalCtaSection } from "@/components/sections/chi-siamo/final-cta";
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
 type Props = {
     params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: 'navigation' });
+    const t = await getTranslations({ locale, namespace: 'metadata' });
 
     return {
-        title: t('azienda'),
+        title: t('about.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/azienda`,
+            languages: getLocalizedAlternates('/azienda', SITE_CONFIG.url)
+        }
     };
 }
 

@@ -46,7 +46,7 @@ export function StatsSection() {
                                 </div>
 
                                 {/* Abstract decorative element */}
-                                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-primary/5 rounded-full blur-xl" />
+                                <div className="absolute -bottom-4 -inset-inline-end-4 w-16 h-16 bg-primary/5 rounded-full blur-xl" />
                             </div>
                         </motion.div>
                     ))}

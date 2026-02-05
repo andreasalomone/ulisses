@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: "/api/",
         },
-        sitemap: "https://ulisses.com/sitemap.xml", // Replace with real domain
+        sitemap: "https://ulisses.it/sitemap.xml", // Replace with real domain
     };
 }

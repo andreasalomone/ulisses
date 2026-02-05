@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
-import { locales, defaultLocale } from "@/i18n";
+import { locales } from "@/i18n";
 import { getPathname, routing } from "@/i18n/routing";
 
-const baseUrl = "https://ulisses.com";
+const baseUrl = "https://ulisses.it";
 
 // Extract static pathnames from routing configuration
 const pathnameKeys = Object.keys(routing.pathnames || {}).filter(
@@ -11,6 +11,8 @@ const pathnameKeys = Object.keys(routing.pathnames || {}).filter(
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const entries: MetadataRoute.Sitemap = [];
+
+    const lastModified = new Date();
 
     for (const pathname of pathnameKeys) {
         // Generate alternates for all locales
@@ -24,37 +26,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
             alternates[locale] = `${baseUrl}/${locale}${localizedPath === '/' ? '' : localizedPath}`;
         }
 
-        // Use default locale URL as the main entry
-        const defaultLocalePath = getPathname({
-            locale: defaultLocale,
-            href: pathname as "/"
-        });
+        // Add an entry for each locale
+        for (const locale of locales) {
+            const localizedPath = getPathname({
+                locale,
+                href: pathname as "/"
+            });
 
-        entries.push({
-            url: `${baseUrl}/${defaultLocale}${defaultLocalePath === '/' ? '' : defaultLocalePath}`,
-            lastModified: new Date(),
-            changeFrequency: pathname === '/' ? 'weekly' : 'monthly',
-            priority: getPriority(pathname),
-            alternates: {
-                languages: alternates
-            }
-        });
-
-        // Also add the English version as a separate entry
-        const enPath = getPathname({
-            locale: 'en',
-            href: pathname as "/"
-        });
-
-        entries.push({
-            url: `${baseUrl}/en${enPath === '/' ? '' : enPath}`,
-            lastModified: new Date(),
-            changeFrequency: pathname === '/' ? 'weekly' : 'monthly',
-            priority: getPriority(pathname),
-            alternates: {
-                languages: alternates
-            }
-        });
+            entries.push({
+                url: `${baseUrl}/${locale}${localizedPath === '/' ? '' : localizedPath}`,
+                lastModified,
+                changeFrequency: pathname === '/' ? 'weekly' : 'monthly',
+                priority: getPriority(pathname),
+                alternates: {
+                    languages: alternates
+                }
+            });
+        }
     }
 
     return entries;

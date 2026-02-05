@@ -35,7 +35,7 @@ export function AwardsSection() {
                             className="flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-card/50 backdrop-blur-sm border shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden"
                         >
                             {/* Decorative background glow */}
-                            <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
+                            <div className="absolute -top-20 -end-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
 
                             <div className="relative h-32 w-full mb-8 flex items-center justify-center p-4 bg-white/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-white/20">
                                 <Image

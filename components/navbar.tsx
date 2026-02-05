@@ -62,7 +62,7 @@ export function Navbar() {
     return (
         <nav
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+                "fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b",
                 scrolled
                     ? "bg-background/80 backdrop-blur-md py-3 border-border"
                     : "bg-transparent py-5 border-transparent"
@@ -228,13 +228,14 @@ export function Navbar() {
 
                 {/* Mobile Toggle */}
                 <div className="lg:hidden flex items-center gap-4">
-                    <a
-                        href={`/${locale === 'it' ? 'en' : 'it'}${pathname}`}
+                    <Link
+                        href={pathname as "/"}
+                        locale={locale === 'it' ? 'en' : 'it'}
                         className="flex items-center text-xl transition-all hover:scale-110"
                         aria-label={locale === 'it' ? tA11y('switchToEnglish') : tA11y('switchToItalian')}
                     >
                         {locale === 'it' ? '🇮🇹' : '🇬🇧'}
-                    </a>
+                    </Link>
                     <button
                         className="text-foreground p-2"
                         onClick={() => setIsOpen(!isOpen)}
@@ -249,7 +250,7 @@ export function Navbar() {
             {/* Mobile Menu */}
             <div
                 className={cn(
-                    "lg:hidden absolute top-full left-0 right-0 bg-background border-b shadow-xl transition-all duration-300 grid",
+                    "lg:hidden absolute top-full inset-x-0 bg-background border-b shadow-xl transition-all duration-300 grid",
                     isOpen ? "grid-rows-[1fr] border-border" : "grid-rows-[0fr] border-transparent"
                 )}
             >
@@ -286,7 +287,7 @@ export function Navbar() {
                                                     isExpanded ? "grid-rows-[1fr] border-b border-muted" : "grid-rows-[0fr]"
                                                 )}
                                             >
-                                                <div className="overflow-hidden flex flex-col pl-4">
+                                                <div className="overflow-hidden flex flex-col ps-4">
                                                     <Link
                                                         href={link.href as "/"}
                                                         className={cn(

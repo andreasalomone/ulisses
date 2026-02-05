@@ -8,6 +8,8 @@ import { GripVertical } from "lucide-react";
 interface CompareProps {
     firstImage?: string;
     secondImage?: string;
+    firstImageAlt?: string;
+    secondImageAlt?: string;
     className?: string;
     firstImageClassName?: string;
     secondImageClassname?: string;
@@ -22,6 +24,8 @@ interface CompareProps {
 export const Compare = ({
     firstImage = "",
     secondImage = "",
+    firstImageAlt = "",
+    secondImageAlt = "",
     className,
     firstImageClassName,
     secondImageClassname,
@@ -234,7 +238,7 @@ export const Compare = ({
                     >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            alt="second image"
+                            alt={secondImageAlt}
                             src={secondImage}
                             className={cn(
                                 "absolute inset-0 w-full h-full object-cover object-top-left",
@@ -259,7 +263,7 @@ export const Compare = ({
                         >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                alt="first image"
+                                alt={firstImageAlt}
                                 src={firstImage}
                                 className={cn(
                                     "absolute inset-0 w-full h-full object-cover object-top-left",

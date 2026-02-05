@@ -14,7 +14,7 @@ export const ReviewSection = ({ text, author, role }: ReviewSectionProps) => {
     return (
         <SectionWrapper variant="muted" className="relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none select-none">
+            <div className="absolute top-0 end-0 p-12 opacity-[0.03] pointer-events-none select-none">
                 <Quote size={400} />
             </div>
 

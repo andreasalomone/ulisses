@@ -37,5 +37,5 @@ export const SOCIAL_LINKS = {
 export const SITE_CONFIG = {
     name: "Ulisses",
     description: "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
-    url: "https://ulisses.com",
+    url: "https://ulisses.it",
 };

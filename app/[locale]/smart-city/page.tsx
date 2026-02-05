@@ -1,10 +1,30 @@
 import React from "react";
+import { Metadata } from 'next';
+import { getTranslations } from "next-intl/server";
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('smartCity.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/smart-city`,
+            languages: getLocalizedAlternates('/smart-city', SITE_CONFIG.url)
+        }
+    };
+}
 import { VerticalHero } from "@/components/shared/vertical-hero";
 
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
 
 export default async function SmartCityPage() {
     const t = await getTranslations("smartCity");

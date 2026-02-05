@@ -180,14 +180,14 @@ export function IntroSection() {
                     >
                         <div className="relative aspect-square md:aspect-4/3 bg-linear-to-b from-muted/20 to-transparent rounded-3xl overflow-hidden border border-border/40 shadow-2xl">
                             {/* Gradient glows */}
-                            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-                            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+                            <div className="absolute -top-24 -inset-inline-end-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+                            <div className="absolute -bottom-24 -inset-inline-start-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
 
                             <NeuralNetwork />
 
                             {/* Scanning line animation */}
                             <motion.div
-                                className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary/40 to-transparent z-10"
+                                className="absolute top-0 inset-inline-start-0 w-full h-1 bg-linear-to-inline-end from-transparent via-primary/40 to-transparent z-10"
                                 animate={{
                                     top: ["0%", "100%", "0%"]
                                 }}

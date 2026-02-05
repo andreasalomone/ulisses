@@ -17,9 +17,9 @@ export function TechnologyPillars({ title, text, items }: TechnologyPillarsProps
     return (
         <SectionWrapper className="relative overflow-hidden">
             {/* Ambient Background */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-30 pointer-events-none">
-                <div className="absolute top-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+            <div className="absolute top-0 inset-inline-start-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-30 pointer-events-none">
+                <div className="absolute top-20 inset-inline-start-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-20 inset-inline-end-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
             </div>
 
             <div className="relative z-10 max-w-4xl mb-24">
@@ -37,7 +37,7 @@ export function TechnologyPillars({ title, text, items }: TechnologyPillarsProps
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-xl md:text-2xl text-muted-foreground leading-relaxed whitespace-pre-line max-w-3xl border-l-4 border-primary/20 pl-8"
+                    className="text-xl md:text-2xl text-muted-foreground leading-relaxed whitespace-pre-line max-w-3xl border-s-4 border-primary/20 ps-8"
                 >
                     {text}
                 </motion.p>
@@ -60,7 +60,7 @@ export function TechnologyPillars({ title, text, items }: TechnologyPillarsProps
                             <div className="relative z-10 flex flex-col h-full bg-card/50 backdrop-blur-sm border border-border/50 p-10 rounded-[2rem] overflow-hidden transition-all duration-500 group-hover:border-primary/30 group-hover:shadow-2xl group-hover:shadow-primary/5">
 
                                 {/* Large Number Watermark */}
-                                <div className="absolute -right-4 -top-8 text-[12rem] font-black text-foreground/5 leading-none select-none tracking-tighter group-hover:text-primary/5 transition-colors duration-500">
+                                <div className="absolute -inset-inline-end-4 -top-8 text-[12rem] font-black text-foreground/5 leading-none select-none tracking-tighter group-hover:text-primary/5 transition-colors duration-500">
                                     0{i + 1}
                                 </div>
 
@@ -82,7 +82,7 @@ export function TechnologyPillars({ title, text, items }: TechnologyPillarsProps
                             </div>
 
                             {/* Decorative bottom reflection */}
-                            <div className="absolute -bottom-4 left-4 right-4 h-4 bg-primary/5 blur-lg rounded-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                            <div className="absolute -bottom-4 inset-x-4 h-4 bg-primary/5 blur-lg rounded-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                         </motion.div>
                     );
                 })}

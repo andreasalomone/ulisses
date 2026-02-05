@@ -64,7 +64,7 @@ export async function Footer() {
                                         </Link>
                                     </li>
                                     {link.subLinks?.map((sub) => (
-                                        <li key={sub.href} className="pl-3">
+                                        <li key={sub.href} className="ps-3">
                                             <Link
                                                 href={sub.href as "/"}
                                                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -122,7 +122,7 @@ export async function Footer() {
                 <Separator className="my-12 opacity-50" />
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-                    <p> © Copyright 2024 I2T2C S.r.l. {tLegal('rightsReserved')}</p>
+                    <p> {tLegal('copyright')} {tLegal('rightsReserved')}</p>
                     <div className="flex gap-6">
                         <p>{tLegal('piva')}</p>
                     </div>

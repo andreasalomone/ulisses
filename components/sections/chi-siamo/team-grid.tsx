@@ -82,7 +82,7 @@ export const TeamGrid = ({ title, members }: TeamGridProps) => {
                                         {initials}
                                     </AvatarFallback>
                                 </Avatar>
-                                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+                                <div className="absolute -top-4 -end-4 w-20 h-20 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
                             </div>
 
                             {/* Info */}

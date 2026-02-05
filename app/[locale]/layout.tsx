@@ -3,6 +3,7 @@ import { Geist_Mono, Inter } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { SITE_CONFIG } from '@/lib/constants';
 import { locales } from '@/i18n';
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -19,17 +20,19 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ulisses.it";
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || SITE_CONFIG.url;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
 
   // Generate hreflang alternate links
-  const alternates: Record<string, string> = {};
-  for (const loc of locales) {
-    alternates[loc] = `${baseUrl}/${loc}`;
-  }
+  // NOTE: This was pointing all pages to the root. We are removing it for now.
+  // Ideally, this should be handled by `getLocalizedAlternates` in specific pages or a sophisticated recursive layout check.
+  // const alternates: Record<string, string> = {};
+  // for (const loc of locales) {
+  //   alternates[loc] = `${baseUrl}/${loc}`;
+  // }
 
   return {
     metadataBase: new URL(baseUrl),
@@ -51,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     creator: "Ulisses",
     alternates: {
       canonical: `${baseUrl}/${locale}`,
-      languages: alternates
+      // languages: alternates, // Disabled: incorrectly points to root
     },
     openGraph: {
       type: "website",

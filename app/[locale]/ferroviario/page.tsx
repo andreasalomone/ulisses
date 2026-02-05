@@ -10,6 +10,26 @@ import { ProcessUnlock } from "@/components/sections/ferroviario/process-unlock"
 import { FerroviarioUseCases } from "@/components/sections/ferroviario/ferroviario-use-cases";
 import { FeaturedStory } from "@/components/sections/ferroviario/featured-story";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('ferroviario.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/ferroviario`,
+            languages: getLocalizedAlternates('/ferroviario', SITE_CONFIG.url)
+        }
+    };
+}
 
 export default async function FerroviarioPage() {
     const t = await getTranslations('ferroviario');

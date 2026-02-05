@@ -1,6 +1,26 @@
 import React from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('termsConditions.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/termini-e-condizioni`,
+            languages: getLocalizedAlternates('/termini-e-condizioni', SITE_CONFIG.url)
+        }
+    };
+}
 import { CONTACT_INFO } from "@/lib/constants";
 import { Link } from "@/i18n/routing";
 

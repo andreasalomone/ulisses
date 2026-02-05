@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const contactFormSchema = z.object({
-    scenario: z.enum(["Logistica", "Ferroviario", "Smart Parking", "Smart Building", "Smart City"], {
+    scenario: z.enum(["logistics", "railway", "smart-parking", "smart-building", "other"], {
         required_error: "Seleziona uno scenario",
     }),
     objective: z.string().min(1, "Seleziona un obiettivo"),

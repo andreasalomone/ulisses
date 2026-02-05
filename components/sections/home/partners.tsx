@@ -67,7 +67,7 @@ export function Partners() {
                 </h2>
             </div>
             <Marquee>
-                <div className="flex items-center gap-20 md:gap-32 pr-20 md:pr-32">
+                <div className="flex items-center gap-20 md:gap-32 pe-20 md:pe-32">
                     {partners.map((partner) => (
                         <div
                             key={partner.name}

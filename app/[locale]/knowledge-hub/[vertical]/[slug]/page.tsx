@@ -6,6 +6,9 @@ import { Link } from "@/i18n/routing";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
 
 // Define simpler interface matching what we put in JSON
 interface StoryContent {
@@ -34,7 +37,33 @@ interface StoryPageProps {
     params: Promise<{
         vertical: string;
         slug: string;
+        locale: string;
     }>;
+}
+
+export async function generateMetadata({ params }: StoryPageProps): Promise<Metadata> {
+    const { vertical, slug, locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'knowledgeHub' });
+    const stories = t.raw('stories') as { sections: StorySection[] };
+
+    const verticalData = stories.sections.find(
+        (s) => s.vertical.toLowerCase().replace(/ /g, "-") === vertical
+    );
+
+    if (!verticalData) return {};
+
+    const currentPath = `/knowledge-hub/${vertical}/${slug}`;
+    const story = verticalData.items.find((item) => item.link === currentPath);
+    if (!story) return {};
+
+    return {
+        title: story.title,
+        alternates: {
+            // Since slugs are currently shared, we can use the helper with the full path
+            canonical: `${SITE_CONFIG.url}/${locale}/knowledge-hub/${vertical}/${slug}`,
+            languages: getLocalizedAlternates(`/knowledge-hub/${vertical}/${slug}`, SITE_CONFIG.url)
+        }
+    };
 }
 
 export default async function StoryPage({ params }: StoryPageProps) {
@@ -52,19 +81,10 @@ export default async function StoryPage({ params }: StoryPageProps) {
         return notFound();
     }
 
-    const story = verticalData.items.find((item) => item.link.endsWith(`/${slug}`));
-
-    // In the new JSON structure, fullContent is not explicitly there yet for EN?
-    // Wait, I only added 'title' 'text' 'link' in en.json placeholder.
-    // I need to add 'fullContent' to en.json for it to work!
-    // Since I didn't add fullContent in en.json, this will Fail for English.
-    // I should fallback to generic or ensure fullContent is present.
-    // For now, let's assume it IS present or check safely.
-    // Actually, I MUST ADD fullContent to en.json now or the page will 404.
+    const currentPath = `/knowledge-hub/${vertical}/${slug}`;
+    const story = verticalData.items.find((item) => item.link === currentPath);
 
     if (!story || !story.fullContent) {
-        // Loophole: If En.json misses fullContent, show notFound? Or fallback?
-        // Ideally I should populate en.json with fullContent.
         return notFound();
     }
 
@@ -91,20 +111,20 @@ export default async function StoryPage({ params }: StoryPageProps) {
             <SectionWrapper>
                 <Link href="/knowledge-hub" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8 font-bold">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Torna al Knowledge Hub
+                    {t('ui.back')}
                 </Link>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
                         <div className="mb-12">
-                            <h3 className="text-2xl font-bold mb-4">La Sfida</h3>
+                            <h3 className="text-2xl font-bold mb-4">{t('ui.challenge')}</h3>
                             <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
                                 {content.challenge}
                             </p>
                         </div>
 
                         <div className="mb-12">
-                            <h3 className="text-2xl font-bold mb-4">Risoluzione Operativa</h3>
+                            <h3 className="text-2xl font-bold mb-4">{t('ui.resolution')}</h3>
                             <p className="text-lg leading-relaxed whitespace-pre-line">
                                 {content.resolution}
                             </p>
@@ -112,7 +132,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
                     </div>
 
                     <div className="bg-muted/30 rounded-[2.5rem] p-8 md:p-12 border">
-                        <h3 className="text-2xl font-bold mb-6">Production Ready</h3>
+                        <h3 className="text-2xl font-bold mb-6">{t('ui.productionReady')}</h3>
                         <p className="opacity-80 leading-relaxed mb-8 whitespace-pre-line">
                             {content.productionReady}
                         </p>
@@ -120,7 +140,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
                         <div className="bg-background rounded-2xl p-6 shadow-sm border">
                             <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
                                 <CheckCircle2 className="h-5 w-5" />
-                                Risultato Atteso
+                                {t('ui.result')}
                             </h4>
                             <p className="text-lg font-medium whitespace-pre-line">
                                 {content.result}

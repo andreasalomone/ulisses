@@ -30,7 +30,7 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                     centered && "mx-auto text-center"
                 )}>
                     <div className={cn(
-                        "animate-in fade-in slide-in-from-left duration-1000 ease-out fill-mode-both",
+                        "animate-in fade-in slide-in-from-inline-start duration-1000 ease-out fill-mode-both",
                         centered && "mx-auto"
                     )}>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-wrap-pretty">
@@ -71,7 +71,7 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                     </div>
 
                     {image && (
-                        <div className="relative animate-in fade-in slide-in-from-right duration-1000 delay-300 ease-out fill-mode-both">
+                        <div className="relative animate-in fade-in slide-in-from-inline-end duration-1000 delay-300 ease-out fill-mode-both">
                             <div className="relative aspect-square lg:aspect-auto lg:h-[500px] w-full flex items-center justify-center">
                                 {/* Floating animation using a simple CSS keyframe defined or utility if available */}
                                 <div className="relative w-full h-full motion-safe:animate-bounce-slow">
@@ -91,7 +91,7 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                     )}
 
                     {sideContent && (
-                        <div className="animate-in fade-in slide-in-from-right-8 duration-1000 delay-300 ease-out fill-mode-both">
+                        <div className="animate-in fade-in slide-in-from-inline-end-8 duration-1000 delay-300 ease-out fill-mode-both">
                             {sideContent}
                         </div>
                     )}
@@ -104,7 +104,7 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                 )}
             </div>
 
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-linear-to-l from-primary/5 to-transparent -z-10 blur-3xl rounded-full" />
+            <div className="absolute inset-inline-end-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-linear-to-s from-primary/5 to-transparent -z-10 blur-3xl rounded-full" />
 
             <style jsx global>{`
                 @keyframes bounce-slow {

@@ -1,10 +1,29 @@
-import React from "react";
+import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('smartBuilding.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/smart-building`,
+            languages: getLocalizedAlternates('/smart-building', SITE_CONFIG.url)
+        }
+    };
+}
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { SmartBuildingExplorer } from "@/components/sections/smart-building/smart-building-explorer";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 export default async function SmartBuildingPage() {

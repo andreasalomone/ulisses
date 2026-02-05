@@ -46,6 +46,7 @@ const cards = [
 
 export function ProcessUnlock() {
     const t = useTranslations('nautica');
+    const tCommon = useTranslations('common');
     const processItems = t.raw('process') as { problem: string; solution: string }[];
 
     return (
@@ -81,6 +82,7 @@ export function ProcessUnlock() {
                             className={card.className}
                             hasAnimation={card.hasAnimation}
                             index={i}
+                            tCommon={tCommon}
                         />
                     ))}
                 </div>
@@ -94,13 +96,15 @@ function FrictionCard({
     Icon,
     className,
     hasAnimation,
-    index
+    index,
+    tCommon
 }: {
     content: { problem: string; solution: string };
     Icon: React.ElementType;
     className?: string;
     hasAnimation?: boolean;
     index: number;
+    tCommon: (key: string) => string;
 }) {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -144,12 +148,12 @@ function FrictionCard({
                     {isHovered ? (
                         <>
                             <Unlock className="h-2.5 w-2.5" />
-                            CON ULISSES
+                            {tCommon('withUlisses')}
                         </>
                     ) : (
                         <>
                             <Lock className="h-2.5 w-2.5" />
-                            SENZA ULISSES
+                            {tCommon('withoutUlisses')}
                         </>
                     )}
                 </div>
@@ -198,8 +202,9 @@ function FrictionCard({
             {/* Subtle background wipe accent */}
             <motion.div
                 className="absolute inset-0 bg-white/5 pointer-events-none"
-                initial={{ x: "-100%" }}
-                animate={{ x: isHovered ? "0%" : "-100%" }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: isHovered ? 1 : 0 }}
+                style={{ transformOrigin: "inline-start" }}
                 transition={{ duration: 0.5, ease: "circOut" }}
             />
         </motion.div>
@@ -242,14 +247,14 @@ function RadarAnimation({ active }: { active: boolean }) {
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             >
                 <div className={cn(
-                    "absolute top-0 left-1/2 -ml-px w-[2px] h-1/2 will-change-[background-color,box-shadow]",
+                    "absolute top-0 inset-inline-start-1/2 -ms-px w-[2px] h-1/2 will-change-[background-color,box-shadow]",
                     "transition-[background-color,box-shadow] duration-700",
                     active ? "bg-linear-to-t from-white/40 to-transparent shadow-[0_0_15px_white]" : "bg-linear-to-t from-muted-foreground/20 to-transparent"
                 )} />
             </motion.div>
 
             {/* Status indicator inside radar */}
-            <div className="absolute bottom-4 left-6 flex items-center gap-2 px-3 py-1 rounded-full bg-black/20 backdrop-blur-sm border border-white/10">
+            <div className="absolute bottom-4 inset-inline-start-6 flex items-center gap-2 px-3 py-1 rounded-full bg-black/20 backdrop-blur-sm border border-white/10">
                 <div className={cn("h-1.5 w-1.5 rounded-full animate-pulse", active ? "bg-white" : "bg-muted-foreground/40")} />
                 <span className={cn("text-[8px] font-mono uppercase tracking-tighter", active ? "text-white" : "text-muted-foreground/60")}>
                     {active ? "LIVE_OCCUPANCY" : "SCANUAL_SCAN"}

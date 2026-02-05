@@ -10,6 +10,26 @@ import { ProcessUnlock } from "@/components/sections/logistica/process-unlock";
 import { LogisticsUseCases } from "@/components/sections/logistica/logistics-use-cases";
 import { IntegrationHub } from "@/components/sections/logistica/integration-hub";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from 'next';
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('logistica.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/logistica`,
+            languages: getLocalizedAlternates('/logistica', SITE_CONFIG.url)
+        }
+    };
+}
 
 export default async function LogisticaPage() {
     const t = await getTranslations('logistica');

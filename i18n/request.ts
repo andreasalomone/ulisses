@@ -13,6 +13,18 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
     return {
         locale,
-        messages: (await import(`../messages/${locale}.json`)).default
+        messages: (await import(`../messages/${locale}.json`)).default,
+        onError(error) {
+            if (process.env.NODE_ENV === 'development') {
+                if (error.code === 'MISSING_MESSAGE') {
+                    console.warn(`[i18n] Missing message key for locale "${locale}":`, error.message);
+                } else {
+                    console.error(`[i18n] Error loading messages for locale "${locale}":`, error);
+                }
+            }
+        },
+        getMessageFallback({ namespace, key }) {
+            return `[MISSING: ${namespace}.${key}]`;
+        }
     };
 });

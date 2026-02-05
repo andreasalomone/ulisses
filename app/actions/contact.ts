@@ -1,8 +1,10 @@
 "use server";
 
 import { contactFormSchema, ContactFormValues } from "@/lib/validations/contact";
+import { getTranslations } from "next-intl/server";
 
-export async function submitContactForm(data: ContactFormValues) {
+export async function submitContactForm(data: ContactFormValues, locale: string) {
+    const t = await getTranslations({ locale, namespace: 'common' });
     // Simulate server delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -11,7 +13,7 @@ export async function submitContactForm(data: ContactFormValues) {
     if (!validatedFields.success) {
         return {
             success: false,
-            error: "Dati non validi. Per favore ricontrolla il modulo.",
+            error: t('error'),
         };
     }
 
@@ -20,6 +22,6 @@ export async function submitContactForm(data: ContactFormValues) {
 
     return {
         success: true,
-        message: "Richiesta inviata con successo! Ti contatteremo a breve.",
+        message: t('successMessage'),
     };
 }

@@ -77,7 +77,7 @@ function CoreNode({ x, y, scale }: { x: number; y: number; scale: number }) {
         <motion.div
             className="absolute z-50 pointer-events-none"
             style={{
-                left: `${(x / CANVAS_SIZE) * 100}%`,
+                insetInlineStart: `${(x / CANVAS_SIZE) * 100}%`,
                 top: `${(y / CANVAS_SIZE) * 100}%`,
                 transform: `rotateX(0deg) translate(-50%, -50%) scale(${scale})`,
             }}
@@ -101,7 +101,7 @@ function CoreNode({ x, y, scale }: { x: number; y: number; scale: number }) {
                     <div className="absolute inset-0 bg-white/5 animate-ping opacity-20" />
                 </div>
 
-                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-80">
+                <div className="absolute -bottom-10 inset-inline-start-1/2 -translate-x-1/2 whitespace-nowrap opacity-80">
                     <span className="text-[10px] font-mono font-bold tracking-[0.4em] text-primary/80 uppercase">ULISSES_CORE</span>
                 </div>
             </div>
@@ -127,7 +127,7 @@ function HubNode({
             onMouseLeave={() => onHover(false)}
             className="absolute pointer-events-auto cursor-pointer"
             style={{
-                left: `${(node.x2d / CANVAS_SIZE) * 100}%`,
+                insetInlineStart: `${(node.x2d / CANVAS_SIZE) * 100}%`,
                 top: `${(node.y2d / CANVAS_SIZE) * 100}%`,
                 transform: `translate(-50%, -50%) scale(${node.scale})`,
                 zIndex: node.zIndex,
@@ -149,7 +149,7 @@ function HubNode({
                         initial={{ opacity: 0, y: 10, scale: 0.9 }}
                         animate={{ opacity: 1, y: 32, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                        className="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap bg-background/95 backdrop-blur-md px-3 py-1.5 rounded-lg border shadow-xl z-50 pointer-events-none"
+                        className="absolute top-0 inset-inline-start-1/2 -translate-x-1/2 whitespace-nowrap bg-background/95 backdrop-blur-md px-3 py-1.5 rounded-lg border shadow-xl z-50 pointer-events-none"
                     >
                         <div className="flex items-center gap-2">
                             <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
@@ -311,9 +311,9 @@ export function IntegrationHub() {
     return (
         <SectionWrapper variant="muted" className="relative overflow-hidden py-24 md:py-32">
             {/* Background elements */}
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full" />
-                <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-400/5 blur-[100px] rounded-full" />
+            <div className="absolute top-0 inset-inline-start-0 w-full h-full pointer-events-none">
+                <div className="absolute top-1/2 inset-inline-start-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full" />
+                <div className="absolute top-0 inset-inline-end-0 w-1/3 h-1/3 bg-blue-400/5 blur-[100px] rounded-full" />
             </div>
 
             <div className="container relative z-10 mx-auto px-4">
@@ -366,7 +366,7 @@ export function IntegrationHub() {
                             transition={{ delay: 0.6 }}
                             className="pt-6"
                         >
-                            <button className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-bold transition-all hover:gap-5 hover:pr-5 shadow-lg shadow-primary/20">
+                            <button className="group flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-bold transition-all hover:gap-5 hover:pe-5 shadow-lg shadow-primary/20">
                                 {tCommon('demoCta')}
                                 <ArrowRight className="h-4 w-4" />
                             </button>

@@ -13,6 +13,51 @@
             "industrialAI": "IA Industriale",
             "ulisses": "Ulisses",
             "realTimeMonitoring": "Monitoraggio in Tempo Reale"
+        },
+        "contact": {
+            "title": "Contatti"
+        },
+        "about": {
+            "title": "Chi Siamo"
+        },
+        "tecnologia": {
+            "title": "Tecnologia"
+        },
+        "soluzioni": {
+            "title": "Soluzioni"
+        },
+        "parking": {
+            "title": "Smart Parking"
+        },
+        "knowledgeHub": {
+            "title": "Knowledge Hub"
+        },
+        "privacyPolicy": {
+            "title": "Privacy Policy"
+        },
+        "cookiePolicy": {
+            "title": "Cookie Policy"
+        },
+        "faq": {
+            "title": "FAQ"
+        },
+        "ferroviario": {
+            "title": "Soluzioni Ferroviarie"
+        },
+        "nautica": {
+            "title": "Soluzioni Nautiche"
+        },
+        "smartCity": {
+            "title": "Smart City"
+        },
+        "logistica": {
+            "title": "Logistica"
+        },
+        "smartBuilding": {
+            "title": "Smart Building"
+        },
+        "termsConditions": {
+            "title": "Termini e Condizioni"
         }
     },
     "accessibility": {
@@ -31,6 +76,8 @@
         "secondImage": "Seconda immagine"
     },
     "common": {
+        "withUlisses": "Con Ulisses",
+        "withoutUlisses": "Senza Ulisses",
         "demoCta": "Parla con un esperto",
         "expertCta": "Parla con un esperto",
         "onePagerCta": "Scarica One-Pager",
@@ -39,7 +86,8 @@
         "backToHome": "Torna alla Home",
         "sending": "Invio in corso...",
         "success": "Successo!",
-        "error": "Errore durante l'invio.",
+        "error": "Dati non validi. Per favore ricontrolla il modulo.",
+        "successMessage": "Richiesta inviata con successo! Ti contatteremo a breve.",
         "networkError": "Si è verificato un errore di rete.",
         "callToAction": {
             "title": "Pronto a ottimizzare i tuoi processi?",
@@ -54,13 +102,13 @@
         "fields": {
             "scenario": {
                 "label": "In quale scenario ti serve Ulisses?",
-                "options": [
-                    "Logistica",
-                    "Ferroviario",
-                    "Smart Parking",
-                    "Smart Building",
-                    "Altro"
-                ]
+                "options": {
+                    "logistics": "Logistica",
+                    "railway": "Ferroviario",
+                    "smart-parking": "Smart Parking",
+                    "smart-building": "Smart Building",
+                    "other": "Altro"
+                }
             },
             "objective": {
                 "label": "Obiettivo principale",
@@ -101,10 +149,12 @@
                 ]
             },
             "email": {
-                "label": "Email"
+                "label": "Email",
+                "placeholder": "nome@azienda.com"
             },
             "phone": {
-                "label": "Telefono"
+                "label": "Telefono",
+                "placeholder": "+39 ..."
             }
         },
         "submitButton": "Invia Richiesta",
@@ -129,6 +179,7 @@
         "privacy": "Privacy Policy",
         "cookie": "Cookie Policy",
         "terms": "Termini e Condizioni",
+        "copyright": "© Copyright 2024 I2T2C S.r.l.",
         "rightsReserved": "Tutti i diritti riservati.",
         "piva": "P. Iva 02718490697 – REA MI-2746967 – SDI USAL8PV",
         "menuHeader": "Menu",
@@ -256,8 +307,8 @@
     },
     "home": {
         "hero": {
-            "h1": "Localizza i tuoi asset, ovunque essi siano",
-            "h1Token": "Localizza",
+            "h1": "<highlight>Localizza</highlight> i tuoi asset, ovunque essi siano",
+            "highlight": "Localizza",
             "subheadline": "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
             "subheadlineToken": "dashboard, rete, sensori e API",
             "proofs": [
@@ -1150,6 +1201,13 @@
         }
     },
     "knowledgeHub": {
+        "ui": {
+            "back": "Torna al Knowledge Hub",
+            "challenge": "La Sfida",
+            "resolution": "Risoluzione Operativa",
+            "productionReady": "Pronto per la produzione",
+            "result": "Risultato Atteso"
+        },
         "hero": {
             "h1": "Knowledge Hub",
             "sub": "Materiali pratici per orientarti sul tuo scenario: storie tipiche, documenti e FAQ su architettura, integrazioni e continuità del dato."

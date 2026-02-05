@@ -17,7 +17,7 @@ export function ProductionProof() {
     return (
         <SectionWrapper id="produzione" className="py-8 md:py-12">
             <div className="flex justify-end">
-                <div className="w-full lg:w-[40%] lg:pr-4">
+                <div className="w-full lg:w-[40%] lg:pe-4">
                     <div className="flex flex-wrap gap-3">
                         {proofs.map((proof, index) => (
                             <div

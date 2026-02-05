@@ -20,7 +20,7 @@ export function EngineRoomSection() {
     return (
         <SectionWrapper className="py-24 bg-zinc-950 text-zinc-100 overflow-hidden relative">
             {/* High-Tech Background Grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_inline-end,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
             <div className="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-16 md:gap-24 items-start">
@@ -74,7 +74,7 @@ export function EngineRoomSection() {
                                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                                 className="group flex items-center p-6 rounded-2xl bg-zinc-900/40 border border-border/10 hover:border-primary/40 hover:bg-zinc-900/60 transition-all duration-300"
                             >
-                                <div className="h-12 w-12 rounded-xl bg-zinc-800/50 flex items-center justify-center mr-6 shrink-0 border border-zinc-700/50 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:text-primary transition-all">
+                                <div className="h-12 w-12 rounded-xl bg-zinc-800/50 flex items-center justify-center me-6 shrink-0 border border-zinc-700/50 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:text-primary transition-all">
                                     {icons[item.key as keyof typeof icons] || <Terminal className="w-5 h-5" />}
                                 </div>
                                 <div className="flex-1">

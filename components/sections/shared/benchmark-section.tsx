@@ -89,7 +89,7 @@ export function BenchmarkSection({ title, items, extra, variant = "muted" }: Ben
                             <BrandText text={extra.text} brandClassName="text-white" />
                         </p>
                     </div>
-                    <Building2 className="absolute right-0 bottom-0 text-white/10 w-64 h-64 -translate-y-1/2 translate-x-1/4 rotate-12" />
+                    <Building2 className="absolute inset-inline-end-0 bottom-0 text-white/10 w-64 h-64 -translate-y-1/2 translate-x-1/4 rotate-12" />
                 </div>
             )}
         </SectionWrapper>
