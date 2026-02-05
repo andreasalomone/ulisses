@@ -71,17 +71,6 @@ export default async function ContattiPage() {
                             <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-4">{t("socialChat")}</p>
                             <div className="grid grid-cols-2 gap-x-3 gap-y-4">
                                 <a
-                                    href={SOCIAL_LINKS.whatsapp}
-                                    className="flex items-center gap-3 group"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div className="h-10 w-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300">
-                                        <MessageSquare className="h-5 w-5" />
-                                    </div>
-                                    <p className="text-xs font-bold group-hover:text-primary transition-colors">WhatsApp</p>
-                                </a>
-                                <a
                                     href={SOCIAL_LINKS.linkedin}
                                     className="flex items-center gap-3 group"
                                     target="_blank"
