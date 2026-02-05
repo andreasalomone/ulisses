@@ -1,5 +1,5 @@
 import { getPathname } from "@/i18n/routing";
-import { locales } from "@/i18n";
+import { locales, type Locale } from "@/i18n";
 
 /**
  * Generates SEO-friendly hreflang alternate links for a given route across all supported locales.
@@ -16,8 +16,8 @@ export function getLocalizedAlternates(href: string, baseUrl: string) {
         try {
             // Attempt to resolve the path as a localized route key
             localizedPath = getPathname({
-                locale: locale as "it" | "en",
-                href: href as any
+                locale: locale as Locale,
+                href: href as unknown as Parameters<typeof getPathname>[0]['href']
             });
         } catch {
             // Fallback to the original path if it's not a localized route (dynamic path)

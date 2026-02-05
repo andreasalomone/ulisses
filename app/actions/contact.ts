@@ -41,7 +41,7 @@ export async function submitContactForm(data: ContactFormValues, locale: string)
                 const resend = new Resend(apiKey);
                 await resend.emails.send({
                     from: 'Ulisses Contact <noreply@resend.dev>', // Use onboarding domain for sandbox. Change to your verified domain in prod.
-                    to: 'info@ulisses.it', // Destination
+                    to: process.env.CONTACT_EMAIL || 'info@ulisses.it', // Destination
                     subject: `New Lead [${scenario.toUpperCase()}]: ${objective}`,
                     html: `
                         <h1>New Contact Request</h1>
