@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, ComponentProps } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
+import { useParams } from "next/navigation";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -22,6 +23,7 @@ export function Navbar() {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
+    const params = useParams();
     const tNav = useTranslations('navigation');
     const tCommon = useTranslations('common');
     const tA11y = useTranslations('accessibility');
@@ -194,7 +196,7 @@ export function Navbar() {
                                 >
                                     <DropdownMenuItem asChild className="py-2.5 px-3 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
                                         <Link
-                                            href={pathname as ComponentProps<typeof Link>['href']}
+                                            href={{ pathname: pathname as any, params: params as any }}
                                             locale="it"
                                             className={cn(
                                                 "flex items-center gap-3 w-full font-semibold text-lg",
@@ -206,7 +208,7 @@ export function Navbar() {
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild className="py-2.5 px-3 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
                                         <Link
-                                            href={pathname as ComponentProps<typeof Link>['href']}
+                                            href={{ pathname: pathname as any, params: params as any }}
                                             locale="en"
                                             className={cn(
                                                 "flex items-center gap-3 w-full font-semibold text-lg",
@@ -229,7 +231,7 @@ export function Navbar() {
                 {/* Mobile Toggle */}
                 <div className="lg:hidden flex items-center gap-4">
                     <Link
-                        href={pathname as ComponentProps<typeof Link>['href']}
+                        href={{ pathname: pathname as any, params: params as any }}
                         locale={locale === 'it' ? 'en' : 'it'}
                         className="flex items-center text-xl transition-all hover:scale-110"
                         aria-label={locale === 'it' ? tA11y('switchToEnglish') : tA11y('switchToItalian')}

@@ -2,13 +2,14 @@ import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/routing";
+import { Link, getPathname } from "@/i18n/routing";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Metadata } from 'next';
 import { getLocalizedAlternates } from '@/lib/i18n-metadata';
 import { SITE_CONFIG } from '@/lib/constants';
+import { Locale } from "@/i18n";
 
 // Define simpler interface matching what we put in JSON
 interface StoryContent {
@@ -46,14 +47,22 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
     const t = await getTranslations({ locale, namespace: 'knowledgeHub' });
     const stories = t.raw('stories') as { sections: StorySection[] };
 
-    const verticalData = stories.sections.find(
-        (s) => s.vertical.toLowerCase().replace(/ /g, "-") === vertical
-    );
+    const allItems = stories.sections.flatMap(s => s.items.map(item => ({ ...item, vertical: s.vertical })));
 
-    if (!verticalData) return {};
+    const story = allItems.find((item) => {
+        try {
+            const localizedLink = getPathname({
+                locale: locale as Locale,
+                href: item.link as Parameters<typeof getPathname>[0]['href']
+            });
+            // Match against current full path
+            const target = `/${locale}/knowledge-hub/${vertical}/${slug}`;
+            return localizedLink === target;
+        } catch {
+            return item.link === `/knowledge-hub/${vertical}/${slug}`;
+        }
+    });
 
-    const currentPath = `/knowledge-hub/${vertical}/${slug}`;
-    const story = verticalData.items.find((item) => item.link === currentPath);
     if (!story) return {};
 
     return {
@@ -72,17 +81,22 @@ export default async function StoryPage({ params }: StoryPageProps) {
     const t = await getTranslations('knowledgeHub');
     const stories = t.raw('stories') as { sections: StorySection[] };
 
-    // Find the story in the translations
-    const verticalData = stories.sections.find(
-        (s) => s.vertical.toLowerCase().replace(/ /g, "-") === vertical
-    );
+    // Use flat-lookup across all sections for robustness against localized vertical params
+    const allItems = stories.sections.flatMap(s => s.items.map(item => ({ ...item, vertical: s.vertical })));
 
-    if (!verticalData) {
-        return notFound();
-    }
-
-    const currentPath = `/knowledge-hub/${vertical}/${slug}`;
-    const story = verticalData.items.find((item) => item.link === currentPath);
+    const story = allItems.find((item) => {
+        try {
+            const localizedLink = getPathname({
+                locale: resolvedParams.locale as Locale,
+                href: item.link as Parameters<typeof getPathname>[0]['href']
+            });
+            // Match against current full path
+            const target = `/${resolvedParams.locale}/knowledge-hub/${vertical}/${slug}`;
+            return localizedLink === target;
+        } catch {
+            return item.link === `/knowledge-hub/${vertical}/${slug}`;
+        }
+    });
 
     if (!story || !story.fullContent) {
         return notFound();
