@@ -618,7 +618,7 @@
             "ctaOnePager": "Download One-Pager"
         },
         "benchmarks": {
-            "title": "Market examples",
+            "title": "Case History",
             "items": [
                 {
                     "title": "Pallet tracking in warehouse",
@@ -626,7 +626,7 @@
                     "challenge": "Wasted search time, poor inventory accuracy.",
                     "solution": "Pallet tracking with precise position and operational updates.",
                     "impact": "Cost reduction and leaner inventory.",
-                    "link": "/knowledge-hub/logistics/geofencing"
+                    "link": "/knowledge-hub/logistica/geofencing"
                 },
                 {
                     "title": "Carts and mobile assets",
@@ -634,7 +634,7 @@
                     "challenge": "Quickly locate critical assets and reduce unproductive time.",
                     "solution": "BLE tags + gateway to display position in app.",
                     "impact": "Reduced search time and better asset utilization.",
-                    "link": "/knowledge-hub/logistics/forklifts"
+                    "link": "/knowledge-hub/logistica/carrelli"
                 },
                 {
                     "title": "Asset tracking in difficult environments",
@@ -642,7 +642,7 @@
                     "challenge": "Maintain precision and stability.",
                     "solution": "Bluetooth Channel Sounding to manage multipath.",
                     "impact": "Fewer misplaced assets, quick audits.",
-                    "link": "/knowledge-hub/logistics/tough-environments"
+                    "link": "/knowledge-hub/logistica/ambienti-difficili"
                 }
             ]
         }
@@ -777,11 +777,11 @@
             }
         ],
         "privateNetwork": {
-            "title": "Why private network (no SIM) changes the economics",
+            "title": "Why data quality changes the system's value",
             "bullets": [
-                "Reduces dependency on operators and recurring connectivity costs",
-                "Greater control over performance and continuity",
-                "More predictable and scalable rollout"
+                "Reduction of localization errors caused by reflections and canyoning",
+                "Greater data consistency in complex urban and infrastructural scenarios",
+                "Actionable insights for KPIs, automation and operational control"
             ]
         },
         "dashboard": {
@@ -794,7 +794,7 @@
             ]
         },
         "benchmarks": {
-            "title": "Market examples",
+            "title": "Case History",
             "items": [
                 {
                     "title": "Occupancy and parking duration",
@@ -1230,7 +1230,7 @@
                         {
                             "title": "Forklifts are there... but every shift starts from zero",
                             "text": "In a busy warehouse, forklifts and rolls are never where they should be. Ulisses introduces visibility for shifts and departments.",
-                            "link": "/knowledge-hub/logistics/forklifts",
+                            "link": "/knowledge-hub/logistica/carrelli",
                             "fullContent": {
                                 "scenario": "In a warehouse with intense shifts and flows, forklifts, rolls, and equipment are never 'where they should be'. They move between aisles, bays, picking and staging areas. On paper they are present, but in operational reality they become invisible. The team doesn't just lose minutes: it loses process continuity.",
                                 "challenge": "The problem isn't simply 'finding an object'. It's the domino effect: delays, micro-stoppages, friction between departments, allocation errors, and worsening KPIs without a clear cause.",
@@ -1244,7 +1244,7 @@
                         {
                             "title": "Geofencing & Anomalies: When process has boundaries",
                             "text": "Without automatic rules, problems are noticed too late. Ulisses enables geofencing and time thresholds for proactive control.",
-                            "link": "/knowledge-hub/logistics/geofencing",
+                            "link": "/knowledge-hub/logistica/geofencing",
                             "fullContent": {
                                 "scenario": "In logistics, some areas aren't just physical zones: they are process boundaries. Exits, gates, restricted areas, HSE zones, temporary buffers. Without operational control, exceptions become habits.",
                                 "challenge": "Without automatic rules, problems are noticed too late: an asset leaves and disappears, a pallet stays in a critical area, equipment enters where it shouldn't. The cost is safety, compliance, and control.",
@@ -1258,7 +1258,7 @@
                         {
                             "title": "Tough Environments: Data quality makes the difference",
                             "text": "Metal structures, interference, multipath. Ulisses works with an industrial approach for stable data.",
-                            "link": "/knowledge-hub/logistics/tough-environments",
+                            "link": "/knowledge-hub/logistica/ambienti-difficili",
                             "fullContent": {
                                 "scenario": "Metal structures, interference, multipath: the real context where many solutions work 'intermittently'. When data is unstable, operators stop trusting it.",
                                 "challenge": "It's not enough to 'detect'. You need data that withstands daily use: repeatable, monitorable, with clear anomaly management.",
@@ -1275,8 +1275,8 @@
                     "vertical": "Railway",
                     "items": [
                         {
-                            "title": "With Trenord, bringing train tracking to the depot",
-                            "text": "In a large railway depot, we realized a PoC for precision localization of 50 trains across 12 tracks.",
+                            "title": "Train position & Digital Twin: Milan Fiorenza PoC",
+                            "text": "For Trenord, we explored sub-meter positioning in depots to optimize maintenance flows.",
                             "link": "/knowledge-hub/ferroviario/trenord",
                             "fullContent": {
                                 "scenario": "In a large railway depot, maintenance is a complex machine of continuous movements, physical constraints, and precise sequences. For Trenord, knowing train positions precisely is a prerequisite for efficiency.",
@@ -1291,12 +1291,12 @@
                         {
                             "title": "Maintenance stops when equipment is missing",
                             "text": "If a critical tool is unavailable, the plan breaks. Ulisses makes tools and assets trackable with clear states.",
-                            "link": "/knowledge-hub/railway/maintenance",
+                            "link": "/knowledge-hub/ferroviario/manutenzione",
                             "fullContent": {
-                                "scenario": "In a depot or workshop, maintenance lives on sequences. If a critical tool isn't available, the plan breaks. In railway contexts, this inefficiency impacts service reliability.",
-                                "challenge": "The problem isn't knowing everything always. It's knowing where critical elements are when needed. In complex environments, technology must hold up.",
-                                "resolution": "Ulisses makes tools trackable: visibility on position/availability, operational states (available/in use/maintenance), event timeline. The team stops 'searching' and starts 'managing'.",
-                                "productionReady": "Mapping real flows, commissioning, and defining useful states. Health observability guarantees continuity.",
+                                "scenario": "In a workshop or depot, knowing where materials and tools are is crucial. Delays are often due to searching for equipment.",
+                                "challenge": "Disconnected silos between the workshop and the office lead to inefficiencies.",
+                                "resolution": "Ulisses maps the workshop and tracks assets in real-time, providing operational truth.",
+                                "productionReady": "Seamless integration into existing workshop processes.",
                                 "result": "Reduced search times, fewer delays, greater control over operational availability.",
                                 "introCTA": "Want to define a pilot in your workshop?",
                                 "cta": "Request a demo"
@@ -1305,7 +1305,7 @@
                         {
                             "title": "From event to action: Connecting field to CMMS",
                             "text": "Native API integration to connect the field to maintenance and ticketing workflows.",
-                            "link": "/knowledge-hub/railway/cmms",
+                            "link": "/knowledge-hub/ferroviario/cmms",
                             "fullContent": {
                                 "scenario": "Many organizations have a CMMS. But often the 'field' is disconnected: events and anomalies are discovered late and reported without context.",
                                 "challenge": "If data remains isolated, complexity increases. Value comes when the event is reliable, contextualized, and integrated.",
@@ -1319,7 +1319,7 @@
                         {
                             "title": "Critical materials: control, permissions, history",
                             "text": "Some components can't 'roam free'. Simple but rigorous event traceability.",
-                            "link": "/knowledge-hub/railway/critical-materials",
+                            "link": "/knowledge-hub/ferroviario/materiali-critici",
                             "fullContent": {
                                 "scenario": "Some components cannot roam free. Area control and movement traceability are needed.",
                                 "challenge": "The problem isn't just loss. It's the lack of evidence: who moved what, when, and where.",
@@ -1548,7 +1548,7 @@
         },
         "ui": {
             "selectScenario": "Select Smart Building Scenario",
-            "useCasesTitle": "Use Cases for this selection",
+            "useCasesTitle": "Use Cases",
             "operationalCases": "Operational Cases"
         },
         "explorer": {
@@ -1645,5 +1645,11 @@
                 "button": "Talk to an expert"
             }
         }
+    },
+    "benchmarks": {
+        "context": "Context",
+        "challenge": "Challenge",
+        "solution": "Solution",
+        "impact": "Impact"
     }
 }

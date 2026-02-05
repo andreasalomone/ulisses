@@ -14,48 +14,56 @@ export function Partners() {
             src: "/partners/logo-cdp.png",
             width: 130,
             height: 65,
+            href: "https://www.cdpventurecapital.it/",
         },
         {
             name: "Trenord",
             src: "/partners/Trenord_Logo.png",
             width: 180,
             height: 52,
+            href: "https://www.trenord.it/",
         },
         {
             name: "Ministero del Turismo",
             src: "/partners/logo_Ministero del Turismo.png",
             width: 230,
             height: 78,
+            href: "https://www.ministeroturismo.gov.it/",
         },
         {
             name: "Zest",
             src: "/partners/zest.png",
             width: 155,
             height: 52,
+            href: "https://zestgroup.vc/it",
         },
         {
             name: "CDP2",
             src: "/partners/logo-cdp.png",
             width: 130,
             height: 65,
+            href: "https://www.cdpventurecapital.it/",
         },
         {
             name: "Trenord2",
             src: "/partners/Trenord_Logo.png",
             width: 180,
             height: 52,
+            href: "https://www.trenord.it/",
         },
         {
             name: "Ministero del Turismo2",
             src: "/partners/logo_Ministero del Turismo.png",
             width: 230,
             height: 78,
+            href: "https://www.ministeroturismo.gov.it/",
         },
         {
             name: "Zest2",
             src: "/partners/zest.png",
             width: 155,
             height: 52,
+            href: "https://zestgroup.vc/it",
         },
     ];
 
@@ -69,8 +77,11 @@ export function Partners() {
             <Marquee>
                 <div className="flex items-center gap-20 md:gap-32 pe-20 md:pe-32">
                     {partners.map((partner) => (
-                        <div
+                        <a
                             key={partner.name}
+                            href={partner.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center justify-center min-w-[150px] lg:min-w-[220px] transition-all duration-500 transform hover:scale-105"
                         >
                             <Image
@@ -80,7 +91,7 @@ export function Partners() {
                                 height={partner.height}
                                 className="h-12 md:h-16 w-auto object-contain"
                             />
-                        </div>
+                        </a>
                     ))}
                 </div>
             </Marquee>

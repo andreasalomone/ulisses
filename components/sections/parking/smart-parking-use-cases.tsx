@@ -41,10 +41,10 @@ export function SmartParkingUseCases() {
                             <div className="h-12 w-12 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
                                 <Icon className="h-6 w-6" />
                             </div>
-                            <h3 className="text-xl font-extrabold mb-4 group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-2xl font-extrabold mb-4 group-hover:text-primary transition-colors duration-300">
                                 <BrandText text={segment.title} />
                             </h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
+                            <p className="text-md text-muted-foreground leading-relaxed">
                                 <BrandText text={segment.text} />
                             </p>
                         </motion.div>
@@ -90,10 +90,10 @@ export function SmartParkingUseCases() {
                                     </div>
 
                                     <div className="mt-auto space-y-3">
-                                        <h5 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                                        <h5 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
                                             <BrandText text={useCase.title} />
                                         </h5>
-                                        <p className="text-sm text-muted-foreground leading-relaxed max-w-[85%]">
+                                        <p className="text-md text-muted-foreground leading-relaxed max-w-[85%]">
                                             <BrandText text={useCase.text} />
                                         </p>
                                     </div>

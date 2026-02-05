@@ -618,7 +618,7 @@
             "ctaOnePager": "Scarica One-Pager"
         },
         "benchmarks": {
-            "title": "Esempi dal mercato",
+            "title": "Case History",
             "items": [
                 {
                     "title": "Pallet tracking in magazzino",
@@ -777,11 +777,11 @@
             }
         ],
         "privateNetwork": {
-            "title": "Perché rete privata (senza SIM) cambia il conto economico",
+            "title": "Perché la qualità del dato cambia il valore del sistema",
             "bullets": [
-                "Riduce dipendenza da operatori e costi ricorrenti per connettività",
-                "Maggiore controllo su prestazioni e continuità",
-                "Rollout più prevedibile e scalabile"
+                "Riduzione degli errori di localizzazione causati da riflessioni e canyoning",
+                "Maggiore coerenza del dato in scenari urbani e infrastrutturali complessi",
+                "Informazioni utilizzabili per KPI, automazioni e controllo operativo"
             ]
         },
         "dashboard": {
@@ -794,7 +794,7 @@
             ]
         },
         "benchmarks": {
-            "title": "Esempi dal mercato",
+            "title": "Case History",
             "items": [
                 {
                     "title": "Occupancy e durata sosta",
@@ -1550,7 +1550,7 @@
         },
         "ui": {
             "selectScenario": "Seleziona scenario Smart Building",
-            "useCasesTitle": "Use Case per questa selezione",
+            "useCasesTitle": "Use Case",
             "operationalCases": "Casi operativi"
         },
         "explorer": {
@@ -1647,5 +1647,11 @@
                 "button": "Parla con un esperto"
             }
         }
+    },
+    "benchmarks": {
+        "context": "Contesto",
+        "challenge": "Sfida",
+        "solution": "Soluzione",
+        "impact": "Impatto"
     }
 }

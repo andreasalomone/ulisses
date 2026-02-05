@@ -68,6 +68,43 @@ export const routing = defineRouting({
             it: '/knowledge-hub/nautica/ministero-turismo',
             en: '/knowledge-hub/nautical/ministry-tourism'
         },
+        // Standardized benchmark mappings using IT paths as keys
+        '/knowledge-hub/logistica/geofencing': {
+            it: '/knowledge-hub/logistica/geofencing',
+            en: '/knowledge-hub/logistics/geofencing'
+        },
+        '/knowledge-hub/logistica/carrelli': {
+            it: '/knowledge-hub/logistica/carrelli',
+            en: '/knowledge-hub/logistics/forklifts'
+        },
+        '/knowledge-hub/logistica/ambienti-difficili': {
+            it: '/knowledge-hub/logistica/ambienti-difficili',
+            en: '/knowledge-hub/logistics/tough-environments'
+        },
+        '/knowledge-hub/ferroviario/manutenzione': {
+            it: '/knowledge-hub/ferroviario/manutenzione',
+            en: '/knowledge-hub/railway/maintenance'
+        },
+        '/knowledge-hub/ferroviario/cmms': {
+            it: '/knowledge-hub/ferroviario/cmms',
+            en: '/knowledge-hub/railway/cmms'
+        },
+        '/knowledge-hub/ferroviario/materiali-critici': {
+            it: '/knowledge-hub/ferroviario/materiali-critici',
+            en: '/knowledge-hub/railway/critical-materials'
+        },
+        '/knowledge-hub/smart-parking/occupancy': {
+            it: '/knowledge-hub/smart-parking/occupancy',
+            en: '/knowledge-hub/smart-parking/occupancy'
+        },
+        '/knowledge-hub/smart-parking/enforcement': {
+            it: '/knowledge-hub/smart-parking/enforcement',
+            en: '/knowledge-hub/smart-parking/enforcement'
+        },
+        '/knowledge-hub/smart-parking/health': {
+            it: '/knowledge-hub/smart-parking/health',
+            en: '/knowledge-hub/smart-parking/health'
+        },
         '/knowledge-hub/[vertical]/[slug]': {
             it: '/knowledge-hub/[vertical]/[slug]',
             en: '/knowledge-hub/[vertical]/[slug]'

@@ -4,6 +4,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2 } from "lucide-react";
 import { BrandText } from "@/components/ui/brand";
+import { useTranslations } from "next-intl";
 
 interface BenchmarkItem {
     title: string;
@@ -25,6 +26,9 @@ interface BenchmarkSectionProps {
 }
 
 export function BenchmarkSection({ title, items, extra, variant = "muted" }: BenchmarkSectionProps) {
+    const t = useTranslations("benchmarks");
+    const tCommon = useTranslations("common");
+
     return (
         <SectionWrapper variant={variant}>
             <div className="mb-16">
@@ -45,20 +49,20 @@ export function BenchmarkSection({ title, items, extra, variant = "muted" }: Ben
                             </CardHeader>
                             <CardContent className="space-y-4 text-sm">
                                 <div>
-                                    <span className="font-bold text-primary block mb-1">Contesto</span>
+                                    <span className="font-bold text-primary block mb-1">{t("context")}</span>
                                     <p className="text-muted-foreground"><BrandText text={item.context} /></p>
                                 </div>
                                 <div>
-                                    <span className="font-bold text-primary block mb-1">Sfida</span>
+                                    <span className="font-bold text-primary block mb-1">{t("challenge")}</span>
                                     <p className="text-muted-foreground"><BrandText text={item.challenge} /></p>
                                 </div>
                                 <div>
-                                    <span className="font-bold text-primary block mb-1">Soluzione</span>
+                                    <span className="font-bold text-primary block mb-1">{t("solution")}</span>
                                     <p className="text-muted-foreground"><BrandText text={item.solution} /></p>
                                 </div>
                                 <div className="pt-4 mt-4 border-t flex flex-col gap-4">
                                     <div>
-                                        <span className="font-bold text-foreground block mb-1">Impatto</span>
+                                        <span className="font-bold text-foreground block mb-1">{t("impact")}</span>
                                         <p className="font-medium italic text-foreground/80"><BrandText text={item.impact} /></p>
                                     </div>
                                     {item.link && (
@@ -67,7 +71,7 @@ export function BenchmarkSection({ title, items, extra, variant = "muted" }: Ben
                                                 href={item.link as "/knowledge-hub"}
                                                 className="text-primary font-bold hover:underline inline-flex items-center gap-1 group transition-all"
                                             >
-                                                Scopri di più
+                                                {tCommon("learnMore")}
                                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                                             </Link>
                                         </div>

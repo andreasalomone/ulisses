@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ComponentProps } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
@@ -194,7 +194,7 @@ export function Navbar() {
                                 >
                                     <DropdownMenuItem asChild className="py-2.5 px-3 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
                                         <Link
-                                            href={pathname as "/"}
+                                            href={pathname as ComponentProps<typeof Link>['href']}
                                             locale="it"
                                             className={cn(
                                                 "flex items-center gap-3 w-full font-semibold text-lg",
@@ -206,7 +206,7 @@ export function Navbar() {
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild className="py-2.5 px-3 rounded-xl focus:bg-primary/5 focus:text-primary transition-colors cursor-pointer">
                                         <Link
-                                            href={pathname as "/"}
+                                            href={pathname as ComponentProps<typeof Link>['href']}
                                             locale="en"
                                             className={cn(
                                                 "flex items-center gap-3 w-full font-semibold text-lg",
@@ -229,7 +229,7 @@ export function Navbar() {
                 {/* Mobile Toggle */}
                 <div className="lg:hidden flex items-center gap-4">
                     <Link
-                        href={pathname as "/"}
+                        href={pathname as ComponentProps<typeof Link>['href']}
                         locale={locale === 'it' ? 'en' : 'it'}
                         className="flex items-center text-xl transition-all hover:scale-110"
                         aria-label={locale === 'it' ? tA11y('switchToEnglish') : tA11y('switchToItalian')}
