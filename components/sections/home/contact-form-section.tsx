@@ -9,10 +9,11 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { FormSelect } from "@/components/ui/form-select";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations, useLocale } from "next-intl";
+import { SCENARIO_KEYS, OBJECTIVE_KEYS, PLATFORM_KEYS, TIMING_KEYS } from "@/lib/constants";
 
 export function ContactFormSection() {
     const t = useTranslations("contactForm");
@@ -25,12 +26,13 @@ export function ContactFormSection() {
         register,
         handleSubmit,
         setValue,
+        setError,
         formState: { errors },
         reset,
     } = useForm<ContactFormValues>({
         resolver: zodResolver(contactFormSchema),
         defaultValues: {
-            platforms: [],
+            platforms: undefined,
         },
     });
 
@@ -44,7 +46,18 @@ export function ContactFormSection() {
                 setServerMessage({ type: "success", text: result.message || tCommon("success") });
                 reset();
             } else {
-                setServerMessage({ type: "error", text: result.error || tCommon("error") });
+                setServerMessage({ type: "error", text: result.message || tCommon("error") });
+
+                // Handle field-specific server errors
+                if (result.errors) {
+                    Object.entries(result.errors).forEach(([key, msgs]) => {
+                        // Cast key safe as we trust the backend to return valid keys for our form
+                        setError(key as keyof ContactFormValues, {
+                            type: 'server',
+                            message: msgs[0]
+                        });
+                    });
+                }
             }
         } catch {
             setServerMessage({ type: "error", text: tCommon("networkError") });
@@ -52,11 +65,6 @@ export function ContactFormSection() {
             setIsSubmitting(false);
         }
     };
-
-    const scenarioOptions = t.raw("fields.scenario.options") as Record<string, string>;
-    const objectiveOptions = t.raw("fields.objective.options") as Record<string, string>;
-    const platformOptions = t.raw("fields.platforms.options") as Record<string, string>;
-    const timingOptions = t.raw("fields.timing.options") as Record<string, string>;
 
     return (
         <SectionWrapper id="richiedi-demo" className="bg-primary text-primary-foreground relative overflow-hidden">
@@ -78,67 +86,34 @@ export function ContactFormSection() {
                             {/* [2026 Standard] Nested container queries for form internal layout */}
                             <div className="@container/form">
                                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="scenario-trigger">{t("fields.scenario.label")}</Label>
-                                        <Select onValueChange={(v) => setValue("scenario", v as ContactFormValues["scenario"])}>
-                                            <SelectTrigger
-                                                id="scenario-trigger"
-                                                className={cn("h-14 cursor-pointer", errors.scenario && "border-destructive")}
-                                                aria-invalid={!!errors.scenario}
-                                                aria-describedby={errors.scenario ? "scenario-error" : undefined}
-                                            >
-                                                <SelectValue placeholder="..." />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                {Object.entries(scenarioOptions).map(([id, label]) => (
-                                                    <SelectItem key={id} value={id} className="h-12 cursor-pointer">{label}</SelectItem>
-                                                ))}
-                                            </SelectContent>
-                                        </Select>
-                                        {errors.scenario && <p id="scenario-error" className="text-xs text-destructive font-bold">{errors.scenario.message}</p>}
-                                    </div>
+                                    <FormSelect
+                                        id="scenario"
+                                        label={t("fields.scenario.label")}
+                                        options={SCENARIO_KEYS}
+                                        translationPrefix="fields.scenario.options"
+                                        onValueChange={(v) => setValue("scenario", v as ContactFormValues["scenario"])}
+                                        error={errors.scenario?.message}
+                                    />
 
-                                    <div className="space-y-2">
-                                        <Label htmlFor="timing-trigger">{t("fields.timing.label")}</Label>
-                                        <Select onValueChange={(v) => setValue("timing", v as ContactFormValues["timing"])}>
-                                            <SelectTrigger
-                                                id="timing-trigger"
-                                                className={cn("h-14 cursor-pointer", errors.timing && "border-destructive")}
-                                                aria-invalid={!!errors.timing}
-                                                aria-describedby={errors.timing ? "timing-error" : undefined}
-                                            >
-                                                <SelectValue placeholder="..." />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                {Object.entries(timingOptions).map(([key, label]) => (
-                                                    <SelectItem key={key} value={key} className="h-12 cursor-pointer">{label}</SelectItem>
-                                                ))}
-                                            </SelectContent>
-                                        </Select>
-                                        {errors.timing && <p id="timing-error" className="text-xs text-destructive font-bold">{errors.timing.message}</p>}
-                                    </div>
+                                    <FormSelect
+                                        id="timing"
+                                        label={t("fields.timing.label")}
+                                        options={TIMING_KEYS}
+                                        translationPrefix="fields.timing.options"
+                                        onValueChange={(v) => setValue("timing", v as ContactFormValues["timing"])}
+                                        error={errors.timing?.message}
+                                    />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <Label htmlFor="objective-trigger">{t("fields.objective.label")}</Label>
-                                <Select onValueChange={(v) => setValue("objective", v as ContactFormValues["objective"])}>
-                                    <SelectTrigger
-                                        id="objective-trigger"
-                                        className={cn("h-14 cursor-pointer", errors.objective && "border-destructive")}
-                                        aria-invalid={!!errors.objective}
-                                        aria-describedby={errors.objective ? "objective-error" : undefined}
-                                    >
-                                        <SelectValue placeholder="..." />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        {Object.entries(objectiveOptions).map(([key, label]) => (
-                                            <SelectItem key={key} value={key} className="h-12 cursor-pointer">{label}</SelectItem>
-                                        ))}
-                                    </SelectContent>
-                                </Select>
-                                {errors.objective && <p id="objective-error" className="text-xs text-destructive font-bold">{errors.objective.message}</p>}
-                            </div>
+                            <FormSelect
+                                id="objective"
+                                label={t("fields.objective.label")}
+                                options={OBJECTIVE_KEYS}
+                                translationPrefix="fields.objective.options"
+                                onValueChange={(v) => setValue("objective", v as ContactFormValues["objective"])}
+                                error={errors.objective?.message}
+                            />
 
                             <div className="space-y-2">
                                 <Label htmlFor="size">{t("fields.size.label")}</Label>
@@ -154,25 +129,15 @@ export function ContactFormSection() {
                                 {errors.size && <p id="size-error" className="text-xs text-destructive font-bold">{errors.size.message}</p>}
                             </div>
 
-                            <div className="space-y-2">
-                                <Label htmlFor="platforms-trigger">{t("fields.platforms.label")}</Label>
-                                <Select onValueChange={(v) => setValue("platforms", [v as NonNullable<ContactFormValues["platforms"]>[number]])}>
-                                    <SelectTrigger
-                                        id="platforms-trigger"
-                                        className={cn("h-14 cursor-pointer", errors.platforms && "border-destructive")}
-                                        aria-invalid={!!errors.platforms}
-                                        aria-describedby={errors.platforms ? "platforms-error" : undefined}
-                                    >
-                                        <SelectValue placeholder="..." />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        {Object.entries(platformOptions).map(([key, label]) => (
-                                            <SelectItem key={key} value={key} className="h-12 cursor-pointer">{label}</SelectItem>
-                                        ))}
-                                    </SelectContent>
-                                </Select>
-                                {errors.platforms && <p id="platforms-error" className="text-xs text-destructive font-bold">{errors.platforms.message}</p>}
-                            </div>
+                            <FormSelect
+                                id="platforms"
+                                label={t("fields.platforms.label")}
+                                options={PLATFORM_KEYS}
+                                translationPrefix="fields.platforms.options"
+                                /* UI restriction: Single select for now. Schema supports multiple. */
+                                onValueChange={(v) => setValue("platforms", v as ContactFormValues["platforms"])}
+                                error={errors.platforms?.message}
+                            />
 
                             <div className="@container/contact">
                                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
@@ -236,6 +201,17 @@ export function ContactFormSection() {
                                     </>
                                 )}
                             </Button>
+
+                            {/* Honeypot field for spam protection */}
+                            <input
+                                type="text"
+                                className="hidden"
+                                style={{ display: "none" }}
+                                tabIndex={-1}
+                                autoComplete="off"
+                                {...register("_gotcha")}
+                            />
+
                             <p className="text-[10px] text-center text-muted-foreground uppercase tracking-widest leading-relaxed">
                                 {t("noSpam")}
                             </p>

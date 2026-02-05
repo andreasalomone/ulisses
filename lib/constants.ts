@@ -39,3 +39,39 @@ export const SITE_CONFIG = {
     description: "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
     url: "https://ulisses.it",
 };
+
+export const SCENARIO_KEYS = [
+    "logistics",
+    "railway",
+    "smart-parking",
+    "smart-building",
+    "other"
+] as const;
+
+export const OBJECTIVE_KEYS = [
+    "reduce_search",
+    "geofencing",
+    "occupancy",
+    "duration",
+    "traceability",
+    "flow_monitoring",
+    "integration",
+    "other"
+] as const;
+
+export const PLATFORM_KEYS = [
+    "wms",
+    "cmms",
+    "its",
+    "bi",
+    "erp",
+    "none",
+    "other"
+] as const;
+
+export const TIMING_KEYS = [
+    "0_3_months",
+    "3_6_months",
+    "6_12_months",
+    "exploration"
+] as const;
