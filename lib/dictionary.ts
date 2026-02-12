@@ -620,9 +620,8 @@ export const DICTIONARY = {
                 { name: "Alessandro Spadaro", role: "CTO", image: "/team/AlessandroSpadaro.jpeg", stack: "Full-Stack Arch | Embedded Systems | Signal Processing", linkedin: "https://www.linkedin.com/in/alessandrospadaro/" },
                 { name: "Stefano Nordio", role: "VP Sales & Growth", image: "/team/Stefano Nordio.jpeg", stack: "Enterprise Sales | Market Strategy", linkedin: "https://www.linkedin.com/in/stefanonordio/" },
                 { name: "Francesco Dell’Onze", role: "Sales Manager", image: "/team/Francesco Dell_Onze.jpeg", stack: "Tech Sales | Client Success", linkedin: "https://www.linkedin.com/in/dell-onze-francesco/" },
-                { name: "Giulia Mora", role: "Account Sales Manager", image: "/team/GiuliaMora.jpeg", stack: "Account Mgmt | Customer Relations", linkedin: "https://www.linkedin.com/in/jessica-faicchio-7b8996150/" },
-                { name: "Jessica Faicchio", role: "Operations Manager", image: "/team/JessicaFaicchio.jpeg", stack: "Ops Excellence | Agile PM", linkedin: "https://www.linkedin.com/in/jessica-faicchio-7b8996150/" },
-                { name: "Lorenzo Giardina", role: "Communications Advisor", image: "/team/LorenzoGiardina.jpeg", stack: "Communications | Brand Strategy | Media Relations", linkedin: "https://www.linkedin.com/in/lorenzo-giardina/" }
+                { name: "Giulia Mora", role: "Account Sales Manager", image: "/team/GiuliaMora.jpeg", stack: "Account Mgmt | Customer Relations", linkedin: "https://www.linkedin.com/in/giulia-m-5a718314a/" },
+                { name: "Jessica Faicchio", role: "Operations Manager", image: "/team/JessicaFaicchio.jpeg", stack: "Ops Excellence | Agile PM", linkedin: "https://www.linkedin.com/in/jessica-faicchio-7b8996150/" }
             ]
         },
         board: {
