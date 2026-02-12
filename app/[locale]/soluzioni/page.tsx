@@ -4,7 +4,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { VerticalSelector } from "@/components/sections/home/vertical-selector";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
-import { Download } from "lucide-react";
+import { OnePagerDialog } from "@/components/shared/one-pager-dialog";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from 'next';
 import { getLocalizedAlternates } from '@/lib/i18n-metadata';
@@ -48,10 +48,10 @@ export default async function SoluzioniPage() {
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{tCommon('demoCta')}</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Download className="mr-2 h-5 w-5" />
-                    {tCommon('onePagerCta')}
-                </Button>
+                <OnePagerDialog
+                    onePagerType="Generale"
+                    triggerLabel={tCommon('onePagerCta')}
+                />
             </VerticalHero>
 
             {/* Scenario Selector */}

@@ -6,8 +6,8 @@ import { Link } from "@/i18n/routing";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
 import { TechnologyPillars } from "@/components/sections/tecnologia/technology-pillars";
 import { DataCenterVisualization } from "@/components/sections/tecnologia/data-center-visualization";
+import { OnePagerDialog } from "@/components/shared/one-pager-dialog";
 import {
-    Download,
     Network,
     Database,
     ShieldCheck,
@@ -57,10 +57,10 @@ export default async function TecnologiaPage() {
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{t('hero.ctaDemo')}</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-full">
-                    <Download className="mr-2 h-5 w-5" />
-                    {t('hero.ctaSheet')}
-                </Button>
+                <OnePagerDialog
+                    onePagerType="Tecnologia & Integrazioni"
+                    triggerLabel={t('hero.ctaSheet')}
+                />
             </VerticalHero>
 
             {/* Pillars */}

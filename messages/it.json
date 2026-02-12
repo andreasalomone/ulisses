@@ -96,6 +96,18 @@
             "title": "Pronto a ottimizzare i tuoi processi?",
             "subtitle": "Scopri come la nostra tecnologia può trasformare la tua operatività.",
             "button": "Parla con un esperto"
+        },
+        "onePagerDialog": {
+            "title": "Scarica One-Pager",
+            "description": "Inserisci la tua email per scaricare il one-pager:",
+            "emailLabel": "Email",
+            "emailPlaceholder": "nome@azienda.com",
+            "cancel": "Annulla",
+            "confirm": "Conferma",
+            "submitting": "Invio in corso...",
+            "successTitle": "Grazie!",
+            "successMessage": "Ti mandiamo il one-pager che hai richiesto a breve.",
+            "close": "Chiudi"
         }
     },
     "contactForm": {

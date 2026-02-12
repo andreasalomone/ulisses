@@ -4,6 +4,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { FileText, Download, ArrowRight } from "lucide-react";
+import { OnePagerDialog } from "@/components/shared/one-pager-dialog";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from 'next';
 import { getLocalizedAlternates } from '@/lib/i18n-metadata';
@@ -146,15 +147,17 @@ export default async function KnowledgeHubPage() {
                         </h2>
                         <div className="grid grid-cols-1 gap-4">
                             {documentItems.map((doc, i) => (
-                                <div key={i} className="flex items-center gap-4 p-4 bg-background rounded-xl border hover:border-primary/50 transition-colors group cursor-pointer">
-                                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                                        <FileText className="h-6 w-6" />
+                                <OnePagerDialog key={i} onePagerType={doc}>
+                                    <div className="flex items-center gap-4 p-4 bg-background rounded-xl border hover:border-primary/50 transition-colors group cursor-pointer">
+                                        <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                                            <FileText className="h-6 w-6" />
+                                        </div>
+                                        <span className="font-bold text-lg grow">
+                                            <BrandText text={doc} />
+                                        </span>
+                                        <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                                     </div>
-                                    <span className="font-bold text-lg grow">
-                                        <BrandText text={doc} />
-                                    </span>
-                                    <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                                </div>
+                                </OnePagerDialog>
                             ))}
                         </div>
                     </div>

@@ -96,6 +96,18 @@
             "title": "Ready to optimize your processes?",
             "subtitle": "Discover how our technology can transform your operations.",
             "button": "Talk to an Expert"
+        },
+        "onePagerDialog": {
+            "title": "Download One-Pager",
+            "description": "Enter your email to download the one-pager:",
+            "emailLabel": "Email",
+            "emailPlaceholder": "name@company.com",
+            "cancel": "Cancel",
+            "confirm": "Confirm",
+            "submitting": "Submitting...",
+            "successTitle": "Thank you!",
+            "successMessage": "We will send you the requested one-pager shortly.",
+            "close": "Close"
         }
     },
     "contactForm": {
