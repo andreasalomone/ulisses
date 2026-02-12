@@ -3,8 +3,10 @@ import type { NextConfig } from "next";
 
 const withNextIntl = createNextIntlPlugin();
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig: NextConfig & { turbopack?: { root: string } } = {
+  turbopack: {
+    root: "/Users/andreasalomone/devving/ulisses",
+  },
 };
 
 export default withNextIntl(nextConfig);

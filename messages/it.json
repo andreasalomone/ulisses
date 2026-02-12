@@ -307,14 +307,14 @@
     },
     "home": {
         "hero": {
-            "h1": "<highlight>Localizza</highlight> i tuoi asset, ovunque essi siano",
+            "h1": "<highlight>Localizza</highlight> i tuoi asset e riduci tempi di ricerca e fermi operativi",
             "highlight": "Localizza",
             "subheadline": "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
             "subheadlineToken": "dashboard, rete, sensori e API",
             "proofs": [
-                "Brevetto tecnologico",
-                "Planning & commissioning integrati",
-                "Integrazioni IT/OT con SLA end-to-end"
+                "Tecnologia brevettata",
+                "Dato stabile nel tempo indoor e outdoor",
+                "SLA end-to-end"
             ],
             "expertLink": "Parla con un esperto"
         },

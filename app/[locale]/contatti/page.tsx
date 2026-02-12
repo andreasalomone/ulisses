@@ -1,7 +1,7 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { ContactFormSection } from "@/components/sections/home/contact-form-section";
-import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from 'next';
