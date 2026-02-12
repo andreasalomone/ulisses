@@ -100,7 +100,7 @@ export default async function SmartParkingPage() {
             </SectionWrapper>
 
             {/* Dashboard detail */}
-            <SectionWrapper variant="muted">
+            {/* <SectionWrapper variant="muted">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="order-2 lg:order-1">
                         <div className="aspect-video bg-card rounded-2xl shadow-2xl border flex items-center justify-center">
@@ -121,7 +121,7 @@ export default async function SmartParkingPage() {
                         </ul>
                     </div>
                 </div>
-            </SectionWrapper>
+            </SectionWrapper> */}
 
             {/* Benchmarks */}
             <BenchmarkSection

@@ -30,7 +30,7 @@ export default async function Page({
             <VerticalSelector />
             <WhyUlisses />
             <HowItWorks />
-            <DashboardPreview />
+            {/* <DashboardPreview /> */}
             <DemoCTA
                 title={t('cta.title')}
                 subtitle={t('cta.text')}

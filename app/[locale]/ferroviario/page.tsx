@@ -59,7 +59,7 @@ export default async function FerroviarioPage() {
             <FerroviarioUseCases />
 
             {/* Dashboard Detail */}
-            <SectionWrapper>
+            {/* <SectionWrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="order-2 lg:order-1">
                         <div className="relative aspect-video rounded-2xl shadow-2xl border-2 border-primary overflow-hidden">
@@ -87,7 +87,8 @@ export default async function FerroviarioPage() {
                         </ul>
                     </div>
                 </div>
-            </SectionWrapper>
+            </SectionWrapper> */}
+
 
             {/* Final CTA */}
             <DemoCTA

@@ -64,7 +64,7 @@ export default async function LogisticaPage() {
             <LogisticsUseCases />
 
             {/* Dashboard Detail */}
-            <SectionWrapper>
+            {/* <SectionWrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div className="order-2 lg:order-1">
                         <div className="aspect-video bg-muted rounded-2xl shadow-2xl border flex items-center justify-center">
@@ -87,7 +87,7 @@ export default async function LogisticaPage() {
                         </ul>
                     </div>
                 </div>
-            </SectionWrapper>
+            </SectionWrapper> */}
 
             {/* Integrazione */}
             <IntegrationHub />

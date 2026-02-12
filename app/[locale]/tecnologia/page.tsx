@@ -137,10 +137,6 @@ export default async function TecnologiaPage() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 {tResearch('collaborations.text')}
                             </p>
-                            <div className="p-5 bg-muted/50 rounded-2xl border border-primary/10 inline-flex items-center gap-4">
-                                <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-                                <span className="font-bold text-lg">{tResearch('collaborations.partner.name')}</span>
-                            </div>
                         </div>
 
                         <div className="p-10 bg-card rounded-[2.5rem] border shadow-sm group hover:border-primary/20 transition-all">

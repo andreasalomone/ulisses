@@ -6,50 +6,94 @@ import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
 interface DifferentiatorCardProps {
-    title: string;
-    problem: string;
-    solution: string;
+    headline: string;
+    description: string;
+    effect: string;
     icon: React.ElementType;
     index: number;
+    variant: "issue" | "solution";
 }
 
-function DifferentiatorCard({ title, problem, solution, icon: Icon, index }: DifferentiatorCardProps) {
+function DifferentiatorCard({ headline, description, effect, icon: Icon, index, variant }: DifferentiatorCardProps) {
+    const isSolution = variant === "solution";
+
     return (
         <div
             className={cn(
-                "group relative h-full flex flex-col rounded-3xl border border-primary/10 bg-card/40 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5",
+                "group relative h-full flex flex-col rounded-3xl border backdrop-blur-sm overflow-hidden transition-all duration-500 hover:shadow-2xl",
+                isSolution
+                    ? "border-primary/40 bg-primary/10 hover:border-primary/60 hover:shadow-primary/20 scale-105 z-20 shadow-xl ring-2 ring-primary/20"
+                    : "border-primary/10 bg-card/40 hover:border-primary/30 hover:shadow-primary/5",
                 "animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
             )}
             style={{ animationDelay: `${(index + 1) * 150}ms` }}
         >
+            {/* Spotlight Effect for Solution */}
+            {isSolution && (
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-primary/20 blur-3xl rounded-full" />
+            )}
+
             {/* Header with Icon */}
             <div className="p-8 pb-4">
-                <div className="mb-6 inline-flex p-3 rounded-2xl bg-primary/5 text-primary group-hover:scale-110 transition-transform duration-500">
+                <div className={cn(
+                    "mb-6 inline-flex p-3 rounded-2xl transition-transform duration-500 group-hover:scale-110",
+                    isSolution ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : "bg-primary/5 text-primary"
+                )}>
                     <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold tracking-tight">Vs {title}</h3>
+                <div className="space-y-2">
+                    <h3 className={cn(
+                        "text-xl font-bold tracking-tight",
+                        isSolution && "text-primary"
+                    )}>
+                        {headline}
+                    </h3>
+                    {/* Effect Section */}
+                    {effect && (
+                        <div className="flex items-center gap-2">
+                            <div className={cn(
+                                "h-1 w-1 rounded-full shrink-0",
+                                isSolution ? "bg-primary" : "bg-destructive/60"
+                            )} />
+                            <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground/70">
+                                {effect}
+                            </p>
+                        </div>
+                    )}
+                </div>
             </div>
 
-            {/* Problem - The Status Quo */}
-            <div className="px-8 pb-6 flex-1">
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-destructive/5 border border-destructive/10 mb-4 transition-colors group-hover:bg-destructive/10">
-                    <XCircle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
-                    <p className="text-sm font-medium text-muted-foreground leading-snug">
-                        {problem}
-                    </p>
-                </div>
-
-                {/* Solution - The Ulisses Way */}
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-primary/5 border border-primary/20 transition-all duration-500 group-hover:border-primary group-hover:bg-primary/10">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <p className="text-sm md:text-base font-bold text-foreground leading-snug">
-                        {solution}
-                    </p>
+            {/* Content Section */}
+            <div className="px-8 pb-8 flex-1 flex flex-col justify-between relative z-10">
+                <div className="space-y-4">
+                    <div className={cn(
+                        "flex items-start gap-4 p-5 rounded-2xl border transition-all duration-500",
+                        isSolution
+                            ? "bg-background/80 border-primary/30 group-hover:border-primary/50 shadow-sm"
+                            : "bg-destructive/5 border-destructive/10 group-hover:bg-destructive/10"
+                    )}>
+                        {isSolution ? (
+                            <CheckCircle2 className="h-6 w-6 text-emerald-500 shrink-0 mt-0.5" />
+                        ) : (
+                            <XCircle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+                        )}
+                        <p className={cn(
+                            "text-sm leading-relaxed",
+                            isSolution ? "text-foreground font-semibold text-base" : "text-muted-foreground"
+                        )}>
+                            {description}
+                        </p>
+                    </div>
                 </div>
             </div>
 
             {/* Subtle background gradient on hover */}
-            <div className="absolute inset-0 bg-linear-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className={cn(
+                "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none",
+                isSolution
+                    ? "bg-linear-to-br from-primary/5 via-primary/5 to-primary/20"
+                    : "bg-linear-to-br from-primary/0 via-primary/0 to-primary/5"
+            )} />
         </div>
     );
 }
@@ -59,9 +103,9 @@ import CompareDemo from "@/components/compare-demo";
 export function WhyUlisses() {
     const t = useTranslations('home.why');
     type ColumnType = {
-        title: string;
-        problem: string;
-        solution: string;
+        headline: string;
+        description: string;
+        effect: string;
     };
     const columns = t.raw('columns') as ColumnType[];
     const icons = [Boxes, Radio, Unplug];
@@ -87,11 +131,12 @@ export function WhyUlisses() {
                 {columns.map((col, i) => (
                     <DifferentiatorCard
                         key={i}
-                        title={col.title}
-                        problem={col.problem}
-                        solution={col.solution}
+                        headline={col.headline}
+                        description={col.description}
+                        effect={col.effect}
                         icon={icons[i] || Boxes}
                         index={i}
+                        variant={i === 2 ? "solution" : "issue"}
                     />
                 ))}
             </div>

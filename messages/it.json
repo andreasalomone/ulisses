@@ -73,7 +73,10 @@
         "smartBuildingVisualization": "Visualizzazione Smart Building",
         "smartParkingNetwork": "Visualizzazione Rete Smart Parking",
         "firstImage": "Prima immagine",
-        "secondImage": "Seconda immagine"
+        "secondImage": "Seconda immagine",
+        "dashboard": {
+            "title": "Dashboard Smart Parking"
+        }
     },
     "common": {
         "withUlisses": "Con Ulisses",
@@ -309,8 +312,7 @@
         "hero": {
             "h1": "<highlight>Localizza</highlight> i tuoi asset e riduci tempi di ricerca e fermi operativi",
             "highlight": "Localizza",
-            "subheadline": "Con Ulisses hai il controllo totale: una soluzione completa di rete, sensori, dashboard e API pronta per gli ambienti più complessi, indoor e outdoor.",
-            "subheadlineToken": "dashboard, rete, sensori e API",
+            "subheadline": "Ulisses porta posizione ed eventi dal campo ai tuoi workflow (WMS/CMMS/BI) con un'unica soluzione end-to-end: rete, sensori, dashboard e API. Progettata per scalare e mantenere dati affidabili nel tempo.",
             "proofs": [
                 "Tecnologia brevettata",
                 "Dato stabile nel tempo indoor e outdoor",
@@ -342,22 +344,22 @@
             "title": "I Nostri Partner"
         },
         "selector": {
-            "title": "In quale scenario ti serve Ulisses?",
-            "subtitle": "Risoluzioni operative, risultati attesi e percorso di progetto.",
+            "title": "Ulisses è per te se vuoi localizzare asset e ridurre tempi e fermi",
+            "subtitle": "Tracciabilità e rollout scalabile: scegli lo scenario più vicino al tuo",
             "cards": {
                 "logistica": {
                     "title": "Logistica & Operations",
-                    "description": "Riduci i tempi di ricerca dei tuoi asset, errori operativi, e rischi in magazzino.",
+                    "description": "Riduci tempi di ricerca, errori e fermi operativi in magazzino e piazzale.",
                     "cta": "Scopri Logistica",
                     "resolutions": [
                         "Ricerca asset",
                         "Geofencing",
-                        "KPI flussi"
+                        "Riduzione tempi"
                     ]
                 },
                 "ferroviario": {
                     "title": "Ferroviario",
-                    "description": "Controllo materiali in depositi, con integrazione ai workflow di manutenzione.",
+                    "description": "Tracciabilità in deposito e materiali: meno ricerca, più controllo su manutenzione e pianificazione.",
                     "cta": "Scopri Ferroviario",
                     "resolutions": [
                         "Disponibilità attrezzature",
@@ -367,7 +369,7 @@
                 },
                 "parking": {
                     "title": "Smart City",
-                    "description": "Dati di occupazione e eventi operativi, rollout scalabile e OPEX con rete privata.",
+                    "description": "Occupazione ed eventi affidabili: enforcement più efficace e roi controllabile.",
                     "cta": "Scopri Smart City",
                     "resolutions": [
                         "Occupancy",
@@ -379,22 +381,22 @@
         },
         "why": {
             "title": "Perché Ulisses è diversa",
-            "intro": "Oltre il singolo sensore: un sistema completo che porta dati certi dal campo alle decisioni, integrandosi via API con i tuoi sistemi (WMS/CMMS/ITS/BI).",
+            "intro": "Non è solo tracking: è una catena end-to-end governata",
             "columns": [
                 {
-                    "title": "Software gestionali",
-                    "problem": "Organizzano processi, ma restano ciechi sul mondo fisico.",
-                    "solution": "Ulisses porta la verità del campo direttamente nei tuoi sistemi, migliorando efficienza e precisione."
+                    "headline": "Soluzioni frammentate",
+                    "description": "Hardware e software non parlano tra loro. Dati incoerenti, gestione a “patch”, responsabilità distribuite.",
+                    "effect": "Più problemi di integrazione, più costi nascosti."
                 },
                 {
-                    "title": "Tracking tradizionale",
-                    "problem": "La demo funziona, ma fatica in ambienti reali e ritorna dati inaffidabili.",
-                    "solution": "Ulisses è ingegneria industriale nata per vincere interferenze e scalare a centinaia di migliaia di sensori senza fatica."
+                    "headline": "Tracking tradizionale",
+                    "description": "Funziona in alcune condizioni, poi degrada nel reale. Interferenze, falsi positivi e performance non misurata.",
+                    "effect": "Fiducia bassa nel dato → processi che non si appoggiano al sistema."
                 },
                 {
-                    "title": "Soluzioni frammentate",
-                    "problem": "Un puzzle di vendor diversi è un incubo di manutenzione.",
-                    "solution": "Ulisses è regia unica. Dalla survey alle API, una soluzione completa per tutto il ciclo di vita del dato."
+                    "headline": "Ulisses",
+                    "description": "Progetto + rete + piattaforma + osservabilità + API. Dato stabile, qualità misurabile e integrazione nei workflow (WMS/CMMS/BI).",
+                    "effect": "Meno tempo perso, rollout scalabile, un responsabile unico."
                 }
             ],
             "closure": "Ulisses è modulare: piattaforma opzionale e dato integrabile via API, con metodo e ownership chiara. Unifica field, rete e dato: puoi usare la nostra piattaforma oppure integrare via API, riducendo complessità e tempi di messa a terra.",
@@ -844,9 +846,9 @@
             "title": "La differenza è trasformare lo standard in dato affidabile",
             "text": "Sfruttiamo l'evoluzione degli standard radio, come il Bluetooth Channel Sounding (RTT + Phase-Based Ranging), per sbloccare nuove possibilità.\n\nLa tecnologia Ulisses garantisce precisione, stabilità e affidabilità anche in contesti critici: ambienti complessi, interferenze e alta densità.\n\nTrasformiamo il segnale in un dato pronto all'uso, integrabile via API o gestibile tramite la nostra piattaforma operativa.",
             "items": [
-                "Stack e algoritmi per trasformare il segnale in un dato stabile e verificabile sul campo.",
-                "Tool di planning e commissioning per una messa a terra ripetibile: progettazione, validazione e qualità del dato.",
-                "Piattaforma e integrazioni per portare eventi e misure in dashboard, workflow e sistemi esistenti via API."
+                "Algoritmi & stack radio → Precisione e stabilità misurate sul campo",
+                "Planning & commissioning → Messa a terra ripetibile + criteri di qualità del dato",
+                "Piattaforma & integrazioni → Eventi nei workflow + API pronte"
             ]
         },
         "infrastructure": {
@@ -855,19 +857,19 @@
             "items": [
                 {
                     "title": "Field",
-                    "text": "Sensori / Tag / Anchor per rilevare eventi e presenza"
+                    "text": "Rileva eventi/presenza con continuità"
                 },
                 {
                     "title": "Rete",
-                    "text": "Connettività robusta e scalabile per trasportare i dati"
+                    "text": "Trasporto robusto, meno buchi di copertura"
                 },
                 {
                     "title": "Piattaforma",
-                    "text": "Dashboard, regole, storicizzazione e gestione operativa (quando utile)"
+                    "text": "Regole, storico, alert (quando serve)"
                 },
                 {
                     "title": "API",
-                    "text": "Integrazione con i sistemi esistenti e con i workflow"
+                    "text": "Il dato entra nei processi, non resta in dashboard"
                 }
             ]
         },
@@ -877,15 +879,15 @@
             "items": [
                 {
                     "title": "Cloud",
-                    "text": "avvio più rapido, aggiornamenti centralizzati, gestione multi-sito"
+                    "text": "Se vuoi partire veloce e gestire multi-sito"
                 },
                 {
                     "title": "On-prem",
-                    "text": "requisiti security/compliance, dati in sito, controllo completo"
+                    "text": "Se hai vincoli compliance/security"
                 },
                 {
                     "title": "Edge / Ibrido",
-                    "text": "bassa latenza, continuità anche con connettività limitata, gestione locale + sincronizzazione"
+                    "text": "Se latenza e continuità sono critiche"
                 }
             ]
         },
@@ -1066,7 +1068,7 @@
             "label": "Testimonial"
         },
         "team": {
-            "title": "Il Nostro Team",
+            "title": "Management Team",
             "members": [
                 {
                     "name": "Mattia Tartaglia",
@@ -1109,13 +1111,6 @@
                     "image": "/team/JessicaFaicchio.jpeg",
                     "stack": "Ops Excellence | Agile PM",
                     "linkedin": "https://www.linkedin.com/in/jessica-faicchio-7b8996150/"
-                },
-                {
-                    "name": "Lorenzo Giardina",
-                    "role": "Communications Advisor",
-                    "image": "/team/LorenzoGiardina.jpeg",
-                    "stack": "Communications | Brand Strategy | Media Relations",
-                    "linkedin": "https://www.linkedin.com/in/lorenzo-giardina/"
                 }
             ]
         },
@@ -1137,7 +1132,7 @@
                 {
                     "name": "Mattia Tartaglia",
                     "role": "Amministratore Delegato",
-                    "image": "/team/MattiaTartaglia.jpeg",
+                    "image": "/team/mattia-tartaglia.png",
                     "linkedin": "https://www.linkedin.com/in/mattia-tartaglia-88510351/"
                 },
                 {

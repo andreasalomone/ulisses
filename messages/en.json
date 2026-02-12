@@ -73,7 +73,10 @@
         "smartBuildingVisualization": "Smart Building Visualization",
         "smartParkingNetwork": "Smart Parking Network Visualization",
         "firstImage": "First image",
-        "secondImage": "Second image"
+        "secondImage": "Second image",
+        "dashboard": {
+            "title": "Smart Parking Dashboard"
+        }
     },
     "common": {
         "withUlisses": "With Ulisses",
@@ -309,8 +312,7 @@
         "hero": {
             "h1": "<highlight>Track</highlight> your assets, wherever they are",
             "highlight": "Track",
-            "subheadline": "With Ulisses you have total control: a complete solution of network, sensors, dashboard and API ready for the most complex environments, indoor and outdoor.",
-            "subheadlineToken": "dashboard, network, sensors and API",
+            "subheadline": "Ulisses brings location and events from the field to your workflows (WMS/CMMS/BI) with a single end-to-end solution: network, sensors, dashboard and API. Designed to scale and maintain reliable data over time.",
             "proofs": [
                 "Technological patent",
                 "Stable data over time indoor/outdoor",
@@ -342,22 +344,22 @@
             "title": "Our Partners"
         },
         "selector": {
-            "title": "In which scenario do you need Ulisses?",
-            "subtitle": "Operational resolutions, expected results and project path.",
+            "title": "Ulisses is for you if you want to track your assets and reduce downtime",
+            "subtitle": "Traceability and scalable rollout: choose the scenario closest to yours",
             "cards": {
                 "logistica": {
                     "title": "Logistics & Operations",
-                    "description": "Reduce asset search times, operational errors, and warehouse risks.",
+                    "description": "Reduce asset search times, operational errors, warehouse and yard risks.",
                     "cta": "Discover Logistics",
                     "resolutions": [
                         "Asset search",
                         "Geofencing",
-                        "Flow KPIs"
+                        "Reduced search times"
                     ]
                 },
                 "ferroviario": {
                     "title": "Railway",
-                    "description": "Material control in depots, with integration into maintenance workflows.",
+                    "description": "Enhanced Traceability: less searching, more control over maintenance and planning.",
                     "cta": "Discover Railway",
                     "resolutions": [
                         "Equipment availability",
@@ -367,7 +369,7 @@
                 },
                 "parking": {
                     "title": "Smart City",
-                    "description": "Occupancy data and operational events, scalable rollout and OPEX with private network.",
+                    "description": "Reliable occupancy data and operational events: more effective enforcement and controlled ROI.",
                     "cta": "Discover Smart City",
                     "resolutions": [
                         "Occupancy",
@@ -379,22 +381,22 @@
         },
         "why": {
             "title": "Why Ulisses is different",
-            "intro": "Beyond the single sensor: a complete system that brings certain data from the field to decisions, integrating via API with your systems (WMS/CMMS/ITS/BI).",
+            "intro": "Not just tracking: a governed end-to-end chain",
             "columns": [
                 {
-                    "title": "Management Software",
-                    "problem": "They organize processes, but remain blind to the physical world.",
-                    "solution": "Ulisses brings the truth of the field directly into your systems, improving efficiency and precision."
+                    "headline": "Fragmented Solutions",
+                    "description": "Hardware and software don't talk to each other. Inconsistent data, 'patch' management, distributed responsibilities.",
+                    "effect": "More integration issues, more hidden costs."
                 },
                 {
-                    "title": "Traditional Tracking",
-                    "problem": "The demo works, but struggles in real environments and returns unreliable data.",
-                    "solution": "Ulisses is industrial engineering born to beat interference and scale to hundreds of thousands of sensors effortlessly."
+                    "headline": "Traditional Tracking",
+                    "description": "Works in some conditions, then degrades in the real world. Interference, false positives, and unmeasured performance.",
+                    "effect": "Low confidence in data → processes that don't rely on the system."
                 },
                 {
-                    "title": "Fragmented Solutions",
-                    "problem": "A puzzle of different vendors is a maintenance nightmare.",
-                    "solution": "Ulisses is a single direction. From survey to API, a complete solution for the entire data lifecycle."
+                    "headline": "Ulisses",
+                    "description": "Project + network + platform + observability + API. Stable data, measurable quality, and integration into workflows (WMS/CMMS/BI).",
+                    "effect": "Less time lost, scalable rollout, a single point of responsibility."
                 }
             ],
             "closure": "Ulisses is modular: optional platform and data integrable via API, with method and clear ownership. Unifies field, network and data: you can use our platform or integrate via API, reducing complexity and implementation times.",
@@ -844,9 +846,9 @@
             "title": "The difference is transforming the standard into reliable data",
             "text": "We leverage the evolution of radio standards, like Bluetooth Channel Sounding (RTT + Phase-Based Ranging), to unlock new possibilities.\n\nUlisses technology guarantees precision, stability, and reliability even in critical contexts: complex environments, interference, and high density.\n\nWe transform the signal into data ready for use, integrable via API or manageable through our operational platform.",
             "items": [
-                "Stack and algorithms to transform the signal into stable and verifiable field data.",
-                "Planning and commissioning tools for repeatable implementation: design, validation, and data quality.",
-                "Platform and integrations to bring events and measures to dashboards, workflows, and existing systems via API."
+                "Algorithms & radio stack → Precision and stability measured in the field",
+                "Planning & commissioning → Repeatable implementation + data quality criteria",
+                "Platform & integrations → Events in workflows + ready APIs"
             ]
         },
         "infrastructure": {
@@ -855,19 +857,19 @@
             "items": [
                 {
                     "title": "Field",
-                    "text": "Sensors / Tags / Anchors to detect events and presence"
+                    "text": "Detect events/presence with continuity"
                 },
                 {
                     "title": "Network",
-                    "text": "Robust and scalable connectivity to transport data"
+                    "text": "Robust transport, fewer coverage gaps"
                 },
                 {
                     "title": "Platform",
-                    "text": "Dashboard, rules, historicization, and operational management (when useful)"
+                    "text": "Rules, history, alerts (when needed)"
                 },
                 {
                     "title": "API",
-                    "text": "Integration with existing systems and workflows"
+                    "text": "Data enters processes, not just a dashboard"
                 }
             ]
         },
@@ -877,15 +879,15 @@
             "items": [
                 {
                     "title": "Cloud",
-                    "text": "faster start, centralized updates, multi-site management"
+                    "text": "if you want to start fast and manage multi-site"
                 },
                 {
                     "title": "On-prem",
-                    "text": "security/compliance requirements, on-site data, complete control"
+                    "text": "if you have compliance/security constraints"
                 },
                 {
                     "title": "Edge / Hybrid",
-                    "text": "low latency, continuity even with limited connectivity, local management + sync"
+                    "text": "if latency and continuity are critical"
                 }
             ]
         },
@@ -1109,13 +1111,6 @@
                     "image": "/team/JessicaFaicchio.jpeg",
                     "stack": "Ops Excellence | Agile PM",
                     "linkedin": "https://www.linkedin.com/in/jessica-faicchio-7b8996150/"
-                },
-                {
-                    "name": "Lorenzo Giardina",
-                    "role": "Communications Advisor",
-                    "image": "/team/LorenzoGiardina.jpeg",
-                    "stack": "Communications | Brand Strategy | Media Relations",
-                    "linkedin": "https://www.linkedin.com/in/lorenzo-giardina/"
                 }
             ]
         },
@@ -1137,7 +1132,7 @@
                 {
                     "name": "Mattia Tartaglia",
                     "role": "CEO",
-                    "image": "/team/MattiaTartaglia.jpeg",
+                    "image": "/team/mattia-tartaglia.png",
                     "linkedin": "https://www.linkedin.com/in/mattia-tartaglia-88510351/"
                 },
                 {
