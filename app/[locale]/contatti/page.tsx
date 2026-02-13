@@ -1,7 +1,7 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { ContactFormSection } from "@/components/sections/home/contact-form-section";
-import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Mail, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from 'next';
@@ -43,16 +43,6 @@ export default async function ContattiPage() {
                                 <div className="">
                                     <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">{t("writeUs")}</p>
                                     <p className="text-base font-bold truncate">{CONTACT_INFO.email}</p>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-4 items-center group">
-                                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                                    <Phone className="h-5 w-5" />
-                                </div>
-                                <div className="">
-                                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">{t("callUs")}</p>
-                                    <p className="text-base font-bold">{CONTACT_INFO.phone}</p>
                                 </div>
                             </div>
 

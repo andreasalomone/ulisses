@@ -22,10 +22,10 @@ export function FinalCTASection({ title, subtitle, buttons }: FinalCTASectionPro
     return (
         <SectionWrapper className="bg-primary text-primary-foreground text-center">
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-wrap-balance whitespace-pre-line">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-balance whitespace-pre-line">
                     <BrandText text={title} brandClassName="text-white" />
                 </h2>
-                <p className="text-xl opacity-90 leading-relaxed mb-12 whitespace-pre-line">
+                <p className="text-xl opacity-90 leading-relaxed mb-12 whitespace-pre-line text-balance">
                     <BrandText text={subtitle} brandClassName="text-white" />
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -22,8 +22,8 @@ export function TechnologyPillars() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent opacity-50 pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+                <div className="text-center mb-16 px-4">
+                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">
                         <BrandText text={title} />
                     </h2>
                 </div>

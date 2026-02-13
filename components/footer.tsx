@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { NAV_LINKS, CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { Separator } from "@/components/ui/separator";
-import { Instagram, Linkedin, Facebook, MessageSquare } from "lucide-react";
+import { Instagram, Linkedin, Facebook } from "lucide-react";
 import { BrandText } from "@/components/ui/brand";
 import { getTranslations } from "next-intl/server";
 
@@ -30,10 +30,6 @@ export async function Footer() {
                             <BrandText text={tLegal('description')} />
                         </p>
                         <div className="flex gap-4">
-                            <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                                <MessageSquare className="h-5 w-5" />
-                                <span className="sr-only">WhatsApp</span>
-                            </a>
                             <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                                 <Instagram className="h-5 w-5" />
                                 <span className="sr-only">Instagram</span>
@@ -86,11 +82,6 @@ export async function Footer() {
                             <li>
                                 <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-primary transition-colors">
                                     {CONTACT_INFO.email}
-                                </a>
-                            </li>
-                            <li>
-                                <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-primary transition-colors">
-                                    {CONTACT_INFO.phone}
                                 </a>
                             </li>
                         </ul>

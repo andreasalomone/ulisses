@@ -41,10 +41,10 @@ export function HowItWorks({ title, subtitle, items, withDeployment = true }: Ho
     return (
         <SectionWrapper id="come-funziona" variant="secondary" className="relative overflow-hidden">
             <div className="max-w-3xl mb-16 relative z-10">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 text-balance">
                     <BrandText text={finalTitle} />
                 </h2>
-                <p className="text-xl opacity-80 leading-relaxed">
+                <p className="text-xl opacity-80 leading-relaxed text-balance">
                     <BrandText text={finalSubtitle} />
                 </p>
             </div>
