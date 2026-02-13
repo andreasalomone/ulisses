@@ -25,10 +25,10 @@ export function VerticalSelector() {
     return (
         <SectionWrapper id="scenari" variant="muted">
             <div className="max-w-2xl mb-16">
-                <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-balance">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-balance">
                     <BrandText text={t('title')} />
                 </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed text-balance">
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-balance">
                     <BrandText text={t('subtitle')} />
                 </p>
             </div>
