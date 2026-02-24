@@ -177,12 +177,12 @@
     },
     "navigation": {
         "soluzioni": "Soluzioni",
-        "nautica": "Nautica",
+        "nautica": "Smart Port",
         "logistica": "Logistica",
         "ferroviario": "Ferroviario",
         "smartParking": "Smart City",
         "tecnologia": "Tecnologia",
-        "risorse": "Risorse",
+        "risorse": "Use Case",
         "azienda": "Chi Siamo",
         "contatti": "Contatti",
         "faq": "FAQ",
@@ -396,19 +396,19 @@
             "intro": "Non è solo tracking: è una catena end-to-end governata",
             "columns": [
                 {
-                    "headline": "Soluzioni frammentate",
-                    "description": "Hardware e software non parlano tra loro. Dati incoerenti, gestione a “patch”, responsabilità distribuite.",
-                    "effect": "Più problemi di integrazione, più costi nascosti."
+                    "title": "Software gestionali",
+                    "problem": "Organizzano processi, ma restano ciechi sul mondo fisico.",
+                    "solution": "Ulisses porta la verità del campo direttamente nei tuoi sistemi, migliorando efficienza e precisione."
                 },
                 {
-                    "headline": "Tracking tradizionale",
-                    "description": "Funziona in alcune condizioni, poi degrada nel reale. Interferenze, falsi positivi e performance non misurata.",
-                    "effect": "Fiducia bassa nel dato → processi che non si appoggiano al sistema."
+                    "title": "Tracking tradizionale",
+                    "problem": "La demo funziona, ma fatica in ambienti reali e ritorna dati inaffidabili.",
+                    "solution": "Ulisses è ingegneria industriale nata per vincere interferenze e scalare a centinaia di migliaia di sensori senza fatica."
                 },
                 {
-                    "headline": "Ulisses",
-                    "description": "Progetto + rete + piattaforma + osservabilità + API. Dato stabile, qualità misurabile e integrazione nei workflow (WMS/CMMS/BI).",
-                    "effect": "Meno tempo perso, rollout scalabile, un responsabile unico."
+                    "title": "Soluzioni frammentate",
+                    "problem": "Un puzzle di vendor diversi è un incubo di manutenzione.",
+                    "solution": "Ulisses è regia unica. Dalla survey alle API, una soluzione completa per tutto il ciclo di vita del dato."
                 }
             ],
             "closure": "Ulisses è modulare: piattaforma opzionale e dato integrabile via API, con metodo e ownership chiara. Unifica field, rete e dato: puoi usare la nostra piattaforma oppure integrare via API, riducendo complessità e tempi di messa a terra.",
