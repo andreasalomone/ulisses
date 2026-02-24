@@ -30,20 +30,24 @@ import { FaqSection } from "@/components/shared/faq-section";
 
 import { BrandText } from "@/components/ui/brand";
 
-const GRADIENTS = [
-    // Premium Dark Blue / Primary
-    "bg-linear-to-br from-primary/90 via-primary/70 to-slate-950 border border-primary/20",
-    // Deep Teal / Secondary
-    "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
-    // Violet / Accent
-    "bg-linear-to-br from-accent/90 via-accent/70 to-slate-950 border border-accent/20",
-    // Indigo / Chart-1
-    "bg-linear-to-br from-[oklch(0.45_0.14_260)]/90 via-[oklch(0.35_0.10_260)]/70 to-slate-950 border border-[oklch(0.45_0.14_260)]/20",
-    // Deep Slate / Industrial
-    "bg-linear-to-br from-slate-600 via-slate-800 to-slate-950 border border-slate-500/30",
-    // Slate / Muted Luxury
-    "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950 border border-slate-600/30",
-];
+const GRADIENTS: Record<string, string> = {
+    // IT Verticals
+    "Logistica": "bg-linear-to-br from-primary/90 via-primary/70 to-slate-950 border border-primary/20",
+    "Ferroviario": "bg-linear-to-br from-slate-600 via-slate-800 to-slate-950 border border-slate-500/30",
+
+    // EN Verticals
+    "Logistics": "bg-linear-to-br from-primary/90 via-primary/70 to-slate-950 border border-primary/20",
+    "Railway": "bg-linear-to-br from-slate-600 via-slate-800 to-slate-950 border border-slate-500/30",
+
+    // Shared Verticals
+    "Smart Building": "bg-linear-to-br from-accent/90 via-accent/70 to-slate-950 border border-accent/20",
+    "Smart City": "bg-linear-to-br from-[oklch(0.45_0.14_260)]/90 via-[oklch(0.35_0.10_260)]/70 to-slate-950 border border-[oklch(0.45_0.14_260)]/20",
+    "Smart Port": "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
+    "Nautica": "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
+
+    // Fallback
+    "default": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950 border border-slate-600/30"
+};
 
 export default async function KnowledgeHubPage() {
     const t = await getTranslations('knowledgeHub');
@@ -71,9 +75,8 @@ export default async function KnowledgeHubPage() {
                             {/* Grid wrapper for the "Book Covers" */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 justify-center">
                                 {section.items.map((item, j) => {
-                                    // Deterministic gradient selection based on index
-                                    const gradientIndex = (i * 3 + j) % GRADIENTS.length;
-                                    const gradientClass = GRADIENTS[gradientIndex];
+                                    // Deterministic gradient selection based on section name (supports both EN and IT)
+                                    const gradientClass = GRADIENTS[section.vertical] || GRADIENTS.default;
 
                                     return (
                                         <Link
@@ -106,11 +109,11 @@ export default async function KnowledgeHubPage() {
                                                     <div className="w-12 h-1 bg-white/30 rounded-full" />
 
                                                     <h3 className="text-2xl font-bold leading-tight tracking-tight drop-shadow-md">
-                                                        <BrandText text={item.title} />
+                                                        <BrandText text={item.title} brandClassName="text-white" />
                                                     </h3>
 
                                                     <p className="text-sm font-medium text-white/80 line-clamp-3 leading-relaxed">
-                                                        <BrandText text={item.text} />
+                                                        <BrandText text={item.text} brandClassName="text-white" />
                                                     </p>
                                                 </div>
 

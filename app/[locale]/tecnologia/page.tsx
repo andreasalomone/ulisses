@@ -92,8 +92,8 @@ export default async function TecnologiaPage() {
                             {archItems.map((item, i) => {
                                 const Icon = [Network, Database, Layers][i % 3];
                                 return (
-                                    <div key={i} className="flex gap-6 p-6 rounded-3xl bg-muted/30 border border-transparent hover:border-primary/10 hover:bg-card transition-all cursor-pointer group shadow-xs">
-                                        <div className="mt-1 h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                                    <div key={i} className="flex gap-6 p-6 rounded-3xl bg-muted/30 border border-transparent shadow-xs">
+                                        <div className="mt-1 h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0">
                                             <Icon className="h-5 w-5" />
                                         </div>
                                         <div>

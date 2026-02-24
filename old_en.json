@@ -73,10 +73,7 @@
         "smartBuildingVisualization": "Smart Building Visualization",
         "smartParkingNetwork": "Smart Parking Network Visualization",
         "firstImage": "First image",
-        "secondImage": "Second image",
-        "dashboard": {
-            "title": "Smart Parking Dashboard"
-        }
+        "secondImage": "Second image"
     },
     "common": {
         "withUlisses": "With Ulisses",
@@ -96,18 +93,6 @@
             "title": "Ready to optimize your processes?",
             "subtitle": "Discover how our technology can transform your operations.",
             "button": "Talk to an Expert"
-        },
-        "onePagerDialog": {
-            "title": "Download One-Pager",
-            "description": "Enter your email to download the one-pager:",
-            "emailLabel": "Email",
-            "emailPlaceholder": "name@company.com",
-            "cancel": "Cancel",
-            "confirm": "Confirm",
-            "submitting": "Submitting...",
-            "successTitle": "Thank you!",
-            "successMessage": "We will send you the requested one-pager shortly.",
-            "close": "Close"
         }
     },
     "contactForm": {
@@ -177,12 +162,12 @@
     },
     "navigation": {
         "soluzioni": "Solutions",
-        "nautica": "Smart Port",
+        "nautica": "Boating",
         "logistica": "Logistics",
         "ferroviario": "Railway",
         "smartParking": "Smart City",
         "tecnologia": "Technology",
-        "risorse": "Use Case",
+        "risorse": "Resources",
         "azienda": "About Us",
         "contatti": "Contacts",
         "faq": "FAQ",
@@ -206,7 +191,7 @@
         "subtitle": "From technical demo to project implementation: our team is at your disposal.",
         "writeUs": "Write to us",
         "callUs": "Call us",
-        "visitUs": "Legal Office",
+        "visitUs": "Visit us",
         "socialChat": "Social & Chat"
     },
     "cookiePolicy": {
@@ -324,7 +309,8 @@
         "hero": {
             "h1": "<highlight>Track</highlight> your assets, wherever they are",
             "highlight": "Track",
-            "subheadline": "Ulisses brings location and events from the field to your workflows (WMS/CMMS/BI) with a single end-to-end solution: network, sensors, dashboard and API. Designed to scale and maintain reliable data over time.",
+            "subheadline": "With Ulisses you have total control: a complete solution of network, sensors, dashboard and API ready for the most complex environments, indoor and outdoor.",
+            "subheadlineToken": "dashboard, network, sensors and API",
             "proofs": [
                 "Technological patent",
                 "Stable data over time indoor/outdoor",
@@ -356,22 +342,22 @@
             "title": "Our Partners"
         },
         "selector": {
-            "title": "Select your scenario",
-            "subtitle": "Traceability and scalable rollout: choose the scenario closest to yours",
+            "title": "In which scenario do you need Ulisses?",
+            "subtitle": "Operational resolutions, expected results and project path.",
             "cards": {
                 "logistica": {
                     "title": "Logistics & Operations",
-                    "description": "Reduce asset search times, operational errors, warehouse and yard risks.",
+                    "description": "Reduce asset search times, operational errors, and warehouse risks.",
                     "cta": "Discover Logistics",
                     "resolutions": [
                         "Asset search",
                         "Geofencing",
-                        "Reduced search times"
+                        "Flow KPIs"
                     ]
                 },
                 "ferroviario": {
                     "title": "Railway",
-                    "description": "Enhanced Traceability: less searching, more control over maintenance and planning.",
+                    "description": "Material control in depots, with integration into maintenance workflows.",
                     "cta": "Discover Railway",
                     "resolutions": [
                         "Equipment availability",
@@ -381,34 +367,19 @@
                 },
                 "parking": {
                     "title": "Smart City",
-                    "description": "Reliable occupancy data and operational events: more effective enforcement and controlled ROI.",
+                    "description": "Occupancy data and operational events, scalable rollout and OPEX with private network.",
                     "cta": "Discover Smart City",
                     "resolutions": [
                         "Occupancy",
                         "Parking duration",
                         "Data quality"
                     ]
-                },
-                "nautica": {
-                    "title": "Smart Port",
-                    "description": "Real-time localization and occupancy analysis for the intelligent management of your marina.",
-                    "cta": "Discover Smart Port",
-                    "resolutions": [
-                        "Real-time Occupancy",
-                        "Operational Area Management",
-                        "Mooring Efficiency"
-                    ]
                 }
             }
         },
-        "selectorCta": {
-            "title": "Don't see your scenario?",
-            "text": "Every localization challenge is unique. Tell us yours and let's discover together how Ulisses can help you.",
-            "cta": "Talk to an expert"
-        },
         "why": {
             "title": "Why Ulisses is different",
-            "intro": "Not just tracking: a governed end-to-end chain",
+            "intro": "Beyond the single sensor: a complete system that brings certain data from the field to decisions, integrating via API with your systems (WMS/CMMS/ITS/BI).",
             "columns": [
                 {
                     "title": "Management Software",
@@ -873,9 +844,9 @@
             "title": "The difference is transforming the standard into reliable data",
             "text": "We leverage the evolution of radio standards, like Bluetooth Channel Sounding (RTT + Phase-Based Ranging), to unlock new possibilities.\n\nUlisses technology guarantees precision, stability, and reliability even in critical contexts: complex environments, interference, and high density.\n\nWe transform the signal into data ready for use, integrable via API or manageable through our operational platform.",
             "items": [
-                "Algorithms & radio stack → Precision and stability measured in the field",
-                "Planning & commissioning → Repeatable implementation + data quality criteria",
-                "Platform & integrations → Events in workflows + ready APIs"
+                "Stack and algorithms to transform the signal into stable and verifiable field data.",
+                "Planning and commissioning tools for repeatable implementation: design, validation, and data quality.",
+                "Platform and integrations to bring events and measures to dashboards, workflows, and existing systems via API."
             ]
         },
         "infrastructure": {
@@ -884,19 +855,19 @@
             "items": [
                 {
                     "title": "Field",
-                    "text": "Detect events/presence with continuity"
+                    "text": "Sensors / Tags / Anchors to detect events and presence"
                 },
                 {
                     "title": "Network",
-                    "text": "Robust transport, fewer coverage gaps"
+                    "text": "Robust and scalable connectivity to transport data"
                 },
                 {
                     "title": "Platform",
-                    "text": "Rules, history, alerts (when needed)"
+                    "text": "Dashboard, rules, historicization, and operational management (when useful)"
                 },
                 {
                     "title": "API",
-                    "text": "Data enters processes, not just a dashboard"
+                    "text": "Integration with existing systems and workflows"
                 }
             ]
         },
@@ -906,15 +877,15 @@
             "items": [
                 {
                     "title": "Cloud",
-                    "text": "if you want to start fast and manage multi-site"
+                    "text": "faster start, centralized updates, multi-site management"
                 },
                 {
                     "title": "On-prem",
-                    "text": "if you have compliance/security constraints"
+                    "text": "security/compliance requirements, on-site data, complete control"
                 },
                 {
                     "title": "Edge / Hybrid",
-                    "text": "if latency and continuity are critical"
+                    "text": "low latency, continuity even with limited connectivity, local management + sync"
                 }
             ]
         },
@@ -1123,14 +1094,14 @@
                     "role": "Sales Manager",
                     "image": "/team/Francesco Dell_Onze.jpeg",
                     "stack": "Tech Sales | Client Success",
-                    "linkedin": "https://www.linkedin.com/in/francescodellonze/"
+                    "linkedin": "https://www.linkedin.com/in/dell-onze-francesco/"
                 },
                 {
                     "name": "Giulia Mora",
                     "role": "Account Sales Manager",
                     "image": "/team/GiuliaMora.jpeg",
                     "stack": "Account Mgmt | Customer Relations",
-                    "linkedin": "https://www.linkedin.com/in/giulia-m-5a718314a/"
+                    "linkedin": "https://www.linkedin.com/in/jessica-faicchio-7b8996150/"
                 },
                 {
                     "name": "Jessica Faicchio",
@@ -1138,6 +1109,13 @@
                     "image": "/team/JessicaFaicchio.jpeg",
                     "stack": "Ops Excellence | Agile PM",
                     "linkedin": "https://www.linkedin.com/in/jessica-faicchio-7b8996150/"
+                },
+                {
+                    "name": "Lorenzo Giardina",
+                    "role": "Communications Advisor",
+                    "image": "/team/LorenzoGiardina.jpeg",
+                    "stack": "Communications | Brand Strategy | Media Relations",
+                    "linkedin": "https://www.linkedin.com/in/lorenzo-giardina/"
                 }
             ]
         },
@@ -1159,7 +1137,7 @@
                 {
                     "name": "Mattia Tartaglia",
                     "role": "CEO",
-                    "image": "/team/mattia-tartaglia.png",
+                    "image": "/team/MattiaTartaglia.jpeg",
                     "linkedin": "https://www.linkedin.com/in/mattia-tartaglia-88510351/"
                 },
                 {
@@ -1355,7 +1333,7 @@
                     ]
                 },
                 {
-                    "vertical": "Smart City",
+                    "vertical": "Smart Parking",
                     "items": [
                         {
                             "title": "Reliable Occupancy: The city stops guessing",
@@ -1382,55 +1360,27 @@
                                 "productionReady": "Shared rules, control workflows, reports, and above all observability. Treat the system as a service: KPIs, SLAs, and targeted maintenance.",
                                 "result": "More effective enforcement, better resource use, data quality maintained over time, more predictable rollout.",
                                 "introCTA": "Want to set up a phased rollout with clear KPIs and SLAs?",
-                                "cta": "Request Smart City assessment"
+                                "cta": "Request Smart Parking assessment"
                             }
                         },
                         {
-                            "title": "Medical devices are there... but when needed they can't be found",
-                            "text": "Defibrillators, infusion pumps, ventilators. Available on paper, invisible in practice.",
-                            "link": "/knowledge-hub/smart-city/medical-devices",
+                            "title": "Data quality & health: 'mute' stalls under control",
+                            "text": "Manage data quality as a service. Health observability for targeted maintenance.",
+                            "link": "/knowledge-hub/smart-parking/health",
                             "fullContent": {
-                                "scenario": "In a hospital, defibrillators, infusion pumps, ventilators, and stretchers constantly move between departments, warehouses, and intervention areas. On paper they are available. In practice they become invisible.",
-                                "challenge": "The problem is not simply 'finding a device'. It is the domino effect: clinical delays, friction between departments, inefficient use of equipment, duplicated costs. When trying to introduce unreliable tracking tools, the real critical issue emerges: if the data is not stable and accurate, staff stops using it. In a healthcare context, error is not an option.",
-                                "resolution": "Ulisses introduces visibility designed for critical environments: real-time localization on a digital map, immediate search by ID, category or department, asset status by area ('in use', 'available', 'in maintenance'), movement history for audits and operational analysis.",
-                                "productionReady": "It starts with a site survey to map departments, sensitive areas, and real flows. Commissioning follows to validate accuracy and coverage. Together we define operational rules aligned with how staff actually works.",
-                                "result": "Reduction in search times, higher utilization of existing assets, fewer redundant purchases, and a reliable database for planning, maintenance, and continuous improvement.",
-                                "introCTA": "Do you want to measure how much time is lost every day looking for critical assets?",
-                                "cta": "Request an assessment"
-                            }
-                        },
-                        {
-                            "title": "The city is connected. But is it governed by a true urban Digital Twin?",
-                            "text": "ZTLs, environmental gates, reserved lanes: isolated systems producing non-integrated data.",
-                            "link": "/knowledge-hub/smart-city/digital-twin",
-                            "fullContent": {
-                                "scenario": "ZTLs, environmental gates, reserved lanes, priority areas: systems are often isolated and produce non-integrated data. Without an urban Digital Twin unifying access, flows, and environmental compliance, administration reacts to events rather than governing the system. The problem is not controlling a gate: it is transforming real flows into strategic decisions.",
-                                "challenge": "The problem is not just monitoring access or detecting a violation. It is building a coherent digital representation of urban flows. Administrations must guarantee compliance with environmental regulations, reduce the impact of the most polluting vehicles, monitor the effectiveness of mobility policies, and have defensible and structured data. Without an integrated digital model, the data remains isolated and does not become a governance tool.",
-                                "resolution": "The Ulisses platform enables the construction of an urban Digital Twin, a dynamic digital replica of city mobility. Through distributed sensors and real-time analysis, the system allows to monitor entries and exits, identify non-compliant vehicles, analyze flows by time slot/zone, evaluate the occupancy of reserved areas, generate structured reports to support political decisions. The result is an integrated vision that surpasses the logic of punctual control and enables systemic management.",
-                                "productionReady": "It starts with the mapping of strategic city points and areas subject to regulation. Flow models, access rules, and monitoring KPIs are defined. The platform is configured to align with the needs of the administration. The system is modular and scalable, ready to be extended.",
-                                "result": "Reduction of non-compliant violations, greater effectiveness of ZTLs, structured data for institutional reporting, and a solid information base for sustainable mobility policies.",
-                                "introCTA": "What if the city could be governed through its digital twin?",
-                                "cta": "Request an assessment"
-                            }
-                        },
-                        {
-                            "title": "PA fleet management: real visibility or just final reports?",
-                            "text": "Local Police vehicles, technical vehicles, street maintenance: management is often fragmented.",
-                            "link": "/knowledge-hub/smart-city/pa-fleets",
-                            "fullContent": {
-                                "scenario": "Local Police vehicles, technical vehicles, street maintenance, environmental services, social transport: fleet management in Public Administration is often fragmented between isolated GPS and non-integrated systems. Without a real-time updated urban Digital Twin, visibility on vehicles is partial, planning is reactive, and operational costs grow without real oversight.",
-                                "challenge": "Fleet management in the PA is not just knowing 'where a vehicle is'. It is guaranteeing real availability of vehicles, correct assignment by service, respect of operational areas, traceability of interventions. Without an integrated system: manual steps multiply, time is lost searching, overlaps or underutilization occur, it becomes difficult to report. The problem is not the fleet. It is the absence of an operational Digital Twin connecting vehicles, territory, and missions.",
-                                "resolution": "Ulisses enables better management of the public fleet, integrating it with the territory. The platform allows: real-time localization of vehicles on an urban map, operational status of the vehicle, monitoring permanence in areas, movement and mission history, dashboard for managers. The system can be integrated via API with management software in use.",
-                                "productionReady": "It starts with the census of municipal vehicles and the definition of areas of competence. Each vehicle is equipped with a discreet tracking device. The platform is configured on specific needs: shifts, routes, KPIs, alerts. Integration closes the loop between planning and execution.",
-                                "result": "Greater utilization of existing vehicles, reduction of downtime, objective control of missions, and a structured database for continuous optimization of the public fleet.",
-                                "introCTA": "Do you want real-time visibility on your public fleet?",
-                                "cta": "Request an assessment"
+                                "scenario": "In a real rollout, some sensors degrade, change behavior, or go silent. If you don't see it, you find out from citizens (too late).",
+                                "challenge": "Manage data quality and continuity as a service, not a one-time project.",
+                                "resolution": "Ulisses introduces observability: network/sensor health, alerts, data quality indicators, SLA reports. Maintenance becomes targeted and predictable.",
+                                "productionReady": "Health monitoring and intervention procedures ensure long-term system trust.",
+                                "result": "Reduced recovery time, fewer outages, long-term system trust.",
+                                "introCTA": "Want to discover how we guarantee data quality over time?",
+                                "cta": "Talk to an Ulisses expert"
                             }
                         }
                     ]
                 },
                 {
-                    "vertical": "Smart Port",
+                    "vertical": "Nautical",
                     "items": [
                         {
                             "title": "With Ministry of Tourism, we resolve marina management",
@@ -1444,20 +1394,6 @@
                                 "result": "Improved operational efficiency, safety, and reception quality.",
                                 "introCTA": "Are you a marina manager?",
                                 "cta": "Talk to an expert"
-                            }
-                        },
-                        {
-                            "title": "Containers in the yard... but the real position is never certain",
-                            "text": "In high-density terminals, goods and containers move continuously. Without stable localization, operational downtime grows.",
-                            "link": "/knowledge-hub/smart-port/containers",
-                            "fullContent": {
-                                "scenario": "In high-density port terminals, goods and containers move between ship, yard, and transport vehicles. Stacked, shielded by metal, distributed over thousands of square meters. Without stable and reliable localization, search times increase, loading/unloading operations slow down, and operational downtime grows.",
-                                "challenge": "In the port sector, the problem is not simply 'finding a container'. It is the loss of operational control when the yard grows in size, density, and complexity. Containers stacked up to multiple levels, extensive operational areas. When localization is not reliable, operations slow down, search times and ship-shore flow micro-downtimes increase. And in environments with high metal density, the data must be stable and coherent.",
-                                "resolution": "Ulisses introduces visibility designed for highly complex physical environments. The system allows: real-time localization on a digital map, identification of presence in an area, dynamic container-load unit association, monitoring of operations. The platform returns filterable operational dashboards. Accuracy is calibrated: centimetric or by macro-area based on the objective.",
-                                "productionReady": "We start from a technical site survey: we analyze metal density and shielding, we study paths to optimize the placement of anchors and gateways. Field commissioning follows. Together, we define operational rules aligned to real terminal processes. The system can be integrated via API with the management system in use.",
-                                "result": "Reduction of container search times, fluidity in ship-shore operations, decrease in downtime and handling errors, database for efficiency analysis.",
-                                "introCTA": "Want to optimize your port terminal's operations?",
-                                "cta": "Request an assessment"
                             }
                         }
                     ]

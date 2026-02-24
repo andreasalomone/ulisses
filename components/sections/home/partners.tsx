@@ -65,6 +65,13 @@ export function Partners() {
             height: 52,
             href: "https://zestgroup.vc/it",
         },
+        {
+            name: "Confindustria Varese",
+            src: "/partners/confindustria-varese.png",
+            width: 180,
+            height: 60,
+            href: "https://www.confindustriavarese.it/",
+        },
     ];
 
     return (
