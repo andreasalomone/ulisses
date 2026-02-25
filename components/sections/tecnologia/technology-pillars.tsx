@@ -53,7 +53,6 @@ export function TechnologyPillars({ title, text, items }: TechnologyPillarsProps
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 + (i * 0.15) }}
-                            whileHover={{ y: -8 }}
                             className="group relative flex flex-col h-full"
                         >
                             {/* Card Content */}

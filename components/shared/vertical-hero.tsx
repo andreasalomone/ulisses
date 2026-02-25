@@ -18,9 +18,10 @@ interface VerticalHeroProps {
     sideContent?: React.ReactNode;
     className?: string;
     centered?: boolean;
+    brandClassName?: string;
 }
 
-export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent, className, centered }: VerticalHeroProps) {
+export function VerticalHero({ title, subtitle, titleToken, description, image, children, footer, sideContent, className, centered, brandClassName }: VerticalHeroProps) {
     return (
         <SectionWrapper className={cn("min-h-[90vh] pt-32 pb-16 md:pt-48 md:pb-32 border-b overflow-hidden bg-muted/20", className)}>
             <div className="container relative z-10">
@@ -39,11 +40,11 @@ export function VerticalHero({ title, subtitle, titleToken, description, image, 
                                     part.toLowerCase() === titleToken.toLowerCase() ? (
                                         <span key={i} className="text-primary">{part}</span>
                                     ) : (
-                                        <BrandText key={i} text={part} />
+                                        <BrandText key={i} text={part} brandClassName={brandClassName} />
                                     )
                                 )
                             ) : (
-                                <BrandText text={title} />
+                                <BrandText text={title} brandClassName={brandClassName} />
                             )}
                         </h1>
                         <p className={cn(

@@ -51,6 +51,7 @@ export default async function LogisticaPage() {
                 subtitle={t('hero.sub')}
                 titleToken={t('hero.h1Highlight')}
                 image="/assets/stock-iso.png"
+                brandClassName="text-white"
             >
                 <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full">
                     <Link href="/contatti">{t('hero.cta')}</Link>
