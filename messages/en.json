@@ -77,6 +77,8 @@
         "dashboardFerroviario": "Railway Dashboard",
         "smartParkingVisualization": "Smart Parking Visualization",
         "smartBuildingVisualization": "Smart Building Visualization",
+        "commercialPortsVisualization": "Commercial Ports Visualization",
+        "marinasVisualization": "Marinas Visualization",
         "smartParkingNetwork": "Smart Parking Network Visualization",
         "firstImage": "First image",
         "secondImage": "Second image",
@@ -1681,8 +1683,8 @@
     },
     "smartPort": {
         "hero": {
-            "title": "Smart Port",
-            "subtitle": "Reliable data to govern what moves between docks and yards. Containers, vehicles, vessels, assets, and people generate continuous flows. Without operational visibility, the port reacts to events instead of governing operations.",
+            "title": "Smart Port: reliable data to govern what moves between docks and yards",
+            "subtitle": "Containers, vehicles, vessels, assets, and people generate continuous flows. Without operational visibility, the port reacts to events instead of governing operations.",
             "titleToken": "Smart Port"
         },
         "cards": {

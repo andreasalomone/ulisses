@@ -62,7 +62,7 @@ export function SmartParkingUseCases() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-[280px] md:auto-rows-[300px]">
+                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-auto grid-flow-row">
                     {useCases.map((useCase, i) => {
                         const Icon = icons[i] || Activity;
 
@@ -77,23 +77,23 @@ export function SmartParkingUseCases() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: i * 0.1 }}
                                 className={cn(
-                                    "group relative p-8 md:p-10 rounded-[3rem] border border-border/50 bg-muted/20 overflow-hidden hover:bg-muted/30 hover:border-primary/20 transition-all duration-500",
+                                    "group relative p-8 md:p-10 rounded-[3rem] border border-border/50 bg-muted/20 overflow-hidden hover:bg-muted/30 hover:border-primary/20 transition-all duration-500 flex flex-col min-h-[280px] md:min-h-[300px]",
                                     colSpan
                                 )}
                             >
-                                <div className="relative z-10 h-full flex flex-col">
+                                <div className="relative z-10 h-full flex flex-col flex-1">
                                     <div className="flex items-center justify-between mb-8">
-                                        <div className="h-10 w-10 rounded-xl bg-background border border-border flex items-center justify-center text-primary group-hover:scale-110 group-hover:shadow-lg transition-all duration-500">
+                                        <div className="h-10 w-10 rounded-xl bg-background border border-border flex items-center justify-center text-primary group-hover:scale-110 group-hover:shadow-lg transition-all duration-500 shrink-0">
                                             <Icon className="h-5 w-5" />
                                         </div>
-                                        <div className="h-1.5 w-1.5 rounded-full bg-primary/20 group-hover:bg-primary group-hover:scale-150 transition-all duration-500" />
+                                        <div className="h-1.5 w-1.5 rounded-full bg-primary/20 group-hover:bg-primary group-hover:scale-150 transition-all duration-500 shrink-0" />
                                     </div>
 
                                     <div className="mt-auto space-y-3">
-                                        <h5 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                                        <h5 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors text-balance">
                                             <BrandText text={useCase.title} />
                                         </h5>
-                                        <p className="text-md text-muted-foreground leading-relaxed max-w-[85%]">
+                                        <p className="text-md text-muted-foreground leading-relaxed max-w-[85%] text-pretty">
                                             <BrandText text={useCase.text} />
                                         </p>
                                     </div>

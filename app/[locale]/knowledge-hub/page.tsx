@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { FileText, Download, ArrowRight } from "lucide-react";
 import { OnePagerDialog } from "@/components/shared/one-pager-dialog";
+import { HorizontalScrollArea } from "@/components/ui/horizontal-scroller";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from 'next';
 import { getLocalizedAlternates } from '@/lib/i18n-metadata';
@@ -72,70 +73,71 @@ export default async function KnowledgeHubPage() {
                                 <span className="bg-primary/10 text-primary px-4 py-2 rounded-xl text-lg uppercase tracking-widest">{section.vertical}</span>
                             </h3>
 
-                            {/* Grid wrapper for the "Book Covers" */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 justify-center">
+                            {/* Horizontal Scroll wrapper for the "Book Covers" */}
+                            <HorizontalScrollArea>
                                 {section.items.map((item, j) => {
                                     // Deterministic gradient selection based on section name (supports both EN and IT)
                                     const gradientClass = GRADIENTS[section.vertical] || GRADIENTS.default;
 
                                     return (
-                                        <Link
-                                            key={j}
-                                            href={item.link as "/knowledge-hub"}
-                                            className="group relative block aspect-[3/4.5] w-full max-w-[320px] mx-auto perspective-[1000px]"
-                                        >
-                                            <div
-                                                className={`
-                                                    relative h-full w-full rounded-tr-2xl rounded-bl-2xl rounded-tl-sm rounded-br-2xl
-                                                    p-8 flex flex-col justify-between
-                                                    transition-all duration-500 ease-out
-                                                    shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20
-                                                    group-hover:transform-[rotateY(-4deg)_translateY(-10px)]
-                                                    overflow-hidden text-white
-                                                    backdrop-blur-sm
-                                                    ${gradientClass}
-                                                `}
+                                        <div key={j} className="w-[85vw] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] shrink-0 snap-center md:snap-start">
+                                            <Link
+                                                href={item.link as "/knowledge-hub"}
+                                                className="group relative block aspect-[3/4.5] w-full max-w-[320px] mx-auto perspective-[1000px]"
                                             >
-                                                {/* Noise Texture Overlay */}
-                                                <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"
-                                                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
-                                                />
-                                                {/* "Spine" effect overlay */}
-                                                <div className="absolute left-0 top-0 bottom-0 w-4 bg-linear-to-r from-black/40 to-transparent z-10" />
+                                                <div
+                                                    className={`
+                                                        relative h-full w-full rounded-tr-2xl rounded-bl-2xl rounded-tl-sm rounded-br-2xl
+                                                        p-8 flex flex-col justify-between
+                                                        transition-all duration-500 ease-out
+                                                        shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20
+                                                        group-hover:transform-[rotateY(-4deg)_translateY(-10px)]
+                                                        overflow-hidden text-white
+                                                        backdrop-blur-sm
+                                                        ${gradientClass}
+                                                    `}
+                                                >
+                                                    {/* Noise Texture Overlay */}
+                                                    <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"
+                                                        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+                                                    />
+                                                    {/* "Spine" effect overlay */}
+                                                    <div className="absolute left-0 top-0 bottom-0 w-4 bg-linear-to-r from-black/40 to-transparent z-10" />
 
-                                                {/* Top Content: Title & Vertical Label */}
-                                                <div className="relative z-20 space-y-4 ml-2">
-                                                    {/* Decorative line */}
-                                                    <div className="w-12 h-1 bg-white/30 rounded-full" />
+                                                    {/* Top Content: Title & Vertical Label */}
+                                                    <div className="relative z-20 space-y-4 ml-2">
+                                                        {/* Decorative line */}
+                                                        <div className="w-12 h-1 bg-white/30 rounded-full" />
 
-                                                    <h3 className="text-2xl font-bold leading-tight tracking-tight drop-shadow-md">
-                                                        <BrandText text={item.title} brandClassName="text-white" />
-                                                    </h3>
+                                                        <h3 className="text-2xl font-bold leading-tight tracking-tight drop-shadow-md">
+                                                            <BrandText text={item.title} brandClassName="text-white" />
+                                                        </h3>
 
-                                                    <p className="text-sm font-medium text-white/80 line-clamp-3 leading-relaxed">
-                                                        <BrandText text={item.text} brandClassName="text-white" />
-                                                    </p>
-                                                </div>
+                                                        <p className="text-sm font-medium text-white/80 line-clamp-3 leading-relaxed">
+                                                            <BrandText text={item.text} brandClassName="text-white" />
+                                                        </p>
+                                                    </div>
 
-                                                {/* Bottom Content: CTA */}
-                                                <div className="relative z-20 pt-6 border-t border-white/20 mt-auto ml-2">
-                                                    <div className="flex items-center justify-between group/btn">
-                                                        <span className="font-semibold text-white tracking-wide uppercase text-sm">
-                                                            Scopri
-                                                        </span>
-                                                        <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm group-hover/btn:bg-white group-hover/btn:text-black transition-colors">
-                                                            <ArrowRight className="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" />
+                                                    {/* Bottom Content: CTA */}
+                                                    <div className="relative z-20 pt-6 border-t border-white/20 mt-auto ml-2">
+                                                        <div className="flex items-center justify-between group/btn">
+                                                            <span className="font-semibold text-white tracking-wide uppercase text-sm">
+                                                                Scopri
+                                                            </span>
+                                                            <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm group-hover/btn:bg-white group-hover/btn:text-black transition-colors">
+                                                                <ArrowRight className="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            {/* Shadow element for depth */}
-                                            <div className="absolute inset-x-8 bottom-0 h-8 bg-black/40 blur-xl rounded-[100%]translate-y-4 opacity-0 group-hover:opacity-60 transition-all duration-500 z-[-1]" />
-                                        </Link>
+                                                {/* Shadow element for depth */}
+                                                <div className="absolute inset-x-8 bottom-0 h-8 bg-black/40 blur-xl rounded-[100%]translate-y-4 opacity-0 group-hover:opacity-60 transition-all duration-500 z-[-1]" />
+                                            </Link>
+                                        </div>
                                     );
                                 })}
-                            </div>
+                            </HorizontalScrollArea>
                         </div>
                     ))}
                 </div>

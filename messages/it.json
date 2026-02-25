@@ -77,6 +77,8 @@
         "dashboardFerroviario": "Dashboard Ferroviario",
         "smartParkingVisualization": "Visualizzazione Smart Parking",
         "smartBuildingVisualization": "Visualizzazione Smart Building",
+        "commercialPortsVisualization": "Visualizzazione Porti Commerciali",
+        "marinasVisualization": "Visualizzazione Porti Turistici",
         "smartParkingNetwork": "Visualizzazione Rete Smart Parking",
         "firstImage": "Prima immagine",
         "secondImage": "Seconda immagine",
@@ -607,7 +609,7 @@
                 "solution": "Dashboard con KPI certi e reportistica automatizzata."
             }
         ],
-        "useCasesHeader": "Cosa puoi fare con Ulisses",
+        "useCasesHeader": "Cosa ti aiutiamo a fare",
         "useCases": [
             {
                 "title": "Ricerca asset in tempo reale",
@@ -1683,8 +1685,8 @@
     },
     "smartPort": {
         "hero": {
-            "title": "Smart Port",
-            "subtitle": "Dati affidabili per governare ciò che si muove tra banchine e piazzali. Container, mezzi, imbarcazioni, asset e persone generano flussi continui. Senza visibilità operativa, il porto reagisce agli eventi invece di governare le operazioni.",
+            "title": "Smart Port: dati affidabili per governare ciò che si muove tra banchine e piazzali",
+            "subtitle": "Container, mezzi, imbarcazioni, asset e persone generano flussi continui. Senza visibilità operativa, il porto reagisce agli eventi invece di governare le operazioni.",
             "titleToken": "Smart Port"
         },
         "cards": {
@@ -1715,7 +1717,7 @@
         "intro": {
             "text": "Nei terminal, migliaia di asset si muovono ogni giorno tra nave, banchina, piazzale e rete ferroviaria. Senza una visione integrata, la localizzazione è frammentata, i tempi di ricerca aumentano e l’efficienza operativa si riduce."
         },
-        "useCasesHeader": "Cosa puoi fare con Ulisses",
+        "useCasesHeader": "Cosa ti aiutiamo a fare",
         "useCases": [
             {
                 "title": "Tracciamento container e asset in tempo reale",

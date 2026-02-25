@@ -5,74 +5,54 @@ import Image from "next/image";
 import { Marquee } from "@/components/ui/marquee";
 import { useTranslations } from "next-intl";
 
+const PARTNERS = [
+    {
+        id: "cdp",
+        name: "CDP",
+        src: "/partners/logo-cdp.png",
+        width: 130,
+        height: 65,
+        href: "https://www.cdpventurecapital.it/",
+    },
+    {
+        id: "trenord",
+        name: "Trenord",
+        src: "/partners/Trenord_Logo.png",
+        width: 180,
+        height: 52,
+        href: "https://www.trenord.it/",
+    },
+    {
+        id: "ministero-turismo",
+        name: "Ministero del Turismo",
+        src: "/partners/logo_Ministero del Turismo.png",
+        width: 230,
+        height: 78,
+        href: "https://www.ministeroturismo.gov.it/",
+    },
+    {
+        id: "zest",
+        name: "Zest",
+        src: "/partners/zest.png",
+        width: 155,
+        height: 52,
+        href: "https://zestgroup.vc/it",
+    },
+    {
+        id: "confindustria-varese",
+        name: "Confindustria Varese",
+        src: "/partners/confindustria-varese.png",
+        width: 180,
+        height: 60,
+        href: "https://www.confindustriavarese.it/",
+    },
+];
+
+// Duplicate cleanly for Marquee effect without polluting the core data structure
+const MARQUEE_ITEMS = [...PARTNERS, ...PARTNERS.map(p => ({ ...p, id: `${p.id}-dup` }))];
+
 export function Partners() {
     const t = useTranslations('home.partners');
-
-    const partners = [
-        {
-            name: "CDP",
-            src: "/partners/logo-cdp.png",
-            width: 130,
-            height: 65,
-            href: "https://www.cdpventurecapital.it/",
-        },
-        {
-            name: "Trenord",
-            src: "/partners/Trenord_Logo.png",
-            width: 180,
-            height: 52,
-            href: "https://www.trenord.it/",
-        },
-        {
-            name: "Ministero del Turismo",
-            src: "/partners/logo_Ministero del Turismo.png",
-            width: 230,
-            height: 78,
-            href: "https://www.ministeroturismo.gov.it/",
-        },
-        {
-            name: "Zest",
-            src: "/partners/zest.png",
-            width: 155,
-            height: 52,
-            href: "https://zestgroup.vc/it",
-        },
-        {
-            name: "CDP2",
-            src: "/partners/logo-cdp.png",
-            width: 130,
-            height: 65,
-            href: "https://www.cdpventurecapital.it/",
-        },
-        {
-            name: "Trenord2",
-            src: "/partners/Trenord_Logo.png",
-            width: 180,
-            height: 52,
-            href: "https://www.trenord.it/",
-        },
-        {
-            name: "Ministero del Turismo2",
-            src: "/partners/logo_Ministero del Turismo.png",
-            width: 230,
-            height: 78,
-            href: "https://www.ministeroturismo.gov.it/",
-        },
-        {
-            name: "Zest2",
-            src: "/partners/zest.png",
-            width: 155,
-            height: 52,
-            href: "https://zestgroup.vc/it",
-        },
-        {
-            name: "Confindustria Varese",
-            src: "/partners/confindustria-varese.png",
-            width: 180,
-            height: 60,
-            href: "https://www.confindustriavarese.it/",
-        },
-    ];
 
     return (
         <section className="w-full bg-background py-12 md:py-16 overflow-hidden">
@@ -83,9 +63,9 @@ export function Partners() {
             </div>
             <Marquee>
                 <div className="flex items-center gap-20 md:gap-32 pe-20 md:pe-32">
-                    {partners.map((partner) => (
+                    {MARQUEE_ITEMS.map((partner) => (
                         <a
-                            key={partner.name}
+                            key={partner.id}
                             href={partner.href}
                             target="_blank"
                             rel="noopener noreferrer"

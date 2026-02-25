@@ -71,13 +71,16 @@ export function CommercialiUseCases() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
+                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 auto-rows-auto grid-flow-row">
                     {useCases.map((uc, i) => {
                         const content = cases[i];
                         const Icon = uc.icon;
 
                         // Bento Grid logic: 3:3, 2:4 pattern
-                        const colSpan = i < 2 ? "lg:col-span-3" : i === 2 ? "lg:col-span-2" : "lg:col-span-4";
+                        const isNarrow = i === 2;
+                        const colSpan = i < 2 ? "lg:col-span-3" : isNarrow ? "lg:col-span-2" : "lg:col-span-4";
+                        const innerGrid = isNarrow ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2";
+                        const visualAlign = isNarrow ? "justify-center mt-4" : "justify-center md:justify-end";
 
                         return (
                             <motion.div
@@ -87,7 +90,7 @@ export function CommercialiUseCases() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: i * 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
                                 className={cn(
-                                    "group relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:bg-white/10",
+                                    "group relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:bg-white/10 flex flex-col min-h-[300px] md:min-h-[350px]",
                                     colSpan
                                 )}
                             >
@@ -96,25 +99,25 @@ export function CommercialiUseCases() {
                                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.05)_0%,transparent_70%)]" />
                                 </div>
 
-                                <div className="h-full flex flex-col p-8 md:p-10">
+                                <div className="h-full flex flex-col p-8 md:p-10 flex-1">
                                     <div className="flex items-start justify-between mb-8">
-                                        <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500 shadow-xl">
+                                        <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500 shadow-xl shrink-0">
                                             <Icon className="h-6 w-6" />
                                         </div>
-                                        <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-white/40">S_0{i + 1}</span>
+                                        <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-white/40 shrink-0">S_0{i + 1}</span>
                                     </div>
 
-                                    <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+                                    <div className={cn("mt-auto grid gap-8 items-end", innerGrid)}>
                                         <div className="space-y-4">
-                                            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                                            <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-balance">
                                                 <BrandText text={content.title} />
                                             </h3>
-                                            <p className="text-zinc-400 leading-relaxed text-sm md:text-base max-w-sm">
+                                            <p className="text-zinc-400 leading-relaxed text-sm md:text-base max-w-sm text-pretty">
                                                 <BrandText text={content.text} />
                                             </p>
                                         </div>
 
-                                        <div className="flex justify-end items-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                                        <div className={cn("flex items-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700", visualAlign)}>
                                             <div className="w-full max-w-[160px] aspect-square flex items-center justify-center">
                                                 {uc.visual}
                                             </div>

@@ -1,86 +1,97 @@
-import { setRequestLocale } from "next-intl/server";
-import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import React from "react";
+import { Metadata } from 'next';
+import { getTranslations } from "next-intl/server";
+import { getLocalizedAlternates } from '@/lib/i18n-metadata';
+import { SITE_CONFIG } from '@/lib/constants';
 import { VerticalHero } from "@/components/shared/vertical-hero";
-import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-export default function SmartPortPage({
-    params: { locale }
-}: {
-    params: { locale: string }
-}) {
-    setRequestLocale(locale);
-    const t = useTranslations("smartPort");
-    const commonT = useTranslations("common");
+type Props = {
+    params: Promise<{ locale: string }>;
+};
 
-    const subPages = [
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
+
+    return {
+        title: t('smartPort.title'),
+        alternates: {
+            canonical: `${SITE_CONFIG.url}/${locale}/smart-port`,
+            languages: getLocalizedAlternates('/smart-port', SITE_CONFIG.url)
+        }
+    };
+}
+
+export default async function SmartPortPage() {
+    const t = await getTranslations("smartPort");
+    const tA11y = await getTranslations("accessibility");
+
+    const SUB_PAGES = [
         {
-            id: "porti-commerciali",
-            href: "/porti-commerciali",
-            title: t("cards.commerciali.title"),
-            description: t("cards.commerciali.subtitle"),
-            image: "/assets/porto-commerciale.png",
-            cta: t("cards.commerciali.cta") || commonT("actions.discoverMore"),
+            href: "/porti-commerciali" as const,
+            imageSrc: "/assets/porto-commerciale.png",
+            a11yKey: "commercialPortsVisualization" as const,
+            titleKey: "cards.commerciali.title" as const,
+            subtitleKey: "cards.commerciali.subtitle" as const,
+            ctaKey: "cards.commerciali.cta" as const,
         },
         {
-            id: "porti-turistici",
-            href: "/porti-turistici",
-            title: t("cards.turistici.title"),
-            description: t("cards.turistici.subtitle"),
-            image: "/assets/nautica.png",
-            cta: t("cards.turistici.cta") || commonT("actions.discoverMore"),
+            href: "/porti-turistici" as const,
+            imageSrc: "/assets/nautica.png",
+            a11yKey: "marinasVisualization" as const,
+            titleKey: "cards.turistici.title" as const,
+            subtitleKey: "cards.turistici.subtitle" as const,
+            ctaKey: "cards.turistici.cta" as const,
         }
     ];
 
     return (
-        <>
+        <div className="flex flex-col">
             <VerticalHero
                 title={t("hero.title")}
                 subtitle={t("hero.subtitle")}
                 titleToken={t("hero.titleToken")}
-                image="/assets/smart-port.jpg"
-            />
+            >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mt-12">
+                    {SUB_PAGES.map((page) => (
+                        <Link
+                            key={page.href}
+                            href={page.href}
+                            className="group relative overflow-hidden rounded-[2.5rem] bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 block h-[400px]"
+                        >
+                            <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <SectionWrapper id="sub-pages" variant="default" className="pt-8 pb-24 md:pt-12 md:pb-32">
-                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    {subPages.map((page) => (
-                        <Link key={page.id} href={page.href as React.ComponentProps<typeof Link>["href"]} className="group h-full flex flex-col">
-                            <Card className="h-full overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 bg-background/50 backdrop-blur-sm relative">
-                                <div className="h-64 sm:h-72 w-full overflow-hidden relative">
-                                    <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent z-10" />
+                            <div className="h-full flex flex-col items-center justify-center p-8 text-center relative z-10">
+                                <div className="relative w-48 h-48 mb-6 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                                    <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
                                     <Image
-                                        src={page.image}
-                                        alt={page.title}
+                                        src={page.imageSrc}
+                                        alt={tA11y(page.a11yKey)}
                                         fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        className="object-contain drop-shadow-lg"
                                     />
-                                    <div className="absolute bottom-6 left-6 right-6 z-20">
-                                        <CardTitle className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                            {page.title}
-                                        </CardTitle>
-                                    </div>
                                 </div>
 
-                                <CardContent className="pt-6 pb-2 text-muted-foreground grow">
-                                    <CardDescription className="text-base text-foreground/70">
-                                        {page.description}
-                                    </CardDescription>
-                                </CardContent>
+                                <h3 className="text-2xl font-extrabold mb-3 group-hover:text-primary transition-colors duration-300">
+                                    {t(page.titleKey)}
+                                </h3>
 
-                                <CardHeader className="pt-0 pb-6 mt-auto">
-                                    <div className="flex items-center text-primary font-medium group-hover:underline underline-offset-4">
-                                        {page.cta}
-                                        <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                                    </div>
-                                </CardHeader>
-                            </Card>
+                                <p className="text-muted-foreground text-sm max-w-[80%] mb-4 line-clamp-2">
+                                    {t(page.subtitleKey)}
+                                </p>
+
+                                <div className="flex items-center gap-2 text-primary font-semibold transition-all duration-300">
+                                    <span>{t(page.ctaKey)}</span>
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
                         </Link>
                     ))}
                 </div>
-            </SectionWrapper>
-        </>
+            </VerticalHero>
+        </div>
     );
 }
