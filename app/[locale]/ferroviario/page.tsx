@@ -1,10 +1,7 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
-import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
-import Image from "next/image";
-import { BrandText } from "@/components/ui/brand";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 import { ProcessUnlock } from "@/components/sections/ferroviario/process-unlock";
 import { FerroviarioUseCases } from "@/components/sections/ferroviario/ferroviario-use-cases";
@@ -33,8 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function FerroviarioPage() {
     const t = await getTranslations('ferroviario');
-    const tA11y = await getTranslations('accessibility');
-    const dashboardBullets = t.raw('dashboard.bullets') as string[];
 
     return (
         <div className="flex flex-col">

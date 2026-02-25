@@ -35,7 +35,6 @@ export default async function SmartParkingPage() {
     const tA11y = await getTranslations('accessibility');
 
     const privateNetworkBullets = t.raw('privateNetwork.bullets') as string[];
-    const dashboardBullets = t.raw('dashboard.bullets') as string[];
     const benchmarkItems = t.raw('benchmarks.items') as { title: string; context: string; challenge: string; solution: string; impact: string; link?: string }[];
     const benchmarkExtra = t.raw('benchmarks.extra') as { title: string; text: string };
 

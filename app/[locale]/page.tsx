@@ -6,7 +6,6 @@ import { VerticalSelector } from "@/components/sections/home/vertical-selector";
 import { SelectorCta } from "@/components/sections/home/selector-cta";
 import { WhyUlisses } from "@/components/sections/home/why-ulisses";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
-import { DashboardPreview } from "@/components/sections/home/dashboard-preview";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 
 /**

@@ -1,7 +1,5 @@
 import React from "react";
-import { Check } from "lucide-react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
-import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
@@ -34,7 +32,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LogisticaPage() {
     const t = await getTranslations('logistica');
 
-    const dashboardBullets = t.raw('dashboard.bullets') as string[];
     const benchmarkItems = t.raw('benchmarks.items') as {
         title: string;
         context: string;
