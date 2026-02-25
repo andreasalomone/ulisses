@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/home/hero";
 import { Partners } from "@/components/sections/home/partners";
 import { TechnologyPillars } from "@/components/sections/home/technology-pillars";
 import { VerticalSelector } from "@/components/sections/home/vertical-selector";
-import { SelectorCta } from "@/components/sections/home/selector-cta";
 import { WhyUlisses } from "@/components/sections/home/why-ulisses";
 import { HowItWorks } from "@/components/sections/home/how-it-works";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
@@ -28,7 +27,6 @@ export default async function Page({
             <Hero />
             <TechnologyPillars />
             <VerticalSelector />
-            <SelectorCta />
             <WhyUlisses />
             <HowItWorks />
             {/* <DashboardPreview /> */}
