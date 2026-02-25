@@ -1432,9 +1432,8 @@
         "documents": {
             "title": "Technical Documentation",
             "items": [
-                "System Architecture",
                 "API Reference",
-                "Hardware Specifications",
+                "Smart Port One-pager",
                 "Security Whitepaper"
             ]
         },
