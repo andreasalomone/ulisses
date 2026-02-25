@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
 export function FeaturedStory() {
-    const t = useTranslations('nautica.featuredStory');
+    const t = useTranslations('portiTuristici.featuredStory');
     const tA11y = useTranslations('accessibility');
 
     return (

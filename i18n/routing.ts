@@ -28,9 +28,17 @@ export const routing = defineRouting({
             it: '/smart-building',
             en: '/smart-building'
         },
-        '/nautica': {
-            it: '/nautica',
-            en: '/nautical'
+        '/smart-port': {
+            it: '/smart-port',
+            en: '/smart-port'
+        },
+        '/porti-commerciali': {
+            it: '/porti-commerciali',
+            en: '/commercial-ports'
+        },
+        '/porti-turistici': {
+            it: '/porti-turistici',
+            en: '/tourist-ports'
         },
         '/tecnologia': {
             it: '/tecnologia',
@@ -64,9 +72,9 @@ export const routing = defineRouting({
             it: '/knowledge-hub/ferroviario/trenord',
             en: '/knowledge-hub/railway/trenord'
         },
-        '/knowledge-hub/nautica/ministero-turismo': {
-            it: '/knowledge-hub/nautica/ministero-turismo',
-            en: '/knowledge-hub/nautical/ministry-tourism'
+        '/knowledge-hub/porti-turistici/ministero-turismo': {
+            it: '/knowledge-hub/porti-turistici/ministero-turismo',
+            en: '/knowledge-hub/tourist-ports/ministry-tourism'
         },
         '/knowledge-hub/[vertical]/[slug]': {
             it: '/knowledge-hub/[vertical]/[slug]',

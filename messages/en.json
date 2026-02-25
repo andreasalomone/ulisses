@@ -44,9 +44,6 @@
         "ferroviario": {
             "title": "Railway Solutions"
         },
-        "nautica": {
-            "title": "Nautical Solutions"
-        },
         "smartCity": {
             "title": "Smart City"
         },
@@ -58,6 +55,15 @@
         },
         "termsConditions": {
             "title": "Terms & Conditions"
+        },
+        "smartPort": {
+            "title": "Smart Port"
+        },
+        "portiCommerciali": {
+            "title": "Commercial Ports"
+        },
+        "portiTuristici": {
+            "title": "Tourist Ports"
         }
     },
     "accessibility": {
@@ -177,7 +183,6 @@
     },
     "navigation": {
         "soluzioni": "Solutions",
-        "nautica": "Smart Port",
         "logistica": "Logistics",
         "ferroviario": "Railway",
         "smartParking": "Smart City",
@@ -188,7 +193,8 @@
         "faq": "FAQ",
         "viewAll": "All",
         "italian": "Italian",
-        "english": "English"
+        "english": "English",
+        "smartPort": "Smart Port"
     },
     "legal": {
         "privacy": "Privacy Policy",
@@ -389,7 +395,7 @@
                         "Data quality"
                     ]
                 },
-                "nautica": {
+                "smartPort": {
                     "title": "Smart Port",
                     "description": "Real-time localization and occupancy analysis for the intelligent management of your marina.",
                     "cta": "Discover Smart Port",
@@ -958,49 +964,6 @@
             "text": "Selection of awards, articles, and public contributions that reinforce credibility and solidity."
         }
     },
-    "nautica": {
-        "hero": {
-            "h1": "Boating: localization, occupancy and operational data to manage your marina in real time",
-            "h1Highlight": "Boating",
-            "sub": "In marinas, Ulisses makes visible what is fragmented today: boats, service vehicles, access, berth occupancy and attendance.",
-            "cta": "Request Boating demo",
-            "unlockTitle": "What we unlock in the process",
-            "unlockSubtitle": "We transform marina management by bringing real-time visibility on occupancy, access and resource usage."
-        },
-        "process": [
-            {
-                "problem": "Difficulty in knowing occupied and available berths in real time",
-                "solution": "Real-time occupancy monitoring for every single berth."
-            },
-            {
-                "problem": "Manual or partial tracking of boats and service vehicles",
-                "solution": "Automatic localization of vessels and service assets."
-            },
-            {
-                "problem": "Non-automated access and attendance, impacting security and control",
-                "solution": "Digitized access control and attendance history."
-            },
-            {
-                "problem": "Inefficient use of port resources (quays, spaces, staff)",
-                "solution": "Space and resource optimization based on real data."
-            },
-            {
-                "problem": "Dispersed data that supports neither operational decisions nor planning",
-                "solution": "Unified dashboard for data-driven decisions."
-            }
-        ],
-        "featuredStory": {
-            "title": "With the Ministry of Tourism, digitizing marina management",
-            "text": "In collaboration with the Ministry of Tourism, Ulisses is contributing to the digitization of Italian marinas, enabling the collection and analysis of operational data on berth occupancy, access and attendance, to support more efficient, secure and data-driven marina management.",
-            "cta": "Find out more",
-            "link": "/knowledge-hub/nautica/ministero-turismo"
-        },
-        "diportistaCta": {
-            "title": "Are you a boater?",
-            "subtitle": "Discover how Ulisses can improve your experience in the port.",
-            "cta": "Discover our web app"
-        }
-    },
     "azienda": {
         "hero": {
             "label": "About Us",
@@ -1435,7 +1398,7 @@
                         {
                             "title": "With Ministry of Tourism, we resolve marina management",
                             "text": "Collaborating with the Ministry of Tourism to digitize Italian marinas.",
-                            "link": "/knowledge-hub/nautica/ministero-turismo",
+                            "link": "/knowledge-hub/porti-turistici/ministero-turismo",
                             "fullContent": {
                                 "scenario": "In a marina, daily management involves arrivals, departures, occupancy, and access. Reliable vision is a prerequisite for efficiency.",
                                 "challenge": "In complex contexts like Italian ports, inefficiencies translate to lost time and poor resource use.",
@@ -1715,5 +1678,102 @@
         "challenge": "Challenge",
         "solution": "Solution",
         "impact": "Impact"
+    },
+    "smartPort": {
+        "hero": {
+            "title": "Smart Port",
+            "subtitle": "Reliable data to govern what moves between docks and yards. Containers, vehicles, vessels, assets, and people generate continuous flows. Without operational visibility, the port reacts to events instead of governing operations.",
+            "titleToken": "Smart Port"
+        },
+        "cards": {
+            "commerciali": {
+                "subtitle": "Container traceability, yard management and logistics Digital Twin",
+                "title": "Commercial ports and freight villages",
+                "cta": "Discover more"
+            },
+            "turistici": {
+                "subtitle": "Berth management, access and marina services",
+                "title": "Tourist ports",
+                "cta": "Discover more"
+            }
+        },
+        "ui": {
+            "discoverMore": "Discover more"
+        }
+    },
+    "portiCommerciali": {
+        "hero": {
+            "h1": "Commercial ports: container tracking, yard management and logistics Digital Twin",
+            "h1Highlight": "Commercial ports",
+            "sub": "Containers, operational vehicles, assets and people generate continuous flows. Without operational visibility, the terminal reacts to events instead of governing operations.",
+            "cta": "Request demo",
+            "unlockTitle": "What we unlock in the process",
+            "unlockSubtitle": "We transform chaos into reliable data for timely decisions."
+        },
+        "intro": {
+            "text": "In terminals, thousands of assets move every day between ship, dock, yard and railway network. Without an integrated vision, localization is fragmented, search times increase and operational efficiency is reduced."
+        },
+        "useCasesHeader": "What you can do with Ulisses",
+        "useCases": [
+            {
+                "title": "Real-time container and asset tracking",
+                "text": "Locate containers, semi-trailers and operational vehicles in yards and terminals."
+            },
+            {
+                "title": "Operational geofencing & area control",
+                "text": "Define storage zones, customs areas, logistics corridors and risk areas."
+            },
+            {
+                "title": "Vehicle flow visibility and yard management",
+                "text": "Monitor movements between docks, yards and gates."
+            },
+            {
+                "title": "Terminal Digital Twin & operational KPIs",
+                "text": "Analyze average dwell times, area saturation, asset utilization and operational performance."
+            }
+        ]
+    },
+    "portiTuristici": {
+        "hero": {
+            "h1": "Tourist ports: localization, occupancy and operational data to manage your marina in real time",
+            "h1Highlight": "Tourist ports",
+            "sub": "In marinas, Ulisses makes visible what is fragmented today: boats, service vehicles, access, berth occupancy and attendance.",
+            "cta": "Request Tourist ports demo",
+            "unlockTitle": "What we unlock in the process",
+            "unlockSubtitle": "We transform marina management by bringing real-time visibility on occupancy, access and resource usage."
+        },
+        "process": [
+            {
+                "problem": "Difficulty in knowing occupied and available berths in real time",
+                "solution": "Real-time occupancy monitoring for every single berth."
+            },
+            {
+                "problem": "Manual or partial tracking of boats and service vehicles",
+                "solution": "Automatic localization of vessels and service assets."
+            },
+            {
+                "problem": "Non-automated access and attendance, impacting security and control",
+                "solution": "Digitized access control and attendance history."
+            },
+            {
+                "problem": "Inefficient use of port resources (quays, spaces, staff)",
+                "solution": "Space and resource optimization based on real data."
+            },
+            {
+                "problem": "Dispersed data that supports neither operational decisions nor planning",
+                "solution": "Unified dashboard for data-driven decisions."
+            }
+        ],
+        "featuredStory": {
+            "title": "With the Ministry of Tourism, digitizing marina management",
+            "text": "In collaboration with the Ministry of Tourism, Ulisses is contributing to the digitization of Italian marinas, enabling the collection and analysis of operational data on berth occupancy, access and attendance, to support more efficient, secure and data-driven marina management.",
+            "cta": "Find out more",
+            "link": "/knowledge-hub/porti-turistici/ministero-turismo"
+        },
+        "diportistaCta": {
+            "title": "Are you a boater?",
+            "subtitle": "Discover how Ulisses can improve your experience in the port.",
+            "cta": "Discover our web app"
+        }
     }
 }

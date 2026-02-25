@@ -44,9 +44,6 @@
         "ferroviario": {
             "title": "Soluzioni Ferroviarie"
         },
-        "nautica": {
-            "title": "Soluzioni Nautiche"
-        },
         "smartCity": {
             "title": "Smart City"
         },
@@ -58,6 +55,15 @@
         },
         "termsConditions": {
             "title": "Termini e Condizioni"
+        },
+        "smartPort": {
+            "title": "Smart Port"
+        },
+        "portiCommerciali": {
+            "title": "Porti Commerciali"
+        },
+        "portiTuristici": {
+            "title": "Porti Turistici"
         }
     },
     "accessibility": {
@@ -177,7 +183,6 @@
     },
     "navigation": {
         "soluzioni": "Soluzioni",
-        "nautica": "Smart Port",
         "logistica": "Logistica",
         "ferroviario": "Ferroviario",
         "smartParking": "Smart City",
@@ -188,7 +193,8 @@
         "faq": "FAQ",
         "viewAll": "Tutte le",
         "italian": "Italiano",
-        "english": "English"
+        "english": "English",
+        "smartPort": "Smart Port"
     },
     "legal": {
         "privacy": "Privacy Policy",
@@ -389,7 +395,7 @@
                         "Qualità dato"
                     ]
                 },
-                "nautica": {
+                "smartPort": {
                     "title": "Smart Port",
                     "description": "Localizzazione in tempo reale e analisi occupazione per la gestione intelligente della tua marina.",
                     "cta": "Scopri Smart Port",
@@ -958,49 +964,6 @@
             "text": "Selezione di premi, articoli e contributi pubblici che rafforzano credibilità e solidità."
         }
     },
-    "nautica": {
-        "hero": {
-            "h1": "Nautica: localizzazione, occupazione e dati operativi per gestire il tuo marina in tempo reale",
-            "h1Highlight": "Nautica",
-            "sub": "Nei porti turistici, Ulisses rende visibile ciò che oggi è frammentato: imbarcazioni, mezzi di servizio, accessi, occupazione dei posti barca e presenze.",
-            "cta": "Richiedi demo Nautica",
-            "unlockTitle": "Cosa sblocchiamo nel processo",
-            "unlockSubtitle": "Trasformiamo la gestione del marina portando visibilità in tempo reale su occupazione, accessi e utilizzo delle risorse."
-        },
-        "process": [
-            {
-                "problem": "Difficoltà nel conoscere in tempo reale posti barca occupati e disponibili",
-                "solution": "Occupancy monitoring in tempo reale per ogni singolo posto barca."
-            },
-            {
-                "problem": "Tracciamento manuale o parziale di imbarcazioni e mezzi di servizio",
-                "solution": "Localizzazione automatica di natanti e asset di servizio."
-            },
-            {
-                "problem": "Accessi e presenze non automatizzati, con impatti su sicurezza e controllo",
-                "solution": "Controllo accessi digitalizzato e storico presenze."
-            },
-            {
-                "problem": "Utilizzo inefficiente delle risorse portuali (banchine, spazi, personale)",
-                "solution": "Ottimizzazione spazi e risorse basata su dati reali."
-            },
-            {
-                "problem": "Dati dispersi che non supportano decisioni operative né pianificazione",
-                "solution": "Dashboard unificata per decisioni data-driven."
-            }
-        ],
-        "featuredStory": {
-            "title": "Con il Ministero del Turismo, digitalizzare la gestione dei porti turistici",
-            "text": "In collaborazione con il Ministero del Turismo, Ulisses sta contribuendo alla digitalizzazione dei porti turistici italiani, abilitando la raccolta e l’analisi di dati operativi su occupazione dei posti barca, accessi e presenze, a supporto di una gestione più efficiente, sicura e data-driven dei marina.",
-            "cta": "Scopri di più",
-            "link": "/knowledge-hub/nautica/ministero-turismo"
-        },
-        "diportistaCta": {
-            "title": "Sei un diportista?",
-            "subtitle": "Scopri come Ulisses può migliorare la tua esperienza in porto.",
-            "cta": "Scopri la nostra web app"
-        }
-    },
     "azienda": {
         "hero": {
             "label": "Chi Siamo",
@@ -1432,7 +1395,7 @@
                         {
                             "title": "Con il Ministero del Turismo, risolviamo la gestione dei marina",
                             "text": "In collaborazione con il Ministero del Turismo, Ulisses sta contribuendo alla digitalizzazione dei porti turistici italiani.",
-                            "link": "/knowledge-hub/nautica/ministero-turismo",
+                            "link": "/knowledge-hub/porti-turistici/ministero-turismo",
                             "fullContent": {
                                 "scenario": "In un porto turistico, la gestione quotidiana è fatta di arrivi e partenze, occupazione dei posti barca, accessi, mezzi di servizio e presenze da monitorare in tempo reale. Per i gestori di marina e per il Ministero del Turismo, avere una visione affidabile di ciò che accade in porto è un prerequisito per migliorare efficienza operativa, sicurezza e qualità dell'accoglienza.",
                                 "challenge": "In contesti complessi come i porti turistici italiani, anche piccole inefficienze nella gestione dell'occupazione e delle presenze si traducono in perdite di tempo, utilizzo inefficiente delle risorse e difficoltà nel garantire controllo e tracciabilità.",
@@ -1717,5 +1680,102 @@
         "challenge": "Sfida",
         "solution": "Soluzione",
         "impact": "Impatto"
+    },
+    "smartPort": {
+        "hero": {
+            "title": "Smart Port",
+            "subtitle": "Dati affidabili per governare ciò che si muove tra banchine e piazzali. Container, mezzi, imbarcazioni, asset e persone generano flussi continui. Senza visibilità operativa, il porto reagisce agli eventi invece di governare le operazioni.",
+            "titleToken": "Smart Port"
+        },
+        "cards": {
+            "commerciali": {
+                "subtitle": "Tracciabilità container, gestione piazzale e Digital Twin logistico",
+                "title": "Porti commerciali e interporti",
+                "cta": "Scopri di più"
+            },
+            "turistici": {
+                "subtitle": "Gestione posti barca, accessi e servizi in marina",
+                "title": "Porti turistici",
+                "cta": "Scopri di più"
+            }
+        },
+        "ui": {
+            "discoverMore": "Scopri di più"
+        }
+    },
+    "portiCommerciali": {
+        "hero": {
+            "h1": "Porti commerciali: container tracking, gestione piazzale e Digital Twin logistico",
+            "h1Highlight": "Porti commerciali",
+            "sub": "Container, mezzi operativi, asset e persone generano flussi continui. Senza visibilità operativa, il terminal reagisce agli eventi invece di governare le operazioni.",
+            "cta": "Richiedi demo",
+            "unlockTitle": "Cosa sblocchiamo nel processo",
+            "unlockSubtitle": "Trasformiamo il caos in dati affidabili per decisioni tempestive."
+        },
+        "intro": {
+            "text": "Nei terminal, migliaia di asset si muovono ogni giorno tra nave, banchina, piazzale e rete ferroviaria. Senza una visione integrata, la localizzazione è frammentata, i tempi di ricerca aumentano e l’efficienza operativa si riduce."
+        },
+        "useCasesHeader": "Cosa puoi fare con Ulisses",
+        "useCases": [
+            {
+                "title": "Tracciamento container e asset in tempo reale",
+                "text": "Localizza container, semirimorchi e mezzi operativi su piazzali e terminal."
+            },
+            {
+                "title": "Geofencing operativo & controllo aree",
+                "text": "Definisci zone di stoccaggio, aree doganali, corridoi logistici e aree a rischio."
+            },
+            {
+                "title": "Visibilità flussi mezzi e yard management",
+                "text": "Monitora movimentazioni tra banchine, piazzali e gate."
+            },
+            {
+                "title": "Digital Twin del terminal & KPI operativi",
+                "text": "Analizza tempi medi di permanenza, saturazione aree, utilizzo asset e performance operative."
+            }
+        ]
+    },
+    "portiTuristici": {
+        "hero": {
+            "h1": "Porti turistici: localizzazione, occupazione e dati operativi per gestire il tuo marina in tempo reale",
+            "h1Highlight": "Porti turistici",
+            "sub": "Nei porti turistici, Ulisses rende visibile ciò che oggi è frammentato: imbarcazioni, mezzi di servizio, accessi, occupazione dei posti barca e presenze.",
+            "cta": "Richiedi demo Porti turistici",
+            "unlockTitle": "Cosa sblocchiamo nel processo",
+            "unlockSubtitle": "Trasformiamo la gestione del marina portando visibilità in tempo reale su occupazione, accessi e utilizzo delle risorse."
+        },
+        "process": [
+            {
+                "problem": "Difficoltà nel conoscere in tempo reale posti barca occupati e disponibili",
+                "solution": "Occupancy monitoring in tempo reale per ogni singolo posto barca."
+            },
+            {
+                "problem": "Tracciamento manuale o parziale di imbarcazioni e mezzi di servizio",
+                "solution": "Localizzazione automatica di natanti e asset di servizio."
+            },
+            {
+                "problem": "Accessi e presenze non automatizzati, con impatti su sicurezza e controllo",
+                "solution": "Controllo accessi digitalizzato e storico presenze."
+            },
+            {
+                "problem": "Utilizzo inefficiente delle risorse portuali (banchine, spazi, personale)",
+                "solution": "Ottimizzazione spazi e risorse basata su dati reali."
+            },
+            {
+                "problem": "Dati dispersi che non supportano decisioni operative né pianificazione",
+                "solution": "Dashboard unificata per decisioni data-driven."
+            }
+        ],
+        "featuredStory": {
+            "title": "Con il Ministero del Turismo, digitalizzare la gestione dei porti turistici",
+            "text": "In collaborazione con il Ministero del Turismo, Ulisses sta contribuendo alla digitalizzazione dei porti turistici italiani, abilitando la raccolta e l’analisi di dati operativi su occupazione dei posti barca, accessi e presenze, a supporto di una gestione più efficiente, sicura e data-driven dei marina.",
+            "cta": "Scopri di più",
+            "link": "/knowledge-hub/porti-turistici/ministero-turismo"
+        },
+        "diportistaCta": {
+            "title": "Sei un diportista?",
+            "subtitle": "Scopri come Ulisses può migliorare la tua esperienza in porto.",
+            "cta": "Scopri la nostra web app"
+        }
     }
 }

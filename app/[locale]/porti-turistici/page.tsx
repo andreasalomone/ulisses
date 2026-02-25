@@ -4,8 +4,8 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
-import { ProcessUnlock } from "@/components/sections/nautica/process-unlock";
-import { FeaturedStory } from "@/components/sections/nautica/featured-story";
+import { ProcessUnlock } from "@/components/sections/porti-turistici/process-unlock";
+import { FeaturedStory } from "@/components/sections/porti-turistici/featured-story";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from 'next';
 import { getLocalizedAlternates } from '@/lib/i18n-metadata';
@@ -20,16 +20,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const t = await getTranslations({ locale, namespace: 'metadata' });
 
     return {
-        title: t('nautica.title'),
+        title: t('portiTuristici.title'),
         alternates: {
-            canonical: `${SITE_CONFIG.url}/${locale}/nautica`,
-            languages: getLocalizedAlternates('/nautica', SITE_CONFIG.url)
+            canonical: `${SITE_CONFIG.url}/${locale}/porti-turistici`,
+            languages: getLocalizedAlternates('/porti-turistici', SITE_CONFIG.url)
         }
     };
 }
 
-export default async function NauticaPage() {
-    const t = await getTranslations('nautica');
+export default async function PortiTuristiciPage() {
+    const t = await getTranslations('portiTuristici');
 
     // Check if diportistaCta exists (it should generally exist if translations are complete)
     // We can use a try/catch or just checking if a key returns a value that is not the key itself if configured,

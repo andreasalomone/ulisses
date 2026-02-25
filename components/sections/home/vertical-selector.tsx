@@ -21,8 +21,7 @@ export function VerticalSelector() {
         { ...cards.logistica, href: "/logistica", resolutions: cards.logistica.resolutions, image: "/assets/stock.webp" },
         { ...cards.ferroviario, href: "/ferroviario", resolutions: cards.ferroviario.resolutions, image: "/assets/trains.webp" },
         { ...cards.parking, href: "/smart-parking", resolutions: cards.parking.resolutions, image: "/assets/parking.webp" },
-        // Fallback for missing translation during layout switch, using partial check
-        ...(cards.nautica ? [{ ...cards.nautica, href: "/nautica", resolutions: cards.nautica.resolutions, image: "/assets/smart-port.jpg" }] : [])
+        ...(cards.smartPort ? [{ ...cards.smartPort, href: "/smart-port", resolutions: cards.smartPort.resolutions, image: "/assets/smart-port.jpg" }] : [])
     ];
 
     return (

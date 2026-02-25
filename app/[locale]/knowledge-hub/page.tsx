@@ -43,7 +43,7 @@ const GRADIENTS: Record<string, string> = {
     "Smart Building": "bg-linear-to-br from-accent/90 via-accent/70 to-slate-950 border border-accent/20",
     "Smart City": "bg-linear-to-br from-[oklch(0.45_0.14_260)]/90 via-[oklch(0.35_0.10_260)]/70 to-slate-950 border border-[oklch(0.45_0.14_260)]/20",
     "Smart Port": "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
-    "Nautica": "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
+    "Porti turistici": "bg-linear-to-br from-secondary/90 via-secondary/70 to-slate-950 border border-secondary/20",
 
     // Fallback
     "default": "bg-linear-to-br from-slate-700 via-slate-800 to-slate-950 border border-slate-600/30"

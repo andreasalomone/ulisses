@@ -45,7 +45,7 @@ const cards = [
 ];
 
 export function ProcessUnlock() {
-    const t = useTranslations('nautica');
+    const t = useTranslations('portiTuristici');
     const tCommon = useTranslations('common');
     const processItems = t.raw('process') as { problem: string; solution: string }[];
 

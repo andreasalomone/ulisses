@@ -12,7 +12,7 @@ export const NAV_LINKS: NavLink[] = [
             { label: "logistica", href: "/logistica" },
             { label: "ferroviario", href: "/ferroviario" },
             { label: "smartParking", href: "/smart-city" },
-            { label: "nautica", href: "/nautica" },
+            { label: "smartPort", href: "/smart-port" },
         ]
     },
     { label: "tecnologia", href: "/tecnologia" },

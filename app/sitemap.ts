@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 function getPriority(pathname: string): number {
     if (pathname === '/') return 1;
-    if (['/logistica', '/ferroviario', '/smart-parking', '/nautica'].includes(pathname)) return 0.9;
+    if (['/logistica', '/ferroviario', '/smart-parking', '/smart-port'].includes(pathname)) return 0.9;
     if (['/tecnologia', '/soluzioni', '/smart-city', '/smart-building'].includes(pathname)) return 0.8;
     if (['/chi-siamo', '/contatti', '/knowledge-hub'].includes(pathname)) return 0.7;
     return 0.5;
