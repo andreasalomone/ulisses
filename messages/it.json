@@ -399,12 +399,12 @@
                 },
                 "smartPort": {
                     "title": "Smart Port",
-                    "description": "Localizzazione in tempo reale e analisi occupazione per la gestione intelligente della tua marina.",
+                    "description": "Gestione banchine e piazzali: container e imbarcazioni sotto controllo continuo.",
                     "cta": "Scopri Smart Port",
                     "resolutions": [
-                        "Occupazione in tempo reale",
+                        "Carico/scarico",
                         "Gestione aree operative",
-                        "Efficienza ormeggi"
+                        "Allocazione"
                     ]
                 }
             }

@@ -399,12 +399,12 @@
                 },
                 "smartPort": {
                     "title": "Smart Port",
-                    "description": "Real-time localization and occupancy analysis for the intelligent management of your marina.",
+                    "description": "Dock and yard management: continuous control of containers and vessels.",
                     "cta": "Discover Smart Port",
                     "resolutions": [
-                        "Real-time Occupancy",
-                        "Operational Area Management",
-                        "Mooring Efficiency"
+                        "Loading/Unloading",
+                        "Operational area management",
+                        "Allocation"
                     ]
                 }
             }
