@@ -1,9 +1,7 @@
 import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
-import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
-import { BrandText } from "@/components/ui/brand";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 import { CommercialiUseCases } from "@/components/sections/porti-commerciali/commerciali-use-cases";
 import { getTranslations } from "next-intl/server";
@@ -43,21 +41,6 @@ export default async function PortiCommercialiPage() {
                     <Link href="/contatti">{t('hero.cta')}</Link>
                 </Button>
             </VerticalHero>
-
-            {/* Intro Section */}
-            <SectionWrapper variant="muted" className="pt-24 pb-24 border-b border-border/50">
-                <div className="max-w-4xl mx-auto text-center space-y-8">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-                        <BrandText text={t('hero.unlockTitle')} />
-                    </h2>
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                        <BrandText text={t('hero.unlockSubtitle')} />
-                    </p>
-                    <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl mx-auto mt-8 font-medium">
-                        {t('intro.text')}
-                    </p>
-                </div>
-            </SectionWrapper>
 
             {/* Use Cases */}
             <CommercialiUseCases />
