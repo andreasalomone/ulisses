@@ -1732,7 +1732,20 @@
                 "title": "Terminal Digital Twin & operational KPIs",
                 "text": "Analyze average dwell times, area saturation, asset utilization and operational performance."
             }
-        ]
+        ],
+        "benchmarks": {
+            "title": "Case History",
+            "items": [
+                {
+                    "title": "Containers in the yard",
+                    "context": "High-density yards with multi-level stacked containers.",
+                    "challenge": "Loss of operational control, increased search times, and slower ship-to-shore flows.",
+                    "solution": "Real-time visibility designed for environments with high physical and metallic complexity.",
+                    "impact": "Reduced search times and smoother ship-to-shore operations.",
+                    "link": "/knowledge-hub/smart-port/containers"
+                }
+            ]
+        }
     },
     "portiTuristici": {
         "hero": {

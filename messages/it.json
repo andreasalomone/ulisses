@@ -1734,7 +1734,20 @@
                 "title": "Digital Twin del terminal & KPI operativi",
                 "text": "Analizza tempi medi di permanenza, saturazione aree, utilizzo asset e performance operative."
             }
-        ]
+        ],
+        "benchmarks": {
+            "title": "Case History",
+            "items": [
+                {
+                    "title": "Container in piazzale",
+                    "context": "Piazzali ad alta densità con container impilati su più livelli.",
+                    "challenge": "Perdita di controllo operativo, aumento tempi di ricerca e rallentamento flussi nave-terra.",
+                    "solution": "Visibilità in tempo reale progettata per ambienti ad alta complessità fisica e metallica.",
+                    "impact": "Riduzione tempi di ricerca e fluidità nelle operazioni nave-terra.",
+                    "link": "/knowledge-hub/smart-port/containers"
+                }
+            ]
+        }
     },
     "portiTuristici": {
         "hero": {

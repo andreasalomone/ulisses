@@ -2,6 +2,7 @@ import React from "react";
 import { VerticalHero } from "@/components/shared/vertical-hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
+import { BenchmarkSection } from "@/components/sections/shared/benchmark-section";
 import { DemoCTA } from "@/components/sections/shared/demo-cta";
 import { CommercialiUseCases } from "@/components/sections/porti-commerciali/commerciali-use-cases";
 import { getTranslations } from "next-intl/server";
@@ -29,6 +30,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PortiCommercialiPage() {
     const t = await getTranslations('portiCommerciali');
 
+    const benchmarkItems = t.raw('benchmarks.items') as {
+        title: string;
+        context: string;
+        challenge: string;
+        solution: string;
+        impact: string;
+        link?: string;
+    }[];
+
     return (
         <div className="flex flex-col">
             <VerticalHero
@@ -44,6 +54,13 @@ export default async function PortiCommercialiPage() {
 
             {/* Use Cases */}
             <CommercialiUseCases />
+
+            {/* Benchmarks */}
+            <BenchmarkSection
+                title={t('benchmarks.title')}
+                items={benchmarkItems}
+                variant="default"
+            />
 
             {/* Final CTA */}
             <DemoCTA />
