@@ -24,7 +24,8 @@ export const NAV_LINKS: NavLink[] = [
 export const CONTACT_INFO = {
     email: "info@ulisses.it",
     phone: "0331939779",
-    address: "Via Francia 1 - 21013 Gallarate VA",
+    legalAddress: "Corso Monforte, 41, 20122 Milano (MI)",
+    operationalAddress: "Via Francia 1 - 21013 Gallarate VA",
 };
 
 export const SOCIAL_LINKS = {

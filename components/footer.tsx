@@ -78,7 +78,14 @@ export async function Footer() {
                     <div>
                         <h4 className="font-bold text-sm uppercase tracking-wider mb-6">{tNav('contatti')}</h4>
                         <ul className="space-y-4 text-sm text-muted-foreground">
-                            <li className="whitespace-pre-line">{CONTACT_INFO.address}</li>
+                            <li className="space-y-1">
+                                <span className="text-[10px] uppercase tracking-widest font-bold opacity-70">Sede Operativa</span>
+                                <p className="whitespace-pre-line">{CONTACT_INFO.operationalAddress}</p>
+                            </li>
+                            <li className="space-y-1">
+                                <span className="text-[10px] uppercase tracking-widest font-bold opacity-70">Sede Legale</span>
+                                <p className="whitespace-pre-line">{CONTACT_INFO.legalAddress}</p>
+                            </li>
                             <li>
                                 <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-primary transition-colors">
                                     {CONTACT_INFO.phone}

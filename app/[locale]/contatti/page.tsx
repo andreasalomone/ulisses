@@ -56,13 +56,19 @@ export default async function ContattiPage() {
                                 </div>
                             </div>
 
-                            <div className="flex gap-4 items-center group">
-                                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                            <div className="flex gap-4 items-start group">
+                                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shrink-0">
                                     <MapPin className="h-5 w-5" />
                                 </div>
-                                <div className="">
-                                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">{t("visitUs")}</p>
-                                    <p className="text-base font-bold leading-tight whitespace-pre-line">{CONTACT_INFO.address}</p>
+                                <div className="space-y-4 mt-[-2px]">
+                                    <div>
+                                        <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">Sede Operativa</p>
+                                        <p className="text-base font-bold leading-tight whitespace-pre-line">{CONTACT_INFO.operationalAddress}</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mb-0.5">Sede Legale</p>
+                                        <p className="text-base font-bold leading-tight whitespace-pre-line">{CONTACT_INFO.legalAddress}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
