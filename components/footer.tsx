@@ -80,6 +80,11 @@ export async function Footer() {
                         <ul className="space-y-4 text-sm text-muted-foreground">
                             <li className="whitespace-pre-line">{CONTACT_INFO.address}</li>
                             <li>
+                                <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-primary transition-colors">
+                                    {CONTACT_INFO.phone}
+                                </a>
+                            </li>
+                            <li>
                                 <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-primary transition-colors">
                                     {CONTACT_INFO.email}
                                 </a>

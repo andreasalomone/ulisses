@@ -23,15 +23,14 @@ export const NAV_LINKS: NavLink[] = [
 
 export const CONTACT_INFO = {
     email: "info@ulisses.it",
-    phone: "+39 377 0855 535",
-    address: "Corso Monforte, 41, 20122 Milano (MI)",
+    phone: "0331939779",
+    address: "Via Francia 1 - 21013 Gallarate VA",
 };
 
 export const SOCIAL_LINKS = {
-    instagram: "https://www.instagram.com/ulisses.life/",
-    linkedin: "https://www.linkedin.com/company/ulissesai/",
-    facebook: "https://www.facebook.com/ulisses.life",
-    whatsapp: "https://wa.me/393770855535",
+    instagram: "https://www.instagram.com/ulisses.iot/",
+    linkedin: "https://www.linkedin.com/company/ulissesiot/",
+    facebook: "https://www.facebook.com/ulisses.iot",
 };
 
 export const SITE_CONFIG = {
