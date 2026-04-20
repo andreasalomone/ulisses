@@ -93,7 +93,7 @@ export default async function CookiePolicyPage() {
                                 {t("contact.text")} <a href="mailto:privacy@ulisses.it" className="text-primary hover:underline">privacy@ulisses.it</a>
                             </p>
                             <div className="mt-6 p-6 bg-muted/50 rounded-2xl border text-sm">
-                                <p className="font-bold text-foreground">{CONTACT_INFO.address}</p>
+                                <p className="font-bold text-foreground">{CONTACT_INFO.legalAddress}</p>
                                 <p className="mt-1">{tLegal("piva")}</p>
                             </div>
                         </div>
