@@ -85,7 +85,7 @@ export default async function TermsPage() {
                                 {t("contact.text")}
                             </p>
                             <div className="mt-6 p-6 bg-muted/50 rounded-2xl border text-sm">
-                                <p className="font-bold text-foreground">{CONTACT_INFO.address}</p>
+                                <p className="font-bold text-foreground">{CONTACT_INFO.legalAddress}</p>
                                 <p className="mt-1">{tLegal("piva")}</p>
                             </div>
                         </div>
