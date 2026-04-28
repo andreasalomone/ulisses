@@ -115,7 +115,8 @@
             "submitting": "Invio in corso...",
             "successTitle": "Grazie!",
             "successMessage": "Ti mandiamo il one-pager che hai richiesto a breve.",
-            "close": "Chiudi"
+            "close": "Chiudi",
+            "disclaimer": "La tua email sarà utilizzata esclusivamente per inviarti il documento richiesto e per eventuali comunicazioni correlate."
         }
     },
     "contactForm": {
@@ -181,7 +182,7 @@
             }
         },
         "submitButton": "Sblocca Soluzione",
-        "noSpam": "Nessuna spam. Usiamo i dati solo per rispondere alla tua richiesta."
+        "noSpam": "Nessuno spam. I tuoi dati saranno utilizzati solo per gestire la tua richiesta e per eventuali comunicazioni correlate."
     },
     "navigation": {
         "soluzioni": "Soluzioni",
@@ -325,7 +326,7 @@
         "contact": {
             "title": "Contatti",
             "text": "Se hai domande o dubbi riguardo alla nostra politica sulla privacy o al trattamento delle tue informazioni personali, ti preghiamo di contattarci attraverso l’indirizzo mail:",
-            "email": "privacy@ulisses.it"
+            "email": "support@ulisses.it"
         }
     },
     "home": {

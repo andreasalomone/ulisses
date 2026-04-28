@@ -111,6 +111,10 @@ export function OnePagerDialog({
                                 />
                             </div>
 
+                            <p className="text-xs text-muted-foreground">
+                                {t("disclaimer")}
+                            </p>
+
                             <DialogFooter>
                                 <Button
                                     type="submit"

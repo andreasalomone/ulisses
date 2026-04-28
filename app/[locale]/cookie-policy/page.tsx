@@ -90,7 +90,7 @@ export default async function CookiePolicyPage() {
                         <div className="pt-8 border-t border-primary/10">
                             <h3 className="text-xl font-bold text-foreground mb-4">{t("contact.title")}</h3>
                             <p>
-                                {t("contact.text")} <a href="mailto:privacy@ulisses.it" className="text-primary hover:underline">privacy@ulisses.it</a>
+                                {t("contact.text")} <a href="mailto:support@ulisses.it" className="text-primary hover:underline">support@ulisses.it</a>
                             </p>
                             <div className="mt-6 p-6 bg-muted/50 rounded-2xl border text-sm">
                                 <p className="font-bold text-foreground">{CONTACT_INFO.legalAddress}</p>
