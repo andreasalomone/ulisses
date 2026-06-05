@@ -46,6 +46,14 @@ const PARTNERS = [
         height: 60,
         href: "https://www.confindustriavarese.it/",
     },
+    {
+        id: "smart-communities-member",
+        name: "Smart Communities Member",
+        src: "/partners/smart-communities-member.png",
+        width: 200,
+        height: 63,
+        href: null,
+    },
 ];
 
 // Duplicate cleanly for Marquee effect without polluting the core data structure
@@ -63,14 +71,8 @@ export function Partners() {
             </div>
             <Marquee>
                 <div className="flex items-center gap-20 md:gap-32 pe-20 md:pe-32">
-                    {MARQUEE_ITEMS.map((partner) => (
-                        <a
-                            key={partner.id}
-                            href={partner.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center min-w-[150px] lg:min-w-[220px] transition-all duration-500 transform hover:scale-105"
-                        >
+                    {MARQUEE_ITEMS.map((partner) => {
+                        const logo = (
                             <Image
                                 src={partner.src}
                                 alt={partner.name}
@@ -78,8 +80,27 @@ export function Partners() {
                                 height={partner.height}
                                 className="h-12 md:h-16 w-auto object-contain"
                             />
-                        </a>
-                    ))}
+                        );
+
+                        const wrapperClassName =
+                            "flex items-center justify-center min-w-[150px] lg:min-w-[220px] transition-all duration-500 transform hover:scale-105";
+
+                        return partner.href ? (
+                            <a
+                                key={partner.id}
+                                href={partner.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={wrapperClassName}
+                            >
+                                {logo}
+                            </a>
+                        ) : (
+                            <div key={partner.id} className={wrapperClassName}>
+                                {logo}
+                            </div>
+                        );
+                    })}
                 </div>
             </Marquee>
         </section>
