@@ -50,8 +50,8 @@ const PARTNERS = [
         id: "smart-communities-member",
         name: "Smart Communities Member",
         src: "/partners/smart-communities-member.png",
-        width: 200,
-        height: 63,
+        width: 203,
+        height: 60,
         href: null,
     },
 ];
