@@ -108,8 +108,12 @@
         "onePagerDialog": {
             "title": "Download One-Pager",
             "description": "Enter your email to download the one-pager:",
-            "emailLabel": "Email",
+            "nameLabel": "First and Last Name",
+            "namePlaceholder": "Mario Rossi",
+            "emailLabel": "Work Email",
             "emailPlaceholder": "name@company.com",
+            "roleLabel": "Role in Company",
+            "rolePlaceholder": "e.g. Operations Manager",
             "cancel": "Cancel",
             "confirm": "Confirm",
             "submitting": "Submitting...",

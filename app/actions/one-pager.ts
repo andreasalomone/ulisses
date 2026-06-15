@@ -1,12 +1,25 @@
 "use server";
 
+interface OnePagerRequest {
+    name: string;
+    email: string;
+    role: string;
+    onePagerType: string;
+}
 
-
-export async function requestOnePager(email: string, onePagerType: string) {
-    // Basic server-side email validation
+export async function requestOnePager({
+    name,
+    email,
+    role,
+    onePagerType,
+}: OnePagerRequest) {
+    // Basic server-side validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
         return { success: false, error: "Invalid email" };
+    }
+    if (!name?.trim() || !role?.trim()) {
+        return { success: false, error: "Missing required fields" };
     }
 
     try {
@@ -14,7 +27,11 @@ export async function requestOnePager(email: string, onePagerType: string) {
 
         if (slackWebhookUrl) {
             const slackMessage = {
-                text: `L'utente ${email} ha richiesto il one-pager ${onePagerType}`,
+                text:
+                    `Nuova richiesta one-pager: *${onePagerType}*\n` +
+                    `• Nome e Cognome: ${name}\n` +
+                    `• Email aziendale: ${email}\n` +
+                    `• Ruolo in azienda: ${role}`,
             };
 
             const response = await fetch(slackWebhookUrl, {

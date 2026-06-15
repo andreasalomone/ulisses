@@ -35,7 +35,9 @@ export function OnePagerDialog({
     const t = useTranslations("common.onePagerDialog");
     const [open, setOpen] = useState(false);
     const [step, setStep] = useState<"form" | "success">("form");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [role, setRole] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleOpenChange = (nextOpen: boolean) => {
@@ -44,7 +46,9 @@ export function OnePagerDialog({
             // Reset after close animation
             setTimeout(() => {
                 setStep("form");
+                setName("");
                 setEmail("");
+                setRole("");
                 setIsSubmitting(false);
             }, 300);
         }
@@ -52,10 +56,10 @@ export function OnePagerDialog({
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        if (!email) return;
+        if (!name || !email || !role) return;
 
         setIsSubmitting(true);
-        await requestOnePager(email, onePagerType);
+        await requestOnePager({ name, email, role, onePagerType });
         setIsSubmitting(false);
         setStep("success");
     };
@@ -93,6 +97,26 @@ export function OnePagerDialog({
                         >
                             <div className="space-y-2">
                                 <Label
+                                    htmlFor="one-pager-name"
+                                    className="text-sm"
+                                >
+                                    {t("nameLabel")}
+                                </Label>
+                                <Input
+                                    id="one-pager-name"
+                                    type="text"
+                                    placeholder={t("namePlaceholder")}
+                                    value={name}
+                                    onChange={(event) =>
+                                        setName(event.target.value)
+                                    }
+                                    required
+                                    autoFocus
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label
                                     htmlFor="one-pager-email"
                                     className="text-sm"
                                 >
@@ -107,7 +131,25 @@ export function OnePagerDialog({
                                         setEmail(event.target.value)
                                     }
                                     required
-                                    autoFocus
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label
+                                    htmlFor="one-pager-role"
+                                    className="text-sm"
+                                >
+                                    {t("roleLabel")}
+                                </Label>
+                                <Input
+                                    id="one-pager-role"
+                                    type="text"
+                                    placeholder={t("rolePlaceholder")}
+                                    value={role}
+                                    onChange={(event) =>
+                                        setRole(event.target.value)
+                                    }
+                                    required
                                 />
                             </div>
 
