@@ -1,11 +1,17 @@
 import createNextIntlPlugin from 'next-intl/plugin';
 import type { NextConfig } from "next";
+import { fileURLToPath } from "node:url";
+import { dirname } from "node:path";
 
 const withNextIntl = createNextIntlPlugin();
 
+// Resolve the Turbopack root to this config's directory so builds work on any
+// machine/checkout, instead of a hardcoded local path.
+const projectRoot = dirname(fileURLToPath(import.meta.url));
+
 const nextConfig: NextConfig & { turbopack?: { root: string } } = {
   turbopack: {
-    root: "/Users/andreasalomone/devving/ulisses",
+    root: projectRoot,
   },
   async redirects() {
     return [

@@ -31,6 +31,14 @@ const PARTNERS = [
         href: "https://www.ministeroturismo.gov.it/",
     },
     {
+        id: "most",
+        name: "MOST - Centro Nazionale per la Mobilità Sostenibile",
+        src: "/partners/most.png",
+        width: 200,
+        height: 64,
+        href: "https://www.centronazionalemost.it/",
+    },
+    {
         id: "zest",
         name: "Zest",
         src: "/partners/zest.png",
