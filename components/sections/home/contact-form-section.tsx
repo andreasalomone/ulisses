@@ -139,6 +139,41 @@ export function ContactFormSection() {
                                 error={errors.platforms?.message}
                             />
 
+                            <div className="@container/identity">
+                                <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="name">{t("fields.name.label")}</Label>
+                                        <Input
+                                            id="name"
+                                            type="text"
+                                            placeholder={t("fields.name.placeholder")}
+                                            {...register("name")}
+                                            className={cn("h-14 text-base", errors.name && "border-destructive")}
+                                            inputMode="text"
+                                            autoComplete="name"
+                                            aria-invalid={!!errors.name}
+                                            aria-describedby={errors.name ? "name-error" : undefined}
+                                        />
+                                        {errors.name && <p id="name-error" className="text-xs text-destructive font-bold">{errors.name.message}</p>}
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="role">{t("fields.role.label")}</Label>
+                                        <Input
+                                            id="role"
+                                            type="text"
+                                            placeholder={t("fields.role.placeholder")}
+                                            {...register("role")}
+                                            className={cn("h-14 text-base", errors.role && "border-destructive")}
+                                            inputMode="text"
+                                            autoComplete="organization-title"
+                                            aria-invalid={!!errors.role}
+                                            aria-describedby={errors.role ? "role-error" : undefined}
+                                        />
+                                        {errors.role && <p id="role-error" className="text-xs text-destructive font-bold">{errors.role.message}</p>}
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="@container/contact">
                                 <div className="grid grid-cols-1 @lg:grid-cols-2 gap-6">
                                     <div className="space-y-2">

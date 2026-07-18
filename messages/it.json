@@ -126,8 +126,16 @@
     "contactForm": {
         "title": "Richiedi una demo / assessment",
         "intro": "Raccontaci scenario e obiettivi: ti proponiamo un percorso chiaro (pilot → rollout).",
-        "microcopy": "Compila 6 campi: ci aiuta a darti una risposta utile, non generica.",
+        "microcopy": "Compila i campi: ci aiuta a darti una risposta utile, non generica.",
         "fields": {
+            "name": {
+                "label": "Nome e Cognome",
+                "placeholder": "Mario Rossi"
+            },
+            "role": {
+                "label": "Ruolo in Azienda",
+                "placeholder": "es. Responsabile Operations"
+            },
             "scenario": {
                 "label": "In quale scenario ti serve Ulisses?",
                 "options": {
