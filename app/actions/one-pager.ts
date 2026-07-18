@@ -2,6 +2,7 @@
 
 interface OnePagerRequest {
     name: string;
+    company: string;
     email: string;
     role: string;
     onePagerType: string;
@@ -9,6 +10,7 @@ interface OnePagerRequest {
 
 export async function requestOnePager({
     name,
+    company,
     email,
     role,
     onePagerType,
@@ -18,7 +20,7 @@ export async function requestOnePager({
     if (!email || !emailRegex.test(email)) {
         return { success: false, error: "Invalid email" };
     }
-    if (!name?.trim() || !role?.trim()) {
+    if (!name?.trim() || !company?.trim() || !role?.trim()) {
         return { success: false, error: "Missing required fields" };
     }
 
@@ -30,6 +32,7 @@ export async function requestOnePager({
                 text:
                     `Nuova richiesta one-pager: *${onePagerType}*\n` +
                     `• Nome e Cognome: ${name}\n` +
+                    `• Azienda: ${company}\n` +
                     `• Email aziendale: ${email}\n` +
                     `• Ruolo in azienda: ${role}`,
             };

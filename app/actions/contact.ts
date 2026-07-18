@@ -27,7 +27,7 @@ export async function submitContactForm(data: ContactFormValues, locale: string)
         };
     }
 
-    const { scenario, objective, email, phone, size, platforms, timing } = validatedFields.data;
+    const { name, company, role, scenario, objective, email, phone, size, platforms, timing } = validatedFields.data;
 
     try {
         const apiKey = process.env.RESEND_API_KEY;
@@ -52,6 +52,9 @@ export async function submitContactForm(data: ContactFormValues, locale: string)
                         <p><strong>Platforms:</strong> ${platforms || 'None'}</p>
                         <hr />
                         <h2>Contact Details</h2>
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Company:</strong> ${company}</p>
+                        <p><strong>Role:</strong> ${role}</p>
                         <p><strong>Email:</strong> ${email}</p>
                         <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
                     `
@@ -67,7 +70,7 @@ export async function submitContactForm(data: ContactFormValues, locale: string)
         const slackOp = async (): Promise<string> => {
             if (slackWebhookUrl) {
                 const slackMessage = {
-                    text: `*New Lead captured!* 🚀\n\n*Scenario:* ${scenario}\n*Objective:* ${objective}\n*Size:* ${size}\n*Timing:* ${timing}\n*Platforms:* ${platforms || 'None'}\n\n*Contact:*\nEmail: ${email}\nPhone: ${phone || 'N/A'}`,
+                    text: `*New Lead captured!* 🚀\n\n*Scenario:* ${scenario}\n*Objective:* ${objective}\n*Size:* ${size}\n*Timing:* ${timing}\n*Platforms:* ${platforms || 'None'}\n\n*Contact:*\nName: ${name}\nCompany: ${company}\nRole: ${role}\nEmail: ${email}\nPhone: ${phone || 'N/A'}`,
                 };
 
                 const response = await fetch(slackWebhookUrl, {

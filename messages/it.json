@@ -110,6 +110,8 @@
             "description": "Inserisci la tua email per scaricare il one-pager:",
             "nameLabel": "Nome e Cognome",
             "namePlaceholder": "Mario Rossi",
+            "companyLabel": "Azienda",
+            "companyPlaceholder": "es. Acme S.p.A.",
             "emailLabel": "Email aziendale",
             "emailPlaceholder": "nome@azienda.com",
             "roleLabel": "Ruolo in Azienda",
@@ -126,8 +128,20 @@
     "contactForm": {
         "title": "Richiedi una demo / assessment",
         "intro": "Raccontaci scenario e obiettivi: ti proponiamo un percorso chiaro (pilot → rollout).",
-        "microcopy": "Compila 6 campi: ci aiuta a darti una risposta utile, non generica.",
+        "microcopy": "Compila i campi: ci aiuta a darti una risposta utile, non generica.",
         "fields": {
+            "name": {
+                "label": "Nome e Cognome",
+                "placeholder": "Mario Rossi"
+            },
+            "company": {
+                "label": "Azienda",
+                "placeholder": "es. Acme S.p.A."
+            },
+            "role": {
+                "label": "Ruolo in Azienda",
+                "placeholder": "es. Responsabile Operations"
+            },
             "scenario": {
                 "label": "In quale scenario ti serve Ulisses?",
                 "options": {
