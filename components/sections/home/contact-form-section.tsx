@@ -157,6 +157,21 @@ export function ContactFormSection() {
                                         {errors.name && <p id="name-error" className="text-xs text-destructive font-bold">{errors.name.message}</p>}
                                     </div>
                                     <div className="space-y-2">
+                                        <Label htmlFor="company">{t("fields.company.label")}</Label>
+                                        <Input
+                                            id="company"
+                                            type="text"
+                                            placeholder={t("fields.company.placeholder")}
+                                            {...register("company")}
+                                            className={cn("h-14 text-base", errors.company && "border-destructive")}
+                                            inputMode="text"
+                                            autoComplete="organization"
+                                            aria-invalid={!!errors.company}
+                                            aria-describedby={errors.company ? "company-error" : undefined}
+                                        />
+                                        {errors.company && <p id="company-error" className="text-xs text-destructive font-bold">{errors.company.message}</p>}
+                                    </div>
+                                    <div className="space-y-2">
                                         <Label htmlFor="role">{t("fields.role.label")}</Label>
                                         <Input
                                             id="role"

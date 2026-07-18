@@ -36,6 +36,7 @@ export function OnePagerDialog({
     const [open, setOpen] = useState(false);
     const [step, setStep] = useState<"form" | "success">("form");
     const [name, setName] = useState("");
+    const [company, setCompany] = useState("");
     const [email, setEmail] = useState("");
     const [role, setRole] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,6 +48,7 @@ export function OnePagerDialog({
             setTimeout(() => {
                 setStep("form");
                 setName("");
+                setCompany("");
                 setEmail("");
                 setRole("");
                 setIsSubmitting(false);
@@ -56,10 +58,10 @@ export function OnePagerDialog({
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        if (!name || !email || !role) return;
+        if (!name || !company || !email || !role) return;
 
         setIsSubmitting(true);
-        await requestOnePager({ name, email, role, onePagerType });
+        await requestOnePager({ name, company, email, role, onePagerType });
         setIsSubmitting(false);
         setStep("success");
     };
@@ -112,6 +114,26 @@ export function OnePagerDialog({
                                     }
                                     required
                                     autoFocus
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label
+                                    htmlFor="one-pager-company"
+                                    className="text-sm"
+                                >
+                                    {t("companyLabel")}
+                                </Label>
+                                <Input
+                                    id="one-pager-company"
+                                    type="text"
+                                    placeholder={t("companyPlaceholder")}
+                                    value={company}
+                                    onChange={(event) =>
+                                        setCompany(event.target.value)
+                                    }
+                                    required
+                                    autoComplete="organization"
                                 />
                             </div>
 

@@ -110,6 +110,8 @@
             "description": "Enter your email to download the one-pager:",
             "nameLabel": "First and Last Name",
             "namePlaceholder": "Mario Rossi",
+            "companyLabel": "Company",
+            "companyPlaceholder": "e.g. Acme Inc.",
             "emailLabel": "Work Email",
             "emailPlaceholder": "name@company.com",
             "roleLabel": "Role in Company",
@@ -131,6 +133,10 @@
             "name": {
                 "label": "First and Last Name",
                 "placeholder": "Mario Rossi"
+            },
+            "company": {
+                "label": "Company",
+                "placeholder": "e.g. Acme Inc."
             },
             "role": {
                 "label": "Role in Company",

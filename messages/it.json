@@ -110,6 +110,8 @@
             "description": "Inserisci la tua email per scaricare il one-pager:",
             "nameLabel": "Nome e Cognome",
             "namePlaceholder": "Mario Rossi",
+            "companyLabel": "Azienda",
+            "companyPlaceholder": "es. Acme S.p.A.",
             "emailLabel": "Email aziendale",
             "emailPlaceholder": "nome@azienda.com",
             "roleLabel": "Ruolo in Azienda",
@@ -131,6 +133,10 @@
             "name": {
                 "label": "Nome e Cognome",
                 "placeholder": "Mario Rossi"
+            },
+            "company": {
+                "label": "Azienda",
+                "placeholder": "es. Acme S.p.A."
             },
             "role": {
                 "label": "Ruolo in Azienda",

@@ -3,6 +3,7 @@ import { SCENARIO_KEYS, OBJECTIVE_KEYS, PLATFORM_KEYS, TIMING_KEYS } from "../co
 
 export const contactFormSchema = z.object({
     name: z.string().min(1, "Please enter your name"),
+    company: z.string().min(1, "Please enter your company"),
     role: z.string().min(1, "Please enter your role"),
     scenario: z.enum(SCENARIO_KEYS, {
         required_error: "Please select a scenario",
