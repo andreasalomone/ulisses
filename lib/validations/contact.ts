@@ -19,6 +19,7 @@ export const contactFormSchema = z.object({
     email: z.string().email("Please enter a valid email"),
     phone: z.string().optional(),
     _gotcha: z.string().optional(), // Honeypot field for spam protection
+    captchaToken: z.string().optional(),
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;

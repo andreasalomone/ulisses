@@ -3,6 +3,7 @@
 import { contactFormSchema, ContactFormValues } from "@/lib/validations/contact";
 import { getTranslations } from "next-intl/server";
 import { Resend } from "resend";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 
 export async function submitContactForm(data: ContactFormValues, locale: string) {
     const t = await getTranslations({ locale, namespace: 'common' });
@@ -24,6 +25,15 @@ export async function submitContactForm(data: ContactFormValues, locale: string)
         return {
             success: true,
             message: t('successMessage'),
+        };
+    }
+
+    const captchaValid = await verifyTurnstileToken(validatedFields.data.captchaToken);
+    if (!captchaValid) {
+        return {
+            success: false,
+            message: t('error'),
+            errors: { captchaToken: [t('captchaError')] },
         };
     }
 

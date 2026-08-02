@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
     Dialog,
@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, CheckCircle2, Download } from "lucide-react";
 import { requestOnePager } from "@/app/actions/one-pager";
+import { TurnstileWidget, TurnstileWidgetHandle } from "@/components/shared/turnstile-widget";
 
 interface OnePagerDialogProps {
     onePagerType: string;
@@ -40,6 +41,10 @@ export function OnePagerDialog({
     const [email, setEmail] = useState("");
     const [role, setRole] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState("");
+    const [captchaError, setCaptchaError] = useState(false);
+    const turnstileRef = useRef<TurnstileWidgetHandle>(null);
+    const captchaConfigured = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
     const handleOpenChange = (nextOpen: boolean) => {
         setOpen(nextOpen);
@@ -52,6 +57,8 @@ export function OnePagerDialog({
                 setEmail("");
                 setRole("");
                 setIsSubmitting(false);
+                setCaptchaToken("");
+                setCaptchaError(false);
             }, 300);
         }
     };
@@ -59,11 +66,20 @@ export function OnePagerDialog({
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         if (!name || !company || !email || !role) return;
+        if (captchaConfigured && !captchaToken) return;
 
         setIsSubmitting(true);
-        await requestOnePager({ name, company, email, role, onePagerType });
+        setCaptchaError(false);
+        const result = await requestOnePager({ name, company, email, role, onePagerType, captchaToken });
         setIsSubmitting(false);
-        setStep("success");
+        turnstileRef.current?.reset();
+        setCaptchaToken("");
+
+        if (result.success) {
+            setStep("success");
+        } else {
+            setCaptchaError(true);
+        }
     };
 
     return (
@@ -175,6 +191,17 @@ export function OnePagerDialog({
                                 />
                             </div>
 
+                            <div className="space-y-2">
+                                <TurnstileWidget
+                                    ref={turnstileRef}
+                                    onVerify={setCaptchaToken}
+                                    onExpire={() => setCaptchaToken("")}
+                                />
+                                {captchaError && (
+                                    <p className="text-xs text-destructive font-bold">{t("captchaError")}</p>
+                                )}
+                            </div>
+
                             <p className="text-xs text-muted-foreground">
                                 {t("disclaimer")}
                             </p>
@@ -182,7 +209,7 @@ export function OnePagerDialog({
                             <DialogFooter>
                                 <Button
                                     type="submit"
-                                    disabled={isSubmitting}
+                                    disabled={isSubmitting || (captchaConfigured && !captchaToken)}
                                     className="w-full sm:w-auto"
                                 >
                                     {isSubmitting && (

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, ContactFormValues } from "@/lib/validations/contact";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FormSelect } from "@/components/ui/form-select";
+import { TurnstileWidget, TurnstileWidgetHandle } from "@/components/shared/turnstile-widget";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations, useLocale } from "next-intl";
@@ -21,6 +22,9 @@ export function ContactFormSection() {
     const locale = useLocale();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [serverMessage, setServerMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+    const [captchaToken, setCaptchaToken] = useState("");
+    const turnstileRef = useRef<TurnstileWidgetHandle>(null);
+    const captchaConfigured = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
     const {
         register,
@@ -33,6 +37,7 @@ export function ContactFormSection() {
         resolver: zodResolver(contactFormSchema),
         defaultValues: {
             platforms: undefined,
+            captchaToken: "",
         },
     });
 
@@ -42,6 +47,10 @@ export function ContactFormSection() {
 
         try {
             const result = await submitContactForm(data, locale);
+            turnstileRef.current?.reset();
+            setValue("captchaToken", "");
+            setCaptchaToken("");
+
             if (result.success) {
                 setServerMessage({ type: "success", text: result.message || tCommon("success") });
                 reset();
@@ -224,6 +233,20 @@ export function ContactFormSection() {
                                 </div>
                             </div>
 
+                            <div className="space-y-2">
+                                <TurnstileWidget
+                                    ref={turnstileRef}
+                                    onVerify={(token) => {
+                                        setValue("captchaToken", token);
+                                        setCaptchaToken(token);
+                                    }}
+                                    onExpire={() => {
+                                        setValue("captchaToken", "");
+                                        setCaptchaToken("");
+                                    }}
+                                />
+                            </div>
+
                             {serverMessage && (
                                 <div className={cn(
                                     "p-4 rounded-xl flex items-center gap-3 text-sm font-bold animate-in fade-in slide-in-from-top-2",
@@ -237,7 +260,7 @@ export function ContactFormSection() {
                             <Button
                                 type="submit"
                                 className="w-full h-14 rounded-xl text-lg font-bold group"
-                                disabled={isSubmitting}
+                                disabled={isSubmitting || (captchaConfigured && !captchaToken)}
                             >
                                 {isSubmitting ? (
                                     <>

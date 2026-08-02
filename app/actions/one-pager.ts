@@ -1,11 +1,14 @@
 "use server";
 
+import { verifyTurnstileToken } from "@/lib/turnstile";
+
 interface OnePagerRequest {
     name: string;
     company: string;
     email: string;
     role: string;
     onePagerType: string;
+    captchaToken: string;
 }
 
 export async function requestOnePager({
@@ -14,6 +17,7 @@ export async function requestOnePager({
     email,
     role,
     onePagerType,
+    captchaToken,
 }: OnePagerRequest) {
     // Basic server-side validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -22,6 +26,11 @@ export async function requestOnePager({
     }
     if (!name?.trim() || !company?.trim() || !role?.trim()) {
         return { success: false, error: "Missing required fields" };
+    }
+
+    const captchaValid = await verifyTurnstileToken(captchaToken);
+    if (!captchaValid) {
+        return { success: false, error: "captcha" };
     }
 
     try {
