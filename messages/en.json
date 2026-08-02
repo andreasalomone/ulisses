@@ -100,6 +100,7 @@
         "error": "Invalid data. Please double check the form.",
         "successMessage": "Request sent successfully! We will contact you soon.",
         "networkError": "A network error occurred.",
+        "captchaError": "Captcha verification failed. Please try again.",
         "callToAction": {
             "title": "Ready to optimize your processes?",
             "subtitle": "Discover how our technology can transform your operations.",
@@ -122,7 +123,8 @@
             "successTitle": "Thank you!",
             "successMessage": "We will send you the requested one-pager shortly.",
             "close": "Close",
-            "disclaimer": "Your email will only be used to send you the requested document and for related communications."
+            "disclaimer": "Your email will only be used to send you the requested document and for related communications.",
+            "captchaError": "Captcha verification failed. Please try again."
         }
     },
     "contactForm": {

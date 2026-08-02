@@ -100,6 +100,7 @@
         "error": "Dati non validi. Per favore ricontrolla il modulo.",
         "successMessage": "Richiesta inviata con successo! Ti contatteremo a breve.",
         "networkError": "Si è verificato un errore di rete.",
+        "captchaError": "Verifica captcha non riuscita. Riprova.",
         "callToAction": {
             "title": "Pronto a ottimizzare i tuoi processi?",
             "subtitle": "Scopri come la nostra tecnologia può trasformare la tua operatività.",
@@ -122,7 +123,8 @@
             "successTitle": "Grazie!",
             "successMessage": "Ti mandiamo il one-pager che hai richiesto a breve.",
             "close": "Chiudi",
-            "disclaimer": "La tua email sarà utilizzata esclusivamente per inviarti il documento richiesto e per eventuali comunicazioni correlate."
+            "disclaimer": "La tua email sarà utilizzata esclusivamente per inviarti il documento richiesto e per eventuali comunicazioni correlate.",
+            "captchaError": "Verifica captcha non riuscita. Riprova."
         }
     },
     "contactForm": {
