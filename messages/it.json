@@ -67,6 +67,10 @@
         }
     },
     "accessibility": {
+        "institutionalBar": "Progetto cofinanziato dall'Unione europea - PN Ricerca, Innovazione e Competitività 2021-2027",
+        "coesioneItaliaLogo": "Coesione Italia 21-27 - Ricerca, Innovazione e Competitività",
+        "euCofundedLogo": "Cofinanziato dall'Unione europea",
+        "mimitLogo": "Ministero delle Imprese e del Made in Italy",
         "ulissesLogo": "Logo Ulisses",
         "toggleMenu": "Apri/chiudi menu",
         "switchToEnglish": "Passa all'inglese",

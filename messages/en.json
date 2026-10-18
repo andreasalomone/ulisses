@@ -67,6 +67,10 @@
         }
     },
     "accessibility": {
+        "institutionalBar": "Project co-funded by the European Union - NP Research, Innovation and Competitiveness 2021-2027",
+        "coesioneItaliaLogo": "Coesione Italia 21-27 - Research, Innovation and Competitiveness",
+        "euCofundedLogo": "Co-funded by the European Union",
+        "mimitLogo": "Italian Ministry of Enterprises and Made in Italy",
         "ulissesLogo": "Ulisses Logo",
         "toggleMenu": "Toggle menu",
         "switchToEnglish": "Switch to English",
