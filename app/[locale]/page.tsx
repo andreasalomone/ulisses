@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Hero } from "@/components/sections/home/hero";
+import { FundingSection } from "@/components/sections/home/funding-section";
 import { Partners } from "@/components/sections/home/partners";
 import { TechnologyPillars } from "@/components/sections/home/technology-pillars";
 import { VerticalSelector } from "@/components/sections/home/vertical-selector";
@@ -24,6 +25,7 @@ export default async function Page({
 
     return (
         <div className="flex flex-col">
+            <FundingSection />
             <Hero />
             <TechnologyPillars />
             <VerticalSelector />

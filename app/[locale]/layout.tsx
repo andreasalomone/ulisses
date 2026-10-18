@@ -8,7 +8,6 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { locales } from '@/i18n';
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { InstitutionalBar } from "@/components/institutional-bar";
 import "../globals.css";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -140,7 +139,6 @@ export default async function RootLayout({
           })(window, document, "clarity", "script", "wwn2tilgbs");`}
         </Script>
         <NextIntlClientProvider messages={messages}>
-          <InstitutionalBar />
           <Navbar />
           <main className="grow">
             {children}

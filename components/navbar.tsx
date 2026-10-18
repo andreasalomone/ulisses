@@ -20,8 +20,6 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [openSubMenus, setOpenSubMenus] = useState<Record<string, boolean>>({});
     const [scrolled, setScrolled] = useState(false);
-    // Clamped so the navbar stops re-rendering once the institutional bar has scrolled away.
-    const [scrollY, setScrollY] = useState(0);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
@@ -34,9 +32,7 @@ export function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
-            setScrollY(Math.min(window.scrollY, 200));
         };
-        handleScroll();
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -67,9 +63,8 @@ export function Navbar() {
 
     return (
         <nav
-            style={{ top: `max(0px, calc(var(--institutional-bar-h) - ${scrollY}px))` }}
             className={cn(
-                "fixed inset-x-0 z-50 transition-[background-color,border-color,padding,backdrop-filter] duration-300 border-b",
+                "fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b",
                 scrolled
                     ? "bg-background/80 backdrop-blur-md py-3 border-border"
                     : "bg-transparent py-5 border-transparent"

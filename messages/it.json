@@ -67,7 +67,6 @@
         }
     },
     "accessibility": {
-        "institutionalBar": "Progetto cofinanziato dall'Unione europea - PN Ricerca, Innovazione e Competitività 2021-2027",
         "coesioneItaliaLogo": "Coesione Italia 21-27 - Ricerca, Innovazione e Competitività",
         "euCofundedLogo": "Cofinanziato dall'Unione europea",
         "mimitLogo": "Ministero delle Imprese e del Made in Italy",
@@ -354,6 +353,16 @@
         }
     },
     "home": {
+        "funding": {
+            "title": "Progetto cofinanziato dall'Unione europea",
+            "paragraphs": [
+                "Ulisses è beneficiaria del sostegno finanziario concesso dall'Unione Europea attraverso lo strumento agevolativo Smart&Start Italia, gestito da Invitalia e cofinanziato dal Programma Nazionale \"Ricerca, Innovazione e Competitività\" (PN RIC) 2021-2027.",
+                "Il progetto si fonda sull'adozione e l'industrializzazione di un protocollo di comunicazione e localizzazione proprietario e brevettato, basato su una rete mesh adattativa con instradamento intelligente.",
+                "Grazie alle risorse del programma Smart&Start Italia, puntiamo a completare il consolidamento produttivo e l'industrializzazione su larga scala del nostro sistema di localizzazione, potenziando le funzionalità di analisi predittiva tramite intelligenza artificiale per i settori della mobilità."
+            ],
+            "cup": "CUP C96I25002060008",
+            "expenses": "Spese ammesse: € 738.132,00"
+        },
         "hero": {
             "h1": "<highlight>Localizza</highlight> i tuoi asset e riduci tempi di ricerca e fermi operativi",
             "highlight": "Localizza",

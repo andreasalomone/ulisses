@@ -16,7 +16,7 @@ export function Hero() {
     const proofs = t.raw('proofs') as string[];
 
     return (
-        <SectionWrapper className="min-h-[95vh] flex items-center pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        <SectionWrapper className="flex items-center pt-16 pb-20 md:pt-20 md:pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 w-full flex flex-col lg:flex-row lg:items-center items-start gap-12 lg:gap-8">
                 {/* Left Content - 60% */}
                 <div className="relative z-10 w-full lg:w-[70%]">

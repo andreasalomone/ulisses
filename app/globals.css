@@ -124,16 +124,6 @@
   --sidebar-ring: oklch(0.55 0.18 250);
 }
 
-:root {
-  --institutional-bar-h: 3rem;
-}
-
-@media (min-width: 48rem) {
-  :root {
-    --institutional-bar-h: 4.5rem;
-  }
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
