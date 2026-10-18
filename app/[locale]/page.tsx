@@ -25,7 +25,6 @@ export default async function Page({
 
     return (
         <div className="flex flex-col">
-            <FundingSection />
             <Hero />
             <TechnologyPillars />
             <VerticalSelector />
@@ -38,6 +37,7 @@ export default async function Page({
                 ctaLabel={t('cta.button')}
             />
             <Partners />
+            <FundingSection />
         </div>
     );
 }

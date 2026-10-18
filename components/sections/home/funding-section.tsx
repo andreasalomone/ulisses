@@ -19,7 +19,7 @@ export async function FundingSection() {
     const paragraphs = t.raw('paragraphs') as string[];
 
     return (
-        <section aria-labelledby="funding-title" className="bg-white border-b pt-28 pb-12 md:pt-32 md:pb-16">
+        <section aria-labelledby="funding-title" className="bg-white border-t py-12 md:py-16">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col lg:flex-row items-center justify-center">
                     {LOGOS.map((logo, i) => (
@@ -36,7 +36,6 @@ export async function FundingSection() {
                                 width={logo.width}
                                 height={logo.height}
                                 className="h-12 md:h-14 w-auto max-w-full object-contain"
-                                priority
                             />
                         </React.Fragment>
                     ))}
